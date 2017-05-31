@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Index</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="../../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="../../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="../../plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="../../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <!-- Calendar CSS -->
+    <link href="../../plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
+    <!-- animation CSS -->
+    <link href="../css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="../css/colors/megna-dark.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <nav class="navbar navbar-default navbar-static-top m-b-0">
+          <div class="navbar-header">
+              <div class="pl-30">
+                  <!-- Logo -->
+                  <a class="logo" href="index.html">
+                    <b>
+                      <img src="../../plugins/images/arm_logo2.png" alt="home" class="light-logo" />
+                   </b>
+                  </a>
+              </div>
+              <!-- /Logo -->
+              <ul class="nav navbar-top-links navbar-right pull-right pr-50">
+                <li class="dropdown">
+                    <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><i class="fa fa-language"></i>  English </b><span class="caret"></span> </a>
+                    <ul class="dropdown-menu dropdown-user animated flipInY">
+                        <li><a href="#" class="text-right"> Spanish</a></li>
+                        <li><a href="#" class="text-right"> Germany</a></li>
+                    </ul>
+                    <!-- /.dropdown-language -->
+                </li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><i class="fa fa-user"></i>  Login </b><span class="caret"></span> </a>
+                      <ul class="dropdown-menu dropdown-user animated flipInY">
+                          <li><a href="#" class="text-right"> User Login</a></li>
+                          <li><a href="#" class="text-right"> Admin Login</a></li>
+                      </ul>
+                      <!-- /.dropdown-login -->
+                  </li>
+                  <!-- /.dropdown -->
+              </ul>
+          </div>
+          <!-- /.navbar-header -->
+          <!-- /.navbar-top-links -->
+          <!-- /.navbar-static-side -->
+      </nav>
+      <!-- End Top Navigation -->
+      <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu" style="padding-left: 20px;">Navigation</span></h3> </div>
+                    <ul class="nav" id="side-menu">
+                        <li> <a href="index.html" class="waves-effect px-25"><i class="fa fa-list"></i> <span class="hide-menu" style="padding-left: 20px;"> Summary <span></span></span></a>
+                        </li>
+                        <li> <a href="active-inactive.html" class="waves-effect px-25"><i class="fa fa-clock-o"></i> <span class="hide-menu" style="padding-left: 20px;"> Active-Cancelled <span></span></span></a>
+                        </li>
+                        <li> <a href="alerts.html" class="waves-effect px-25"><i class="fa fa-bell"></i> <span class="hide-menu" style="padding-left: 20px;"> Alerts <span></span></span></a>
+                        </li>
+                        <li><a href="create-certificate.html" class="waves-effect px-25"><i class="fa fa-plus-circle"></i> <span class="hide-menu" style="padding-left: 20px;"> Create new </span></a>
+                        </li>
+                        <li><a href="admin-settings.html" class="waves-effect px-25"><i class="fa fa-key"></i> <span class="hide-menu" style="padding-left: 20px;"> Admin settings </span></a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Admin settings</h4> </div>
+                        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                          <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Admin settings</li>
+                          </ol>
+                        </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="white-box">
+                        <h2 class="box-title m-b-0">Full access admin</h2>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="col-lg-4 col-md-8 col-xs-12">
+                                      <i class="fa fa-key p-10"></i>
+                                      <label> Arias Alex</label>
+                                    </div>
+                                    <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-info"><i class="fa fa-trash-o"></i> Delete</button>
+                                      </div>
+                                </div>
+                                <hr>
+                                <hr>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                      <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-default btn-outline"><i class="fa fa-plus-circle"></i> Add new</button></div>
+                                    </div>
+                                </div>
+                                <h2 class="box-title m-b-0">Limited access admin</h2>
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="col-lg-4 col-md-8 col-xs-12">
+                                              <i class="fa fa-users p-10"></i>
+                                              <label> Zapata Fabian</label>
+                                            </div>
+                                            <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-info"><i class="fa fa-trash-o"></i> Delete</button>
+                                              </div>
+                                        </div>
+                                        <hr>
+                                        <hr>
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="col-lg-4 col-md-8 col-xs-12">
+                                              <i class="fa fa-users p-10"></i>
+                                              <label> Zapata Fabian</label>
+                                            </div>
+                                            <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-info"><i class="fa fa-trash-o"></i> Delete</button>
+                                              </div>
+                                        </div>
+                                        <hr>
+                                        <hr>
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="col-lg-4 col-md-8 col-xs-12">
+                                              <i class="fa fa-users p-10"></i>
+                                              <label> Zapata Fabian</label>
+                                            </div>
+                                            <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-info"><i class="fa fa-trash-o"></i> Delete</button>
+                                              </div>
+                                        </div>
+                                        <hr>
+                                        <hr>
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                              <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-default btn-outline"><i class="fa fa-plus-circle"></i> Add new</button></div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                        </div>
+                  </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- wallet, & manage users widgets -->
+                <!-- ============================================================== -->
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="../../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="../js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="../js/waves.js"></script>
+    <!--Counter js -->
+    <script src="../../plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js"></script>
+    <!-- FormValidation -->
+    <link rel="stylesheet" href="../../plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.css">
+    <!-- FormValidation plugin and the class supports validating Bootstrap form -->
+    <script src="../../plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js"></script>
+    <script src="../../plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/custom.min.js"></script>
+    <!-- Sweet-Alert  -->
+    <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+
+    <script src="../../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        $('#exampleBasic').wizard({
+            onFinish: function() {
+                swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+            }
+        });
+        $('#exampleBasic2').wizard({
+            onFinish: function() {
+                swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+            }
+        });
+        $('#exampleValidator').wizard({
+            onInit: function() {
+                $('#validation').formValidation({
+                    framework: 'bootstrap',
+                    fields: {
+                        username: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The username is required'
+                                },
+                                stringLength: {
+                                    min: 6,
+                                    max: 30,
+                                    message: 'The username must be more than 6 and less than 30 characters long'
+                                },
+                                regexp: {
+                                    regexp: /^[a-zA-Z0-9_\.]+$/,
+                                    message: 'The username can only consist of alphabetical, number, dot and underscore'
+                                }
+                            }
+                        },
+                        email: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The email address is required'
+                                },
+                                emailAddress: {
+                                    message: 'The input is not a valid email address'
+                                }
+                            }
+                        },
+                        password: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The password is required'
+                                },
+                                different: {
+                                    field: 'username',
+                                    message: 'The password cannot be the same as username'
+                                }
+                            }
+                        }
+                    }
+                });
+            },
+            validator: function() {
+                var fv = $('#validation').data('formValidation');
+                var $this = $(this);
+                // Validate the container
+                fv.validateContainer($this);
+                var isValidStep = fv.isValidContainer($this);
+                if (isValidStep === false || isValidStep === null) {
+                    return false;
+                }
+                return true;
+            },
+            onFinish: function() {
+                $('#validation').submit();
+                swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+            }
+        });
+        $('#accordion').wizard({
+            step: '[data-toggle="collapse"]',
+            buttonsAppendTo: '.panel-collapse',
+            templates: {
+                buttons: function() {
+                    var options = this.options;
+                    return '<div class="panel-footer"><ul class="pager">' + '<li class="previous">' + '<a href="#' + this.id + '" data-wizard="back" role="button">' + options.buttonLabels.back + '</a>' + '</li>' + '<li class="next">' + '<a href="#' + this.id + '" data-wizard="next" role="button">' + options.buttonLabels.next + '</a>' + '<a href="#' + this.id + '" data-wizard="finish" role="button">' + options.buttonLabels.finish + '</a>' + '</li>' + '</ul></div>';
+                }
+            },
+            onBeforeShow: function(step) {
+                step.$pane.collapse('show');
+            },
+            onBeforeHide: function(step) {
+                step.$pane.collapse('hide');
+            },
+            onFinish: function() {
+                swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+            }
+        });
+    })();
+    </script>
+    <!--Style Switcher -->
+    <script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+
+</html>
