@@ -23,11 +23,9 @@ Route::get('/admin/index', function () {
     return view('admin.index');
 });
 
-Route::get('/admin/create-certificate', function () {
-    return view('admin.create-certificate');
-});
-
-Route::post('/admin/create-certificate', 'AdminController@create_certificate');
+/* Route::get('/admin/create-certificate', function () {return view('admin.create-certificate');}); */
+Route::get('/admin/create-certificate', 'AdminController@certificate');
+Route::post('/admin/prueba', 'AdminController@create_certificate');
 
 Route::get('/admin/alerts', function () {
     return view('admin.alerts');

@@ -52,7 +52,7 @@
               <div class="white-box">
                   <h3 class="box-title m-b-0">Validation</h3>
                   <p class="text-muted m-b-30 font-13"> This is the Validation wizard with validation.</p>
-                  <div id="exampleValidator" class="wizard">
+                  <div id="WizardFormContainer" class="wizard">
                       <ul class="wizard-steps" role="tablist">
                           <li class="active" role="tab">
                               <h4><span><i class="ti-user"></i></span>1</h4> </li>
@@ -65,11 +65,11 @@
                           <li role="tab">
                               <h4><span><i class="ti-check"></i></span>5</h4> </li>
                       </ul>
-                      <form id="validation" class="form-horizontal">
+                      <form id="dataFormContainer" class="form-horizontal" method="post">
                           <div class="wizard-content">
                               <div class="wizard-pane active" role="tabpanel">
                                   <div class="form-group p-50">
-                                    <form action="#">
+                                    <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                                   <div class="form-body">
                                       <h3 class="box-title">1. Contact info agency</h3>
                                       <hr>
@@ -312,12 +312,10 @@
                                           <!--/span-->
                                       </div>
                                   </div>
-                              </form>
                                   </div>
                               </div>
                               <div class="wizard-pane" role="tabpanel">
                                   <div class="form-group p-50">
-                                  <form action="#">
                                   <div class="form-body">
                                       <h3 class="box-title">4. General liability</h3>
                                       <div class="row">
@@ -587,12 +585,10 @@
                                       </div>
                                       <hr>
                                   </div>
-                                  </form>
                                   </div>
                               </div>
                               <div class="wizard-pane" role="tabpanel">
                                   <div class="form-group p-50">
-                                    <form action="#">
                                     <div class="form-body">
                                         <h3 class="box-title">5. Auto liability</h3>
                                         <div class="row">
@@ -852,12 +848,10 @@
                                         </div>
                                         <hr>
                                     </div>
-                                </form>
                                   </div>
                               </div>
                               <div class="wizard-pane" role="tabpanel">
                                   <div class="form-group p-50">
-                                    <form action="#">
                                     <div class="form-body">
                                         <h3 class="box-title">6. Umbrella liability</h3>
                                         <div class="row">
@@ -1061,12 +1055,11 @@
                                         </div>
                                         <hr>
                                     </div>
-                                </form>
+
                                   </div>
                               </div>
                               <div class="wizard-pane" role="tabpanel">
                                   <div class="form-group p-50">
-                                    <form action="#">
                                     <div class="form-body">
                                         <h3 class="box-title">7. Workers compensation</h3>
                                         <div class="row">
@@ -1443,12 +1436,12 @@
                                                     </div>
                                                 </div>
                                                 -->
-                                                <textarea rows="4" cols="50" name="description">
+                                                    <textarea rows="4" cols="50" name="description">
                                                   </textarea>
+                                              <input type="submit" name="sendForm" id="sendForm" value="Enviar" style="display:none;"/>
                                           </div>
                                         </div>
-                                    </div>
-                                </form>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -1469,7 +1462,7 @@
     <script src="{{URL::asset('assets/plugins/bower_components/summernote/dist/summernote.min.js')}}"></script>
     <script src="{{URL::asset('assets/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
     <!-- Form Wizard JavaScript -->
-    <script src="{{URL::asset('plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js')}}"></script>
+    <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js')}}"></script>
     <!-- FormValidation -->
     <link rel="stylesheet" href="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.css')}}">
     <!-- FormValidation plugin and the class supports validating Bootstrap form -->
@@ -1480,19 +1473,9 @@
 @section('script')
 <script type="text/javascript">
 (function() {
-    $('#exampleBasic').wizard({
-        onFinish: function() {
-            swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
-        }
-    });
-    $('#exampleBasic2').wizard({
-        onFinish: function() {
-            swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
-        }
-    });
-    $('#exampleValidator').wizard({
+    $('#WizardFormContainer').wizard({
         onInit: function() {
-            $('#validation').formValidation({
+            $('#dataFormContainer').formValidation({
                 framework: 'bootstrap',
                 fields: {
                     username: {
@@ -1536,7 +1519,7 @@
             });
         },
         validator: function() {
-            var fv = $('#validation').data('formValidation');
+            var fv = $('#dataFormContainer').data('formValidation');
             var $this = $(this);
             // Validate the container
             fv.validateContainer($this);
@@ -1547,41 +1530,11 @@
             return true;
         },
         onFinish: function() {
-            $('#validation').submit();
-            swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
-        }
-    });
-    $('#accordion').wizard({
-        step: '[data-toggle="collapse"]',
-        buttonsAppendTo: '.panel-collapse',
-        templates: {
-            buttons: function() {
-                var options = this.options;
-                return '<div class="panel-footer"><ul class="pager">' + '<li class="previous">' + '<a href="#' + this.id + '" data-wizard="back" role="button">' + options.buttonLabels.back + '</a>' + '</li>' + '<li class="next">' + '<a href="#' + this.id + '" data-wizard="next" role="button">' + options.buttonLabels.next + '</a>' + '<a href="#' + this.id + '" data-wizard="finish" role="button">' + options.buttonLabels.finish + '</a>' + '</li>' + '</ul></div>';
-            }
-        },
-        onBeforeShow: function(step) {
-            step.$pane.collapse('show');
-        },
-        onBeforeHide: function(step) {
-            step.$pane.collapse('hide');
-        },
-        onFinish: function() {
-            swal("Message Finish!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+          $("#sendForm").trigger("click");
+
         }
     });
 })();
-
-      // Date Picker
-      jQuery('.mydatepicker, #datepicker').datepicker();
-      jQuery('#datepicker1, #datepicker2').datepicker({
-          autoclose: true,
-          todayHighlight: true
-      });
-      jQuery('#date-range').datepicker({
-          toggleActive: true
-      });
-      //summernote
 
 </script>
 @endsection

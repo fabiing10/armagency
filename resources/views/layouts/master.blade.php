@@ -12,7 +12,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('assets/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!--alerts CSS -->
-    <link href="../../plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="{{URL::asset('assets/plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
     <!-- Menu CSS -->
     <link href="{{URL::asset('assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- toast CSS -->
