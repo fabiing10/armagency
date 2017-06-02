@@ -72,7 +72,7 @@
 <!-- ============================================================== -->
 @endsection
 
-@section('library')
+@section('library_js')
 <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
 <!-- start - This is for export functionality only -->
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>

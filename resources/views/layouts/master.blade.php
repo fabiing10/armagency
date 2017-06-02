@@ -11,6 +11,8 @@
     <title>@yield('title')</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('assets/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!--alerts CSS -->
+    <link href="../../plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <!-- Menu CSS -->
     <link href="{{URL::asset('assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- toast CSS -->
@@ -34,9 +36,12 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+@yield('library_css')
+@yield('style')
+
 </head>
 <body class="fix-header">
-      @yield('body_content')
+@yield('body_content')
 
 <!-- ============================================================== -->
 <!-- End Wrapper -->
@@ -67,7 +72,7 @@
 <!--Style Switcher -->
 <script src="{{URL::asset('assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
-@yield('library')
+@yield('library_js')
 @yield('script')
 </body>
 
