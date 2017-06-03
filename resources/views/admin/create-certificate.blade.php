@@ -65,11 +65,12 @@
                           <li role="tab">
                               <h4><span><i class="ti-check"></i></span>5</h4> </li>
                       </ul>
-                      <form id="dataFormContainer" class="form-horizontal" method="post">
+                      <form id="dataFormContainer" class="form-horizontal" method="POST">
+                          <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                           <div class="wizard-content">
                               <div class="wizard-pane active" role="tabpanel">
                                   <div class="form-group p-50">
-                                    <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
+
                                   <div class="form-body">
                                       <h3 class="box-title">1. Contact info agency</h3>
                                       <hr>
@@ -375,8 +376,8 @@
                                             <div class="form-group">
                                               <label>
                                                   <div class="radio radio-success">
-                                                    <input type="radio" name="g_l_general_aggregate" id="radioclientPhone" value="800-363-4806">
-                                                    <label for="general_aggregate">Policy</label>
+                                                    <input type="radio" name="general_aggregate_options" value="Policy">
+                                                    <label for="general_aggregate_options">Policy</label>
                                                   </div>
                                               </label>
                                             </div>
@@ -388,8 +389,8 @@
                                             <div class="form-group">
                                               <label>
                                                   <div class="radio radio-success">
-                                                    <input type="radio" name="g_l_general_aggregate" id="radioclientPhone" value="800-363-4806">
-                                                    <label for="general_aggregate">Project</label>
+                                                    <input type="radio" name="general_aggregate_options" value="Project">
+                                                    <label for="general_aggregate_options">Project</label>
                                                   </div>
                                               </label>
                                             </div>
@@ -401,8 +402,8 @@
                                             <div class="form-group">
                                               <label>
                                                   <div class="radio radio-success">
-                                                    <input type="radio" name="g_l_general_aggregate" id="radioclientPhone" value="800-363-4806">
-                                                    <label for="general_aggregate">Loc</label>
+                                                    <input type="radio" name="general_aggregate_options" value="Loc">
+                                                    <label for="general_aggregate_options">Loc</label>
                                                   </div>
                                               </label>
                                             </div>
@@ -414,7 +415,7 @@
                                             <div class="form-group">
                                               <label>
                                                   <div class="radio radio-success">
-                                                    <input type="radio" name="g_l_general_aggregate" id="radioclientPhone" value="800-363-4806">
+                                                    <input type="radio" name="general_aggregate_options" value="Other">
                                                     <label for="general_aggregate">Other</label>
                                                   </div>
                                               </label>
@@ -427,7 +428,7 @@
                                             <div class="form-group">
                                               <label>
                                                   <div class="radio radio-success">
-                                                    <input type="radio" name="g_l_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                    <input type="radio" name="g_l_options_addl_subr" value="ADDL INSR">
                                                     <label for="options_addl_subr">ADDL INSR</label>
                                                   </div>
                                               </label>
@@ -437,7 +438,7 @@
                                             <div class="form-group">
                                               <label>
                                                   <div class="radio radio-success">
-                                                    <input type="radio" name="g_l_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                    <input type="radio" name="g_l_options_addl_subr" value="SUBR WVD">
                                                     <label for="options_addl_subr">SUBR WVD</label>
                                                   </div>
                                               </label>
@@ -473,7 +474,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_each_ocurrence" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_each_ocurrence" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -488,7 +489,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_rented_permises" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_rented_permises" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -503,7 +504,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_medical_expenses" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_medical_expenses" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -518,7 +519,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_personal_adv" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_personal_adv" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -533,7 +534,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_general_aggregate" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_general_aggregate" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -548,7 +549,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_product_comp" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_product_comp" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -563,7 +564,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_product_comp2" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_product_comp2" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -578,7 +579,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="g_l_other" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="g_l_other" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -606,7 +607,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="Any auto">
+                                                      <input type="radio" name="a_l_options" value="Any auto">
                                                       <label for="radio_options2">Any auto</label>
                                                     </div>
                                                 </label>
@@ -619,7 +620,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="All owned autos">
                                                       <label for="radio_options2">All owned autos</label>
                                                     </div>
                                                 </label>
@@ -632,7 +633,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="Scheduled autos">
                                                       <label for="radio_options2">Scheduled autos</label>
                                                     </div>
                                                 </label>
@@ -645,7 +646,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="Home autos<">
                                                       <label for="radio_options2">Home autos</label>
                                                     </div>
                                                 </label>
@@ -658,7 +659,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="Hired autos">
                                                       <label for="radio_options2">Hired autos</label>
                                                     </div>
                                                 </label>
@@ -671,7 +672,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="Non-owned autos">
                                                       <label for="radio_options2">Non-owned autos</label>
                                                     </div>
                                                 </label>
@@ -684,7 +685,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="Non-owned autos">
                                                       <label for="radio_options2">Non-owned autos</label>
                                                     </div>
                                                 </label>
@@ -697,7 +698,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options" value="Other">
                                                       <label for="radio_options2">Other</label>
                                                     </div>
                                                 </label>
@@ -710,7 +711,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options_addl_subr" value="ADDL INSR">
                                                       <label for="radio_options_addl_subr2">ADDL INSR</label>
                                                     </div>
                                                 </label>
@@ -720,7 +721,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="a_l_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="a_l_options_addl_subr" value="SUBR WVD">
                                                       <label for="radio_options_addl_subr2">SUBR WVD</label>
                                                     </div>
                                                 </label>
@@ -766,7 +767,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="a_l_combined_single" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="a_l_combined_single" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -781,7 +782,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="a_l_bodily_person" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="a_l_bodily_person" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -796,7 +797,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="a_l_bodily_accident" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="a_l_bodily_accident" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -811,7 +812,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="a_l_property_damage" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="a_l_property_damage" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -826,7 +827,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="a_l_other" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="a_l_other" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -841,7 +842,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="a_l_other2" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="a_l_other2" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -869,7 +870,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options" value="Umbrella liability">
                                                       <label for="radio_options3">Umbrella liability</label>
                                                     </div>
                                                 </label>
@@ -882,7 +883,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options" value="Occur ">
                                                       <label for="radio_options3">Occur </label>
                                                     </div>
                                                 </label>
@@ -895,7 +896,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options" value="Excess liability">
                                                       <label for="radio_options3">Excess liability</label>
                                                     </div>
                                                 </label>
@@ -908,7 +909,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options" value="Claims-made">
                                                       <label for="radio_options3">Claims-made</label>
                                                     </div>
                                                 </label>
@@ -921,7 +922,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options" value="Deductible">
                                                       <label for="radio_options3">Deductible</label>
                                                     </div>
                                                 </label>
@@ -934,7 +935,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options" value="Retention">
                                                       <label for="radio_options3">Retention</label>
                                                     </div>
                                                 </label>
@@ -947,7 +948,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options_addl_subr" value="ADDL INSR">
                                                       <label for="radio_options_addl_subr3">ADDL INSR</label>
                                                     </div>
                                                 </label>
@@ -957,7 +958,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="u_l_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="u_l_options_addl_subr" value="SUBR WVD">
                                                       <label for="radio_options_addl_subr3">SUBR WVD</label>
                                                     </div>
                                                 </label>
@@ -1003,7 +1004,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="u_l_each_occurent" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="u_l_each_occurent" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -1018,7 +1019,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="u_l_aggregate" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="u_l_aggregate" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -1033,7 +1034,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="u_l_other" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="u_l_other" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -1048,7 +1049,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="u_l_other2" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="u_l_other2" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -1083,13 +1084,13 @@
                                                   <div class="radio-list">
                                                       <label class="radio-inline p-0">
                                                           <div class="radio radio-info">
-                                                              <input type="radio" name="W_C_propretor" id="radio1" value="option1">
+                                                              <input type="radio" name="W_C_propretor" id="radio1" value="yes">
                                                               <label for="radio_propetor">YES</label>
                                                           </div>
                                                       </label>
                                                       <label class="radio-inline">
                                                           <div class="radio radio-info">
-                                                              <input type="radio" name="W_C_propretor" id="radio2" value="option2">
+                                                              <input type="radio" name="W_C_propretor" id="radio2" value="no">
                                                               <label for="radio_propetor">NO</label>
                                                           </div>
                                                       </label>
@@ -1112,7 +1113,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group">
                                                   <div class="col-md-12">
-                                                  <input name="W_C_office" type="text" placeholder="Office / Member excluded" class="form-control">
+                                                  <input name="W_C_office2" type="text" placeholder="Office / Member excluded" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -1122,7 +1123,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group">
                                                   <div class="col-md-12">
-                                                  <input name="W_C_office" type="text" placeholder="Office / Member excluded" class="form-control">
+                                                  <input name="W_C_office3" type="text" placeholder="Office / Member excluded" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -1133,7 +1134,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="W_C_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="W_C_options_addl_subr" id="radioclientPhone" value="ADDL INSR">
                                                       <label for="radio_options_addl_subr4">ADDL INSR</label>
                                                     </div>
                                                 </label>
@@ -1143,7 +1144,7 @@
                                               <div class="form-group">
                                                 <label>
                                                     <div class="radio radio-success">
-                                                      <input type="radio" name="W_C_options_addl_subr" id="radioclientPhone" value="800-363-4806">
+                                                      <input type="radio" name="W_C_options_addl_subr" id="radioclientPhone" value="SUBR WVD">
                                                       <label for="radio_options_addl_subr4">SUBR WVD</label>
                                                     </div>
                                                 </label>
@@ -1189,7 +1190,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="W_C_statutory_limits" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="W_C_statutory_limits" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
@@ -1281,13 +1282,13 @@
                                                   <div class="radio-list">
                                                       <label class="radio-inline p-0">
                                                           <div class="radio radio-info">
-                                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio1" value="option1">
+                                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio1" value="Additonal insurance">
                                                               <label for="radio_options_add">Additonal insurance</label>
                                                           </div>
                                                       </label>
                                                       <label class="radio-inline">
                                                           <div class="radio radio-info">
-                                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio2" value="option2">
+                                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio2" value="Surrogation">
                                                               <label for="radio_options_add">Surrogation</label>
                                                           </div>
                                                       </label>
@@ -1333,7 +1334,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                  <input name="A_C_a_coverage_limits" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                  <input name="A_C_a_coverage_limits" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                               </div>
                                             </div>
                                             </div>
@@ -1365,13 +1366,13 @@
                                                     <div class="radio-list">
                                                         <label class="radio-inline p-0">
                                                             <div class="radio radio-info">
-                                                                <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio1" value="option1">
+                                                                <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio1" value="Additonal insurance">
                                                                 <label for="radio_options_add2">Additonal insurance</label>
                                                             </div>
                                                         </label>
                                                         <label class="radio-inline">
                                                             <div class="radio radio-info">
-                                                                <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio2" value="option2">
+                                                                <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio2" value="Surrogation">
                                                                 <label for="radio_options_add2">Surrogation</label>
                                                             </div>
                                                         </label>
@@ -1402,7 +1403,7 @@
                                                   <div class="form-group">
                                                     <div class="example">
                                                         <div class="input-group">
-                                                            <input name="A_C_b_exp_date" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                            <input name="" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                                     </div>
                                                   </div>
                                                   </div>
@@ -1417,7 +1418,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                 <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input name="A_C_b_coverage_limits" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                                    <input name="A_C_b_coverage_limits" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                                                 </div>
                                               </div>
                                               </div>
