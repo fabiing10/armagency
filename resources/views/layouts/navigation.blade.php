@@ -25,8 +25,14 @@
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><i class="fa fa-user"></i>  Login </b><span class="caret"></span> </a>
                 <ul class="dropdown-menu dropdown-user animated flipInY">
                     <li><a href="#" class="text-right"> User Login</a></li>
-                    <li><a href="#" class="text-right"> Admin Login</a></li>
+
                 </ul>
+                <!-- /.dropdown-login -->
+            </li>
+
+            <li >
+                <a href="/logout"><b class="hidden-xs"><i class="fa fa-exit"></i>Logout</b> </a>
+
                 <!-- /.dropdown-login -->
             </li>
             <!-- /.dropdown -->

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('title') Login @endsection
 
@@ -55,16 +55,17 @@
                 <div class="white-box">
                     <h1 class="m-b-0 text-center">User login</h1>
 
-                  <form class="form-horizontal new-lg-form" id="loginform" action="index.html">
+
+                    {!! Form::open(['url' => '/login','class' => 'form-horizontal new-lg-form','method' => 'POST']) !!}
 
                     <div class="form-group  m-t-20">
                       <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="Username">
+                        <input class="form-control" type="text" required="" name="email" placeholder="Email">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" placeholder=" Password">
+                        <input class="form-control" type="password" required="" name="password" placeholder=" Password">
                       </div>
                     </div>
                     <div class="form-group">
@@ -88,7 +89,7 @@
                     </div>
                     <div class="form-group ">
                       <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="Email">
+                        <input class="form-control" type="text" required="" name="" placeholder="Email">
                       </div>
                     </div>
                     <div class="form-group text-center m-t-20">
@@ -96,7 +97,7 @@
                         <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
                       </div>
                     </div>
-                  </form>
+                  {!! Form::close() !!}
                 </div>
       </div>
 

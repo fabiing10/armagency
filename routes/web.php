@@ -19,30 +19,7 @@ Route::get('/login', function () {
     return view('login');
 });
 */
-Route::get('/admin/index', function () {
-    return view('admin.index');
-});
 
-/* Route::get('/admin/create-certificate', function () {return view('admin.create-certificate');}); */
-Route::get('/admin/create-certificate', 'AdminController@certificate');
-Route::post('/admin/create-certificate', 'AdminController@create_certificate');
-Route::post('/admin/prueba', 'AdminController@create_certificate');
-
-Route::get('/admin/alerts', function () {
-    return view('admin.alerts');
-});
-
-Route::get('/admin/active-inactive', function () {
-    return view('admin.active-inactive');
-});
-
-Route::get('/admin/admin-settings', function () {
-    return view('admin.admin-settings');
-});
-
-Route::get('/admin/login', function () {
-    return view('admin.login');
-});
 
 
 /* User */
@@ -63,3 +40,48 @@ Route::get('/user/certificate',function(){return view('user.send_certificate');}
 Route::get('/user/send-via',function(){return view('user.send-via');});
 
 Route::get('/user/support',function(){return view('user.support');});
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/redirect', 'HomeController@redirectURL')->name('redirect');
+
+//Redirect Applications
+
+
+//Login Controller's
+Route::get('/login', function () {
+  return view('login');
+});
+Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@authenticate']);
+Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
+
+//Admin Controller's
+Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function(){
+
+  Route::get('/', function () {
+      return view('admin.index');
+  });
+
+  /* Route::get('/admin/create-certificate', function () {return view('admin.create-certificate');}); */
+  Route::get('/create-certificate', 'AdminController@certificate');
+  Route::post('/create-certificate', 'AdminController@create_certificate');
+  Route::post('/prueba', 'AdminController@create_certificate');
+
+  Route::get('/alerts', function () {
+      return view('admin.alerts');
+  });
+
+  Route::get('/active-inactive', function () {
+      return view('admin.active-inactive');
+  });
+
+  Route::get('/admin-settings', function () {
+      return view('admin.admin-settings');
+  });
+
+
+
+});
