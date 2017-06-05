@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use User,FormControl;
+use App\User;
+use App\FormControl;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -16,26 +17,27 @@ class AdminController extends Controller
 
           return view('admin.create-certificate');
       }
+
       public function create_certificate (Request $request){
+
         $user = new User();
+        $user->identification = $request->customer_id;
         $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->fax = $request->fax;
+        $user->email = $request->email;
+        $user->userType = "user";
+        $user->password = bcrypt('123456');
         $user->save();
 
-
-
         $formcontrol = new FormControl();
-        $formcontrol->user_id = $user->id;
-        $formcontrol = $request->name;
-        $formcontrol = $request->phone;
-        $formcontrol = $request->fax;
-        $formcontrol = $request->email;
-        $formcontrol = $request->customer_id;
-        $formcontrol = $request->P_I_name;
-        $formcontrol = $request->dba_name;
-        $formcontrol = $request->address;
-        $formcontrol = $request->city;
-        $formcontrol = $request->state;
-        $formcontrol = $request->zip_code;
+        $formcontrol->userId = $user->id;
+        $formcontrol->P_I_name = $request->name;
+        $formcontrol->P_I_dba_name = $request->dba_name;
+        $formcontrol->P_I_address = $request->address;
+        $formcontrol->P_I_city = $request->city;
+        $formcontrol->P_I_dba_state = $request->state;
+        $formcontrol->P_I_dba_zip_code = $request->zip_code;
 
         $insuranceData = array(
               'ensured_a' => $request->ensured_a,
@@ -51,7 +53,8 @@ class AdminController extends Controller
               'ensured_f' => $request->ensured_f,
               'naic_f' => $request->naic_f,
             );
-          $formcontrol  = json_encode($insuranceData);
+          $insurance  = json_encode($insuranceData);
+          $formcontrol->insurance = $insurance;
 
           $generalliabilityData = array(
               'g_l_insurance_letter' => $request->g_l_insurance_letter,
@@ -70,7 +73,8 @@ class AdminController extends Controller
               'g_l_other' => $request->g_l_other,
             );
 
-          $formcontrol  = json_encode($generalliabilityData);
+          $generalliability  = json_encode($generalliabilityData);
+          $formcontrol->general_liability = $generalliability;
 
 
           $autoliabilityData = array(
@@ -88,7 +92,8 @@ class AdminController extends Controller
               'a_l_other2' => $request->a_l_other2,
             );
 
-            $formcontrol  = json_encode($autoliabilityData);
+            $autoliability  = json_encode($autoliabilityData);
+            $formcontrol->auto_liability = $autoliability;
 
           $umbrellaliabilityData = array(
                 'u_l_insurance_letter' => $request->u_l_insurance_letter,
@@ -103,44 +108,47 @@ class AdminController extends Controller
                 'u_l_other2' => $request->u_l_other2,
             );
 
-          $formcontrol  = json_encode($umbrellaliabilityData);
+          $umbrellaliability  = json_encode($umbrellaliabilityData);
+          $formcontrol->umbrella_liability = $umbrellaliability;
 
-          $formcontrol = $request->W_C_insurance_letter;
-          $formcontrol = $request->W_C_propretor;
+          $formcontrol->W_C_insurance_letter = $request->W_C_insurance_letter;
+          $formcontrol->W_C_propretor = $request->W_C_propretor;
 
           $officeData = array(
                 'W_C_office' => $request->W_C_office,
                 'W_C_office2' => $request->W_C_office2,
                 'W_C_office3' => $request->W_C_office3,
             );
-          $formcontrol  = json_encode($officeData);
-          $formcontrol = $request->W_C_options_addl_subr;
-          $formcontrol = $request->W_C_policy_number;
-          $formcontrol = $request->W_C_eff_date;
-          $formcontrol = $request->W_C_exp_date;
-          $formcontrol = $request->W_C_statutory_limits;
-          $formcontrol = $request->W_C_other;
-          $formcontrol = $request->W_C_each_accident;
-          $formcontrol = $request->W_C_ea_employee;
-          $formcontrol = $request->W_C_policy_limit;
+          $office  = json_encode($officeData);
+          $formcontrol->W_C_office = $office;
 
-          $formcontrol = $request->A_C_a_insurance_letter;
-          $formcontrol = $request->A_C_a_policy_type;
-          $formcontrol = $request->A_C_a_options_add_insurance_surrogation;
-          $formcontrol = $request->A_C_a_policy_number;
-          $formcontrol = $request->A_C_a_eff_date;
-          $formcontrol = $request->A_C_a_exp_date;
-          $formcontrol = $request->A_C_a_coverage_limits;
+          $formcontrol->W_C_options_addl_subr = $request->W_C_options_addl_subr;
+          $formcontrol->W_C_policy_number = $request->W_C_policy_number;
+          $formcontrol->W_C_eff_date = $request->W_C_eff_date;
+          $formcontrol->W_C_exp_date = $request->W_C_exp_date;
+          $formcontrol->W_C_statutory_limits = $request->W_C_statutory_limits;
+          $formcontrol->W_C_other = $request->W_C_other;
+          $formcontrol->W_C_each_accident = $request->W_C_each_accident;
+          $formcontrol->W_C_ea_employee = $request->W_C_ea_employee;
+          $formcontrol->W_C_policy_limit = $request->W_C_policy_limit;
 
-          $formcontrol = $request->A_C_b_insurance_letter;
-          $formcontrol = $request->A_C_b_policy_type;
-          $formcontrol = $request->A_C_b_options_add_insurance_surrogation;
-          $formcontrol = $request->A_C_b_policy_number;
-          $formcontrol = $request->A_C_b_eff_date;
-          $formcontrol = $request->A_C_b_exp_date;
-          $formcontrol = $request->A_C_b_coverage_limits;
+          $formcontrol->A_C_a_insurance_letter = $request->A_C_a_insurance_letter;
+          $formcontrol->A_C_a_policy_type = $request->A_C_a_policy_type;
+          $formcontrol->A_C_a_options_add_insurance_surrogation = $request->A_C_a_options_add_insurance_surrogation;
+          $formcontrol->A_C_a_policy_number = $request->A_C_a_policy_number;
+          $formcontrol->A_C_a_eff_date = $request->A_C_a_eff_date;
+          $formcontrol->A_C_a_exp_date = $request->A_C_a_exp_date;
+          $formcontrol->A_C_a_coverage_limits = $request->A_C_a_coverage_limits;
 
-          $formcontrol = $request->description;
+          $formcontrol->A_C_b_insurance_letter = $request->A_C_b_insurance_letter;
+          $formcontrol->A_C_b_policy_type = $request->A_C_b_policy_type;
+          $formcontrol->A_C_b_options_add_insurance_surrogation = $request->A_C_b_options_add_insurance_surrogation;
+          $formcontrol->A_C_b_policy_number = $request->A_C_b_policy_number;
+          $formcontrol->A_C_b_eff_date = $request->A_C_b_eff_date;
+          $formcontrol->A_C_b_exp_date = $request->A_C_b_exp_date;
+          $formcontrol->A_C_b_coverage_limits = $request->A_C_b_coverage_limits;
+
+          $formcontrol->description = $request->description;
 
           $formcontrol->save();
 
