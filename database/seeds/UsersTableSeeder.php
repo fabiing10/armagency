@@ -16,9 +16,9 @@ class UsersTableSeeder extends Seeder
           'name' => 'Fabian Alexander',
           'phone' => '3143666151',
           'fax' => '3870102',
-          'email' => 'fabiing10@gmail.com',
-          'userType' => 'super-admin',
-          'password' => bcrypt('1013636219')
+          'email' => 'admin@armagencyonline.com',
+          'userType' => 'admin',
+          'password' => bcrypt('armagency2017')
       ]);
     }
 }
