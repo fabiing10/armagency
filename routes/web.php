@@ -65,7 +65,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function()
       return view('admin.index');
   });
 
-Route::get('/', 'AdminController@home');
 
   /* Route::get('/admin/create-certificate', function () {return view('admin.create-certificate');}); */
 
