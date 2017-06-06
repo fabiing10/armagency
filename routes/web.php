@@ -73,7 +73,6 @@ Route::get('/', 'AdminController@home');
 
   Route::get('/create-certificate', 'AdminController@certificate');
   Route::post('/create-certificate', 'AdminController@create_certificate');
-  Route::post('/prueba', 'AdminController@create_certificate');
 
   Route::get('/alerts', function () {
       return view('admin.alerts');

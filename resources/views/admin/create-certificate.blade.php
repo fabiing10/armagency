@@ -1537,5 +1537,14 @@
     });
 })();
 
+jQuery('.mydatepicker, #datepicker').datepicker();
+jQuery('#datepicker1, #datepicker2').datepicker({
+    autoclose: true,
+    todayHighlight: true
+});
+jQuery('#date-range').datepicker({
+    toggleActive: true
+});
+
 </script>
 @endsection
