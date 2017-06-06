@@ -29,11 +29,14 @@
           <div class="row bg-title">
               <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                   <h4 class="page-title">HOME</h4> </div>
-                  <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                  <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
                     <ol class="breadcrumb">
-                      <li><a href="index.html">Home</a></li>
+                      <li><a href="/user">Home</a></li>
                       <li class="active">Send via</li>
                     </ol>
+                  </div>
+                  <div class="col-lg-3 col-sm-8 col-md-8 col-xs-12">
+                    <a href="#" target="_blank" class="btn btn-info pull-left m-l-20 hidden-xs hidden-sm waves-effect waves-light">Dowloand Certificate PDF</a>
                   </div>
               <!-- /.col-lg-12 -->
           </div>
@@ -41,6 +44,7 @@
           <div class="row">
               <div class="col-sm-12">
                   <div class="white-box">
+
                                 <h2 class="box-title m-b-0">SEND VIA</h2>
                                 <p class="text-muted m-b-30 font-13"></p>
 
@@ -82,7 +86,7 @@
                                               <a href="send-certificate-to.html" class="btn btn-default pull-left hidden-xs hidden-sm waves-effect waves-light">Back</a>
                                             </div>
                                             <div class="col-lg-1" style="padding-left:0px;">
-                                              <a href="client-list.html" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light">Next</a>
+                                              <a href="client-list" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light">Next</a>
                                             </div>
                                           </div>
                                         </form>

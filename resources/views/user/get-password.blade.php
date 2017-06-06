@@ -31,8 +31,8 @@
                 <h4 class="page-title">ACCOUNT</h4> </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
               <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="account.html">Account</a></li>
+                <li><a href="user/certificate">Home</a></li>
+                <li><a href="account">Account</a></li>
                 <li class="active">Reset Password</li>
               </ol>
             </div>
@@ -56,7 +56,7 @@
                                           </div>
                                               <br>
                                               <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
-                                                <a href="#" class="btn btn-default m-l-20 hidden-xs hidden-sm waves-effect waves-light">Cancel</a>
+                                                <a href="account" class="btn btn-default m-l-20 hidden-xs hidden-sm waves-effect waves-light">Cancel</a>
                                                 <a href="#" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</a>
                                               </div>
                                         </form>

@@ -2,6 +2,15 @@
 
 @section('title') Login @endsection
 
+@section('style')
+
+  <style media="screen">
+  .new-login-register .new-login-box {
+      margin-left: 380px;
+  }
+  </style>
+@endsection
+
 @section('body_content')
 <!-- Preloader -->
 <div class="preloader">
@@ -18,7 +27,7 @@
             <!-- Logo -->
             <a class="logo" href="index.html">
               <b>
-                <img src="../plugins/images/arm_logo2.png" alt="home" class="light-logo" />
+                <img src="{{URL::asset('assets/plugins/images/arm_logo2.png')}}" alt="home" class="light-logo" />
              </b>
             </a>
         </div>
@@ -52,8 +61,8 @@
 <section id="wrapper" class="new-login-register">
 
       <div class="new-login-box">
-                <div class="white-box">
-                    <h1 class="m-b-0 text-center">User login</h1>
+                <div class="white-box" style="margin-top:130px;">
+                    <h1 class="m-b-0 text-center">Admin login</h1>
 
 
                     {!! Form::open(['url' => '/login','class' => 'form-horizontal new-lg-form','method' => 'POST']) !!}
@@ -71,7 +80,7 @@
                     <div class="form-group">
                     <div class="form-group text-center m-t-20">
                       <div class="col-xs-12">
-                        <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Log In</button>
+                        <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Login</button>
                       </div>
                     </div>
                     <div class="row">
