@@ -59,8 +59,15 @@ Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@log
 //Admin Controller's
 Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function(){
 
-  Route::get('/', function () {return view('admin.index');});
+
+  Route::get('/', function () {
+      return view('admin.index');
+  });
+
   /* Route::get('/admin/create-certificate', function () {return view('admin.create-certificate');}); */
+
+
+
   Route::get('/create-certificate', 'AdminController@certificate');
   Route::post('/create-certificate', 'AdminController@create_certificate');
   Route::get('/alerts', function () {return view('admin.alerts');});
