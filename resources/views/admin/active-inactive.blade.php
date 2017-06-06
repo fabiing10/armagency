@@ -31,16 +31,26 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row bg-title">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">HOME</h4> </div>
-                <!-- /.col-lg-12 -->
-            </div>
+              <div class="row">
+                    <ol class="breadcrumb" style="float:left; margin-left:15px;">
+                      <li><a href="index.html">Home</a></li>
+                      <li class="active">Active-Cancelled</li>
+                    </ol>
+              </div>
             <!-- /.row -->
             <div class="row">
               <div class="col-sm-12">
+              <div class="row" style="padding-bottom:10px;">
+                <div class="col-sm-6">
+                  <h3 class="box-title m-b-0">Active - Cancelled</h3>
+                </div>
+                  <div class="col-sm-6">
+                    <div id="editable-datatable_filter" class="dataTables_filter">
+                      <input type="search" class="form-control input-sm" placeholder="Enter search" aria-controls="editable-datatable">
+                    </div>
+                  </div>
+                </div>
                   <div class="white-box">
-                      <h3 class="box-title m-b-0">Certificates summary</h3>
-                      <p class="text-muted m-b-30"></p>
                       <div class="table-responsive">
                           <table id="myTable" class="table table-striped">
                               <thead>

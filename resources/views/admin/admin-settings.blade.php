@@ -4,7 +4,12 @@
 @endsection
 
 @section('style')
-
+<style>
+hr{
+  margin-top: 9px;
+  margin-bottom: 5px;
+}
+</style>
 @endsection
 
 @section('body_content')
@@ -27,19 +32,22 @@
   <div id="page-wrapper">
       <div class="container-fluid">
           <div class="row bg-title">
-              <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                  <h4 class="page-title">Admin settings</h4> </div>
-                  <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    <ol class="breadcrumb">
-                      <li><a href="index.html">Home</a></li>
-                      <li class="active">Admin settings</li>
-                    </ol>
-                  </div>
+            <div class="row">
+                  <ol class="breadcrumb" style="float:left; margin-left:30px;">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Alerts</li>
+                  </ol>
+            </div>
               <!-- /.col-lg-12 -->
           </div>
           <!-- /.row -->
           <div class="row">
             <div class="col-sm-12">
+              <div class="row" style="padding-bottom:20px;">
+                <div class="col-sm-6">
+                  <h3 class="box-title m-b-0">Admin sttings</h3>
+                </div>
+                </div>
               <div class="white-box">
                   <h2 class="box-title m-b-0">Full access admin</h2>
                           <hr>
@@ -99,7 +107,6 @@
                                         <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-default btn-outline"><i class="fa fa-plus-circle"></i> Add new</button></div>
                                       </div>
                                   </div>
-                                  <hr>
                   </div>
             </div>
           </div>

@@ -29,9 +29,11 @@
           <div class="row bg-title">
               <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                   <h4 class="page-title">HOME</h4> </div>
-              <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                <a href="#" target="_blank" class="btn btn-info pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Dowloand Certificate PDF</a>
-              </div>
+                  <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <ol class="breadcrumb">
+                      <li><a href="user/certificate">Home</a></li>
+                    </ol>
+                  </div>
               <!-- /.col-lg-12 -->
           </div>
           <!-- /.row -->
@@ -83,7 +85,7 @@
                                             </div>
                                             <div class="form-group">
                                               <div class="col-lg-12" style="padding-left:0px;">
-                                                <a href="send-via.html" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light">Next</a>
+                                                <a href="send-via" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light">Next</a>
                                               </div>
                                             </div>
                                         </form>

@@ -4,7 +4,12 @@
 @endsection
 
 @section('style')
-
+<style>
+hr {
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+</style>
 @endsection
 
 @section('body_content')
@@ -45,7 +50,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
               </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
-                        <img src="../plugins/images/arm_logo.png" alt="home" class="light-logo text-center"></div>
+                        <img src="{{URL::asset('assets/plugins/images/arm_logo.png')}}" alt="home" class="light-logo text-center"></div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         </div>
                       </div>

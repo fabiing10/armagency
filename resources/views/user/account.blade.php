@@ -31,7 +31,7 @@
                   <h4 class="page-title">ACCOUNT</h4> </div>
               <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="user/certificate">Home</a></li>
                   <li class="active">Account</li>
                 </ol>
               </div>
@@ -44,8 +44,8 @@
               <div class="row m-t-30">
                       <div class="form-group">
                         <div class="col-lg-4 col-md-8 col-xs-12">
-                            <i class="ti-world p-10"></i>
-                            <label> Account status:</label><span> Active</span>
+                            <img src="{{URL::asset('assets/plugins/images/icono2.png')}}" style="width: 10%;"></img>
+                            <label> Account status:</label><span style="color:green;"> Active</span>
                         </div>
                       </div>
                       <hr>
@@ -64,7 +64,7 @@
                       <div class="form-group">
                           <div class="col-lg-4 col-md-8 col-xs-12"><i class="fa fa-lock p-10"></i>
                           <label> My Password</label></div>
-                          <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-info"> <i class="fa fa-pencil"></i> Edit</button></div>
+                          <div class="col-md-8 col-xs-12 text-right"><button type="submit" class="btn btn-info" onclick="window.location.href='reset-password'"> <i class="fa fa-pencil"></i> Edit</button></div>
                       </div><br>
                       <hr>
               </div>

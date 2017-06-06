@@ -7,7 +7,7 @@
               <ul class="nav" id="side-menu">
                   <li> <a href="/admin/" class="waves-effect px-25"><i class="fa fa-list"></i> <span class="hide-menu" style="padding-left: 20px;"> Summary <span></span></span></a>
                   </li>
-                  <li> <a href="/admin/active-inactive" class="waves-effect px-25"><i class="fa fa-clock-o"></i> <span class="hide-menu" style="padding-left: 20px;"> Active-Cancelled <span></span></span></a>
+                  <li> <a href="/admin/active-inactive" class="waves-effect px-25"><img src="{{URL::asset('assets/plugins/images/icon.png')}}" style="width:15%;  margin-left: -5px !important;"></img> <span class="hide-menu" style="padding-left: 15px;">Active-Cancelled <span></span></span></a>
                   </li>
                   <li> <a href="/admin/alerts/" class="waves-effect px-25"><i class="fa fa-bell"></i> <span class="hide-menu" style="padding-left: 20px;"> Alerts <span></span></span></a>
                   </li>

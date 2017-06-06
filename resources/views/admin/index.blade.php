@@ -30,9 +30,19 @@
             <!-- /.row -->
             <div class="row">
               <div class="col-sm-12">
+                <div class="row">
+                <div class="col-sm-6">
+                  <h3 class="box-title m-b-0">Certificates summary</h3>
+                </div>
+                  <div class="col-sm-6">
+                    <div id="editable-datatable_filter" class="dataTables_filter">
+                      <input type="search" class="form-control input-sm" placeholder="Enter search" aria-controls="editable-datatable">
+                    </div>
+                  </div>
+                </div>
                   <div class="white-box">
-                      <h3 class="box-title m-b-0">Certificates summary</h3>
-                      <p class="text-muted m-b-30"></p>
+
+
                       <div class="table-responsive">
                           <table id="myTable" class="table table-striped">
                               <thead>
