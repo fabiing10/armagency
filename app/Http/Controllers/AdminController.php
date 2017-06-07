@@ -118,7 +118,8 @@ class AdminController extends Controller
                 'W_C_office' => $request->W_C_office,
                 'W_C_office2' => $request->W_C_office2,
                 'W_C_office3' => $request->W_C_office3,
-            );
+          );
+          
           $office  = json_encode($officeData);
           $formcontrol->W_C_office = $office;
 
