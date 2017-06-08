@@ -18,10 +18,10 @@
                   <div class="form-group">
 
                         <div class="radio radio-success">
-                          <input type="checkbox" name="a_l_options[]" value="Any auto"> Any auto <br>
-                          <input type="checkbox" name="a_l_options[]" value="All owned autos"> All owned autos<br>
-                          <input type="checkbox" name="a_l_options[]" value="Scheduled autos"> Scheduled autos<br>
-                          <input type="checkbox" name="a_l_options[]" value="Home autos<"> Home autos<br>
+                          <input type="checkbox" name="a_l_any_auto" value="Any auto"> Any auto <br>
+                          <input type="checkbox" name="a_l_all_owned" value="All owned autos"> All owned autos<br>
+                          <input type="checkbox" name="a_l_sheduled" value="Scheduled autos"> Scheduled autos<br>
+                          <input type="checkbox" name="a_l_home_autos" value="Home autos<"> Home autos<br>
 
                         </div>
 
@@ -30,10 +30,9 @@
                   <div class="col-md-6">
                     <div class="form-group">
                           <div class="radio radio-success">
-                            <input type="checkbox" name="a_l_options[]" value="Hired autos"> Hired autos<br>
-                            <input type="checkbox" name="a_l_options[]" value="Non-owned autos"> Non-owned autos<br>
-                            <input type="checkbox" name="a_l_options[]" value="Non-owned autos"> Non-owned autos<br>
-                            <input type="checkbox" name="a_l_options[]" value="Other">Other<br>
+                            <input type="checkbox" name="a_l_hired_autos" value="Hired autos"> Hired autos<br>
+                            <input type="checkbox" name="a_l_owned_autos" value="Non-owned autos"> Non-owned autos<br>
+                            <input type="checkbox" name="a_l_other" value="Other"><input name="a_l_other_input" type="text" placeholder="Other" class="form-control"><br>
                           </div>
 
                     </div>
@@ -46,7 +45,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="checkbox" name="a_l_options_addl_subr[]" value="ADDL INSR"> ADDL INSR
+                          <input type="checkbox" name="a_l_options_addl" value="ADDL INSR"> ADDL INSR
                         </div>
                     </label>
                   </div>
@@ -55,7 +54,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="checkbox" name="a_l_options_addl_subr[]" value="SUBR WVD">  SUBR WVD
+                          <input type="checkbox" name="a_l_options_subr" value="SUBR WVD">  SUBR WVD
                         </div>
                     </label>
                   </div>

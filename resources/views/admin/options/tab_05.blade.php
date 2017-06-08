@@ -54,8 +54,7 @@
                 <div class="form-group">
                   <label>
                       <div class="radio radio-success">
-                        <input type="radio" name="W_C_options_addl_subr" id="radioclientPhone" value="ADDL INSR">
-                        <label for="radio_options_addl_subr4">ADDL INSR</label>
+                        <input type="checkbox" name="w_c_options_addl" value="ADDL INSR"> ADDL INSR
                       </div>
                   </label>
                 </div>
@@ -64,8 +63,7 @@
                 <div class="form-group">
                   <label>
                       <div class="radio radio-success">
-                        <input type="radio" name="W_C_options_addl_subr" id="radioclientPhone" value="SUBR WVD">
-                        <label for="radio_options_addl_subr4">SUBR WVD</label>
+                        <input type="checkbox" name="w_c_options_subr" value="SUBR WVD">  SUBR WVD
                       </div>
                   </label>
                 </div>
@@ -157,7 +155,5 @@
 
             </div>
           </div>
+          @include('admin.options.tab_06')
         </div>
-    </div>
-</div>
-@include('admin.options.tab_06')

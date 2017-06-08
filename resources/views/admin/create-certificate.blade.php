@@ -64,8 +64,6 @@
                               <h4><span><i class="ti-check"></i></span>4</h4> </li>
                           <li role="tab">
                               <h4><span><i class="ti-check"></i></span>5</h4> </li>
-                          <li role="tab">
-                                  <h4><span><i class="ti-check"></i></span>6</h4> </li>
                       </ul>
                       <form id="dataFormContainer" class="form-horizontal" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
@@ -77,7 +75,7 @@
                               @include('admin.options.tab_03')
                               @include('admin.options.tab_04')
                               @include('admin.options.tab_05')
-                              
+
                           </div>
                       </form>
                   </div>

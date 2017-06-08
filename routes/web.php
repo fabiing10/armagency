@@ -24,26 +24,14 @@ Route::get('/login', function () {
 
 /* User */
 Route::get('/user/account',function(){return view('user.account');});
-
 Route::get('/user/client-list',function(){return view('user.client-list');});
-
 Route::get('/user/get-password',function(){return view('user.get-password');});
-
 Route::get('/user/history',function(){return view('user.history');});
-
 Route::get('/user/login',function(){return view('user.login');});
-
 Route::get('/user/reset-password',function(){return view('user.reset-password');});
-
 Route::get('/user/certificate',function(){return view('user.send_certificate');});
-
 Route::get('/user/send-via',function(){return view('user.send-via');});
-
 Route::get('/user/support',function(){return view('user.support');});
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::get('/redirect', 'HomeController@redirectURL')->name('redirect');
 
 //Redirect Applications

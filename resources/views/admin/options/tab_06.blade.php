@@ -146,7 +146,7 @@
                     <div class="form-group">
                       <div class="example">
                           <div class="input-group">
-                              <input name="" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                              <input name="A_C_b_exp_date" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                       </div>
                     </div>
                     </div>

@@ -105,7 +105,7 @@
           <div class="col-md-4">
               <div class="form-group">
                   <select name="state" class="form-control">
-                    <option value="">City</option>
+                    <option value="">State</option>
                     <option value="india">India</option>
                     <option value="sri_lanka">Sri Lanka</option>
                     <option value="usa">USA</option>

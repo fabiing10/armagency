@@ -20,22 +20,40 @@ class CreateDatabaseGeneral extends Migration
             $table->foreign('userId')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
+            $table->string('status')->nullable();
+            /* contact info agency */
+            $table->string('C_I_name')->nullable();
+            $table->string('C_I_phone')->nullable();
+            $table->string('C_I_fax')->nullable();
+            $table->string('C_I_email')->nullable();
+            $table->string('C_I_producer_id')->nullable();
+            /* producer information */
             $table->string('P_I_name')->nullable();
             $table->string('P_I_dba_name')->nullable();
             $table->string('P_I_address')->nullable();
             $table->string('P_I_city')->nullable();
             $table->string('P_I_dba_state')->nullable();
             $table->string('P_I_dba_zip_code')->nullable();
-
+            /* insurance */
             $table->json('insurance')->nullable();
+            /* general liability */
             $table->json('general_liability')->nullable();
+            $table->json('g_l_options')->nullable();
+            $table->json('g_l_options_limit_per')->nullable();
+            $table->json('g_l_options_addl_subr')->nullable();
+            /* auto liability */
             $table->json('auto_liability')->nullable();
+            $table->json('a_l_options')->nullable();
+            $table->json('a_l_options_addl_subr')->nullable();
+            /* umbrella liability */
             $table->json('umbrella_liability')->nullable();
-
+            $table->json('u_l_options')->nullable();
+            $table->json('u_l_options_addl_subr')->nullable();
+            /* workers compesation */
             $table->string('W_C_insurance_letter')->nullable();
             $table->string('W_C_propretor')->nullable();
-            $table->json('W_C_office')->nullable();
-            $table->string('W_C_options_addl_subr')->nullable();
+            $table->json('W_C_options_addl_subr')->nullable();
+            $table->string('W_C_office')->nullable();
             $table->string('W_C_policy_number')->nullable();
             $table->date('W_C_eff_date')->nullable();
             $table->date('W_C_exp_date')->nullable();
@@ -44,7 +62,7 @@ class CreateDatabaseGeneral extends Migration
             $table->string('W_C_each_accident')->nullable();
             $table->string('W_C_ea_employee')->nullable();
             $table->string('W_C_policy_limit')->nullable();
-
+            /* additional coverage */
             $table->string('A_C_a_insurance_letter')->nullable();
             $table->string('A_C_a_policy_type')->nullable();
             $table->string('A_C_a_options_add_insurance_surrogation')->nullable();
@@ -52,7 +70,7 @@ class CreateDatabaseGeneral extends Migration
             $table->date('A_C_a_eff_date')->nullable();
             $table->date('A_C_a_exp_date')->nullable();
             $table->string('A_C_a_coverage_limits')->nullable();
-
+            /* additional coverage 2 */
             $table->string('A_C_b_insurance_letter')->nullable();
             $table->string('A_C_b_policy_type')->nullable();
             $table->string('A_C_b_options_add_insurance_surrogation')->nullable();
@@ -60,7 +78,7 @@ class CreateDatabaseGeneral extends Migration
             $table->date('A_C_b_eff_date')->nullable();
             $table->date('A_C_b_exp_date')->nullable();
             $table->string('A_C_b_coverage_limits')->nullable();
-
+            /* description */
             $table->string('description')->nullable();
             $table->timestamps();
         });

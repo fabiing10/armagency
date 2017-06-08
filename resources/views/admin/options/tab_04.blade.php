@@ -17,23 +17,23 @@
                 <div class="col-md-6">
                     <div class="form-group">
                           <div class="radio radio-success">
-                            <input type="checkbox" name="u_l_options[]" value="Umbrella liability">Umbrella liability <br>
-                            <input type="checkbox" name="u_l_options[]" value="Occur "> Occur <br>
-                            <input type="checkbox" name="u_l_options[]" value="Excess liability"> Excess liability<br>
-                            <input type="checkbox" name="u_l_options[]" value="Claims-made">Claims-made <br>
+                            <input type="checkbox" name="u_l_umbrella_liability" value="Umbrella liability">Umbrella liability <br>
+                            <input type="checkbox" name="u_l_occur" value="Occur "> Occur <br>
+                            <input type="checkbox" name="u_l_excess_liability" value="Excess liability"> Excess liability<br>
+                            <input type="checkbox" name="u_l_claims_made" value="Claims-made">Claims-made <br>
                           </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
                             <div class="radio radio-success">
-                              <input type="checkbox" name="u_l_options[]" value="Deductible"> Deductible <br>
-                              <input type="checkbox" name="u_l_options[]" value="Retention"> Retention
+                              <input type="checkbox" name="u_l_deductible" value="Deductible"> Deductible <br>
+                              <input type="checkbox" name="u_l_retention" value="Retention"> Retention
                             </div>
                       </div>
                       <div class="form-group">
                           <div class="col-md-12">
-                          <input name="u_l_retention_value" type="text" placeholder="$ Retention" class="form-control">
+                          <input name="u_l_retention_input" type="text" placeholder="$ Retention" class="form-control">
                         </div>
                       </div>
                   </div>
@@ -45,8 +45,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="radio" name="u_l_options_addl_subr" value="ADDL INSR">
-                          <label for="radio_options_addl_subr3">ADDL INSR</label>
+                          <input type="checkbox" name="u_l_options_addl" value="ADDL INSR"> ADDL INSR
                         </div>
                     </label>
                   </div>
@@ -55,8 +54,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="radio" name="u_l_options_addl_subr" value="SUBR WVD">
-                          <label for="radio_options_addl_subr3">SUBR WVD</label>
+                          <input type="checkbox" name="u_l_options_subr" value="SUBR WVD">  SUBR WVD
                         </div>
                     </label>
                   </div>
