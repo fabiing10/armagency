@@ -709,16 +709,20 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             N/A
           </td>
           <td style="width:48px;">
+            @if ($wcoptionsubr === 'true')
+            <input type="checkbox" name="" value="" checked="">
+            @else
             <input type="checkbox" name="" value="">
+            @endif
           </td>
           <td>
-
+            {{W_C_policy_number}}
           </td>
           <td style="width:110px;">
-
+            {{W_C_eff_date}}
           </td>
           <td style="width:110px;">
-
+            {{W_C_exp_date}}
           </td>
           <td style="width:350px;">
             <table>
