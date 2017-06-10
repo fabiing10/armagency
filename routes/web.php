@@ -62,7 +62,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function()
   Route::get('/active-inactive', function () {return view('admin.active-inactive');});
   Route::get('/admin-settings', function () {return view('admin.admin-settings');});
   Route::get('/table', function () {return view('admin.table');});
-
+  Route::get('/table/{id}', 'AdminController@loadResult');
 
 
 });

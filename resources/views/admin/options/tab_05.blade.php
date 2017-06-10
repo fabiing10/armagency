@@ -42,7 +42,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                     <div class="col-md-12">
-                    <input type="checkbox" name="W_C_office" value="Claims-made">Office / Member excluded <br>
+                    <input type="checkbox" name="W_C_office" value="true">Office / Member excluded <br>
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
                 <div class="form-group">
                   <label>
                       <div class="radio radio-success">
-                        <input type="checkbox" name="w_c_options_addl" value="ADDL INSR"> ADDL INSR
+                        <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
                       </div>
                   </label>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="form-group">
                   <label>
                       <div class="radio radio-success">
-                        <input type="checkbox" name="w_c_options_subr" value="SUBR WVD">  SUBR WVD
+                        <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
                       </div>
                   </label>
                 </div>
@@ -110,12 +110,12 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <h3 class="box-subtitle m-b-0">Other </h3>
+                  <h3 class="box-subtitle m-b-0">E.L Disease - Policy limit </h3>
                   <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                      <input name="W_C_other" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                      <input name="W_C_policy_limit" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                   </div>
                 </div>
-                </div>
+              </div>
           </div>
           <hr>
           <div class="row">
@@ -138,17 +138,14 @@
           </div>
           <hr>
           <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <h3 class="box-subtitle m-b-0">E.L Disease - Policy limit </h3>
-                  <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                      <input name="W_C_policy_limit" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
 
+              <div class="col-md-6">
+                <div class="form-group">
+                  <h3 class="box-subtitle m-b-0">Other </h3>
+                  <input name="W_C_other_input" type="text" class="form-control" placeholder="NAME">
+                  <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                      <input name="W_C_other" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                  </div>
                 </div>
                 </div>
           </div>

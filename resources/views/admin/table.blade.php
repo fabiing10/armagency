@@ -13,6 +13,7 @@
     th, td {
         padding: 5px;
         text-align: left;
+        vertical-align: top;
     }
     table{
       width: 100%;
@@ -23,10 +24,107 @@
     body{
       background: white !important;
     }
+    .center{
+      text-align: center;
+    }
+    .l-height15{
+      line-height: 15px;
+    }
+    .form-control {
+    display: -webkit-inline-box !important;
+    width: 80% !important;
+    height: 34px !important;
+    padding: 6px 12px !important;
+  }
   </style>
 @endsection
 
 @section('body_content')
+
+<?php
+// insurance json
+$ensuredResult = json_decode($formcontrol->insurance);
+  $Ensured_a = $ensuredResult->ensured_a;
+  $Naic_a = $ensuredResult->naic_a;
+  $Ensured_b = $ensuredResult->ensured_b;
+  $Naic_b = $ensuredResult->naic_b;
+  $Ensured_c = $ensuredResult->ensured_c;
+  $Naic_c = $ensuredResult->naic_c;
+  $Ensured_d = $ensuredResult->ensured_d;
+  $Naic_d = $ensuredResult->naic_d;
+  $Ensured_e = $ensuredResult->ensured_e;
+  $Naic_e = $ensuredResult->naic_e;
+  $Ensured_f = $ensuredResult->ensured_f;
+  $Naic_f = $ensuredResult->naic_f;
+// general libiality json
+$generalliabilityResult = json_decode($formcontrol->general_liability);
+  $glinsuranceletter = $generalliabilityResult->g_l_insurance_letter;
+  $gleffdate = $generalliabilityResult->g_l_eff_date;
+  $glexpdate = $generalliabilityResult->g_l_exp_date;
+  $glpolicynumber = $generalliabilityResult->g_l_policy_number;
+  $gleachocurrence = $generalliabilityResult->g_l_each_ocurrence;
+  $glrentedpermises = $generalliabilityResult->g_l_rented_permises;
+  $glmedicalexpenses = $generalliabilityResult->g_l_medical_expenses;
+  $glpersonaladv = $generalliabilityResult->g_l_personal_adv;
+  $glgeneralaggregate = $generalliabilityResult->g_l_general_aggregate;
+  $glproductcomp = $generalliabilityResult->g_l_product_comp;
+  $glother = $generalliabilityResult->g_l_other2;
+  $glotherinput = $generalliabilityResult->g_l_other_input2;
+// general libiality options json
+$generalliabilityoptionsResult = json_decode($formcontrol->g_l_options);
+  $gloptioncommercial = $generalliabilityoptionsResult->g_l_commercial;
+  $gloptionclaims_made = $generalliabilityoptionsResult->g_l_claims_made;
+  $gloptionoccur = $generalliabilityoptionsResult->g_l_occur;
+// general libiality options limit per json
+$generalliabilityoptionsperResult = json_decode($formcontrol->g_l_options_limit_per);
+  $gloptionpolicy = $generalliabilityoptionsperResult->g_l_policy;
+  $gloptionproject = $generalliabilityoptionsperResult->g_l_project;
+  $gloptionloc = $generalliabilityoptionsperResult->g_l_loc;
+// general libiality options addl subr json
+$gloptionsaddlsubrResult = json_decode($formcontrol->g_l_options_addl_subr);
+  $gloptionaddl = $gloptionsaddlsubrResult->g_l_options_addl;
+  $gloptionsubr = $gloptionsaddlsubrResult->g_l_options_subr;
+// auto libiality json
+$autolliabilityResult = json_decode($formcontrol->general_liability);
+  $alinsuranceletter = $autolliabilityResult->a_l_insurance_letter;
+  $alpolicynumber = $autolliabilityResult->a_l_policy_number;
+  $aleffdate = $autolliabilityResult->a_l_eff_date;
+  $alexpdate = $autolliabilityResult->a_l_exp_date;
+  $alcombinedsingle = $autolliabilityResult->a_l_combined_single;
+  $albodilyperson = $autolliabilityResult->a_l_bodily_person;
+  $albodilyaccident = $autolliabilityResult->a_l_bodily_accident;
+  $alpropertydamage = $autolliabilityResult->a_l_property_damage;
+  $alother2 = $autolliabilityResult->a_l_other2;
+  $alotherinput2 = $autolliabilityResult->a_l_other_input2;
+  $alother3 = $autolliabilityResult->a_l_other3;
+  $alotherinput3 = $autolliabilityResult->a_l_other_input3;
+// Auto libiality options json
+$aloptionsResult = json_decode($formcontrol->a_l_options);
+  $aloptionanyauto = $aloptionsResult->a_l_any_auto;
+  $aloptionallowned = $aloptionsResult->a_l_all_owned;
+  $aloptionsheduled = $aloptionsResult->a_l_sheduled;
+  $aloptionalhomeautos = $aloptionsResult->a_l_home_autos;
+  $aloptionalhiredautos = $aloptionsResult->a_l_hired_autos;
+  $aloptionalownedautos = $aloptionsResult->a_l_owned_autos;
+  $aloptionother = $aloptionsResult->a_l_owned_autos;
+// Auto libiality options addl subr json
+$aloptionsaddlsubrResult = json_decode($formcontrol->a_l_options_addl_subr);
+  $aloptionaddl = $aloptionsaddlsubrResult->a_l_options_addl;
+  $aloptionsubr = $aloptionsaddlsubrResult->a_l_options_subr;
+// umbrella liability options
+$uloptionsResult = json_decode($formcontrol->u_l_options);
+  $uloptionumbrellaliability = $uloptionsResult->u_l_umbrella_liability;
+  $uloptionoccur = $uloptionsResult->u_l_occur;
+  $uloptionexcessliability = $uloptionsResult->u_l_excess_liability;
+  $uloptionclaimsmade = $uloptionsResult->u_l_claims_made;
+  $uloptiondeductible = $uloptionsResult->u_l_deductible;
+  $uloptionretention = $uloptionsResult->u_l_retention;
+// umbrella liability options addl subr
+$uloptionsaddlsubrResult = json_decode($formcontrol->u_l_options_addl_subr);
+  $uloptionaddl = $uloptionsaddlsubrResult->u_l_options_addl;
+  $uloptionsubr = $uloptionsaddlsubrResult->u_l_options_subr;
+
+ ?>
 <!-- ============================================================== -->
 <!-- Preloader -->
 <!-- ============================================================== -->
@@ -41,64 +139,70 @@
   <div class="row">
   <table style="width:100%">
     <tr>
-      <th colspan="2">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER, THE CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICE  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZATION REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE, HOLDER.</th>
+      <th colspan="2">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
     </tr>
     <tr>
       <td colspan="2">IMPORTANT: if the certificate holder is an ADDITIONAL INSURED. the policy(ies) must be endorsed. if SUBROGATION IS WAIVED, subject to the terms and conditions of the policy, certain policies may require and endorsement. A statement on this certificate does not confer rights to the certificate holder in lieu of such endorsement(s).</td>
     </tr>
       <tr>
-      <td>PRODUCDER<br/>
-  	ARM INSURANCE AGENCY<br/>
-      4511 HIGHWAY 6 N STE A<br/>
-      HOUSTON, TX 77084
+      <td style=" width: 635px !important; ">PRODUCDER<br>
+        {{$formcontrol->P_I_name}}<br>
+        {{$formcontrol->P_I_address}}<br>
+        {{$formcontrol->P_I_dba_state}},{{$formcontrol->P_I_city}},TX {{$formcontrol->P_I_dba_zip_code}}
       </td>
-          <td><table>
+          <td><table border="0">
           <tr>
-            <td>
+            <td class="l-height15">
             CONTACT<br/>
-            NAME
+            NAME:
             </td>
             <td colspan="3">
-            ARM INSURANCE AGENCY
+              {{$formcontrol->C_I_name}}
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="l-height15">
             PHONE<br/>
-            (AIC, NIT, EXT)
+            (A/C, No, Ext):
             </td>
             <td>
-            281-550-1799
+            {{$formcontrol->C_I_phone}}
             </td>
-            <td>
+            <td class="l-height15">
             FAX<br/>
-            (AIC, No)
+            (A/C, No):
             </td>
             <td>
-            281-550-1720
+            {{$formcontrol->C_I_fax}}
             </td>
           </tr>
           <tr>
-            <td>
-            EMAIL<br/>
-            ADDRESS
+            <td class="l-height15">
+            E-MAIL<br/>
+            ADDRESS:
             </td>
             <td colspan="3">
-            info@armagencyonline.com
+            {{$formcontrol->C_I_email}}
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="l-height15">
             PRODUCER<br/>
-            CUSTOMER ID #
+            CUSTOMER ID #:
             </td>
             <td colspan="3">
+            {{$formcontrol->C_I_producer_id}}
             </td>
           </tr>
           </table></td>
     </tr>
     <tr>
     <td>
+      INSURED<br>
+      {{$user->name}}<br>
+      {{$user->address}}<br>
+      {{$user->phone}}
+      <!--
     	<table>
       <tr>
       <td colspan="2">
@@ -115,7 +219,7 @@
       <br/>KATY, TX 77449
       </td>
       </tr>
-      </table>
+    </table> -->
     </td>
     <td>
     <table>
@@ -128,93 +232,51 @@
             </td>
     </tr>
     <tr>
-      <td>
-      INSURER A
-      </td>
-        <td>
-      <select>
-        <option value="">HALLMARK COUNTY MUTUAL</option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <td colspan="2">
+      INSURER A: {{$Ensured_a}}
       </td>
       <td>
+        {{$Naic_a}}
       </td>
     </tr>
     <tr>
-      <td>
-      INSURER B
-      </td>
-        <td>
-      <select>
-        <option value="">LLOYDS OF LONDON</option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <td colspan="2">
+      INSURER B: {{$Ensured_b}}
       </td>
       <td>
+        {{$Naic_b}}
       </td>
     </tr>
     <tr>
-      <td>
-      INSURER C
-      </td>
-        <td>
-      <select>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <td colspan="2">
+      INSURER C: {{$Ensured_c}}
       </td>
       <td>
+        {{$Naic_c}}
       </td>
     </tr>
     <tr>
-      <td>
-      INSURER D
-      </td>
-        <td>
-      <select>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <td colspan="2">
+      INSURER D: {{$Ensured_d}}
       </td>
       <td>
+        {{$Naic_d}}
       </td>
     </tr>
     <tr>
-      <td>
-      INSURER E
-      </td>
-        <td>
-      <select>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <td colspan="2">
+      INSURER E: {{$Ensured_e}}
       </td>
       <td>
+        {{$Naic_e}}
       </td>
     </tr>
     <tr>
-      <td>
-      INSURER F
-      </td>
-        <td>
-      <select>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <td colspan="2">
+      INSURER F: {{$Ensured_f}}
       </td>
       <td>
+        {{$Naic_f}}
       </td>
     </tr>
     </table>
@@ -228,7 +290,7 @@
       COVERAGES
       </td>
       <td>
-      CERTIFICATE NUMBER
+      CERTIFICATE NUMBER:
       <label>ARMINS0008723</label>
       </td>
       <td>
@@ -239,71 +301,116 @@
     </td>
     </tr>
     <tr>
-      <td colspan="2">
-      THIS IS TO CERTIFY THAT THE POLICES OF INSURANCE LISTED BELOW BEEN ISSUED TO THE INSURED NAMED ABOVE FOR THE POLICY PERIOD INDICATED. NOTWITHSTANDING ANY REQUIREMENT, TERM OR CONDITION OF ANY CONTACT OR OTHER DOCUMENT WITH RESPECT TO WHICH THIS CERTIFICATE MAY BE ISSUED OR MAY PERTAIN. THE INSURANCE AFFORDED BY THE POLICIES DESCRIBED HERE IN IS SUBJECT TO ALL THE TERMS. EXCLUSIONS AND CONDITIONS OF SUCH POLICIES. LIMITS SHOWN MAY HAVE BEEN RECUDED BY PAID CLAIMS
-      </td>
+      <th colspan="2">
+      THIS IS TO CERTIFY THAT THE POLICES OF INSURANCE LISTED BELOW BEEN ISSUED TO THE INSURED NAMED ABOVE FOR THE POLICY PERIOD INDICATED. NOTWITHSTANDING ANY REQUIREMENT, TERM OR CONDITION OF ANY CONTACT OR OTHER DOCUMENT WITH RESPECT TO WHICH THIS CERTIFICATE MAY BE ISSUED OR MAY PERTAIN, THE INSURANCE AFFORDED BY THE POLICIES DESCRIBED HERE IN IS SUBJECT TO ALL THE TERMS, EXCLUSIONS AND CONDITIONS OF SUCH POLICIES. LIMITS SHOWN MAY HAVE BEEN RECUDED BY PAID CLAIMS.
+    </th>
     </tr>
       <tr>
       <td colspan="2">
         <table>
           <tr>
-            <td>
-              LTM
+            <td class="center l-height15" style="width:42px; !important">
+              INSR<br/>
+              LTR
             </td>
-            <td>
+            <td class="center" style="width:250px;">
               TYPE OF INSURANCE
             </td>
-            <td>
-              ACL
+            <td class="center l-height15" style="width:42px;">
+              ADDL<br/>
+              INSR
             </td>
-            <td>
-              YYD
+            <td class="center l-height15" style="width:42px;">
+              SUBR<br/>
+              WVD
             </td>
-            <td>
+            <td class="center">
               POLICY NUMBER
             </td>
-            <td>
+            <td class="center l-height15" style="width:110px;">
               POLICY EFF<br/>
               (MM/DD/YYYY)
             </td>
-            <td>
+            <td class="center l-height15" style="width:110px;">
               POLICY EXP<br/>
               (MM/DD/YYYY)
             </td>
-            <td>
+            <td class="center" style="width:350px;">
               LIMITS
             </td>
           </tr>
           <tr>
             <td>
-
+              {{$glinsuranceletter}}
             </td>
             <td>
-
+              <b>GENERAL LIABILITY</b><br>
+              @if ( $gloptioncommercial === 'true')
+                <input type="checkbox" name="" value="" checked=""> COMMERCIAL GENERAL LIABILITY<br/>
+              @else
+                <input type="checkbox" name="" value=""> COMMERCIAL GENERAL LIABILITY<br/>
+              @endif
+              @if ( $gloptionclaims_made === 'true')
+              <input type="checkbox" name="" value="" checked=""> CLAIMS-MADE
+              @else
+              <input type="checkbox" name="" value=""> CLAIMS-MADE
+              @endif
+              @if ( $gloptionoccur === 'true')
+              <input type="checkbox" name="" value="" checked=""> OCCUR<br/>
+              @else
+              <input type="checkbox" name="" value=""> OCCUR<br/>
+              @endif
+              <input type="checkbox" name="" value=""><input name="" type="text" class="form-control" placeholder=""><br/>
+              <input type="checkbox" name="" value=""><input name="" type="text" class="form-control" placeholder="">
+              GEN'L AGGREGATE LIMIT APPLIES PER:
+              @if ( $gloptionpolicy === 'true')
+              <input type="checkbox" name="" value="" checked=""> POLICY
+              @else
+              <input type="checkbox" name="" value=""> POLICY
+              @endif
+              @if ( $gloptionpolicy === 'true')
+              <input type="checkbox" name="" value="" checked=""> PROJECT
+              @else
+              <input type="checkbox" name="" value=""> PROJECT
+              @endif
+              @if ( $gloptionloc === 'true')
+              <input type="checkbox" name="" value="" checked=""> LOC
+              @else
+              <input type="checkbox" name="" value=""> LOC
+              @endif
+            </td>
+              {{$glpolicynumber}}
+            <td>
+              @if ( $gloptionaddl === 'true')
+              <input type="checkbox" name="" value="" checked="">
+              @else
+              <input type="checkbox" name="" value="">
+              @endif
             </td>
             <td>
-
+              @if ( $gloptionsubr === 'true')
+              <input type="checkbox" name="" value="" checked="">
+              @else
+              <input type="checkbox" name="" value="">
+              @endif
             </td>
             <td>
-
+              {{$glpolicynumber}}
             </td>
             <td>
-
+              {{$gleffdate}}
             </td>
             <td>
-              //
-            </td>
-            <td>
-              //
+              {{$glexpdate}}
             </td>
             <td>
               <table>
                 <tr>
-                  <td>
+                  <td style="width:200px;">
                     EACH OCURRENCE
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$gleachocurrence}}
                   </td>
                 </tr>
                 <tr>
@@ -312,7 +419,7 @@
                     PREMISES(Ea ocurrence)
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$glrentedpermises}}
                   </td>
                 </tr>
                 <tr>
@@ -320,7 +427,7 @@
                     MED EXP(Amy one person)
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$glmedicalexpenses}}
                   </td>
                 </tr>
                 <tr>
@@ -328,7 +435,7 @@
                     PERSONAL & ADV INJURY
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$glpersonaladv}}
                   </td>
                 </tr>
                 <tr>
@@ -336,7 +443,7 @@
                     GENERAL AGGREGATE
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$glgeneralaggregate}}
                   </td>
                 </tr>
                 <tr>
@@ -344,14 +451,15 @@
                     PRODUCTS-COMPO OP AGG
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$glproductcomp}}
                   </td>
                 </tr>
                 <tr>
                   <td>
+                      {{$glotherinput}}
                   </td>
                   <td>
-                    $ 0.00
+                    $ {{$glother}}
                   </td>
                 </tr>
               </table>
@@ -364,36 +472,70 @@
       <td colspan="2">
         <table style="width: 100%">
         <tr>
-          <td>
-            A
+          <td style="width:42px;">
+            {{$alinsuranceletter}}
+          </td>
+          <td style="width:250px;">
+            <b>AUTOMOBILE LIABILITY<br>
+            @if ($aloptionanyauto === 'true')
+            <input type="checkbox" name="" value="" checked=""> ANY AUTO<br>
+            @else
+            <input type="checkbox" name="" value=""> ANY AUTO<br>
+            @endif
+            @if ($aloptionallowned === 'true')
+            <input type="checkbox" name="" value="" checked=""> ALL OWNED AUTOS<br>
+            @else
+            <input type="checkbox" name="" value=""> ALL OWNED AUTOS<br>
+            @endif
+            @if ($aloptionsheduled === 'true')
+            <input type="checkbox" name="" value="" checked=""> SHEDULED AUTOS<br>
+            @else
+            <input type="checkbox" name="" value=""> SHEDULED AUTOS<br>
+            @endif
+            @if ($aloptionalhiredautos === 'true')
+            <input type="checkbox" name="" value="" checked=""> HIRED AUTOS<br>
+            @else
+            <input type="checkbox" name="" value=""> HIRED AUTOS<br>
+            @endif
+            @if ($aloptionalownedautos === 'true')
+            <input type="checkbox" name="" value="" checked=""> NON-OWNED AUTOS<br>
+            @else
+            <input type="checkbox" name="" value=""> NON-OWNED AUTOS<br>
+            @endif
+            <input type="checkbox" name="" value="">
+          </td>
+          <td style="width:47px;">
+            @if ($aloptionaddl === 'true')
+            <input type="checkbox" name="" value="" checked="">
+            @else
+            <input type="checkbox" name="" value="">
+            @endif
+          </td>
+          <td style="width:48px;">
+            @if ($aloptionsubr === 'true')
+            <input type="checkbox" name="" value="" checked="">
+            @else
+            <input type="checkbox" name="" value="">
+            @endif
           </td>
           <td>
-
+            {{$alpolicynumber}}
           </td>
-          <td>
-            Y
+          <td style="width:110px;">
+            {{$aleffdate}}
           </td>
-          <td>
-
+          <td style="width:110px;">
+            {{$alexpdate}}
           </td>
-          <td>
-            A42512314-02
-          </td>
-          <td>
-            01/16/2017
-          </td>
-          <td>
-            01/16/2016
-          </td>
-          <td>
+          <td style="width:350px;">
             <table>
               <tr>
-                <td>
+                <td style="width:200px;">
                   COMBINED SINGLE LIMIT<br/>
                   (EA accident)
                 </td>
                 <td>
-                  $ 1,000,000.00
+                  $ {{$alcombinedsingle}}
                 </td>
               </tr>
               <tr>
@@ -401,7 +543,7 @@
                   BODILY INJURY(Per person)
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$albodilyperson}}
                 </td>
               </tr>
               <tr>
@@ -409,7 +551,7 @@
                   BODILY INJURY(Per accident)
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$albodilyaccident}}
                 </td>
               </tr>
               <tr>
@@ -418,21 +560,23 @@
                   (Per accident)
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$alpropertydamage}}
                 </td>
               </tr>
               <tr>
                 <td>
+                  {{$alotherinput2}}
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$alother2}}
                 </td>
               </tr>
               <tr>
                 <td>
+                  {{$alotherinput3}}
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$alother3}}
                 </td>
               </tr>
             </table>
@@ -445,31 +589,69 @@
       <td colspan="2">
         <table style="widht: 100%">
         <tr>
+          <td style="width:42px;">
+
+          </td>
+          <td style="width:250px;">
+            @if ($uloptionumbrellaliability === 'true')
+            <input type="checkbox" name="" value="" checked=""><b> UMBRELLA LIAB </b>
+            @else
+            <input type="checkbox" name="" value=""><b> UMBRELLA LIAB </b>
+            @endif
+            @if ($uloptionoccur === 'true')
+             <input type="checkbox" name="" value="" checked=""> OCCUR <br>
+            @else
+              <input type="checkbox" name="" value=""> OCCUR <br>
+            @endif
+            @if ($uloptionexcessliability === 'true')
+            <input type="checkbox" name="" value="" checked=""><b> EXCESS LAB </b>
+            @else
+            <input type="checkbox" name="" value=""><b> EXCESS LAB </b>
+            @endif
+            @if ($uloptionclaimsmade === 'true')
+            <input type="checkbox" name="" value="" checked=""> CLAIMS-MADE
+            @else
+            <input type="checkbox" name="" value=""> CLAIMS-MADE
+            @endif
+            <hr>
+            @if ($uloptiondeductible === 'true')
+            <input type="checkbox" name="" value="" checked=""> DEDUCTIBLE <br/>
+            @else
+            <input type="checkbox" name="" value=""> DEDUCTIBLE <br/>
+            @endif
+            @if ($uloptionretention === 'true')
+            <input type="checkbox" name="" value=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
+            @else
+            <input type="checkbox" name="" value=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
+            @endif
+          </td>
+          <td style="width:47px;">
+            @if ($uloptionaddl === 'true')
+            <input type="checkbox" name="" value="" checked="">
+            @else
+            <input type="checkbox" name="" value="" checked="">
+            @endif
+          </td>
+          <td style="width:48px;">
+            @if ($uloptionsubr === 'true')
+            <input type="checkbox" name="" value="" checked="">
+            @else
+            <input type="checkbox" name="" value="">
+            @endif
+          </td>
           <td>
 
           </td>
-          <td>
+          <td style="width:110px;">
 
           </td>
-          <td>
+          <td style="width:110px;">
 
           </td>
-          <td>
-
-          </td>
-          <td>
-
-          </td>
-          <td>
-            //
-          </td>
-          <td>
-            //
-          </td>
-          <td>
+          <td style="width:350px;">
             <table>
               <tr>
-                <td>
+                <td style="width:200px;">
                   EACH OCURRENCE
                 </td>
                 <td>
@@ -504,35 +686,40 @@
       </table>
       </td>
     </tr>
-        <tr>
+    <tr>
       <td colspan="2">
         <table style="widht: 100%">
         <tr>
-          <td>
+          <td style="width:42px;">
 
           </td>
-          <td>
-
+          <td style="width:250px;">
+            <b>WORKERS COMPESATION<br>
+            AND EMPLOYERS' LIABILITY </b><br>
+            ANY PROPRIETOR/PARTNER/EXECUTIVE OFFICER/MEMBER EXCLUDED?<input type="checkbox" name="" value=""><b> Y/N</b><br>
+            <b>(Mandatory in NH)<br>
+            if yes, describe under<br>
+            SPECIAL PROVISIONS below
           </td>
-          <td>
+          <td style="width:47px;">
             N/A
           </td>
-          <td>
-
+          <td style="width:48px;">
+            <input type="checkbox" name="" value="">
           </td>
           <td>
 
           </td>
-          <td>
-            //
+          <td style="width:110px;">
+
           </td>
-          <td>
-            //
+          <td style="width:110px;">
+
           </td>
-          <td>
+          <td style="width:350px;">
             <table>
               <tr>
-                <td>
+                <td style="width:200px;">
                   <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">EACH OCURRENCE
                 </td>
                 <td>
@@ -568,69 +755,60 @@
       </table>
       </td>
     </tr>
-      <tr>
+    <tr>
       <td colspan="2">
         <table style="widht: 100%">
         <tr>
-          <td>
-            A
+          <td style="width:42px; height: 50px;">
+
           </td>
-          <td>
-            CARGO
+          <td style="width:250px;">
+
+          </td>
+          <td style="width:47px;">
+            <input type="checkbox" name="" value="">
+          </td>
+          <td style="width:48px;">
+            <input type="checkbox" name="" value="">
           </td>
           <td>
 
           </td>
-          <td>
-
+          <td style="width:110px;">
           </td>
-          <td>
-            142402267
+          <td style="width:110px;">
           </td>
-          <td>
-            01/16/2017
-          </td>
-          <td>
-            01/16/2016
-          </td>
-          <td>
-            $100.000 - $1.000.DED
+          <td style="width:350px;">
           </td>
         </tr>
       </table>
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-        <table style="widht: 100%">
-        <tr>
-          <td>
-            B
-          </td>
-          <td>
-            PHYSICALD
-          </td>
-          <td>
+      <th colspan="2" style="height:100px;">
+        DESCRIPTION OF OPERATIONS / VEHICLES (Atthach ACORD 101, Additional Remarks Schedule, if more space is required)
+      </th>
+    </tr>
+    <tr>
+      <th>
+        CERTIFICATE HOLDER
+      </th>
+      <th>
+        CANCELLATION
+      </th>
+    </tr>
+    <tr>
+      <td rowspan="2" style="height:150px;">
 
-          </td>
-          <td>
-
-          </td>
-          <td>
-            2165324-DD4APO-17618
-          </td>
-          <td>
-            01/16/2017
-          </td>
-          <td>
-            01/16/2016
-          </td>
-          <td>
-            $135.000 - $1.000.DED
-          </td>
-        </tr>
-      </table>
       </td>
+      <th>
+        SHOULD ANY OF THE ABOVE DESCRIBED POLICIES BE CANCELLED BEFORE THE EXPIRATION DATE THEREOF, NOTICE WILL BE DELIVERED IN A ACCORDANCE WITH THE POLICY PROVISIONS.
+      </th>
+    </tr>
+    <tr>
+      <th>
+        AUTHORIZED REPRESENTATIVE
+      </th>
     </tr>
   </table>
     <!-- ============================================================== -->

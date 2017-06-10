@@ -18,10 +18,10 @@
                   <div class="form-group">
 
                         <div class="radio radio-success">
-                          <input type="checkbox" name="a_l_any_auto" value="Any auto"> Any auto <br>
-                          <input type="checkbox" name="a_l_all_owned" value="All owned autos"> All owned autos<br>
-                          <input type="checkbox" name="a_l_sheduled" value="Scheduled autos"> Scheduled autos<br>
-                          <input type="checkbox" name="a_l_home_autos" value="Home autos<"> Home autos<br>
+                          <input type="checkbox" name="a_l_any_auto" value="true"> Any auto <br>
+                          <input type="checkbox" name="a_l_all_owned" value="true"> All owned autos<br>
+                          <input type="checkbox" name="a_l_sheduled" value="true"> Scheduled autos<br>
+                          <input type="checkbox" name="a_l_home_autos" value="true"> Home autos<br>
 
                         </div>
 
@@ -30,9 +30,9 @@
                   <div class="col-md-6">
                     <div class="form-group">
                           <div class="radio radio-success">
-                            <input type="checkbox" name="a_l_hired_autos" value="Hired autos"> Hired autos<br>
-                            <input type="checkbox" name="a_l_owned_autos" value="Non-owned autos"> Non-owned autos<br>
-                            <input type="checkbox" name="a_l_other" value="Other"><input name="a_l_other_input" type="text" placeholder="Other" class="form-control"><br>
+                            <input type="checkbox" name="a_l_hired_autos" value="true"> Hired autos<br>
+                            <input type="checkbox" name="a_l_owned_autos" value="true"> Non-owned autos<br>
+                            <input type="checkbox" name="a_l_other" value="true"><input name="a_l_other_input" type="text" placeholder="Other" class="form-control"><br>
                           </div>
 
                     </div>
@@ -45,7 +45,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="checkbox" name="a_l_options_addl" value="ADDL INSR"> ADDL INSR
+                          <input type="checkbox" name="a_l_options_addl" value="true"> ADDL INSR
                         </div>
                     </label>
                   </div>
@@ -54,7 +54,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="checkbox" name="a_l_options_subr" value="SUBR WVD">  SUBR WVD
+                          <input type="checkbox" name="a_l_options_subr" value="true">  SUBR WVD
                         </div>
                     </label>
                   </div>
@@ -132,16 +132,18 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <h3 class="box-subtitle m-b-0">Other </h3>
+                    <input name="a_l_other_input2" type="text" class="form-control" placeholder="NAME">
                     <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                        <input name="a_l_other" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                        <input name="a_l_other2" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                       <h3 class="box-subtitle m-b-0">Other </h3>
+                      <input name="a_l_other_input3" type="text" class="form-control" placeholder="NAME">
                       <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                          <input name="a_l_other2" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                          <input name="a_l_other3" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
                       </div>
                   </div>
                   </div>

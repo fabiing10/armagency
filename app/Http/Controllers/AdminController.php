@@ -73,34 +73,62 @@ class AdminController extends Controller
               'g_l_personal_adv' => $request->g_l_personal_adv,
               'g_l_general_aggregate' => $request->g_l_general_aggregate,
               'g_l_product_comp' => $request->g_l_product_comp,
-              'g_l_other' => $request->g_l_other,
-              'g_l_other_input' => $request->g_l_other_input,
+              'g_l_other2' => $request->g_l_other2,
+              'g_l_other_input2' => $request->g_l_other_input2,
             );
           $generalliability  = json_encode($generalliabilityData);
           $formcontrol->general_liability = $generalliability;
+          /* considitional */
+          if($request->g_l_commercial == 'true'){$g_l_option_commercial = 'true';}
+          else {$g_l_option_commercial = 'false';}
+
+          if($request->g_l_claims_made == 'true'){$g_l_option_claims_made = 'true';}
+          else {$g_l_option_claims_made = 'false';}
+
+          if($request->g_l_occur == 'true'){$g_l_option_occur = 'true';}
+          else {$g_l_option_occur = 'false';}
           /* general liability options */
           $optionsData = array(
-              'g_l_commercial' => $request->g_l_commercial,
-              'g_l_claims_made' => $request->g_l_claims_made,
-              'g_l_claims_made' => $request->g_l_claims_made,
+              'g_l_commercial' => $g_l_option_commercial,
+              'g_l_claims_made' => $g_l_option_claims_made,
+              'g_l_occur' => $g_l_option_occur,
             );
           $g_l_options  = json_encode($optionsData);
           $formcontrol->g_l_options = $g_l_options;
+          /* considitional */
+          if($request->g_l_policy == 'true'){$g_l_option_policy = 'true';}
+          else {$g_l_option_policy = 'false';}
 
+          if($request->g_l_project == 'true'){$g_l_option_project = 'true';}
+          else {$g_l_option_project = 'false';}
+
+          if($request->g_l_loc == 'true'){$g_l_option_loc = 'true';}
+          else {$g_l_option_loc = 'false';}
+
+          if($request->g_l_other == 'true'){$g_l_option_other = 'true';}
+          else {$g_l_option_other = 'false';}
           /* general liability options limit */
           $optionslimitperData = array(
-              'g_l_policy' => $request->g_l_policy,
-              'g_l_project' => $request->g_l_project,
-              'g_l_loc' => $request->g_l_loc,
-              'g_l_other' => $request->g_l_other,
-              'g_l_other_input2' => $request->g_l_other_input2,
+              'g_l_policy' => $g_l_option_policy,
+              'g_l_project' => $g_l_option_project,
+              'g_l_loc' => $g_l_option_loc,
+              'g_l_other' => $g_l_option_other,
+              'g_l_other_input' => $request->g_l_other_input,
             );
           $g_l_options_limit_per  = json_encode($optionslimitperData);
           $formcontrol->g_l_options_limit_per = $g_l_options_limit_per;
+
+          /* considitional */
+          if($request->g_l_options_addl == 'true'){$g_l_option_addl = 'true';}
+          else {$g_l_option_addl = 'false';}
+
+          if($request->g_l_options_subr == 'true'){$g_l_option_subr = 'true';}
+          else {$g_l_option_subr = 'false';}
+
           /* general liability options addl subr */
           $optionsaddlsubrData = array(
-              'g_l_options_addl' => $request->g_l_options_addl,
-              'g_l_options_subr' => $request->g_l_options_subr,
+              'g_l_options_addl' => $g_l_option_addl,
+              'g_l_options_subr' => $g_l_option_subr,
             );
           $g_l_options_addl_subr  = json_encode($optionsaddlsubrData);
           $formcontrol->g_l_options_addl_subr = $g_l_options_addl_subr;
@@ -114,28 +142,59 @@ class AdminController extends Controller
               'a_l_bodily_person' => $request->a_l_bodily_person,
               'a_l_bodily_accident' => $request->a_l_bodily_accident,
               'a_l_property_damage' => $request->a_l_property_damage,
-              'a_l_other' => $request->a_l_other,
               'a_l_other2' => $request->a_l_other2,
+              'a_l_other_input2' => $request->a_l_other_input2,
+              'a_l_other3' => $request->a_l_other3,
+              'a_l_other_input3' => $request->a_l_other_input3,
             );
             $autoliability  = json_encode($autoliabilityData);
             $formcontrol->auto_liability = $autoliability;
+            /* considitional */
+            if($request->a_l_any_auto == 'true'){$a_l_option_any_auto = 'true';}
+            else {$a_l_option_any_auto = 'false';}
+
+            if($request->a_l_all_owned == 'true'){$a_l_option_all_owned = 'true';}
+            else {$a_l_option_all_owned = 'false';}
+
+            if($request->a_l_sheduled == 'true'){$a_l_option_sheduled = 'true';}
+            else {$a_l_option_sheduled = 'false';}
+
+            if($request->a_l_home_autos == 'true'){$a_l_option_home_autos = 'true';}
+            else {$a_l_option_home_autos = 'false';}
+
+            if($request->a_l_hired_autos == 'true'){$a_l_option_hired_autos = 'true';}
+            else {$a_l_option_hired_autos = 'false';}
+
+            if($request->a_l_owned_autos== 'true'){$a_l_option_owned_autos = 'true';}
+            else {$a_l_option_owned_autos = 'false';}
+
+            if($request->a_l_other== 'true'){$a_l_option_other = 'true';}
+            else {$a_l_option_other = 'false';}
+
           /* auto liability options */
           $optionsautoliabilityData = array(
-              'a_l_any_auto' => $request->a_l_any_auto,
-              'a_l_all_owned' => $request->a_l_all_owned,
-              'a_l_sheduled' => $request->a_l_sheduled,
-              'a_l_home_autos' => $request->a_l_home_autos,
-              'a_l_hired_autos' => $request->a_l_hired_autos,
-              'a_l_owned_autos' => $request->a_l_owned_autos,
-              'a_l_other' => $request->a_l_other,
+              'a_l_any_auto' => $a_l_option_any_auto,
+              'a_l_all_owned' => $a_l_option_all_owned,
+              'a_l_sheduled' => $a_l_option_sheduled,
+              'a_l_home_autos' => $a_l_option_home_autos,
+              'a_l_hired_autos' => $a_l_option_hired_autos,
+              'a_l_owned_autos' => $a_l_option_owned_autos,
+              'a_l_other' => $a_l_option_other,
               'a_l_other_input' => $request->a_l_other_input,
             );
           $a_l_options  = json_encode($optionsautoliabilityData);
           $formcontrol->a_l_options = $a_l_options;
+          /* considitional */
+          if($request->a_l_options_addl == 'true'){$a_l_option_addl = 'true';}
+          else {$a_l_option_addl = 'false';}
+
+          if($request->a_l_options_subr == 'true'){$a_l_option_subr = 'true';}
+          else {$a_l_option_subr = 'false';}
+
           /* auto liability options addl subr */
           $options_a_l_addlsubrData = array(
-              'a_l_options_addl' => $request->a_l_options_addl,
-              'a_l_options_subr' => $request->a_l_options_subr,
+              'a_l_options_addl' => $a_l_option_addl,
+              'a_l_options_subr' => $a_l_option_subr,
             );
           $a_l_options_addl_subr  = json_encode($options_a_l_addlsubrData);
           $formcontrol->a_l_options_addl_subr = $a_l_options_addl_subr;
@@ -148,26 +207,52 @@ class AdminController extends Controller
                 'u_l_each_occurent' => $request->u_l_each_occurent,
                 'u_l_aggregate' => $request->u_l_aggregate,
                 'u_l_other' => $request->u_l_other,
+                'u_l_other_input' => $request->u_l_other_input,
                 'u_l_other2' => $request->u_l_other2,
+                'u_l_other_input2' => $request->u_l_other_input2,
             );
           $umbrellaliability  = json_encode($umbrellaliabilityData);
           $formcontrol->umbrella_liability = $umbrellaliability;
+          /* considitional */
+          if($request->u_l_umbrella_liability == 'true'){$u_l_option_umbrella_liability = 'true';}
+          else {$u_l_option_umbrella_liability = 'false';}
+
+          if($request->u_l_occur == 'true'){$u_l_option_occur = 'true';}
+          else {$u_l_option_occur = 'false';}
+
+          if($request->u_l_excess_liability == 'true'){$u_l_option_excess_liability = 'true';}
+          else {$u_l_option_excess_liability = 'false';}
+
+          if($request->u_l_claims_made == 'true'){$u_l_option_claims_made = 'true';}
+          else {$u_l_option_claims_made = 'false';}
+
+          if($request->u_l_deductible == 'true'){$u_l_option_deductible = 'true';}
+          else {$u_l_option_deductible = 'false';}
+
+          if($request->u_l_retention == 'true'){$u_l_option_retention = 'true';}
+          else {$u_l_option_retention = 'false';}
           /* umbrella liability options */
           $umbrellaliabilityoptionsData = array(
-                'u_l_umbrella_liability' => $request->u_l_umbrella_liability,
-                'u_l_occur' => $request->u_l_occur,
-                'u_l_excess_liability' => $request->u_l_excess_liability,
-                'u_l_claims_made' => $request->u_l_claims_made,
-                'u_l_deductible' => $request->u_l_deductible,
-                'u_l_retention' => $request->u_l_retention,
+                'u_l_umbrella_liability' => $u_l_option_umbrella_liability,
+                'u_l_occur' => $u_l_option_occur,
+                'u_l_excess_liability' => $u_l_option_excess_liability,
+                'u_l_claims_made' => $u_l_option_claims_made,
+                'u_l_deductible' => $u_l_option_deductible,
+                'u_l_retention' => $u_l_option_retention,
                 'u_l_retention_input' => $request->u_l_retention_input,
             );
           $u_l_options  = json_encode($umbrellaliabilityoptionsData);
           $formcontrol->u_l_options = $u_l_options;
+          /* considitional */
+          if($request->u_l_options_addl == 'true'){$u_l_option_addl = 'true';}
+          else {$u_l_option_addl = 'false';}
+
+          if($request->u_l_options_subr == 'true'){$u_l_option_subr = 'true';}
+          else {$u_l_option_subr = 'false';}
           /* umbrella liability options addl subr */
           $umbrellaliabilityoptionsaddlsubrData = array(
-                'u_l_options_addl' => $request->u_l_options_addl,
-                'u_l_options_subr' => $request->u_l_options_subr,
+                'u_l_options_addl' => $u_l_option_addl,
+                'u_l_options_subr' => $u_l_option_subr,
             );
           $u_l_options_addl_subr  = json_encode($umbrellaliabilityoptionsaddlsubrData);
           $formcontrol->u_l_options_addl_subr = $u_l_options_addl_subr;
@@ -180,14 +265,21 @@ class AdminController extends Controller
           $formcontrol->W_C_eff_date = $request->W_C_eff_date;
           $formcontrol->W_C_exp_date = $request->W_C_exp_date;
           $formcontrol->W_C_statutory_limits = $request->W_C_statutory_limits;
+          $formcontrol->W_C_other_input = $request->W_C_other_input;
           $formcontrol->W_C_other = $request->W_C_other;
           $formcontrol->W_C_each_accident = $request->W_C_each_accident;
           $formcontrol->W_C_ea_employee = $request->W_C_ea_employee;
           $formcontrol->W_C_policy_limit = $request->W_C_policy_limit;
-          /*  */
+          /* conditional */
+          if($request->w_c_options_addl== 'true'){$w_c_options_addl = 'true';}
+          else {$w_c_options_addl = 'false';}
+
+          if($request->w_c_options_subr== 'true'){$w_c_options_subr = 'true';}
+          else {$w_c_options_subr = 'false';}
+          /* worker compensation options addl subr */
           $workerscompesationoptionsaddlsubrData = array(
-                'w_c_options_addl' => $request->u_l_options_addl,
-                'w_c_options_subr' => $request->u_l_options_subr,
+                'w_c_options_addl' => $w_c_options_addl,
+                'w_c_options_subr' => $w_c_options_subr,
             );
           $W_C_options_addl_subr  = json_encode($workerscompesationoptionsaddlsubrData);
           $formcontrol->W_C_options_addl_subr = $W_C_options_addl_subr;
@@ -213,5 +305,17 @@ class AdminController extends Controller
           $formcontrol->save();
 
           return $formcontrol;
+      }
+
+
+      public function loadResult($id){
+        $user = User::find($id);
+        $formQuery = FormControl::where('userId','=',$user->id)->get();
+        foreach($formQuery as $f){
+          $form_id = $f->id;
+        }
+        $FormControl = FormControl::find($form_id);
+        return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
+
       }
 }

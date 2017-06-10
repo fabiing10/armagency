@@ -58,6 +58,7 @@ class CreateDatabaseGeneral extends Migration
             $table->date('W_C_eff_date')->nullable();
             $table->date('W_C_exp_date')->nullable();
             $table->string('W_C_statutory_limits')->nullable();
+            $table->string('W_C_other_input')->nullable();
             $table->string('W_C_other')->nullable();
             $table->string('W_C_each_accident')->nullable();
             $table->string('W_C_ea_employee')->nullable();

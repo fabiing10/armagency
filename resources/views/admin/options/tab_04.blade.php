@@ -17,18 +17,18 @@
                 <div class="col-md-6">
                     <div class="form-group">
                           <div class="radio radio-success">
-                            <input type="checkbox" name="u_l_umbrella_liability" value="Umbrella liability">Umbrella liability <br>
-                            <input type="checkbox" name="u_l_occur" value="Occur "> Occur <br>
-                            <input type="checkbox" name="u_l_excess_liability" value="Excess liability"> Excess liability<br>
-                            <input type="checkbox" name="u_l_claims_made" value="Claims-made">Claims-made <br>
+                            <input type="checkbox" name="u_l_umbrella_liability" value="true">Umbrella liability <br>
+                            <input type="checkbox" name="u_l_occur" value="true"> Occur <br>
+                            <input type="checkbox" name="u_l_excess_liability" value="true"> Excess liability<br>
+                            <input type="checkbox" name="u_l_claims_made" value="true">Claims-made <br>
                           </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
                             <div class="radio radio-success">
-                              <input type="checkbox" name="u_l_deductible" value="Deductible"> Deductible <br>
-                              <input type="checkbox" name="u_l_retention" value="Retention"> Retention
+                              <input type="checkbox" name="u_l_deductible" value="true"> Deductible <br>
+                              <input type="checkbox" name="u_l_retention" value="true"> Retention
                             </div>
                       </div>
                       <div class="form-group">
@@ -45,7 +45,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="checkbox" name="u_l_options_addl" value="ADDL INSR"> ADDL INSR
+                          <input type="checkbox" name="u_l_options_addl" value="true"> ADDL INSR
                         </div>
                     </label>
                   </div>
@@ -54,7 +54,7 @@
                   <div class="form-group">
                     <label>
                         <div class="radio radio-success">
-                          <input type="checkbox" name="u_l_options_subr" value="SUBR WVD">  SUBR WVD
+                          <input type="checkbox" name="u_l_options_subr" value="true">  SUBR WVD
                         </div>
                     </label>
                   </div>
@@ -115,7 +115,7 @@
                   <div class="form-group">
                     <h3 class="box-title m-b-0">Other </h3>
                     <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                        <input name="u_l_other_name" type="text" class="form-control" placeholder=""></span>
+                        <input name="u_l_other_input" type="text" class="form-control" placeholder="NAME">
                     </div>
                   </div>
                 </div>
@@ -134,7 +134,7 @@
                   <div class="form-group">
                     <h3 class="box-title m-b-0">Other </h3>
                     <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                        <input name="u_l_other_name_2" type="text" class="form-control" placeholder=""></span>
+                        <input name="u_l_other_input2" type="text" class="form-control" placeholder="NAME">
                     </div>
                   </div>
                 </div>
