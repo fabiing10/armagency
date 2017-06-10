@@ -85,7 +85,7 @@ $gloptionsaddlsubrResult = json_decode($formcontrol->g_l_options_addl_subr);
   $gloptionaddl = $gloptionsaddlsubrResult->g_l_options_addl;
   $gloptionsubr = $gloptionsaddlsubrResult->g_l_options_subr;
 // auto libiality json
-$autolliabilityResult = json_decode($formcontrol->general_liability);
+$autolliabilityResult = json_decode($formcontrol->auto_liability);
   $alinsuranceletter = $autolliabilityResult->a_l_insurance_letter;
   $alpolicynumber = $autolliabilityResult->a_l_policy_number;
   $aleffdate = $autolliabilityResult->a_l_eff_date;
@@ -123,6 +123,10 @@ $uloptionsResult = json_decode($formcontrol->u_l_options);
 $uloptionsaddlsubrResult = json_decode($formcontrol->u_l_options_addl_subr);
   $uloptionaddl = $uloptionsaddlsubrResult->u_l_options_addl;
   $uloptionsubr = $uloptionsaddlsubrResult->u_l_options_subr;
+
+$wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
+  $wcoptionaddl = $wcoptionsaddlsubrResult->w_c_options_addl;
+  $wcoptionsubr = $wcoptionsaddlsubrResult->w_c_options_subr;
 
  ?>
 <!-- ============================================================== -->
@@ -691,7 +695,7 @@ $uloptionsaddlsubrResult = json_decode($formcontrol->u_l_options_addl_subr);
         <table style="widht: 100%">
         <tr>
           <td style="width:42px;">
-
+            {{$formcontrol->W_C_insurance_letter}}
           </td>
           <td style="width:250px;">
             <b>WORKERS COMPESATION<br>
