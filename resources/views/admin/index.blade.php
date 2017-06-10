@@ -55,13 +55,15 @@
                                   </tr>
                               </thead>
                               <tbody>
+                                @foreach ($users as $user)
                                   <tr>
-                                      <td>Perez Correa Juan Pablo </td>
-                                      <td>04-20-17</td>
-                                      <td>21114404-C200746</td>
-                                      <td>Active</td>
-                                      <td><button type="submit" class="btn btn-info"> <i class="fa fa-pencil"></i></button></td>
+                                      <td>{{$user->name}}</td>
+                                      <td>{{$user->W_C_exp_date}}</td>
+                                      <td>{{$user->C_I_producer_id}}</td>
+                                      <td>{{$user->status}}</td>
+                                      <td><button onclick="window.location.href='admin/edit-certificate/{{$user->id}}'" type="submit" class="btn btn-info"> <i class="fa fa-pencil"></i></button></td>
                                   </tr>
+                                  @endforeach
                               </tbody>
                           </table>
                       </div>

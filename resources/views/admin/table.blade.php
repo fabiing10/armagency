@@ -80,6 +80,8 @@ $generalliabilityoptionsperResult = json_decode($formcontrol->g_l_options_limit_
   $gloptionpolicy = $generalliabilityoptionsperResult->g_l_policy;
   $gloptionproject = $generalliabilityoptionsperResult->g_l_project;
   $gloptionloc = $generalliabilityoptionsperResult->g_l_loc;
+  $glother2 = $generalliabilityoptionsperResult->g_l_other;
+  $glotherinput2 = $generalliabilityoptionsperResult->g_l_other_input;
 // general libiality options addl subr json
 $gloptionsaddlsubrResult = json_decode($formcontrol->g_l_options_addl_subr);
   $gloptionaddl = $gloptionsaddlsubrResult->g_l_options_addl;
@@ -106,11 +108,24 @@ $aloptionsResult = json_decode($formcontrol->a_l_options);
   $aloptionalhomeautos = $aloptionsResult->a_l_home_autos;
   $aloptionalhiredautos = $aloptionsResult->a_l_hired_autos;
   $aloptionalownedautos = $aloptionsResult->a_l_owned_autos;
-  $aloptionother = $aloptionsResult->a_l_owned_autos;
+  $aloptionother = $aloptionsResult->a_l_other;
+  $aloptionotherinput = $aloptionsResult->a_l_other_input;
 // Auto libiality options addl subr json
 $aloptionsaddlsubrResult = json_decode($formcontrol->a_l_options_addl_subr);
   $aloptionaddl = $aloptionsaddlsubrResult->a_l_options_addl;
   $aloptionsubr = $aloptionsaddlsubrResult->a_l_options_subr;
+// auto libiality json
+$umbrellaliabilityResult = json_decode($formcontrol->umbrella_liability);
+  $ulinsuranceletter = $umbrellaliabilityResult->u_l_insurance_letter;
+  $ulpolicynumber = $umbrellaliabilityResult->u_l_policy_number;
+  $uleffdate = $umbrellaliabilityResult->u_l_eff_date;
+  $ulexpdate = $umbrellaliabilityResult->u_l_exp_date;
+  $uleachoccurent = $umbrellaliabilityResult->u_l_each_occurent;
+  $ulaggregate = $umbrellaliabilityResult->u_l_aggregate;
+  $ulother = $umbrellaliabilityResult->u_l_other;
+  $ulotherinput = $umbrellaliabilityResult->u_l_other_input;
+  $ulother2 = $umbrellaliabilityResult->u_l_other2;
+  $ulotherinput2 = $umbrellaliabilityResult->u_l_other_input2;
 // umbrella liability options
 $uloptionsResult = json_decode($formcontrol->u_l_options);
   $uloptionumbrellaliability = $uloptionsResult->u_l_umbrella_liability;
@@ -119,6 +134,8 @@ $uloptionsResult = json_decode($formcontrol->u_l_options);
   $uloptionclaimsmade = $uloptionsResult->u_l_claims_made;
   $uloptiondeductible = $uloptionsResult->u_l_deductible;
   $uloptionretention = $uloptionsResult->u_l_retention;
+  $uloptionretentioninput = $uloptionsResult->u_l_retention_input;
+
 // umbrella liability options addl subr
 $uloptionsaddlsubrResult = json_decode($formcontrol->u_l_options_addl_subr);
   $uloptionaddl = $uloptionsaddlsubrResult->u_l_options_addl;
@@ -128,7 +145,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
   $wcoptionaddl = $wcoptionsaddlsubrResult->w_c_options_addl;
   $wcoptionsubr = $wcoptionsaddlsubrResult->w_c_options_subr;
 
- ?>
+?>
 <!-- ============================================================== -->
 <!-- Preloader -->
 <!-- ============================================================== -->
@@ -364,8 +381,16 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
               @else
               <input type="checkbox" name="" value=""> OCCUR<br/>
               @endif
-              <input type="checkbox" name="" value=""><input name="" type="text" class="form-control" placeholder=""><br/>
-              <input type="checkbox" name="" value=""><input name="" type="text" class="form-control" placeholder="">
+              @if ($glother2 === 'true')
+              <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" value="{{$glotherinput2}}"><br/>
+              @else
+              <input type="checkbox" name="" value=""> <input name="" type="text" class="form-control" placeholder=""><br/>
+              @endif
+              @if ($glother2 === 'true')
+              <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" value="{{$glotherinput2}}">
+              @else
+              <input type="checkbox" name="" value=""> <input name="" type="text" class="form-control" placeholder="">
+              @endif
               GEN'L AGGREGATE LIMIT APPLIES PER:
               @if ( $gloptionpolicy === 'true')
               <input type="checkbox" name="" value="" checked=""> POLICY
@@ -506,7 +531,11 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             @else
             <input type="checkbox" name="" value=""> NON-OWNED AUTOS<br>
             @endif
+            @if ($aloptionother === 'true')
+            <input type="checkbox" name="" value="" checked=""> {{$aloptionotherinput}}
+            @else
             <input type="checkbox" name="" value="">
+            @endif
           </td>
           <td style="width:47px;">
             @if ($aloptionaddl === 'true')
@@ -594,7 +623,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
         <table style="widht: 100%">
         <tr>
           <td style="width:42px;">
-
+            {{$ulinsuranceletter}}
           </td>
           <td style="width:250px;">
             @if ($uloptionumbrellaliability === 'true')
@@ -624,7 +653,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <input type="checkbox" name="" value=""> DEDUCTIBLE <br/>
             @endif
             @if ($uloptionretention === 'true')
-            <input type="checkbox" name="" value=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
+            <input type="checkbox" name="" value="" checked=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control" value="{{$uloptionretentioninput}}"/></div>
             @else
             <input type="checkbox" name="" value=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
             @endif
@@ -644,13 +673,13 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             @endif
           </td>
           <td>
-
+            {{$ulpolicynumber}}
           </td>
           <td style="width:110px;">
-
+            {{$uleffdate}}
           </td>
           <td style="width:110px;">
-
+            {{$ulexpdate}}
           </td>
           <td style="width:350px;">
             <table>
@@ -659,7 +688,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   EACH OCURRENCE
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$uleachoccurent}}
                 </td>
               </tr>
               <tr>
@@ -667,21 +696,23 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   AGGREGATE<br/>
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$ulaggregate}}
                 </td>
               </tr>
               <tr>
                 <td>
+                  {{$ulotherinput}}
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$ulother}}
                 </td>
               </tr>
               <tr>
                 <td>
+                  {{$ulotherinput2}}
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$ulother2}}
                 </td>
               </tr>
             </table>
@@ -716,22 +747,22 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             @endif
           </td>
           <td>
-            {{W_C_policy_number}}
+            {{$formcontrol->W_C_policy_number}}
           </td>
           <td style="width:110px;">
-            {{W_C_eff_date}}
+            {{$formcontrol->W_C_eff_date}}
           </td>
           <td style="width:110px;">
-            {{W_C_exp_date}}
+            {{$formcontrol->W_C_exp_date}}
           </td>
           <td style="width:350px;">
             <table>
               <tr>
                 <td style="width:200px;">
-                  <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">EACH OCURRENCE
+                  <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">OTHER
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$formcontrol->W_C_other}}
                 </td>
               </tr>
               <tr>
@@ -739,14 +770,14 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   E.L. EACH ACCIDENT
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$formcontrol->W_C_each_accident}}
                 </td>
               </tr>
               <tr>
                 <td>
                   E.L. DISEABLE - EA EMPLOYEE</td>
                 <td>
-                  $ 0.00
+                  $ {{$formcontrol->W_C_ea_employee}}
                 </td>
               </tr>
               <tr>
@@ -754,7 +785,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   E.L. DISEABLE - POLICY LIMIT
                 </td>
                 <td>
-                  $ 0.00
+                  $ {{$formcontrol->W_C_policy_limit}}
                 </td>
               </tr>
             </table>
