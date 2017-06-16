@@ -2,7 +2,17 @@
   <div class="wizard-pane" role="tabpanel">
       <div class="form-group p-50">
         <div class="form-body">
-            <h3 class="box-title">5. Auto liability</h3>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingSeven">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            5. Auto liability
+          </a>
+        </h4>
+        </div>
+        <div id="collapseSeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSeven">
+          <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -123,7 +133,19 @@
                   </div>
                   </div>
             </div>
-            <hr>
+          </div>
+          </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingEight">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  5. Auto liability
+                </a>
+              </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+              <div class="panel-body">
             <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -187,3 +209,7 @@
         </div>
       </div>
   </div>
+</div>
+</div>
+</div>
+</div>

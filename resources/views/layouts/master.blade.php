@@ -28,6 +28,7 @@
     <link href="{{URL::asset('assets/css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{URL::asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('assets/css/responsive.css')}}" rel="stylesheet">
     <!-- color CSS -->
     <link href="{{URL::asset('assets/css/colors/megna-dark.css')}}" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

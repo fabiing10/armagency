@@ -2,8 +2,17 @@
     <div class="form-group p-50">
 
     <div class="form-body">
-        <h3 class="box-title">1. Contact info agency</h3>
-        <hr>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      1. Contact info agency
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -56,10 +65,19 @@
               </div>
               </div>
         </div>
-
-        <!--/row-->
-        <h3 class="box-title m-t-20">2. Producer information</h3>
-        <hr>
+      </div>
+</div>
+</div>
+<div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            2. Producer information
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -94,22 +112,12 @@
         <div class="row">
           <div class="col-md-4">
               <div class="form-group">
-                  <select name="city" class="form-control">
-                      <option value="">City</option>
-                      <option value="india">India</option>
-                      <option value="sri_lanka">Sri Lanka</option>
-                      <option value="usa">USA</option>
-                  </select>
+                <input name="city" type="text" class="form-control" value="{{$formcontrol->P_I_city}}" placeholder="city">
               </div>
           </div>
           <div class="col-md-4">
               <div class="form-group">
-                  <select name="state" class="form-control">
-                    <option value="">State</option>
-                    <option value="india">India</option>
-                    <option value="sri_lanka">Sri Lanka</option>
-                    <option value="usa">USA</option>
-                  </select>
+                <input name="state" type="text" class="form-control" value="{{$formcontrol->P_I_dba_state}}" placeholder="state">
               </div>
           </div>
             <div class="col-md-4">
@@ -117,6 +125,19 @@
                     <input name="zip_code" type="text" class="form-control" value="{{$formcontrol->P_I_dba_zip_code}}" placeholder="Zip code"> </div>
             </div>
         </div>
+      </div>
+</div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingThree">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        3. Insured Information
+      </a>
+    </h4>
+  </div>
+  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div class="panel-body">
         <h3 class="box-title m-t-20">3. Insured Information</h3>
         <hr>
         <div class="row">
@@ -128,20 +149,27 @@
                       </div>
               </div>
               </div>
-            <!--/span-->
-            <div class="col-md-6">
-              <div class="form-group">
-                      <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                        <input name="address_insured" type="text" class="form-control" value="{{$user->address}}" id="address_insured" placeholder="Address">
-                      </div>
-              </div>
-            </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                            <input name="dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="dba_name" placeholder="DBA name">
+                        </div>
+                </div>
+                </div>
             <!--/span-->
         </div>
         <!--/row-->
         <div class="row">
-            <div class="col-md-6">
+          <div class="col-md-4">
+            <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                      <input name="address_insured" type="text" class="form-control" value="{{$user->address}}" id="address_insured" placeholder="Address">
+                    </div>
+            </div>
+          </div>
+            <div class="col-md-4">
               <div class="form-group">
                       <div class="input-group">
                           <div class="input-group-addon"><i class="fa fa-fax"></i></div>
@@ -150,7 +178,7 @@
               </div>
               </div>
             <!--/span-->
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
@@ -303,4 +331,8 @@
         </div>
     </div>
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>

@@ -18,11 +18,15 @@
       border: 1px solid #aaa;
       border-radius: 20px;
     }
-    .wizard-steps>li {
+
+.wizard-steps>li {
     display: table-cell;
     padding: 10px 20px;
-    background: #f7fafc;
-    }
+    background: none;
+    border-bottom: 2px solid #e5e5e5;
+    text-align: center;
+}
+
   </style>
 @endsection
 
@@ -47,23 +51,37 @@
     <!-- Page Content -->
     <!-- ============================================================== -->
     <div id="page-wrapper">
-      <div class="row">
+    <div class="container-fluid">
+        <div class="row bg-title">
+          <div class="row">
+                <ol class="breadcrumb" style="float:left; margin-left:30px;">
+                  <li><a href="/admin">Home</a></li>
+                  <li class="active">create certificate</li>
+                </ol>
+          </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
           <div class="col-sm-12">
+            <div class="row" style="padding-bottom:10px;">
+              <div class="col-sm-6">
+                <h3 class="box-title m-b-0">Create Certificate</h3>
+              </div>
+              </div>
               <div class="white-box">
-                  <h3 class="box-title m-b-0">Create certificate</h3>
-                  <p class="text-muted m-b-30 font-13"> This is the Validation wizard with validation.</p>
                   <div id="WizardFormContainer" class="wizard">
                       <ul class="wizard-steps" role="tablist">
                           <li class="active" role="tab">
-                              <h4><span><i class="ti-user"></i></span>1</h4> </li>
+                              <h4>Info</h4> </li>
                           <li role="tab">
-                              <h4><span><i class="ti-credit-card"></i></span>2</h4> </li>
+                              <h4>General</h4> </li>
                           <li role="tab">
-                              <h4><span><i class="ti-check"></i></span>3</h4> </li>
+                              <h4>Auto</h4> </li>
                           <li role="tab">
-                              <h4><span><i class="ti-check"></i></span>4</h4> </li>
+                              <h4>Umbrella</h4> </li>
                           <li role="tab">
-                              <h4><span><i class="ti-check"></i></span>5</h4> </li>
+                              <h4>Workers</h4> </li>
                       </ul>
                       <form id="dataFormContainer" class="form-horizontal" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />

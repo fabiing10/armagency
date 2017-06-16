@@ -48,7 +48,7 @@
 
                                 <div class="row">
                                     <div class="col-sm-12 col-xs-12">
-                                        <form>
+                                        <form class="form-horizontal" method="POST">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
@@ -83,7 +83,7 @@
                                             </div>
                                             <div class="form-group">
                                               <div class="col-lg-12" style="padding-left:0px;">
-                                                <a href="send-via.html" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light">Next</a>
+                                                <input type="submit" value="Enviar" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light" />
                                               </div>
                                             </div>
                                         </form>

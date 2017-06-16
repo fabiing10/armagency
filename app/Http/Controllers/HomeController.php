@@ -39,7 +39,7 @@ class HomeController extends Controller
             return redirect("/logout");
         }
       }else{
-        return redirect("/login");
+        return redirect("pailan");
       }
 
 

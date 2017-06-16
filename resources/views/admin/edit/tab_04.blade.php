@@ -2,7 +2,17 @@
   <div class="wizard-pane" role="tabpanel">
       <div class="form-group p-50">
         <div class="form-body">
-            <h3 class="box-title">6. Umbrella liability</h3>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingNine">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                    6. Umbrella liability
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseNine" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNine">
+                <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -140,9 +150,20 @@
                   </div>
                   </div>
             </div>
-
-            <hr>
-            <div class="row">
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTen">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+              6. Umbrella liability
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+          <div class="panel-body">
+              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <h3 class="box-title m-b-0">Other </h3>
@@ -184,3 +205,7 @@
 
       </div>
   </div>
+</div>
+</div>
+</div>
+</div>

@@ -152,11 +152,25 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <!-- Page Content -->
     <!-- ============================================================== -->
     <div id="page-wrapper">
-      <div class="row">
+    <div class="container-fluid">
+        <div class="row bg-title">
+          <div class="row">
+                <ol class="breadcrumb" style="float:left; margin-left:30px;">
+                  <li><a href="/admin">Home</a></li>
+                  <li class="active">create certificate</li>
+                </ol>
+          </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
           <div class="col-sm-12">
+            <div class="row" style="padding-bottom:10px;">
+              <div class="col-sm-6">
+                <h3 class="box-title m-b-0">Edit Certificate</h3>
+              </div>
+              </div>
               <div class="white-box">
-                  <h3 class="box-title m-b-0">Edit certificate</h3>
-                  <p class="text-muted m-b-30 font-13"> This is the Validation wizard with validation.</p>
                   <div id="WizardFormContainer" class="wizard">
                       <ul class="wizard-steps" role="tablist">
                           <li class="active" role="tab">

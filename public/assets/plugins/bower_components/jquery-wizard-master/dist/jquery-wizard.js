@@ -140,8 +140,8 @@
         enableWhenVisited: false,
 
         buttonLabels: {
-            next: 'Next',
             back: 'Back',
+            next: 'Next',
             finish: 'Finish'
         },
 

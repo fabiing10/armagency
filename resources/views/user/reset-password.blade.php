@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('library_css')
+    <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
 @endsection
 
 @section('style')
@@ -42,42 +43,44 @@
           <div class="row">
               <div class="col-sm-12">
                       <div class="panel panel-default">
-                            <div class="white-box">
+                            <div class="white-box" style="padding:20px;">
                                 <h2 class="box-title m-b-0">RESET PASSWORD</h2>
                                 <p class="text-muted m-b-30 font-13"></p>
 
                                 <div class="row">
                                     <div class="col-sm-12 col-xs-12">
-                                        <form>
+                                      <form id="dataFormContainer" class="form-horizontal" method="POST">
+                                          <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                                    <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Enter pwd">
+                                                    <input type="passwordold" name="password" class="form-control" placeholder="Enter pwd">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                                    <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Re Enter pwd">
+                                                    <input type="password" name="newpassword" id="newpassword" class="form-control" placeholder="Re Enter pwd">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                                    <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Re Enter pwd">
+                                                    <input type="password" name="newpassword2" class="form-control" id="newpassword2" placeholder="Re Enter pwd">
                                                 </div>
                                             </div>
                                             <div class="row">
                                               <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
-                                                <a href="" id="to-recover" class="blue text-center"><i class="fa fa-question-circle m-r-5 blue"></i> Forgot your password?</a> </div>
+                                                <a href="get-password" id="to-recover" class="blue text-center"><i class="fa fa-question-circle m-r-5 blue"></i> Forgot your password?</a> </div>
                                               </div>
                                               <br>
                                               <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
-                                                <a href="reset-password" class="btn btn-default m-l-20 hidden-xs hidden-sm waves-effect waves-light">Back</a>
-                                                <a href="get-password" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</a>
+                                                <a href="account" class="btn btn-default m-l-20 hidden-xs hidden-sm waves-effect waves-light">Back</a>
+                                                <button type="submit" id="sendForm" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</button>
+                                                <button type="submit"  style="display:none;" id="sendForm" class="btn btn-info hidden-sm waves-effect waves-light changereset">Change password</button>
                                               </div>
                                         </form>
-                                    </div>
+                                  </div>
                                 </div>
                             </div>
                           </div>
@@ -91,9 +94,13 @@
 @endsection
 
 @section('library_js')
-
 @endsection
 
 @section('script')
+<script>
+        onFinish: function() {
+          $("#sendForm").trigger("click");
 
+        }
+</script>
 @endsection

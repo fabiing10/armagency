@@ -2,9 +2,18 @@
     <div class="form-group p-50">
 
     <div class="form-body">
-        <h3 class="box-title">1. Contact info agency</h3>
-        <hr>
-        <div class="row">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                1. Contact info agency
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                       <div class="input-group">
@@ -56,10 +65,20 @@
               </div>
               </div>
         </div>
-
+      </div>
+      </div>
+      </div>
         <!--/row-->
-        <h3 class="box-title m-t-20">2. Producer information</h3>
-        <hr>
+      <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            2. Producer information
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -94,22 +113,12 @@
         <div class="row">
           <div class="col-md-4">
               <div class="form-group">
-                  <select name="city" class="form-control">
-                      <option value="">City</option>
-                      <option value="india">India</option>
-                      <option value="sri_lanka">Sri Lanka</option>
-                      <option value="usa">USA</option>
-                  </select>
+                <input name="city" type="text" class="form-control" placeholder="City">
               </div>
           </div>
           <div class="col-md-4">
               <div class="form-group">
-                  <select name="state" class="form-control">
-                    <option value="">State</option>
-                    <option value="india">India</option>
-                    <option value="sri_lanka">Sri Lanka</option>
-                    <option value="usa">USA</option>
-                  </select>
+                <input name="state" type="text" class="form-control" placeholder="State">
               </div>
           </div>
             <div class="col-md-4">
@@ -117,8 +126,19 @@
                     <input name="zip_code" type="text" class="form-control" placeholder="Zip code"> </div>
             </div>
         </div>
-        <h3 class="box-title m-t-20">3. Insured Information</h3>
-        <hr>
+      </div>
+  </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          3. Insured Information
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -128,20 +148,27 @@
                       </div>
               </div>
               </div>
-            <!--/span-->
-            <div class="col-md-6">
-              <div class="form-group">
-                      <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                        <input name="address_insured" type="text" class="form-control" id="address_insured" placeholder="Address">
-                      </div>
-              </div>
-            </div>
-            <!--/span-->
+              <div class="col-md-6">
+                <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                            <input name="dba_name" type="text" class="form-control" id="dba_name" placeholder="DBA name">
+                        </div>
+                </div>
+                </div>
+            <!--span-->
         </div>
         <!--/row-->
         <div class="row">
-            <div class="col-md-6">
+          <div class="col-md-4">
+            <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                      <input name="address_insured" type="text" class="form-control" id="address_insured" placeholder="Address">
+                    </div>
+            </div>
+          </div>
+            <div class="col-md-4">
               <div class="form-group">
                       <div class="input-group">
                           <div class="input-group-addon"><i class="fa fa-fax"></i></div>
@@ -150,7 +177,7 @@
               </div>
               </div>
             <!--/span-->
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
@@ -179,8 +206,19 @@
               </div>
             </div>
         </div>
-        <h3 class="box-title m-t-20">3. Insurance</h3>
-        <hr>
+      </div>
+      </div>
+      </div>
+      <div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingFour">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        3. Insurance
+      </a>
+    </h4>
+  </div>
+  <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+    <div class="panel-body">
         <div class="row">
             <div class="col-md-9">
               <div class="form-group">
@@ -303,4 +341,8 @@
         </div>
     </div>
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>

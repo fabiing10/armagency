@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use DB;
+use DB, PDF;
 use App\FormControl;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -23,7 +23,27 @@ class AdminController extends Controller
         ->get();
         return view('admin.index')->with('users',$users);
       }
+      public function getuser(){
+        $users = DB::table('users as u')
+        ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
+        ->select('u.email','u.name','fc.W_C_exp_date','fc.status','fc.id')
+        ->where('u.userType', '=', 'user')
+        ->get();
+        return view('admin.active-inactive')->with('users',$users);
+      }
+      public function editstatus ($id){
+          $FormControl = FormControl::find($id);
+            if($FormControl->status === 'cancel'){
+              $FormControl->status = 'active';
+              $FormControl->save();
+              return ('loco');
+            }else {
+              $FormControl->status = 'cancel';
+              $FormControl->save();
+              return ('no');
+            }
 
+      }
       public function certificate (Request $request){
 
           return view('admin.create-certificate');
@@ -36,6 +56,7 @@ class AdminController extends Controller
         $user->phone = $request->phone_insured;
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
+        $user->dba_name = $request->dba_name;
         $user->userType = "user";
         $user->password = bcrypt($request->password_insured);
         $user->save();
@@ -316,7 +337,7 @@ class AdminController extends Controller
 
           $formcontrol->save();
 
-          return view('admin');
+          return redirect('admin');
       }
 
       public function loadResult($id){
@@ -326,7 +347,14 @@ class AdminController extends Controller
           $form_id = $f->id;
         }
         $FormControl = FormControl::find($form_id);
-        return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
+
+
+        view()->share('formcontrol',$FormControl);
+        view()->share('user',$user);
+        $pdf = PDF::loadView('admin.table');
+        $pdf->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        return $pdf->stream();
+        //return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
 
       }
 
@@ -339,16 +367,82 @@ class AdminController extends Controller
         $FormControl = FormControl::find($form_id);
         return view('admin.edit-certificate')->with('user',$user)->with('formcontrol',$FormControl);
       }
+      public function userprofile (Request $request, $id){
+        $user = User::find($id);
+        $formQuery = FormControl::where('userId','=',$user->id)->get();
+        foreach($formQuery as $f){
+          $form_id = $f->id;
+        }
+        $FormControl = FormControl::find($form_id);
+        return view('admin.user-profile')->with('user',$user)->with('formcontrol',$FormControl);
+      }
+      public function edituserprofile (Request $request, $id){
+        $user = User::find($id);
+        $user->name = $request->name_insured;
+        $user->phone = $request->phone_insured;
+        $user->address = $request->address_insured;
+        $user->email = $request->email_insured;
+        $user->dba_name = $request->dba_name;
+        $user->userType = "user";
+        $user->password = bcrypt($request->password_insured);
+        $user->save();
 
+        $formQuery = FormControl::where('userId','=',$user->id)->get();
+        foreach($formQuery as $f){
+          $form_id = $f->id;}
+          $formcontrol = FormControl::find($form_id);
+          $formcontrol->userId = $user->id;
+          /* contact info agency */
+          $formcontrol->C_I_name = $request->name;
+          $formcontrol->C_I_phone = $request->phone;
+          $formcontrol->C_I_email = $request->email;
+          $formcontrol->C_I_fax = $request->fax;
+          $formcontrol->C_I_producer_id = $request->customer_id;
+          /* producer information */
+          $formcontrol->P_I_name = $request->P_I_name;
+          $formcontrol->P_I_dba_name = $request->dba_name;
+          $formcontrol->P_I_address = $request->address;
+          $formcontrol->P_I_city = $request->city;
+          $formcontrol->P_I_dba_state = $request->state;
+          $formcontrol->P_I_dba_zip_code = $request->zip_code;
+          $formcontrol->save();
+
+          return redirect('admin');
+          }
+
+      public function getuseradmin (){
+        $users = User::where('userType','=','admin')->get();
+        return view('admin.admin-settings')->with('users',$users);
+      }
+
+      public function addAdmin (Request $request){
+
+        $user = new User();
+        $user->name = $request->name_insured;
+        $user->phone = $request->phone_insured;
+        $user->address = $request->address_insured;
+        $user->email = $request->email_insured;
+        $user->userType = "admin";
+        $user->password = bcrypt($request->password_insured);
+        $user->save();
+
+        return redirect('admin');
+      }
       public function editcertificate (Request $request, $id){
         /* user */
         $user = User::find($id);
         $user->name = $request->name_insured;
         $user->phone = $request->phone_insured;
         $user->address = $request->address_insured;
+
         $user->email = $request->email_insured;
         $user->userType = "user";
-        $user->password = bcrypt($request->password_insured);
+        if($request->password_insured != "" || $request->password_insured_repeat != ""){
+          if($request->password_insured == $request->password_insured_repeat){
+            $user->password = bcrypt($request->password_insured);
+          }
+        }
+        $user->dba_name = $request->dba_name;
         $user->save();
 
         $formQuery = FormControl::where('userId','=',$user->id)->get();
@@ -630,6 +724,6 @@ class AdminController extends Controller
 
           $formcontrol->save();
 
-          return view('admin');
+          return redirect('admin');
       }
 }

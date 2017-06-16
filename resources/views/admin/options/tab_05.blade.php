@@ -1,7 +1,17 @@
 <div class="wizard-pane" role="tabpanel">
     <div class="form-group p-50">
       <div class="form-body">
-          <h3 class="box-title">7. Workers compensation</h3>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingEleven">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+          7. Workers compensation
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEleven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingEleven">
+      <div class="panel-body">
           <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -85,7 +95,7 @@
                 <div class="form-group">
                   <div class="example">
                       <div class="input-group">
-                          <input name="W_C_eff_date" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                          <input name="W_C_eff_date" type="text" data-date-format="dd/mm/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                   </div>
                 </div>
               </div>
@@ -93,12 +103,24 @@
                 <div class="form-group">
                   <div class="example">
                       <div class="input-group">
-                          <input name="W_C_exp_date" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                          <input name="W_C_exp_date" type="text" data-date-format="dd/mm/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                   </div>
                 </div>
                 </div>
           </div>
-          <hr>
+        </div>
+</div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingTwelve">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+        7. Workers compensation
+      </a>
+    </h4>
+  </div>
+  <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+    <div class="panel-body">
           <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -154,3 +176,6 @@
           </div>
           @include('admin.options.tab_06')
         </div>
+      </div>
+</div>
+</div>

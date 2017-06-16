@@ -1,10 +1,26 @@
 @extends('layouts.master')
 
 @section('library_css')
+<!-- Wizard CSS -->
+<link href="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/css/wizard.css')}}" rel="stylesheet">
+<link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
 @endsection
 
 @section('style')
-
+<style>
+.wizard-steps{
+  display: none;
+}
+.wizard-content {
+    border: 0px;
+}
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+</style>
 @endsection
 
 @section('body_content')
@@ -29,11 +45,6 @@
           <div class="row bg-title">
               <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                   <h4 class="page-title">HOME</h4> </div>
-                  <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    <ol class="breadcrumb">
-                      <li><a href="user/certificate">Home</a></li>
-                    </ol>
-                  </div>
               <!-- /.col-lg-12 -->
           </div>
           <!-- /.row -->
@@ -43,52 +54,97 @@
                               <div class="col-lg-3" style="padding-left:0px; padding-bottom:40px;">
                                 <h2 class="box-title m-b-0">SEND CERTIFICATE TO</h2>
                               </div>
-                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                                  <a href="#" target="_blank" class="btn btn-info pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"><i class="fa fa-align-left"></i>  Clients list</a>
-                                </div>
-                                <p class="text-muted m-b-30 font-13"></p>
-
                                 <div class="row">
                                     <div class="col-sm-12 col-xs-12">
-                                        <form>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
-                                                <input type="text" class="form-control" id="exampleInputuname" placeholder="Certificate holders name"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                <div class="input-group-addon"><i class="ti-world grey"></i></div>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Address"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-phone grey"></i></div>
-                                                <input type="tel" class="form-control" id="exampleInputphone" placeholder="phone number"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-fax grey"></i></div>
-                                                <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Fax"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-envelope grey"></i></div>
-                                                <input type="password" class="form-control" id="exampleInputpwd1" placeholder="Email"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                              <div class="checkbox checkbox checkbox-success">
-                                                <input type="checkbox" id="terms4" data-error="Before you wreck yourself" required>
-                                                <label for="terms4"> Save to clients list</label>
-                                                <div class="help-block with-errors"></div>
+                                      <div id="WizardFormContainer" class="wizard">
+                                          <ul class="wizard-steps" role="tablist">
+                                              <li class="active" role="tab">
+                                                  <h4><span><i class="ti-user"></i></span>1</h4> </li>
+                                              <li role="tab">
+                                                  <h4><span><i class="ti-credit-card"></i></span>2</h4> </li>
+                                          </ul>
+                                          <form id="dataFormContainer" class="form-horizontal" method="POST">
+                                              <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
+                                              <div class="wizard-content">
+                                                  <div class="wizard-pane active" role="tabpanel">
+                                                      <div class="form-group">
+                                                          <div class="input-group">
+                                                          <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
+                                                          <input type="text" class="form-control" id="certificate_name" name="certificate_name" placeholder="Certificate holders name"> </div>
+                                                      </div>
+                                                      <div class="form-group">
+                                                          <div class="input-group">
+                                                          <div class="input-group-addon"><i class="ti-world grey"></i></div>
+                                                          <input type="text" class="form-control" name="address_client" id="address_client" placeholder="Address"> </div>
+                                                      </div>
+                                                      <div class="form-group">
+                                                          <div class="input-group">
+                                                          <div class="input-group-addon"><i class="fa fa-phone grey"></i></div>
+                                                          <input type="tel" class="form-control" id="phone_client" name="phone_client" placeholder="phone number"> </div>
+                                                      </div>
+                                                      <div class="form-group">
+                                                          <div class="input-group">
+                                                          <div class="input-group-addon"><i class="fa fa-fax grey"></i></div>
+                                                          <input type="text" class="form-control" id="fax_client" name="fax_client" placeholder="Fax"> </div>
+                                                      </div>
+                                                      <div class="form-group">
+                                                          <div class="input-group">
+                                                          <div class="input-group-addon"><i class="fa fa-envelope grey"></i></div>
+                                                          <input type="email" class="form-control" id="email_client" name="email_client" placeholder="Email" required=""> </div>
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <div class="checkbox checkbox checkbox-success">
+                                                          <input type="checkbox" id="terms4" data-error="Before you wreck yourself" required>
+                                                          <label for="terms4"> Save to clients list</label>
+                                                          <div class="help-block with-errors"></div>
+                                                        </div>
+                                                      </div>
+
+                                                  </div>
+                                                  <div class="wizard-pane" role="tabpanel">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-xs-12">
+                                                            <form>
+                                                              <div class="form-group">
+                                                                  <label class="control-label">Send to clients</label>
+                                                                  <div class="radio-list">
+                                                                      <div class="checkbox checkbox-success checkbox-circle">
+                                                                          <input type="checkbox" name="email_option">
+                                                                          <label for="email_option" id="email_option"></label>
+                                                                      </div>
+                                                                      <hr>
+                                                                      <div class="checkbox checkbox-success checkbox-circle">
+                                                                          <input name="fax_option" type="checkbox" >
+                                                                          <label for="fax_option" id="fax_option"></label>
+                                                                      </div>
+                                                                      <hr>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="form-group">
+                                                                  <label class="control-label">Send me a copy to</label>
+                                                                  <div class="radio-list">
+                                                                      <div class="checkbox checkbox-success checkbox-circle">
+                                                                          <input id="email_to_me" name="email_to_me" type="checkbox" >
+                                                                          <label for="email_to_me"> nando2008@hotmail.com </label>
+                                                                      </div>
+                                                                      <hr>
+                                                                      <div class="checkbox checkbox-success checkbox-circle">
+                                                                          <input id="phone_to_me" name="phone_to_me" type="checkbox" >
+                                                                          <label for="phone_to_me"> 558-430-0002 </label>
+                                                                      </div>
+                                                                      <hr>
+                                                                  </div>
+                                                              </div>
+                                                              <input type="submit" id="sendForm" style="display:none;" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                  </div>
                                               </div>
-                                            </div>
-                                            <div class="form-group">
-                                              <div class="col-lg-12" style="padding-left:0px;">
-                                                <a href="send-via" class="btn btn-info pull-left hidden-xs hidden-sm waves-effect waves-light">Next</a>
-                                              </div>
-                                            </div>
-                                        </form>
+                                          </form>
+                                      </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -102,9 +158,102 @@
 @endsection
 
 @section('library_js')
-
+    <script src="{{URL::asset('assets/plugins/bower_components/summernote/dist/summernote.min.js')}}"></script>
+    <script src="{{URL::asset('assets/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    <!-- Form Wizard JavaScript -->
+    <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js')}}"></script>
+    <!-- FormValidation -->
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.css')}}">
+    <!-- FormValidation plugin and the class supports validating Bootstrap form -->
+    <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js')}}"></script>
+    <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js')}}"></script>
 @endsection
 
 @section('script')
+<script type="text/javascript">
+(function() {
 
+$('#email_client').change(function(){
+  $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
+});
+$('#fax_client').change(function(){
+  $('#fax_option').html($('#fax_client').val());
+});
+
+
+
+    $('#WizardFormContainer').wizard({
+        onInit: function() {
+            $('#dataFormContainer').formValidation({
+                framework: 'bootstrap',
+                fields: {
+                    username: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The username is required'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 30,
+                                message: 'The username must be more than 6 and less than 30 characters long'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                message: 'The username can only consist of alphabetical, number, dot and underscore'
+                            }
+                        }
+                    },
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The email address is required'
+                            },
+                            emailAddress: {
+                                message: 'The input is not a valid email address'
+                            }
+                        }
+                    },
+                    password: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The password is required'
+                            },
+                            different: {
+                                field: 'username',
+                                message: 'The password cannot be the same as username'
+                            }
+                        }
+                    }
+                }
+            });
+        },
+        validator: function() {
+
+            var fv = $('#dataFormContainer').data('formValidation');
+            var $this = $(this);
+            // Validate the container
+            fv.validateContainer($this);
+            var isValidStep = fv.isValidContainer($this);
+            if (isValidStep === false || isValidStep === null) {
+                return false;
+            }
+            return true;
+        },
+        onFinish: function() {
+          $("#sendForm").trigger("click");
+
+        }
+    });
+})();
+
+jQuery('.mydatepicker, #datepicker').datepicker();
+jQuery('#datepicker1, #datepicker2').datepicker({
+    autoclose: true,
+    todayHighlight: true
+});
+jQuery('#date-range').datepicker({
+    toggleActive: true
+});
+
+</script>
 @endsection

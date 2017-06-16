@@ -1,7 +1,17 @@
 <div class="wizard-pane" role="tabpanel">
     <div class="form-group p-50">
     <div class="form-body">
-        <h3 class="box-title">4. General liability</h3>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingOne">
+<h4 class="panel-title">
+  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+    4. General liability
+  </a>
+</h4>
+</div>
+<div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+<div class="panel-body">
         <div class="row">
             <div class="col-md-12">
               <div class="form-group">
@@ -119,7 +129,7 @@
               <div class="form-group">
                 <div class="example">
                     <div class="input-group">
-                        <input name="g_l_eff_date" type="text" value="{{$gleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                        <input name="g_l_eff_date" type="text" value="{{$gleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm-mm-yyyy"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                 </div>
               </div>
             </div>
@@ -127,12 +137,24 @@
               <div class="form-group">
                 <div class="example">
                     <div class="input-group">
-                        <input name="g_l_exp_date" type="text" value="{{$glexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                        <input name="g_l_exp_date" type="text" value="{{$glexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="dd-mm-yyyy" > <span class="input-group-addon" ><i class="fa fa-calendar"></i></span> </div>
                 </div>
               </div>
               </div>
         </div>
         <hr>
+      </div>
+</div>
+</div>  <div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingTwo">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        4. General liability
+      </a>
+    </h4>
+  </div>
+  <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+    <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -207,4 +229,8 @@
 
     </div>
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>

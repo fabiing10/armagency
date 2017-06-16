@@ -1,13 +1,14 @@
 @extends('layouts.master')
 
 @section('library_css')
+    <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
 @endsection
 
 @section('style')
 <style>
 hr {
-    margin-top: -20px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
 }
 </style>
 @endsection
@@ -36,7 +37,7 @@ hr {
                   <h4 class="page-title">SUPPORT</h4> </div>
               <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="/user">Home</a></li>
                   <li class="active">Support</li>
                 </ol>
               </div>
@@ -45,12 +46,14 @@ hr {
           <!-- /.row -->
           <div class="white-box">
               <h2 class="box-title m-b-0">NEED HELP?</h2>
-              <p class="text-muted m-b-30 font-13">We are here to help</p>
+              <p class="text-muted m-b-30 font-13 disable">We are here to help</p>
               <div class="row m-t-30">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
               </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
                         <img src="{{URL::asset('assets/plugins/images/arm_logo.png')}}" alt="home" class="light-logo text-center"></div>
+                        <h1 class="box-title titlesupport m-b-0 block" style="text-align:center; display:none;">NEED HELP?</h1>
+                        <p class="text-muted m-b-30 font-13 titlesupport block" style="text-align:center; display:none;">Take some time to browse our site and feel free to<br>contact us about insurance needs.</p>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         </div>
                       </div>

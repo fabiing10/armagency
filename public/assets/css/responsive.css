@@ -1,0 +1,16 @@
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .white-box {
+    background: #fff;
+    padding: 0px;
+    margin-bottom: 30px;
+    }
+    .p-50 {
+    padding: 0px;
+    }
+    .wizard-steps>li {
+    display: table-cell;
+    padding: 0px !important;
+    background: #f7fafc;
+    }
+}

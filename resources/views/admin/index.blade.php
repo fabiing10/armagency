@@ -1,5 +1,11 @@
 @extends('layouts.master')
 
+@section('library_css')
+<link href="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
+<link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+<link href="{{URL::asset('assets/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet">
+@endsection
+
 @section('body_content')
 <!-- ============================================================== -->
 <!-- Preloader -->
@@ -21,25 +27,23 @@
     <!-- Page Content -->
     <!-- ============================================================== -->
     <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row bg-title">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">HOME</h4> </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="row">
-                <div class="col-sm-6">
-                  <h3 class="box-title m-b-0">Certificates summary</h3>
-                </div>
-                  <div class="col-sm-6">
-                    <div id="editable-datatable_filter" class="dataTables_filter">
-                      <input type="search" class="form-control input-sm" placeholder="Enter search" aria-controls="editable-datatable">
-                    </div>
-                  </div>
-                </div>
+    <div class="container-fluid">
+        <div class="row bg-title">
+          <div class="row">
+                <ol class="breadcrumb" style="float:left; margin-left:30px;">
+                  <li class="active">Home</li>
+                </ol>
+          </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row" style="padding-bottom:10px;">
+              <div class="col-sm-6">
+                <h3 class="box-title m-b-0">Certificates Summary</h3>
+              </div>
+              </div>
                   <div class="white-box">
 
 
@@ -51,7 +55,7 @@
                                       <th>Exp date</th>
                                       <th>insurance #</th>
                                       <th>status</th>
-                                      <th></th>
+                                      <th>Manage</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -61,7 +65,10 @@
                                       <td>{{$user->W_C_exp_date}}</td>
                                       <td>{{$user->C_I_producer_id}}</td>
                                       <td>{{$user->status}}</td>
-                                      <td><button onclick="window.location.href='admin/edit-certificate/{{$user->id}}'" type="submit" class="btn btn-info"> <i class="fa fa-pencil"></i></button></td>
+                                      <td><button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
+                                        <button onclick="window.location.href='/admin/edit-certificate/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                        <button onclick="window.location.href='/admin/table/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
+                                      </td>
                                   </tr>
                                   @endforeach
                               </tbody>
@@ -91,6 +98,17 @@
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+<script src="{{URL::asset('assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+
+<script src="{{URL::asset('assets/plugins/bower_components/switchery/dist/switchery.min.js')}}"></script>
 @endsection
 
 @section('script')
@@ -187,5 +205,54 @@
         }
     });
 })();
+$(document).ready(function() {
+    $('#myTable').DataTable();
+    $(document).ready(function() {
+        var table = $('#example').DataTable({
+            "columnDefs": [{
+                "visible": false,
+                "targets": 2
+            }],
+            "order": [
+                [2, 'asc']
+            ],
+            "displayLength": 25,
+            "drawCallback": function(settings) {
+                var api = this.api();
+                var rows = api.rows({
+                    page: 'current'
+                }).nodes();
+                var last = null;
+                api.column(2, {
+                    page: 'current'
+                }).data().each(function(group, i) {
+                    if (last !== group) {
+                        $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                        last = group;
+                    }
+                });
+            }
+        });
+        // Order by the grouping
+        $('#example tbody').on('click', 'tr.group', function() {
+            var currentOrder = table.order()[0];
+            if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                table.order([2, 'desc']).draw();
+            } else {
+                table.order([2, 'asc']).draw();
+            }
+        });
+    });
+});
+$('#example23').DataTable({
+    dom: 'Bfrtip',
+    buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+    ]
+});
+var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+$('.js-switch').each(function() {
+    new Switchery($(this)[0], $(this).data());
+});
 </script>
 @endsection

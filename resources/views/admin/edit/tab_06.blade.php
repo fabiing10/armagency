@@ -1,8 +1,16 @@
 
     <div class="form-group p-50">
       <div class="form-body">
-          <hr>
-          <h3 class="box-title">8. Additional coverage</h3>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThirteen">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                8. Additional coverage
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
+            <div class="panel-body">
           <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -90,8 +98,19 @@
             </div>
 
             </div>
-            <hr>
-            <h3 class="box-title">9. Additional coverage</h3>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFourteen">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+              9. Additional coverage
+            </a>
+          </h4>
+        </div>
+        <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
+          <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -179,7 +198,10 @@
               </div>
 
               </div>
-              <hr>
+            </div>
+</div>
+</div>
+</div>
               <h3 class="box-title">9. Description</h3>
               <hr>
                   <!--

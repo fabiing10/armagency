@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('library_css')
+    <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
 @endsection
 
 @section('style')
@@ -42,22 +43,24 @@
           <div class="row">
               <div class="col-sm-12">
                       <div class="panel panel-default">
-                            <div class="white-box">
+                            <div class="white-box m-30-responsive">
                                 <h2 class="box-title m-b-0">GET PASSWORD</h2>
                                 <p class="text-muted m-b-30 font-13">Enter your email address, press send and check your email. You'll get a password</p>
 
                                 <div class="row">
                                     <div class="col-sm-12 col-xs-12">
-                                        <form>
+                                      <form id="dataFormContainer" class="form-horizontal" method="POST">
+                                          <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                                           <div class="form-group">
                                               <div class="input-group">
                                               <div class="input-group-addon"><i class="fa fa-envelope grey"></i></div>
-                                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email address"> </div>
+                                              <input type="email" class="form-control" name="email" placeholder="Enter email address"> </div>
                                           </div>
                                               <br>
                                               <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
                                                 <a href="account" class="btn btn-default m-l-20 hidden-xs hidden-sm waves-effect waves-light">Cancel</a>
-                                                <a href="#" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</a>
+                                                <button type="submit" id="sendForm" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</button>
+                                                <button type="submit"  style="display:none;" id="sendForm" class="btn btn-info hidden-sm waves-effect waves-light changereset">Reset password</button>
                                               </div>
                                         </form>
                                     </div>
@@ -78,5 +81,10 @@
 @endsection
 
 @section('script')
+<script>
+        onFinish: function() {
+          $("#sendForm").trigger("click");
 
+        }
+</script>
 @endsection

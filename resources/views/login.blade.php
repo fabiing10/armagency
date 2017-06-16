@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
+@section('library_css')
+      <!-- Wizard CSS -->
+    <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
+@endsection
+
 @section('title') Login @endsection
 
 @section('style')
@@ -21,7 +26,7 @@
 <!-- ============================================================== -->
 <!-- Topbar header - style you can find in pages.scss -->
 <!-- ============================================================== -->
-<nav class="navbar navbar-default navbar-static-top m-b-0">
+<nav class="navbar navbar-default navbar-static-top m-b-0 loginnav">
     <div class="navbar-header">
         <div class="pl-50">
             <!-- Logo -->
@@ -41,14 +46,6 @@
               </ul>
               <!-- /.dropdown-language -->
           </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><i class="fa fa-user"></i>  Login </b><span class="caret"></span> </a>
-                <ul class="dropdown-menu dropdown-user animated flipInY">
-                    <li><a href="#" class="text-right"> User Login</a></li>
-                    <li><a href="#" class="text-right"> Admin Login</a></li>
-                </ul>
-                <!-- /.dropdown-login -->
-            </li>
             <!-- /.dropdown -->
         </ul>
     </div>
@@ -61,9 +58,9 @@
 <section id="wrapper" class="new-login-register">
 
       <div class="new-login-box">
-                <div class="white-box" style="margin-top:130px;">
-                    <h1 class="m-b-0 text-center">Admin login</h1>
-
+                <div class="white-box contentlogin" style="margin-top:130px;">
+                    <h1 class="m-b-0 text-center login">Admin login</h1>
+                    <center><img src="{{URL::asset('assets/plugins/images/logo3.png')}}" alt="home" style="width:25%; display:none;" class="light-logo logo-login" /></center>
 
                     {!! Form::open(['url' => '/login','class' => 'form-horizontal new-lg-form','method' => 'POST']) !!}
 
@@ -80,12 +77,12 @@
                     <div class="form-group">
                     <div class="form-group text-center m-t-20">
                       <div class="col-xs-12">
-                        <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Login</button>
+                        <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light btnlogin" type="submit">Login</button>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                        <a href="javascript:void(0)" id="to-recover" class="text-dark2 text-center"> Forgot your password?</a> </div>
+                        <a href="javascript:void(0)" id="to-recover" class="text-dark2 text-center forgot-login"> Forgot your password?</a> </div>
                       </div>
                     </div>
                   </form>
