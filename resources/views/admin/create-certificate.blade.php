@@ -70,33 +70,19 @@
               </div>
               </div>
               <div class="white-box">
-                  <div id="WizardFormContainer" class="wizard">
-                      <ul class="wizard-steps" role="tablist">
-                          <li class="active" role="tab">
-                              <h4>Info</h4> </li>
-                          <li role="tab">
-                              <h4>General</h4> </li>
-                          <li role="tab">
-                              <h4>Auto</h4> </li>
-                          <li role="tab">
-                              <h4>Umbrella</h4> </li>
-                          <li role="tab">
-                              <h4>Workers</h4> </li>
-                      </ul>
+
+
                       <form id="dataFormContainer" class="form-horizontal" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                           <div class="wizard-content">
 
 
                               @include('admin.options.tab_01')
-                              @include('admin.options.tab_02')
-                              @include('admin.options.tab_03')
-                              @include('admin.options.tab_04')
-                              @include('admin.options.tab_05')
+        
 
                           </div>
                       </form>
-                  </div>
+
               </div>
           </div>
     <!-- ============================================================== -->
