@@ -14,6 +14,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class AdminController extends Controller
 {
 
+
       public function homeAdmin (){
 
         $users = DB::table('users as u')
@@ -23,6 +24,18 @@ class AdminController extends Controller
         ->get();
         return view('admin.index')->with('users',$users);
       }
+
+      public function alerts(){
+        $users = DB::table('users as u')
+        ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
+        ->select('u.name','fc.exp_date','u.email','u.phone')
+        ->orderBy('fc.exp_date', 'desc')
+        ->where('u.userType', '=', 'user')
+        ->get();
+
+        return view('admin.alerts')->with('users',$users);
+      }
+
       public function getuser(){
         $users = DB::table('users as u')
         ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
@@ -169,8 +182,8 @@ class AdminController extends Controller
           $autoliabilityData = array(
               'a_l_insurance_letter' => $request->a_l_insurance_letter,
               'a_l_policy_number' => $request->a_l_policy_number,
-              'a_l_eff_date' => $request->g_l_eff_date,
-              'a_l_exp_date' => $request->g_l_exp_date,
+              'a_l_eff_date' => $request->a_l_eff_date,
+              'a_l_exp_date' => $request->a_l_exp_date,
               'a_l_combined_single' => $request->a_l_combined_single,
               'a_l_bodily_person' => $request->a_l_bodily_person,
               'a_l_bodily_accident' => $request->a_l_bodily_accident,
@@ -335,8 +348,29 @@ class AdminController extends Controller
           /* description */
           $formcontrol->description = $request->description;
 
-          $formcontrol->save();
 
+
+          $fechas = array();
+          if($request->g_l_exp_date != null){
+            array_push($fechas,$request->g_l_exp_date);
+          }
+          if($request->a_l_exp_date != null){
+            array_push($fechas,$request->a_l_exp_date);
+          }
+          if($request->u_l_exp_date!= null){
+            array_push($fechas,$request->u_l_exp_date);
+          }
+          if($request->W_C_exp_date!= null){
+            array_push($fechas,$request->W_C_exp_date);
+          }
+          if($request->A_C_b_exp_date!= null){
+            array_push($fechas,$request->A_C_b_exp_date);
+          }
+          if($request->A_C_a_exp_date!= null){
+            array_push($fechas,$request->A_C_a_exp_date);
+          }
+          $formcontrol->exp_date = $fechas[0];
+          $formcontrol->save();
           return redirect('admin');
       }
 
@@ -721,6 +755,29 @@ class AdminController extends Controller
           $formcontrol->A_C_b_coverage_limits = $request->A_C_b_coverage_limits;
           /* description */
           $formcontrol->description = $request->description;
+
+          $fechas = array();
+          if($request->g_l_exp_date != null){
+            array_push($fechas,$request->g_l_exp_date);
+          }
+          if($request->a_l_exp_date != null){
+            array_push($fechas,$request->a_l_exp_date);
+          }
+          if($request->u_l_exp_date!= null){
+            array_push($fechas,$request->u_l_exp_date);
+          }
+          if($request->W_C_exp_date!= null){
+            array_push($fechas,$request->W_C_exp_date);
+          }
+          if($request->A_C_b_exp_date!= null){
+            array_push($fechas,$request->A_C_b_exp_date);
+          }
+          if($request->A_C_a_exp_date!= null){
+            array_push($fechas,$request->A_C_a_exp_date);
+          }
+          $formcontrol->exp_date = $fechas[0];
+
+
 
           $formcontrol->save();
 

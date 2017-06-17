@@ -40,10 +40,12 @@ Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@log
 //Admin Controller's
 Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function(){
 
+Route::get('/fechas', 'AdminController@alerts');
+
   Route::get('/', 'AdminController@homeAdmin');
   Route::get('/create-certificate', 'AdminController@certificate');
   Route::post('/create-certificate', 'AdminController@create_certificate');
-  Route::get('/alerts', function () {return view('admin.alerts');});
+  Route::get('/alerts', 'AdminController@alerts');
   Route::get('/active-inactive', 'AdminController@getuser');
   Route::get('/active-inactive/status/{id}', 'AdminController@editstatus');
   Route::get('/admin-settings', 'AdminController@getuseradmin');
@@ -58,7 +60,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function()
 
 });
 
-
+Route::get('/cancelled',function(){return view('user.cancelled');});
+  Route::get('/expired',function(){return view('user.expired');});
 Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::get('/',function(){return view('user.home');});
   Route::post('/', 'UserController@sendCertificate');
@@ -73,8 +76,8 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::get('/login',function(){return view('user.login');});
   Route::get('/reset-password',function(){return view('user.reset-password');});
   Route::post('/reset-password', 'UserController@resetpassword');
-  Route::get('/cancelled',function(){return view('user.cancelled');});
-  Route::get('/expired',function(){return view('user.expired');});
+
+
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/support',function(){return view('user.support');});
 

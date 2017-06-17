@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('library_css')
-<link href="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{URL::asset('/assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
 <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
-<link href="{{URL::asset('assets/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet">
+<link href="{{URL::asset('/assets/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet">
 @endsection
 
 @section('style')
@@ -53,23 +53,19 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Exp date</th>
-                                <th>Insurance #</th>
+                                <th>Email</th>
                                 <th>Contact</th>
                             </tr>
                         </thead>
                         <tbody>
+                          @foreach($users as $user)
                             <tr>
-                                <td>Perez Correa Juan Pablo </td>
-                                <td>04-20-17</td>
-                                <td>21114404-C200746</td>
-                                <td><i class="fa fa-phone"></i> 281-550-1799</td>
+                                <td>{{$user->name}} </td>
+                                <td>{{$user->exp_date}}</td>
+                                <td>{{$user->email}}</td>
+                                <td><i class="fa fa-phone"></i> {{$user->phone}}</td>
                             </tr>
-                            <tr>
-                                <td>Perez Correa Juan Pablo </td>
-                                <td>04-20-17</td>
-                                <td>21114404-C200746</td>
-                                <td><i class="fa fa-phone"></i> 281-550-1799</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
