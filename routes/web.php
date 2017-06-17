@@ -20,7 +20,9 @@ Route::get('/login', function () {
 });
 */
 
-
+Route::get('/home', function () {
+  return redirect('redirect');
+});
 
 
 
