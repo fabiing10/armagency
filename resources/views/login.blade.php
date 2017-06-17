@@ -13,6 +13,14 @@
   .new-login-register .new-login-box {
       margin-left: 380px;
   }
+  .alert.alert-error {
+    margin-bottom: 0pc;
+    background-color: #ff8888;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid red;
+}
   </style>
 @endsection
 
@@ -61,7 +69,9 @@
                 <div class="white-box contentlogin" style="margin-top:130px;">
                     <h1 class="m-b-0 text-center login">Admin login</h1>
                     <center><img src="{{URL::asset('assets/plugins/images/logo3.png')}}" alt="home" style="width:25%; display:none;" class="light-logo logo-login" /></center>
-
+                    @if (Session::has('error_message'))
+                        <div class="alert alert-error">{{ Session::get('error_message') }}</div>
+                    @endif
                     {!! Form::open(['url' => '/login','class' => 'form-horizontal new-lg-form','method' => 'POST']) !!}
 
                     <div class="form-group  m-t-20">
