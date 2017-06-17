@@ -57,6 +57,7 @@
                                       <th>Name</th>
                                       <th>email</th>
                                       <th>Exp date</th>
+                                      <th>Status</th>
                                       <th>Manage</th>
                                   </tr>
                               </thead>
@@ -65,7 +66,8 @@
                                     @foreach($users as $user)
                                       <td>{{$user->name}}</td>
                                       <td>{{$user->email}}</td>
-                                      <td>{{$user->W_C_exp_date}}</td>
+                                      <td>{{$user->exp_date}}</td>
+                                      <td>{{$user->status}}</td>
                                       @if ($user->status === 'active')
                                       <td><button id="sa-params" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Cancel </button></td>
                                       @else

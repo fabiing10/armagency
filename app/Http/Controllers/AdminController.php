@@ -39,7 +39,7 @@ class AdminController extends Controller
       public function getuser(){
         $users = DB::table('users as u')
         ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
-        ->select('u.email','u.name','fc.W_C_exp_date','fc.status','fc.id')
+        ->select('u.email','u.name','fc.exp_date','fc.status','fc.id')
         ->where('u.userType', '=', 'user')
         ->get();
         return view('admin.active-inactive')->with('users',$users);
