@@ -32,11 +32,12 @@ class DataAccessUser
           }
           if($status == "cancel"){
             return redirect("cancelled");
-          }else if($date < date('dd-mm-yyyy')){
+          }else if($date < date('mm/dd/yyyy')){
             return redirect("expired");
           }else{
             return $next($request);
           }
+      
 
 
         }else{

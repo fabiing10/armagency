@@ -171,30 +171,12 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
               </div>
               </div>
               <div class="white-box">
-                  <div id="WizardFormContainer" class="wizard">
-                      <ul class="wizard-steps" role="tablist">
-                          <li class="active" role="tab">
-                              <h4><span><i class="ti-user"></i></span>1</h4> </li>
-                          <li role="tab">
-                              <h4><span><i class="ti-credit-card"></i></span>2</h4> </li>
-                          <li role="tab">
-                              <h4><span><i class="ti-check"></i></span>3</h4> </li>
-                          <li role="tab">
-                              <h4><span><i class="ti-check"></i></span>4</h4> </li>
-                          <li role="tab">
-                              <h4><span><i class="ti-check"></i></span>5</h4> </li>
-                      </ul>
                       <form id="dataFormContainer" class="form-horizontal" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                           <div class="wizard-content">
                               @include('admin.edit.tab_01')
-                              @include('admin.edit.tab_02')
-                              @include('admin.edit.tab_03')
-                              @include('admin.edit.tab_04')
-                              @include('admin.edit.tab_05')
                           </div>
                       </form>
-                  </div>
               </div>
           </div>
     <!-- ============================================================== -->
@@ -220,6 +202,41 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
 
 @section('script')
 <script type="text/javascript">
+$(document).ready(function() {
+  var SweetAlert = function() {};
+
+  //examples
+  SweetAlert.prototype.init = function() {
+    //Parameter
+    $('#sa-params{{$user->id}}').click(function(){
+      console.log("Click")
+      var id = $(this).attr("data-id");
+      console.log(id)
+        swal({
+            title: "Update Form?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, I'm sure",
+            cancelButtonText: "No, go back",
+            closeOnConfirm: true,
+            closeOnCancel: true
+        }, function(isConfirm){
+            if (isConfirm) {
+              dataFormContainer.submit();
+                /*$.post( "/create-certificate").done(function(data) {
+                  console.log(data);
+                  location.reload(true);
+                });*/
+            } else {
+            }
+        });
+    });
+  }
+  $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+$.SweetAlert.init()
+});
 (function() {
     $('#WizardFormContainer').wizard({
         onInit: function() {
@@ -276,10 +293,6 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                 return false;
             }
             return true;
-        },
-        onFinish: function() {
-          $("#sendForm").trigger("click");
-
         }
     });
 })();

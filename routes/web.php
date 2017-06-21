@@ -62,8 +62,10 @@ Route::get('/fechas', 'AdminController@alerts');
 
 Route::get('/cancelled',function(){return view('user.cancelled');});
   Route::get('/expired',function(){return view('user.expired');});
+
 Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
-  Route::get('/',function(){return view('user.home');});
+  Route::get('/',function(){ return view('user.home');
+  });
   Route::post('/', 'UserController@sendCertificate');
   /* User */
   Route::get('/history', 'UserController@gethistory');

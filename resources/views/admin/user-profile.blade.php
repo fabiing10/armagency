@@ -47,6 +47,8 @@
               </div>
             </div>
             <div class="white-box">
+              <form class="" action="" method="POST">
+                          <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
               <div class="form-body">
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
@@ -258,6 +260,10 @@
 
 </div>
 </div>
+<button type="submit" id="sendForm" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Save</button>
+
+</form>
+
             </div>
         </div>
       </div>
@@ -273,5 +279,10 @@
 @endsection
 
 @section('script')
+<script type="text/javascript">
+onFinish: function() {
+  $("#sendForm").trigger("click");
 
+}
+</script>
 @endsection

@@ -78,7 +78,7 @@
 
 
                               @include('admin.options.tab_01')
-        
+
 
                           </div>
                       </form>
@@ -108,6 +108,39 @@
 
 @section('script')
 <script type="text/javascript">
+$(document).ready(function() {
+  var SweetAlert = function() {};
+
+  //examples
+  SweetAlert.prototype.init = function() {
+    //Parameter
+    $('#sa-params').click(function(){
+        swal({
+            title: "Send Form?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, I'm sure",
+            cancelButtonText: "No, go back",
+            closeOnConfirm: true,
+            closeOnCancel: true
+        }, function(isConfirm){
+            if (isConfirm) {
+              dataFormContainer.submit();
+                /*$.post( "/create-certificate").done(function(data) {
+                  console.log(data);
+                  location.reload(true);
+                });*/
+            } else {
+            }
+        });
+    });
+  }
+  $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+$.SweetAlert.init()
+});
+
 (function() {
     $('#WizardFormContainer').wizard({
         onInit: function() {
@@ -164,10 +197,6 @@
                 return false;
             }
             return true;
-        },
-        onFinish: function() {
-          $("#sendForm").trigger("click");
-
         }
     });
 })();

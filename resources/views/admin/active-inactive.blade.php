@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('library_css')
-<link href="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{URL::asset('/assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
 <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
-<link href="{{URL::asset('assets/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet">
+<link href="{{URL::asset('/assets/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet">
 @endsection
 
 @section('style')
@@ -62,19 +62,21 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
+
                                     @foreach($users as $user)
+                                    <tr>
                                       <td>{{$user->name}}</td>
                                       <td>{{$user->email}}</td>
                                       <td>{{$user->exp_date}}</td>
                                       <td>{{$user->status}}</td>
                                       @if ($user->status === 'active')
-                                      <td><button id="sa-params" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Cancel </button></td>
+                                      <td><button id="sa-params{{$user->id}}" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Cancel </button></td>
                                       @else
-                                      <td><button id="sa-params2" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Activate </button></td>
+                                      <td><button id="sa-params{{$user->id}}" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Activate </button></td>
                                       @endif
+                                      </tr>
                                     @endforeach
-                                  </tr>
+
                               </tbody>
                           </table>
                       </div>
@@ -125,7 +127,7 @@
     //examples
     SweetAlert.prototype.init = function() {
       //Parameter
-      $('#sa-params').click(function(){
+      $('#sa-params{{$user->id}}').click(function(){
         console.log("Click")
         var id = $(this).attr("data-id");
         console.log(id)
@@ -152,7 +154,7 @@
               }
           });
       });
-      $('#sa-params2').click(function(){
+      $('#sa-params{{$user->id}}').click(function(){
         console.log("Click")
         var id = $(this).attr("data-id");
         console.log(id)
