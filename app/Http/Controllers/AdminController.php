@@ -69,7 +69,7 @@ class AdminController extends Controller
         $user->phone = $request->phone_insured;
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
-        $user->dba_name = $request->dba_name;
+        $user->dba_name = $request->I_I_dba_name;
         $user->userType = "user";
         $user->password = bcrypt($request->password_insured);
         $user->save();
@@ -168,7 +168,8 @@ class AdminController extends Controller
           if($request->g_l_options_addl == 'true'){$g_l_option_addl = 'true';}
           else {$g_l_option_addl = 'false';}
 
-          if($request->g_l_options_subr == 'true'){$g_l_option_subr = 'true';}
+          if($request->g_l_options_subr == 'true')
+          {$g_l_option_subr = 'true';}
           else {$g_l_option_subr = 'false';}
 
           /* general liability options addl subr */
@@ -416,7 +417,7 @@ class AdminController extends Controller
         $user->phone = $request->phone_insured;
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
-        $user->dba_name = $request->dba_name;
+        $user->dba_name = $request->I_I_dba_name;
         $user->userType = "user";
         $user->password = bcrypt($request->password_insured);
         $user->save();
@@ -476,7 +477,7 @@ class AdminController extends Controller
             $user->password = bcrypt($request->password_insured);
           }
         }
-        $user->dba_name = $request->dba_name;
+        $user->dba_name = $request->I_I_dba_name;
         $user->save();
 
         $formQuery = FormControl::where('userId','=',$user->id)->get();
@@ -573,10 +574,10 @@ class AdminController extends Controller
           $formcontrol->g_l_options_limit_per = $g_l_options_limit_per;
 
           /* considitional */
-          if($request->g_l_options_addl == 'true'){$g_l_option_addl = 'true';}
+          if($request->g_l_option_addl == 'true'){$g_l_option_addl = 'true';}
           else {$g_l_option_addl = 'false';}
 
-          if($request->g_l_options_subr == 'true'){$g_l_option_subr = 'true';}
+          if($request->g_l_option_subr == 'true'){$g_l_option_subr = 'true';}
           else {$g_l_option_subr = 'false';}
 
           /* general liability options addl subr */
@@ -590,8 +591,8 @@ class AdminController extends Controller
           $autoliabilityData = array(
               'a_l_insurance_letter' => $request->a_l_insurance_letter,
               'a_l_policy_number' => $request->a_l_policy_number,
-              'a_l_eff_date' => $request->g_l_eff_date,
-              'a_l_exp_date' => $request->g_l_exp_date,
+              'a_l_eff_date' => $request->a_l_eff_date,
+              'a_l_exp_date' => $request->a_l_exp_date,
               'a_l_combined_single' => $request->a_l_combined_single,
               'a_l_bodily_person' => $request->a_l_bodily_person,
               'a_l_bodily_accident' => $request->a_l_bodily_accident,

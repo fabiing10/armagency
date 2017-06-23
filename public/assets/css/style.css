@@ -201,11 +201,17 @@ button.confirm {
     background-color: #C1C1C1;
     float: left;
 }
+.color-collapse{
+    background: #e4e4e4 !important;
+}
 .btn-primary.btn-outline {
     color: grey;
     background-color: transparent;
     background: transparent;
     border: 1px solid grey;
+}
+.panel-heading:active {
+    background: #eaeaea !important;
 }
 .btn-primary.btn-outline.focus, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:hover {
     background: transparent !important;

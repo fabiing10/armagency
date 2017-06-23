@@ -381,14 +381,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
               </div>
               <div class="row">
                 @if ($glother2 === 'true')
-                <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" value="{{$glotherinput2}}"><br/>
-                @else
-                <input type="checkbox" name="" value=""> <input name="" type="text" class="form-control" placeholder=""><br/>
-                @endif
-              </div>
-              <div class="row">
-                @if ($glother2 === 'true')
-                <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" value="{{$glotherinput2}}"><br/>
+                <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" >{{$glotherinput2}}<br/>
                 @else
                 <input type="checkbox" name="" value=""> <input name="" type="text" class="form-control" placeholder=""><br/>
                 @endif
@@ -765,7 +758,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <table>
               <tr>
                 <td style="width:200px; border-bottom:1px solid;">
-                  <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">OTHER
+                  <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">{{$formcontrol->W_C_other_input}}
                 </td>
                 <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$formcontrol->W_C_other}}

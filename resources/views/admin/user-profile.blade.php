@@ -200,7 +200,7 @@
             <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                        <input name="dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="dba_name" placeholder="DBA name">
+                        <input name="I_I_dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="dba_name" placeholder="DBA name">
                     </div>
             </div>
             </div>

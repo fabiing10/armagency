@@ -27,7 +27,7 @@
                                                 <div class="form-group">
                                                         <div class="input-group">
                                                             <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                                                            <input name="dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="dba_name" placeholder="DBA name">
+                                                            <input name="I_I_dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="I_I_dba_name" placeholder="DBA name">
                                                         </div>
                                                 </div>
                                                 </div>
@@ -431,9 +431,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($gloptionaddl === 'true')
-                                          <input type="checkbox" name="g_l_options_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="g_l_option_addl" value="true" checked=""> ADDL INSR
                                           @else
-                                          <input type="checkbox" name="g_l_options_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="g_l_option_addl" value="true"> ADDL INSR
                                           @endif
                                         </div>
                                     </label>
@@ -444,9 +444,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($gloptionsubr === 'true')
-                                          <input type="checkbox" name="g_l_options_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="g_l_option_subr" value="true" checked="">  SUBR WVD
                                           @else
-                                          <input type="checkbox" name="g_l_options_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="g_l_option_subr" value="true">  SUBR WVD
                                           @endif
                                         </div>
                                     </label>
@@ -1372,7 +1372,7 @@
                 </div>
 
                 Description<br>
-                <textarea rows="5" cols="100" name="description"></textarea>
+                <textarea rows="5" cols="100" name="description">{{$formcontrol->description}}</textarea>
 
                 <hr>
                 <input class="btn btn-info" data-id="{{$user->id}}" id="sa-params{{$user->id}}" value="Enviar"  />
