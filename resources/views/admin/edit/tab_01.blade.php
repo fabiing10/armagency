@@ -62,6 +62,22 @@
                                               </div>
                                               <!--/span-->
                                           </div>
+                                          <div class="row">
+                                              <div class="col-md-4">
+                                                  <div class="form-group">
+                                                      <input name="I_I_city" type="text" class="form-control" placeholder="City" value="{{$user->city}}">
+                                                  </div>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <div class="form-group">
+                                                      <input name="I_I_state" type="text" class="form-control" placeholder="State" value="{{$user->state}}">
+                                                  </div>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <div class="form-group">
+                                                      <input name="I_I_zip_code" type="text" class="form-control" placeholder="Zip code" value="{{$user->zip_code}}"> </div>
+                                              </div>
+                                          </div>
                                           <!--/row-->
                                           <div class="row">
                                               <div class="col-md-6">
@@ -1207,21 +1223,19 @@
                                       <label class="radio-inline p-0">
                                           <div class="radio radio-info">
                                             @if ($formcontrol->A_C_a_options_add_insurance_surrogation === 'Additonal insurance')
-                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio1" value="Additonal insurance" checked="">
+                                              <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance" checked="">Additonal insurance
                                             @else
-                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio1" value="Additonal insurance">
+                                              <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance">Additonal insurance
                                             @endif
-                                              <label for="radio_options_add">Additonal insurance</label>
                                           </div>
                                       </label>
                                       <label class="radio-inline">
                                           <div class="radio radio-info">
                                             @if ($formcontrol->A_C_a_options_add_insurance_surrogation === 'Surrogation')
-                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio2" value="Surrogation" checked="">
+                                              <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation" checked="">Waiver of subrogation
                                             @else
-                                              <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio2" value="Surrogation">
+                                              <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation">Waiver of subrogation
                                             @endif
-                                              <label for="radio_options_add">Surrogation</label>
                                           </div>
                                       </label>
                                   </div>
@@ -1306,21 +1320,19 @@
                                       <label class="radio-inline p-0">
                                           <div class="radio radio-info">
                                             @if ($formcontrol->A_C_b_options_add_insurance_surrogation === 'Additonal insurance')
-                                              <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio1" value="Additonal insurance" checked="">
+                                              <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance" checked="">Additonal insurance
                                             @else
-                                              <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio1" value="Additonal insurance">
+                                              <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance">Additonal insurance
                                             @endif
-                                              <label for="radio_options_add2">Additonal insurance</label>
                                           </div>
                                       </label>
                                       <label class="radio-inline">
                                           <div class="radio radio-info">
                                             @if ($formcontrol->A_C_b_options_add_insurance_surrogation === 'Surrogation')
-                                              <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio2" value="Surrogation" checked="">
+                                              <input type="radio" name="A_C_b_options_surrogation" value="Surrogation" checked="">Waiver of subrogation
                                             @else
-                                              <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio2" value="Surrogation">
+                                              <input type="radio" name="A_C_b_options_surrogation" value="Surrogation">Waiver of subrogation
                                             @endif
-                                              <label for="radio_options_add2">Surrogation</label>
                                           </div>
                                       </label>
                                   </div>
@@ -1375,7 +1387,7 @@
                 <textarea rows="5" cols="100" name="description">{{$formcontrol->description}}</textarea>
 
                 <hr>
-                <input class="btn btn-info" data-id="{{$user->id}}" id="sa-params{{$user->id}}" value="Enviar"  />
+                <input class="btn btn-info" data-id="{{$user->id}}" id="sa-params{{$user->id}}" value="Save"  />
             </div>
         </div>
     </div>

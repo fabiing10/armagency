@@ -67,6 +67,22 @@
                                               </div>
                                               <!--/span-->
                                           </div>
+                                          <div class="row">
+                                              <div class="col-md-4">
+                                                  <div class="form-group">
+                                                      <input name="I_I_city" type="text" class="form-control" placeholder="City">
+                                                  </div>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <div class="form-group">
+                                                      <input name="I_I_state" type="text" class="form-control" placeholder="State">
+                                                  </div>
+                                              </div>
+                                              <div class="col-md-4">
+                                                  <div class="form-group">
+                                                      <input name="I_I_zip_code" type="text" class="form-control" placeholder="Zip code"> </div>
+                                              </div>
+                                          </div>
                                           <!--/row-->
                                           <div class="row">
                                               <div class="col-md-6">
@@ -956,14 +972,12 @@
                                 <div class="radio-list">
                                     <label class="radio-inline p-0">
                                         <div class="radio radio-info">
-                                            <input type="radio" name="W_C_propretor" id="radio1" value="yes">
-                                            <label for="radio_propetor">YES</label>
+                                            <input type="checkbox" name="W_C_propretor_yes" value="yes">YES
                                         </div>
                                     </label>
                                     <label class="radio-inline">
                                         <div class="radio radio-info">
-                                            <input type="radio" name="W_C_propretor" id="radio2" value="no">
-                                            <label for="radio_propetor">NO</label>
+                                            <input type="checkbox" name="W_C_propretor_no" value="no">NO
                                         </div>
                                     </label>
                                 </div>
@@ -1018,7 +1032,7 @@
                             <div class="form-group">
                               <div class="example">
                                   <div class="input-group">
-                                      <input name="W_C_eff_date" type="text" data-date-format="dd/mm/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                      <input name="W_C_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                               </div>
                             </div>
                           </div>
@@ -1026,7 +1040,7 @@
                             <div class="form-group">
                               <div class="example">
                                   <div class="input-group">
-                                      <input name="W_C_exp_date" type="text" data-date-format="dd/mm/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                      <input name="W_C_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                               </div>
                             </div>
                             </div>
@@ -1132,14 +1146,12 @@
                                     <div class="radio-list">
                                         <label class="radio-inline p-0">
                                             <div class="radio radio-info">
-                                                <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio1" value="Additonal insurance">
-                                                <label for="radio_options_add">Additonal insurance</label>
+                                                <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance">Additonal insurance
                                             </div>
                                         </label>
                                         <label class="radio-inline">
                                             <div class="radio radio-info">
-                                                <input type="radio" name="A_C_a_options_add_insurance_surrogation" id="radio2" value="Surrogation">
-                                                <label for="radio_options_add">Surrogation</label>
+                                                <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation">Waiver of subrogation
                                             </div>
                                         </label>
                                     </div>
@@ -1224,14 +1236,13 @@
                                     <div class="radio-list">
                                         <label class="radio-inline p-0">
                                             <div class="radio radio-info">
-                                                <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio1" value="Additonal insurance">
-                                                <label for="radio_options_add2">Additonal insurance</label>
+                                                <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance">Additonal insurance
+                                                <label for="radio_options_add2"></label>
                                             </div>
                                         </label>
                                         <label class="radio-inline">
                                             <div class="radio radio-info">
-                                                <input type="radio" name="A_C_b_options_add_insurance_surrogation" id="radio2" value="Surrogation">
-                                                <label for="radio_options_add2">Surrogation</label>
+                                                <input type="checkbox" name="A_C_b_options_surrogation" value="Surrogation">Waiver of subrogation
                                             </div>
                                         </label>
                                     </div>
@@ -1286,7 +1297,7 @@
                 <textarea rows="5" cols="100" name="description"></textarea>
 
                 <hr>
-                <input class="btn btn-info" id="sa-params" value="Enviar"  />
+                <input class="btn btn-info" id="sa-params" value="Save"  />
             </div>
         </div>
     </div>

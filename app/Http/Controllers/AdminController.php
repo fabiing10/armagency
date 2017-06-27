@@ -70,6 +70,9 @@ class AdminController extends Controller
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
         $user->dba_name = $request->I_I_dba_name;
+        $user->city = $request->I_I_city;
+        $user->state = $request->I_I_state;
+        $user->zip_code = $request->I_I_zip_code;
         $user->userType = "user";
         $user->password = bcrypt($request->password_insured);
         $user->save();
@@ -305,7 +308,8 @@ class AdminController extends Controller
           $formcontrol->u_l_options_addl_subr = $u_l_options_addl_subr;
           /* workers compensation */
           $formcontrol->W_C_insurance_letter = $request->W_C_insurance_letter;
-          $formcontrol->W_C_propretor = $request->W_C_propretor;
+          $formcontrol->W_C_propretor_yes = $request->W_C_propretor_yes;
+          $formcontrol->W_C_propretor_no = $request->W_C_propretor_no;
           $formcontrol->W_C_office = $request->W_C_office;
           $formcontrol->W_C_options_addl_subr = $request->W_C_options_addl_subr;
           $formcontrol->W_C_policy_number = $request->W_C_policy_number;
@@ -478,6 +482,9 @@ class AdminController extends Controller
           }
         }
         $user->dba_name = $request->I_I_dba_name;
+        $user->city = $request->I_I_city;
+        $user->state = $request->I_I_state;
+        $user->zip_code = $request->I_I_zip_code;
         $user->save();
 
         $formQuery = FormControl::where('userId','=',$user->id)->get();
@@ -713,7 +720,8 @@ class AdminController extends Controller
           $formcontrol->u_l_options_addl_subr = $u_l_options_addl_subr;
           /* workers compensation */
           $formcontrol->W_C_insurance_letter = $request->W_C_insurance_letter;
-          $formcontrol->W_C_propretor = $request->W_C_propretor;
+          $formcontrol->W_C_propretor_yes = $request->W_C_propretor_yes;
+          $formcontrol->W_C_propretor_no = $request->W_C_propretor_no;
           $formcontrol->W_C_office = $request->W_C_office;
           $formcontrol->W_C_options_addl_subr = $request->W_C_options_addl_subr;
           $formcontrol->W_C_policy_number = $request->W_C_policy_number;

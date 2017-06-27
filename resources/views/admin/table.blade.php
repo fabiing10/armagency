@@ -2,7 +2,7 @@
 
   <style media="screen">
   * {
-    line-height: 12px !important;
+    line-height: 10px !important;
     font-size: 11px !important;
 
   }
@@ -22,6 +22,8 @@
 
     body{
       background: white !important;
+      margin: 0px !important;
+      padding: 0px !important;
     }
     .center{
       text-align: center;
@@ -31,9 +33,8 @@
     }
     .form-control {
     display: -webkit-inline-box !important;
-    width: 80% !important;
+    width: 95% !important;
     height: 34px !important;
-    padding: 6px 12px !important;
   }
   </style>
 
@@ -149,28 +150,28 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
 <!-- ============================================================== -->
 
   <table style="width:100%">
-    <td colspan="2" ><h1 style="text-align:center; font-size:20px !important;">CERTIFICATE OF LIABILITY INSURANCE</h1></td>
-    <td style="width:40px; text-align:right !important; padding-right:80px;"> <p style="border-top:1px solid; border-left:1px solid; border-right:1px solid; padding:10px;"> Date(MM/DD/YYYY) <p></td>
+    <td colspan="2" ><h1 style="text-align:center; font-size:35px !important; vertical-align:bottom;">CERTIFICATE OF LIABILITY INSURANCE</h1></td>
+    <td style="width:40px; text-align:right !important; padding-right:80px;"> <p style="border-top:1px solid; border-left:1px solid; border-right:1px solid; padding:10px;"> Date:{{$formcontrol->exp_date}} <p></td>
 
   </table>
   <div class="row">
-  <table style="width:50%; border:1px solid;">
+  <table style="width:90% !important; border:1px solid;">
 
     <tr>
-      <th colspan="2" style="border-bottom:1px solid;">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
+      <th colspan="2" style="border-bottom:1px solid; font-size:15px !important; padding-left: 5px!important; padding-right:5px !important;">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid;" >IMPORTANT: if the certificate holder is an ADDITIONAL INSURED. the policy(ies) must be endorsed. if SUBROGATION IS WAIVED, subject to the terms and conditions of the policy, certain policies may require and endorsement. A statement on this certificate does not confer rights to the certificate holder in lieu of such endorsement(s).</td>
+      <td colspan="2" style="border-bottom:1px solid; font-weight:bold; font-size:15px !important;" >IMPORTANT: if the certificate holder is an ADDITIONAL INSURED. the policy(ies) must be endorsed. if SUBROGATION IS WAIVED, subject to the terms and conditions of the policy, certain policies may require and endorsement. A statement on this certificate does not confer rights to the certificate holder in lieu of such endorsement(s).</td>
     </tr>
       <tr>
-      <td style=" width: 200px !important; border-bottom: 1px solid; border-right:1px solid; ">PRODUCDER<br>
+      <td style=" width: 200px !important; border-bottom: 1px solid; border-right:1px solid;"><b>PRODUCDER</b><br>
         {{$formcontrol->P_I_name}}<br>
         {{$formcontrol->P_I_address}}<br>
         {{$formcontrol->P_I_dba_state}},{{$formcontrol->P_I_city}},TX {{$formcontrol->P_I_dba_zip_code}}
       </td>
           <td><table border="0">
           <tr>
-            <td class="l-height15" style="border-bottom:1px solid !important;">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             CONTACT NAME:
             </td>
             <td colspan="3" style="border-bottom:1px solid !important;">
@@ -178,13 +179,13 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             </td>
           </tr>
           <tr>
-            <td class="l-height15" style="border-bottom:1px solid !important;">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             PHONE(A/C, No, Ext):
             </td>
             <td style="border-bottom:1px solid !important;">
             {{$formcontrol->C_I_phone}}
             </td>
-            <td class="l-height15" style="border-bottom:1px solid !important; border-left:1px solid;" >
+            <td class="l-height15" style="border-bottom:1px solid !important; border-left:1px solid; font-weight:bold;" >
             FAX (A/C, No):
             </td>
             <td style="border-bottom:1px solid !important;">
@@ -192,7 +193,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             </td>
           </tr>
           <tr>
-            <td class="l-height15" style="border-bottom:1px solid !important;">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             E-MAIL ADDRESS:
             </td>
             <td colspan="3" style="border-bottom:1px solid !important;">
@@ -200,7 +201,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             </td>
           </tr>
           <tr>
-            <td class="l-height15" style="border-bottom:1px solid !important;">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             PRODUCER CUSTOMER ID #:
             </td>
             <td colspan="3" style="border-bottom:1px solid !important;">
@@ -211,7 +212,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     </tr>
     <tr>
     <td style="border-bottom:1px solid !important; border-right:1px solid;">
-      INSURED<br>
+      <b>INSURED</b><br>
       {{$user->name}}<br>
       {{$user->address}}<br>
       {{$user->phone}}
@@ -237,57 +238,63 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <td>
     <table>
     <tr>
-            <td colspan="2" style="border-bottom:1px solid !important;">
+            <td colspan="2" style="border-bottom:1px solid !important; font-weight:bold; vertical-align:bottom; padding:0px;">
             <center>INSURER(S) AFFORDING COVERAGE</center>
             </td>
-            <td style="border-bottom:1px solid !important; border-left:1px solid;">
-            <center>NAIC #</center><br/>
+            <td style="border-bottom:1px solid !important; border-left:1px solid; font-weight:bold; vertical-align:bottom; padding:0px;">
+            <center>NAIC #</center>
             </td>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid !important;">
-      INSURER A: {{$Ensured_a}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER A:
       </td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_a}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_a}}
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid !important;">
-      INSURER B: {{$Ensured_b}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER B:
       </td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_b}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_b}}
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid !important;">
-      INSURER C: {{$Ensured_c}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER C:
       </td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_c}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_c}}
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid !important;">
-      INSURER D: {{$Ensured_d}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER D:
       </td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_d}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_d}}
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid !important;">
-      INSURER E: {{$Ensured_e}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER E:
       </td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_e}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_e}}
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="border-bottom:1px solid !important;">
-      INSURER F: {{$Ensured_f}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER F:
       </td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_f}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_f}}
       </td>
@@ -300,56 +307,56 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <table>
       <tr>
       <td style="border-bottom:1px solid !important;">
-      COVERAGES
+      <b>COVERAGES</b>
       </td>
       <td style="border-bottom:1px solid !important;">
-      CERTIFICATE NUMBER:
+      <b>CERTIFICATE NUMBER:</b>
       <label>ARMINS0008723</label>
       </td>
       <td style="border-bottom:1px solid !important;">
-      REVISION NUMBER
+      <b>REVISION NUMBER</b>
       </td>
       </tr>
       </table>
     </td>
     </tr>
     <tr>
-      <th colspan="2" style="border-bottom:1px solid !important;">
+      <td colspan="2" style="border-bottom:1px solid !important; font-size:15px !important;">
       THIS IS TO CERTIFY THAT THE POLICES OF INSURANCE LISTED BELOW BEEN ISSUED TO THE INSURED NAMED ABOVE FOR THE POLICY PERIOD INDICATED. NOTWITHSTANDING ANY REQUIREMENT, TERM OR CONDITION OF ANY CONTACT OR OTHER DOCUMENT WITH RESPECT TO WHICH THIS CERTIFICATE MAY BE ISSUED OR MAY PERTAIN, THE INSURANCE AFFORDED BY THE POLICIES DESCRIBED HERE IN IS SUBJECT TO ALL THE TERMS, EXCLUSIONS AND CONDITIONS OF SUCH POLICIES. LIMITS SHOWN MAY HAVE BEEN RECUDED BY PAID CLAIMS.
-    </th>
+    </td>
     </tr>
       <tr>
       <td colspan="2">
         <table>
           <tr>
-            <td class="center l-height15" style="width:42px; !important; border-bottom: 1px solid !important;">
-              INSR<br/>
-              LTR
+            <td class="center l-height15" style="line-height:10px !important; width:42px; !important; border-bottom: 1px solid !important;">
+              <b>INSR<br/>
+              LTR</b>
             </td>
-            <td class="center" style="width:250px; border-bottom:1px solid; border-left:1px solid;">
-              TYPE OF INSURANCE
+            <td class="center" style="width:250px; border-bottom:1px solid; border-left:1px solid; vertical-align:bottom;">
+              <b>TYPE OF INSURANCE</b>
+            </td>
+            <td class="center l-height15" style="width:42px; border-bottom:1px solid; border-left:1px solid; vertical-align:bottom;">
+              <b>ADDL<br/>
+              INSR</b>
             </td>
             <td class="center l-height15" style="width:42px; border-bottom:1px solid; border-left:1px solid;">
-              ADDL<br/>
-              INSR
-            </td>
-            <td class="center l-height15" style="width:42px; border-bottom:1px solid; border-left:1px solid;">
-              SUBR<br/>
-              WVD
+              <b>SUBR<br/>
+              WVD</b>
             </td>
             <td class="center" style="border-bottom:1px solid; border-left:1px solid;">
-              POLICY NUMBER
+              <b>POLICY NUMBER</b>
             </td>
             <td class="center l-height15" style="width:90px; border-bottom:1px solid; border-left:1px solid;">
-              POLICY EFF<br/>
-              (MM/DD/YYYY)
+              <b>POLICY EFF<br/>
+              (MM/DD/YYYY)</b>
             </td>
             <td class="center l-height15" style="width:90px; border-bottom:1px solid; border-left:1px solid;">
-              POLICY EXP<br/>
-              (MM/DD/YYYY)
+              <b>POLICY EXP<br/>
+              (MM/DD/YYYY)</b>
             </td>
-            <td class="center" style="width:350px; border-bottom:1px solid; border-left:1px solid;">
-              LIMITS
+            <td class="center" style="width:350px; border-bottom:1px solid; border-left:1px solid; vertical-align:bottom;">
+              <b>LIMITS</b>
             </td>
           </tr>
           <tr>
@@ -409,14 +416,14 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                 @endif
               </div>
             </td>
-            <td style="border-bottom:1px solid; border-right:1px solid;">
+            <td style="width:47px; border-bottom:1px solid; border-right:1px solid;">
               @if ( $gloptionaddl === 'true')
               <input type="checkbox" name="" value="" checked="">
               @else
               <input type="checkbox" name="" value="">
               @endif
             </td>
-            <td style="border-bottom:1px solid; border-right:1px solid;">
+            <td style="width:48px; border-bottom:1px solid; border-right:1px solid;">
               @if ( $gloptionsubr === 'true')
               <input type="checkbox" name="" value="" checked="">
               @else
@@ -498,7 +505,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     </tr>
     <tr>
       <td colspan="2">
-        <table style="width: 100%">
+        <table style="width: 100% !important;">
         <tr>
           <td style="width:42px; border-bottom:1px solid; border-right:1px solid;">
             {{$alinsuranceletter}}
@@ -619,7 +626,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     </tr>
         <tr>
       <td colspan="2">
-        <table style="widht: 100%">
+        <table style="widht: 100% !important;">
         <tr>
           <td style="width:42px; border-bottom:1px solid; border-right:1px solid;">
             {{$ulinsuranceletter}}
@@ -797,35 +804,79 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <td colspan="2">
         <table style="widht: 100%">
         <tr>
-          <td style="width:42px; height: 50px; border-bottom:1px solid;">
-
+          <td style="width:42px; border-bottom:1px solid;">
+            {{$formcontrol->A_C_a_insurance_letter}}<br>
+            {{$formcontrol->A_C_b_insurance_letter}}
           </td>
           <td style="width:250px; border-bottom:1px solid; border-left:1px solid;">
-
+            {{$formcontrol->A_C_a_policy_type}}<br>
+            {{$formcontrol->A_C_b_policy_type}}
           </td>
           <td style="width:47px; border-bottom:1px solid; border-left:1px solid;">
+            @if ($formcontrol->A_C_a_options_add_insurance === 'Additonal insurance')
+            <input type="checkbox" name="" value="" checked=""><br>
+            @else
+            <input type="checkbox" name="" value=""><br>
+            @endif
+            @if ($formcontrol->A_C_b_options_add_insurance === 'Additonal insurance')
+            <input type="checkbox" name="" value="" checked="">
+            @else
             <input type="checkbox" name="" value="">
+            @endif
           </td>
           <td style="width:48px; border-bottom:1px solid; border-left:1px solid;">
+            @if ($formcontrol->A_C_a_options_surrogation === 'Surrogation')
+            <input type="checkbox" name="" value="" checked=""><br>
+            @else
+            <input type="checkbox" name="" value=""><br>
+            @endif
+            @if ($formcontrol->A_C_b_options_surrogation === 'Surrogation')
+            <input type="checkbox" name="" value="" checked="">
+            @else
             <input type="checkbox" name="" value="">
+            @endif
           </td>
           <td style="border-bottom:1px solid; border-left:1px solid;">
-
+            {{$formcontrol->A_C_a_policy_number}}<br>
+            {{$formcontrol->A_C_b_policy_number}}
           </td>
           <td style="width:90px; border-bottom:1px solid; border-left:1px solid;">
+            {{$formcontrol->A_C_a_eff_date}}<br>
+            {{$formcontrol->A_C_b_eff_date}}
           </td>
           <td style="width:90px; border-bottom:1px solid; border-left:1px solid;">
+            {{$formcontrol->A_C_a_exp_date}}<br>
+            {{$formcontrol->A_C_b_exp_date}}
           </td>
           <td style="width:350px; border-bottom:1px solid; border-left:1px solid;">
+            <table>
+              <tr>
+                <td style="width:200px; border-bottom:1px solid;">
+                  COVERAGE LIMITS 1 / DEDUCTIBLE
+                </td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
+                  $ {{$formcontrol->A_C_a_coverage_limits}}
+                </td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid;">
+                  COVERAGE LIMITS 2 / DEDUCTIBLE
+                </td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
+                  $ {{$formcontrol->A_C_b_coverage_limits}}
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
       </table>
       </td>
     </tr>
     <tr>
-      <th colspan="2" style="height:90px; border-bottom:1px solid;">
-        DESCRIPTION OF OPERATIONS / VEHICLES (Atthach ACORD 101, Additional Remarks Schedule, if more space is required)
-      </th>
+      <td colspan="2" style="height:90px; border-bottom:1px solid;">
+        <b>DESCRIPTION OF OPERATIONS / VEHICLES (Atthach ACORD 101, Additional Remarks Schedule, if more space is required)</b><br>
+        {{$formcontrol->description}}
+      </td>
     </tr>
     <tr>
       <th>

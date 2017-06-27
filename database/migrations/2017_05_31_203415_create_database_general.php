@@ -52,7 +52,8 @@ class CreateDatabaseGeneral extends Migration
             $table->json('u_l_options_addl_subr')->nullable();
             /* workers compesation */
             $table->string('W_C_insurance_letter')->nullable();
-            $table->string('W_C_propretor')->nullable();
+            $table->string('W_C_propretor_yes')->nullable();
+            $table->string('W_C_propretor_no')->nullable();
             $table->json('W_C_options_addl_subr')->nullable();
             $table->string('W_C_office')->nullable();
             $table->string('W_C_policy_number')->nullable();
@@ -67,7 +68,8 @@ class CreateDatabaseGeneral extends Migration
             /* additional coverage */
             $table->string('A_C_a_insurance_letter')->nullable();
             $table->string('A_C_a_policy_type')->nullable();
-            $table->string('A_C_a_options_add_insurance_surrogation')->nullable();
+            $table->string('A_C_a_options_add_insurance')->nullable();
+            $table->string('A_C_a_options_surrogation')->nullable();
             $table->string('A_C_a_policy_number')->nullable();
             $table->string('A_C_a_eff_date')->nullable();
             $table->string('A_C_a_exp_date')->nullable();
@@ -75,7 +77,8 @@ class CreateDatabaseGeneral extends Migration
             /* additional coverage 2 */
             $table->string('A_C_b_insurance_letter')->nullable();
             $table->string('A_C_b_policy_type')->nullable();
-            $table->string('A_C_b_options_add_insurance_surrogation')->nullable();
+            $table->string('A_C_b_options_add_insurance')->nullable();
+            $table->string('A_C_b_options_surrogation')->nullable();
             $table->string('A_C_b_policy_number')->nullable();
             $table->string('A_C_b_eff_date')->nullable();
             $table->string('A_C_b_exp_date')->nullable();
