@@ -900,6 +900,17 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       </th>
     </tr>
   </table>
+  <table style="width:95%;">
+  <tr>
+    <th style="font-size:15px !important;">
+      ACORD 25 (2010/05)
+    </th>
+    <th style="text-align:right !important; font-size:15px !important;">
+      © 1988-2010 ACORD CORPORATION.  All rights reserved.
+    </th>
+  </tr>
+</table>
+<center><b style="font-size:15px !important;">The ACORD name and logo are registered marks of ACORD</b></center>
     <!-- ============================================================== -->
     <!-- End Page Content -->
     <!-- ============================================================== -->
