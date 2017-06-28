@@ -30,9 +30,9 @@ Route::get('/home', function () {
 
 
 //Login Controller's
-Route::get('/login', function () {
-  return view('login');
-});
+
+
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::get('/redirect', 'HomeController@redirectURL')->name('redirect');
 Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@authenticate']);
 Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
