@@ -51,132 +51,6 @@
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
               <div class="form-body">
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            User Information
-          </a>
-        </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-          <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                      <input name="name" value="{{$formcontrol->C_I_name}}" type="text" class="form-control"  placeholder="Contact name">
-                  </div>
-          </div>
-          </div>
-        <!--/span-->
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                    <input name="phone" value="{{$formcontrol->C_I_phone}}" type="text" class="form-control" placeholder="Phone number">
-                  </div>
-          </div>
-        </div>
-        <!--/span-->
-    </div>
-    <!--/row-->
-    <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-fax"></i></div>
-                      <input name="fax" value="{{$formcontrol->C_I_fax}}" type="text" class="form-control" placeholder="FAX">
-                  </div>
-          </div>
-          </div>
-        <!--/span-->
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                    <input name="email" value="{{$formcontrol->C_I_email}}" type="text" class="form-control" placeholder="email">
-                  </div>
-          </div>
-        </div>
-        <!--/span-->
-    </div>
-    <!--/row-->
-    <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                      <input name="customer_id" value="{{$formcontrol->C_I_producer_id}}" type="text" class="form-control" placeholder="Producer customer ID number">
-                  </div>
-          </div>
-          </div>
-    </div>
-  </div>
-  </div>
-  </div>
-    <!--/row-->
-  <div class="panel panel-default">
-  <div class="panel-heading" role="tab" id="headingTwo">
-    <h4 class="panel-title">
-      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Insurance information
-      </a>
-    </h4>
-  </div>
-  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-    <div class="panel-body">
-    <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                      <input name="P_I_name" value="{{$formcontrol->P_I_name}}" type="text" class="form-control" placeholder="name">
-                  </div>
-          </div>
-          </div>
-        <!--/span-->
-        <div class="col-md-6">
-          <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
-                    <input name="dba_name" value="{{$formcontrol->P_I_dba_name}}" type="text" class="form-control" placeholder="DBA name">
-                  </div>
-          </div>
-        </div>
-        <!--/span-->
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-                  <div class="input-group">
-                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                      <input name="address" value="{{$formcontrol->P_I_address}}" type="text" class="form-control" placeholder="Address">
-                  </div>
-          </div>
-        </div>
-    </div>
-    <!--/row-->
-    <div class="row">
-      <div class="col-md-4">
-          <div class="form-group">
-            <input name="city" value="{{$formcontrol->P_I_city}}" type="text" class="form-control" placeholder="City">
-          </div>
-      </div>
-      <div class="col-md-4">
-          <div class="form-group">
-            <input name="state" value="{{$formcontrol->P_I_dba_state}}" type="text" class="form-control" placeholder="State">
-          </div>
-      </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <input name="zip_code" value="{{$formcontrol->P_I_dba_zip_code}}" type="text" class="form-control" placeholder="Zip code"> </div>
-        </div>
-    </div>
-  </div>
-</div>
-</div>
 <div class="panel panel-default">
 <div class="panel-heading" role="tab" id="headingThree">
   <h4 class="panel-title">
@@ -185,7 +59,7 @@
     </a>
   </h4>
 </div>
-<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
   <div class="panel-body">
     <div class="row">
         <div class="col-md-6">
@@ -234,6 +108,22 @@
           </div>
         </div>
         <!--/span-->
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input name="I_I_city" type="text" class="form-control" value="{{$user->city}}" placeholder="City">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input name="I_I_state" type="text" class="form-control" value="{{$user->state}}" placeholder="State">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input name="I_I_zip_code" type="text" class="form-control" value="{{$user->zip_code}}" placeholder="Zip code"> </div>
+        </div>
     </div>
     <!--/row-->
     <div class="row">

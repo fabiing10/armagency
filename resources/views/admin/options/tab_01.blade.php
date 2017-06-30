@@ -1237,7 +1237,6 @@
                                         <label class="radio-inline p-0">
                                             <div class="radio radio-info">
                                                 <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance">Additonal insurance
-                                                <label for="radio_options_add2"></label>
                                             </div>
                                         </label>
                                         <label class="radio-inline">
@@ -1297,7 +1296,7 @@
                 <textarea rows="5" cols="100" name="description"></textarea>
 
                 <hr>
-                <input class="btn btn-info" id="sa-params" value="Save"  />
+                <input class="btn btn-info" id="sa-params" value="Save" type="button" />
             </div>
         </div>
     </div>

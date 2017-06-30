@@ -337,7 +337,8 @@ class AdminController extends Controller
           /* additional coverage */
           $formcontrol->A_C_a_insurance_letter = $request->A_C_a_insurance_letter;
           $formcontrol->A_C_a_policy_type = $request->A_C_a_policy_type;
-          $formcontrol->A_C_a_options_add_insurance_surrogation = $request->A_C_a_options_add_insurance_surrogation;
+          $formcontrol->A_C_a_options_add_insurance = $request->A_C_a_options_add_insurance;
+          $formcontrol->A_C_a_options_surrogation = $request->A_C_a_options_surrogation;
           $formcontrol->A_C_a_policy_number = $request->A_C_a_policy_number;
           $formcontrol->A_C_a_eff_date = $request->A_C_a_eff_date;
           $formcontrol->A_C_a_exp_date = $request->A_C_a_exp_date;
@@ -345,7 +346,8 @@ class AdminController extends Controller
           /* additional coverage 2 */
           $formcontrol->A_C_b_insurance_letter = $request->A_C_b_insurance_letter;
           $formcontrol->A_C_b_policy_type = $request->A_C_b_policy_type;
-          $formcontrol->A_C_b_options_add_insurance_surrogation = $request->A_C_b_options_add_insurance_surrogation;
+          $formcontrol->A_C_b_options_add_insurance = $request->A_C_b_options_add_insurance;
+          $formcontrol->A_C_b_options_surrogation = $request->A_C_b_options_surrogation;
           $formcontrol->A_C_b_policy_number = $request->A_C_b_policy_number;
           $formcontrol->A_C_b_eff_date = $request->A_C_b_eff_date;
           $formcontrol->A_C_b_exp_date = $request->A_C_b_exp_date;
@@ -406,14 +408,9 @@ class AdminController extends Controller
         $FormControl = FormControl::find($form_id);
         return view('admin.edit-certificate')->with('user',$user)->with('formcontrol',$FormControl);
       }
-      public function userprofile (Request $request, $id){
+      public function userprofile ($id){
         $user = User::find($id);
-        $formQuery = FormControl::where('userId','=',$user->id)->get();
-        foreach($formQuery as $f){
-          $form_id = $f->id;
-        }
-        $FormControl = FormControl::find($form_id);
-        return view('admin.user-profile')->with('user',$user)->with('formcontrol',$FormControl);
+        return view('admin.user-profile')->with('user',$user);
       }
       public function edituserprofile (Request $request, $id){
         $user = User::find($id);
@@ -422,31 +419,18 @@ class AdminController extends Controller
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
         $user->dba_name = $request->I_I_dba_name;
+        $user->city = $request->I_I_city;
+        $user->state = $request->I_I_state;
+        $user->zip_code = $request->I_I_zip_code;
         $user->userType = "user";
-        $user->password = bcrypt($request->password_insured);
+        if($request->password_insured != "" || $request->password_insured_repeat != ""){
+          if($request->password_insured == $request->password_insured_repeat){
+            $user->password = bcrypt($request->password_insured);
+          }
+        }
         $user->save();
 
-        $formQuery = FormControl::where('userId','=',$user->id)->get();
-        foreach($formQuery as $f){
-          $form_id = $f->id;}
-          $formcontrol = FormControl::find($form_id);
-          $formcontrol->userId = $user->id;
-          /* contact info agency */
-          $formcontrol->C_I_name = $request->name;
-          $formcontrol->C_I_phone = $request->phone;
-          $formcontrol->C_I_email = $request->email;
-          $formcontrol->C_I_fax = $request->fax;
-          $formcontrol->C_I_producer_id = $request->customer_id;
-          /* producer information */
-          $formcontrol->P_I_name = $request->P_I_name;
-          $formcontrol->P_I_dba_name = $request->dba_name;
-          $formcontrol->P_I_address = $request->address;
-          $formcontrol->P_I_city = $request->city;
-          $formcontrol->P_I_dba_state = $request->state;
-          $formcontrol->P_I_dba_zip_code = $request->zip_code;
-          $formcontrol->save();
-
-          return redirect('admin');
+        return redirect('admin');
           }
 
       public function getuseradmin (){
@@ -749,7 +733,8 @@ class AdminController extends Controller
           /* additional coverage */
           $formcontrol->A_C_a_insurance_letter = $request->A_C_a_insurance_letter;
           $formcontrol->A_C_a_policy_type = $request->A_C_a_policy_type;
-          $formcontrol->A_C_a_options_add_insurance_surrogation = $request->A_C_a_options_add_insurance_surrogation;
+          $formcontrol->A_C_a_options_add_insurance = $request->A_C_a_options_add_insurance;
+          $formcontrol->A_C_a_options_surrogation = $request->A_C_a_options_surrogation;
           $formcontrol->A_C_a_policy_number = $request->A_C_a_policy_number;
           $formcontrol->A_C_a_eff_date = $request->A_C_a_eff_date;
           $formcontrol->A_C_a_exp_date = $request->A_C_a_exp_date;
@@ -757,7 +742,8 @@ class AdminController extends Controller
           /* additional coverage 2 */
           $formcontrol->A_C_b_insurance_letter = $request->A_C_b_insurance_letter;
           $formcontrol->A_C_b_policy_type = $request->A_C_b_policy_type;
-          $formcontrol->A_C_b_options_add_insurance_surrogation = $request->A_C_b_options_add_insurance_surrogation;
+          $formcontrol->A_C_b_options_add_insurance = $request->A_C_b_options_add_insurance;
+          $formcontrol->A_C_b_options_surrogation = $request->A_C_b_options_surrogation;
           $formcontrol->A_C_b_policy_number = $request->A_C_b_policy_number;
           $formcontrol->A_C_b_eff_date = $request->A_C_b_eff_date;
           $formcontrol->A_C_b_exp_date = $request->A_C_b_exp_date;
