@@ -67,7 +67,7 @@
 
       <div class="new-login-box">
                 <div class="white-box contentlogin" style="margin-top:130px;">
-                    <h1 class="m-b-0 text-center login">Admin login</h1>
+                    <h1 class="m-b-0 text-center login">Login</h1>
                     <center><img src="{{URL::asset('assets/plugins/images/logo3.png')}}" alt="home" style="width:25%; display:none;" class="light-logo logo-login" /></center>
                     @if (Session::has('error_message'))
                         <div class="alert alert-error">{{ Session::get('error_message') }}</div>
