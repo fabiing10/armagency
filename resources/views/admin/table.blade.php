@@ -1,7 +1,7 @@
 
 
   <style media="screen">
-  html{margin:20px 35px}
+  html{margin:10px 35px}
   * {
     line-height: 10px !important;
     font-size: 11px !important;
@@ -159,7 +159,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
 
   </table>
   <div class="row">
-  <table style="width:1030px !important; border:1px solid;">
+  <table style="width:1040px !important; border:1px solid;">
 
     <tr>
       <th colspan="2" style="border-bottom:1px solid; font-size:15px !important; padding-left: 5px!important; padding-right:5px !important;">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
@@ -173,7 +173,8 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
         {{$formcontrol->P_I_address}}<br>
         {{$formcontrol->P_I_dba_state}},{{$formcontrol->P_I_city}},TX {{$formcontrol->P_I_dba_zip_code}}
       </td>
-          <td><table border="0">
+          <td style="margin:0px !important; padding:0px !important;">
+        <table border="1" style="">
           <tr>
             <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             CONTACT NAME:
@@ -333,20 +334,18 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <td colspan="2">
         <table>
           <tr>
-            <td class="center l-height15" style="line-height:10px !important; width:42px; !important; border-bottom: 1px solid !important;">
-              <b>INSR<br/>
+            <td class="center l-height15" width="15" style="line-height:5px!important;border-bottom: 1px solid !important; font-size:10px !important;">
+              <b style="font-size:10px !important;">INSR<br/>
               LTR</b>
             </td>
             <td class="center" style="width:250px; border-bottom:1px solid; border-left:1px solid; vertical-align:bottom;">
               <b>TYPE OF INSURANCE</b>
             </td>
-            <td class="center l-height15" style="width:42px; border-bottom:1px solid; border-left:1px solid; vertical-align:bottom;">
-              <b>ADDL<br/>
-              INSR</b>
+            <td class="center l-height15" width="15" style="width:10px;border-bottom:1px solid; border-left:1px solid;padding:0px !important;margin:0px !important;">
+              <b>ADDL</b>
             </td>
-            <td class="center l-height15" style="width:42px; border-bottom:1px solid; border-left:1px solid;">
-              <b>SUBR<br/>
-              WVD</b>
+            <td class="center l-height15" width="15" style="border-bottom:1px solid; border-left:1px solid;padding:0px !important;margin:0px !important;">
+              <b>SUBR</b>
             </td>
             <td class="center" style="border-bottom:1px solid; border-left:1px solid;">
               <b>POLICY NUMBER</b>

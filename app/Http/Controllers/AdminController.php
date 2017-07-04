@@ -375,8 +375,13 @@ class AdminController extends Controller
           if($request->A_C_a_exp_date!= null){
             array_push($fechas,$request->A_C_a_exp_date);
           }
-          asort($fechas);
-          $fecha_exp = array_values($fechas)[0];
+          $count = count($fechas);
+          if($count > 0){
+            asort($fechas);
+            $fecha_exp = array_values($fechas)[0];
+          }else{
+            $fecha_exp = '00/00/0000';
+          }
 
           $formcontrol->exp_date = $fecha_exp;
           $formcontrol->save();
@@ -395,7 +400,7 @@ class AdminController extends Controller
         view()->share('formcontrol',$FormControl);
         view()->share('user',$user);
         $pdf = PDF::loadView('admin.table');
-        $pdf->setOptions(['dpi' => 135, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
         return $pdf->stream();
         //return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
 

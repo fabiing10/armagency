@@ -41,7 +41,7 @@
           <div class="col-sm-12">
             <div class="row" style="padding-bottom:10px;">
               <div class="col-sm-6">
-                <h3 class="box-title m-b-0">Certificates Summary</h3>
+                <h3 class="box-title m-b-0">Client Summary</h3>
               </div>
               </div>
                   <div class="white-box">
