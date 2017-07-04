@@ -63,6 +63,7 @@ class AdminController extends Controller
       }
 
       public function create_certificate (Request $request){
+
         /* user */
         $user = new User();
         $user->name = $request->name_insured;
@@ -355,8 +356,6 @@ class AdminController extends Controller
           /* description */
           $formcontrol->description = $request->description;
 
-
-
           $fechas = array();
           if($request->g_l_exp_date != null){
             array_push($fechas,$request->g_l_exp_date);
@@ -376,7 +375,10 @@ class AdminController extends Controller
           if($request->A_C_a_exp_date!= null){
             array_push($fechas,$request->A_C_a_exp_date);
           }
-          $formcontrol->exp_date = $fechas[0];
+          asort($fechas);
+          $fecha_exp = array_values($fechas)[0];
+
+          $formcontrol->exp_date = $fecha_exp;
           $formcontrol->save();
           return redirect('admin');
       }
@@ -770,11 +772,14 @@ class AdminController extends Controller
           if($request->A_C_a_exp_date!= null){
             array_push($fechas,$request->A_C_a_exp_date);
           }
-          $formcontrol->exp_date = $fechas[0];
 
 
+          asort($fechas);
+          $fecha_exp = array_values($fechas)[0];
 
+          $formcontrol->exp_date = $fecha_exp;
           $formcontrol->save();
+
 
           return redirect('admin');
       }
