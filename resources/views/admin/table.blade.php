@@ -1,6 +1,7 @@
 
 
   <style media="screen">
+  html{margin:20px 35px}
   * {
     line-height: 10px !important;
     font-size: 11px !important;
@@ -149,13 +150,16 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
 <!-- Wrapper -->
 <!-- ============================================================== -->
 
-  <table style="width:100%">
-    <td colspan="2" ><h1 style="text-align:center; font-size:35px !important; vertical-align:bottom;">CERTIFICATE OF LIABILITY INSURANCE</h1></td>
-    <td style="width:40px; text-align:right !important; padding-right:80px;"> <p style="border-top:1px solid; border-left:1px solid; border-right:1px solid; padding:10px;"> Date:{{$formcontrol->exp_date}} <p></td>
+  <table style="position:relative;top:15px;">
+    <td colspan="2" >
+      <h1 style="text-align:center; font-size:25px !important; vertical-align:bottom;">CERTIFICATE OF LIABILITY INSURANCE</h1>
+    </td>
+    <td style="width:40px; text-align:right !important; padding-right:80px;">
+      <p style="border-top:1px solid; border-left:1px solid; border-right:1px solid; padding:10px;"> Date:{{$formcontrol->exp_date}} <p></td>
 
   </table>
   <div class="row">
-  <table style="width:90% !important; border:1px solid;">
+  <table style="width:1030px !important; border:1px solid;">
 
     <tr>
       <th colspan="2" style="border-bottom:1px solid; font-size:15px !important; padding-left: 5px!important; padding-right:5px !important;">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
@@ -668,7 +672,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             @if ($uloptionaddl === 'true')
             <input type="checkbox" name="" value="" checked="">
             @else
-            <input type="checkbox" name="" value="" checked="">
+            <input type="checkbox" name="" value="" >
             @endif
           </td>
           <td style="width:48px; border-bottom:1px solid; border-left:1px solid;">
@@ -873,7 +877,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="height:90px; border-bottom:1px solid;">
+      <td colspan="2" style="height:50px; border-bottom:1px solid;">
         <b>DESCRIPTION OF OPERATIONS / VEHICLES (Atthach ACORD 101, Additional Remarks Schedule, if more space is required)</b><br>
         {{$formcontrol->description}}
       </td>

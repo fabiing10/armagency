@@ -19,7 +19,7 @@ class AdminController extends Controller
 
         $users = DB::table('users as u')
         ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
-        ->select('fc.C_I_producer_id','u.name','fc.W_C_exp_date','fc.status','u.id')
+        ->select('fc.C_I_producer_id','u.name','u.email','fc.exp_date','fc.status','u.id')
         ->where('u.userType', '=', 'user')
         ->get();
         return view('admin.index')->with('users',$users);
@@ -395,7 +395,7 @@ class AdminController extends Controller
         view()->share('formcontrol',$FormControl);
         view()->share('user',$user);
         $pdf = PDF::loadView('admin.table');
-        $pdf->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        $pdf->setOptions(['dpi' => 135, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
         return $pdf->stream();
         //return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
 

@@ -52,8 +52,9 @@
                               <thead>
                                   <tr>
                                       <th>Name</th>
+                                      <th>Email</th>
                                       <th>Exp date</th>
-                                      <th>insurance #</th>
+
                                       <th>status</th>
                                       <th>Manage</th>
                                   </tr>
@@ -62,8 +63,8 @@
                                 @foreach ($users as $user)
                                   <tr>
                                       <td>{{$user->name}}</td>
-                                      <td>{{$user->W_C_exp_date}}</td>
-                                      <td>{{$user->C_I_producer_id}}</td>
+                                      <td>{{$user->email}}</td>
+                                      <td>{{$user->exp_date}}</td>
                                       <td>{{$user->status}}</td>
                                       <td><button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
                                         <button onclick="window.location.href='/admin/edit-certificate/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
