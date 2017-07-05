@@ -485,7 +485,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="g_l_eff_date" type="text" value="{{$gleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="g_l_eff_date" type="text" value="{{$gleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                 </div>
@@ -493,7 +493,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="g_l_exp_date" type="text" value="{{$glexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon" ><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="g_l_exp_date" type="text" value="{{$glexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon" ><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                   </div>
@@ -704,7 +704,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="a_l_eff_date" type="text" value="{{$aleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="a_l_eff_date" type="text" value="{{$aleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                 </div>
@@ -712,7 +712,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="a_l_exp_date" type="text" value="{{$alexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="a_l_exp_date" type="text" value="{{$alexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                   </div>
@@ -908,7 +908,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="u_l_eff_date" type="text" value="{{$uleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="u_l_eff_date" type="text" value="{{$uleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                 </div>
@@ -916,7 +916,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="u_l_exp_date" type="text" value="{{$ulexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="u_l_exp_date" type="text" value="{{$ulexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                   </div>
@@ -1109,7 +1109,7 @@
                               <div class="form-group">
                                 <div class="example">
                                     <div class="input-group">
-                                        <input name="W_C_eff_date" type="text" value="{{$formcontrol->W_C_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                        <input name="W_C_eff_date" type="text" value="{{$formcontrol->W_C_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                 </div>
                               </div>
                             </div>
@@ -1117,7 +1117,7 @@
                               <div class="form-group">
                                 <div class="example">
                                     <div class="input-group">
-                                        <input name="W_C_exp_date" type="text" value="{{$formcontrol->W_C_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="dd/mm/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                        <input name="W_C_exp_date" type="text" value="{{$formcontrol->W_C_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                 </div>
                               </div>
                               </div>

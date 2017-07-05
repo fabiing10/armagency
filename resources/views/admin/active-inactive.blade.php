@@ -126,6 +126,7 @@
 
     //examples
     SweetAlert.prototype.init = function() {
+      
       //Parameter
       $('#sa-params-cancel').click(function(){
         console.log("Click")
