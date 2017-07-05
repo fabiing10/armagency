@@ -249,5 +249,9 @@ button.confirm {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 5px !important;
-    float: right;
+}
+.wizard-buttons > a.disabled {
+    color: #525252 !important;
+    border-color: gainsboro !important;
+    background-color: gainsboro;
 }

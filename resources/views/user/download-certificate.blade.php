@@ -1,13 +1,14 @@
 
 
   <style media="screen">
+  html{margin:10px 35px}
   * {
-    line-height: 12px;
+    line-height: 9px !important;
     font-size: 11px !important;
 
   }
   table, th, td {
-    border: 1px solid black;
+    border: 0px solid black;
     border-collapse: collapse;
     }
     th, td {
@@ -19,9 +20,16 @@
     table{
       width: 100%;
     }
-
+    .m-0{
+      margin: 0px !important;
+    }
+    .p-0{
+      padding: 0px !important;
+    }
     body{
       background: white !important;
+      margin: 0px !important;
+      padding: 0px !important;
     }
     .center{
       text-align: center;
@@ -31,9 +39,8 @@
     }
     .form-control {
     display: -webkit-inline-box !important;
-    width: 80% !important;
+    width: 95% !important;
     height: 34px !important;
-    padding: 6px 12px !important;
   }
   </style>
 
@@ -147,64 +154,78 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
 <!-- ============================================================== -->
 <!-- Wrapper -->
 <!-- ============================================================== -->
+
+  <table style="position:relative;top:15px;">
+    <td width="100">
+      <img src="../public/assets/plugins/images/acord.png" width="150" alt="" class="light-logo" />
+    <td style="vertical-align:bottom;">
+      <h1 style="text-align:center; font-size:30px !important; vertical-align:bottom">CERTIFICATE OF LIABILITY INSURANCE</h1>
+    </td>
+    <td style="width:80px; text-align:right !important; padding-right:5px;">
+      <p style="border-top:1px solid; border-left:1px solid; border-right:1px solid; padding:20px;"> Date:{{$formcontrol->exp_date}} <p>
+    </td>
+
+  </table>
   <div class="row">
-  <table style="width:50%">
+  <table style="width:1040px !important; border:1px solid;">
+
     <tr>
-      <th colspan="2">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
+      <th colspan="2" style="border-bottom:2px solid; font-size:15px !important; padding-left: 5px!important; padding-right:5px !important;">THIS CERTIFICATE IS ISSUED AS A MATTER OF INFORMATION ONLY AND CONFERS NO RIGHTS UPON THE CERTIFICATE HOLDER. THIS CERTIFICATE DOES NOT AFFIRMATIVELY OR NEGATIVELY AMEND, EXTEND OR ALTER THE COVERAGE AFFORDED BY THE POLICIES  BELOW. THIS CERTIFICATE OF INSURANCE DOES NOT CONSTITUTE A CONTRACT BETWEEN THE ISSUING INSURER(S), AUTHORIZED REPRESENTATIVE OR PRODUCER, AND THE CERTIFICATE HOLDER.</th>
     </tr>
     <tr>
-      <td colspan="2">IMPORTANT: if the certificate holder is an ADDITIONAL INSURED. the policy(ies) must be endorsed. if SUBROGATION IS WAIVED, subject to the terms and conditions of the policy, certain policies may require and endorsement. A statement on this certificate does not confer rights to the certificate holder in lieu of such endorsement(s).</td>
+      <td colspan="2" style="border-bottom:2px solid; font-weight:bold; font-size:15px !important;" >IMPORTANT: if the certificate holder is an ADDITIONAL INSURED. the policy(ies) must be endorsed. if SUBROGATION IS WAIVED, subject to the terms and conditions of the policy, certain policies may require and endorsement. A statement on this certificate does not confer rights to the certificate holder in lieu of such endorsement(s).</td>
     </tr>
       <tr>
-      <td style=" width: 200px !important; ">PRODUCDER<br>
+      <td style=" width: 500px !important; border-bottom: 1px solid; border-right:1px solid;"><b>PRODUCDER</b><br>
         {{$formcontrol->P_I_name}}<br>
         {{$formcontrol->P_I_address}}<br>
         {{$formcontrol->P_I_dba_state}},{{$formcontrol->P_I_city}},TX {{$formcontrol->P_I_dba_zip_code}}
       </td>
-          <td><table border="0">
+        <td style="margin:0px !important; padding:0px !important;">
+        <table border="1" style="">
           <tr>
-            <td class="l-height15">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             CONTACT NAME:
             </td>
-            <td colspan="3">
+            <td colspan="3" style="border-bottom:1px solid !important;">
               {{$formcontrol->C_I_name}}
             </td>
           </tr>
           <tr>
-            <td class="l-height15">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             PHONE(A/C, No, Ext):
             </td>
-            <td>
+            <td style="border-bottom:1px solid !important;">
             {{$formcontrol->C_I_phone}}
             </td>
-            <td class="l-height15">
+            <td class="l-height15" style="border-bottom:1px solid !important; border-left:1px solid; font-weight:bold;" >
             FAX (A/C, No):
             </td>
-            <td>
+            <td style="border-bottom:1px solid !important;">
             {{$formcontrol->C_I_fax}}
             </td>
           </tr>
           <tr>
-            <td class="l-height15">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             E-MAIL ADDRESS:
             </td>
-            <td colspan="3">
+            <td colspan="3" style="border-bottom:1px solid !important;">
             {{$formcontrol->C_I_email}}
             </td>
           </tr>
           <tr>
-            <td class="l-height15">
+            <td class="l-height15" style="border-bottom:1px solid !important; font-weight:bold;">
             PRODUCER CUSTOMER ID #:
             </td>
-            <td colspan="3">
+            <td colspan="3" style="border-bottom:1px solid !important;">
             {{$formcontrol->C_I_producer_id}}
             </td>
           </tr>
           </table></td>
     </tr>
     <tr>
-    <td>
-      INSURED<br>
+    <td style="border-bottom:1px solid !important; border-right:1px solid;">
+      <b>INSURED</b><br>
       {{$user->name}}<br>
       {{$user->address}}<br>
       {{$user->phone}}
@@ -230,256 +251,253 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <td>
     <table>
     <tr>
-            <td colspan="2">
+            <td colspan="2" style="border-bottom:1px solid !important; width:350px; font-weight:bold; vertical-align:bottom; padding:0px;">
             <center>INSURER(S) AFFORDING COVERAGE</center>
             </td>
-            <td>
-            <center>NAIC #</center><br/>
+            <td style="border-bottom:1px solid !important; width:100px; border-left:1px solid; font-weight:bold; vertical-align:bottom; padding:0px;">
+            <center>NAIC #</center>
             </td>
     </tr>
     <tr>
-      <td colspan="2">
-      INSURER A: {{$Ensured_a}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER A:
       </td>
-      <td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_a}}</td>
+      <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_a}}
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-      INSURER B: {{$Ensured_b}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER B:
       </td>
-      <td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_b}}</td>
+      <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_b}}
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-      INSURER C: {{$Ensured_c}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER C:
       </td>
-      <td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_c}}</td>
+      <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_c}}
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-      INSURER D: {{$Ensured_d}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER D:
       </td>
-      <td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_d}}</td>
+      <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_d}}
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-      INSURER E: {{$Ensured_e}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER E:
       </td>
-      <td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_e}}</td>
+      <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_e}}
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-      INSURER F: {{$Ensured_f}}
+      <td style="border-bottom:1px solid !important; font-weight:bold;">
+      INSURER F:
       </td>
-      <td>
+      <td style="border-bottom:1px solid !important;">{{$Ensured_f}}</td>
+      <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_f}}
       </td>
     </tr>
     </table>
     </td>
     </tr>
+  </table>
+  <table>
     <tr>
       <td colspan="2">
       <table>
       <tr>
       <td>
-      COVERAGES
+      <b>COVERAGES</b>
       </td>
       <td>
-      CERTIFICATE NUMBER:
+      <b>CERTIFICATE NUMBER:</b>
       <label>ARMINS0008723</label>
       </td>
       <td>
-      REVISION NUMBER
+      <b>REVISION NUMBER</b>
       </td>
       </tr>
       </table>
     </td>
     </tr>
     <tr>
-      <th colspan="2">
+      <td colspan="2" style=" border:1px solid !important; border-bottom:1px solid !important; font-size:15px !important; margin:0px !important; padding:0px !important;">
       THIS IS TO CERTIFY THAT THE POLICES OF INSURANCE LISTED BELOW BEEN ISSUED TO THE INSURED NAMED ABOVE FOR THE POLICY PERIOD INDICATED. NOTWITHSTANDING ANY REQUIREMENT, TERM OR CONDITION OF ANY CONTACT OR OTHER DOCUMENT WITH RESPECT TO WHICH THIS CERTIFICATE MAY BE ISSUED OR MAY PERTAIN, THE INSURANCE AFFORDED BY THE POLICIES DESCRIBED HERE IN IS SUBJECT TO ALL THE TERMS, EXCLUSIONS AND CONDITIONS OF SUCH POLICIES. LIMITS SHOWN MAY HAVE BEEN RECUDED BY PAID CLAIMS.
-    </th>
+    </td>
     </tr>
-      <tr>
-      <td colspan="2">
-        <table>
+  </table>
+      <table>
           <tr>
-            <td class="center l-height15" style="width:42px; !important">
-              INSR<br/>
-              LTR
+            <td class="center l-height15" width="15" style="border-bottom:2px solid !important; border-left:1px solid; line-height:5px!important; font-size:10px !important;">
+              <b style="font-size:10px !important;">INSR<br/>
+              LTR</b>
             </td>
-            <td class="center" style="width:250px;">
-              TYPE OF INSURANCE
+            <td class="center" style="border-bottom:2px solid !important; width:250px; border-left:1px solid; vertical-align:bottom;">
+              <b>TYPE OF INSURANCE</b>
             </td>
-            <td class="center l-height15" style="width:42px;">
-              ADDL<br/>
-              INSR
+            <td class="center l-height15" width="15" style="width:15px; border-bottom:2px solid !important; width:10px; border-left:1px solid;padding:0px !important;margin:0px !important;">
+              <b>ADDL</b>
             </td>
-            <td class="center l-height15" style="width:42px;">
-              SUBR<br/>
-              WVD
+            <td class="center l-height15" width="15" style="width:15px; border-bottom:2px solid !important; border-left:1px solid;padding:0px !important;margin:0px !important;">
+              <b>SUBR</b>
             </td>
-            <td class="center">
-              POLICY NUMBER
+            <td class="center" style="border-bottom:2px solid !important; border-left:1px solid;">
+              <b>POLICY NUMBER</b>
             </td>
-            <td class="center l-height15" style="width:110px;">
-              POLICY EFF<br/>
-              (MM/DD/YYYY)
+            <td class="center l-height15" style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
+              <b>POLICY EFF<br/>
+              (MM/DD/YYYY)</b>
             </td>
-            <td class="center l-height15" style="width:110px;">
-              POLICY EXP<br/>
-              (MM/DD/YYYY)
+            <td class="center l-height15" style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
+              <b>POLICY EXP<br/>
+              (MM/DD/YYYY)</b>
             </td>
-            <td class="center" style="width:350px;">
-              LIMITS
+            <td class="center" style="width:290px; border-bottom:2px solid !important; border-left:1px solid; border-right:1px solid; vertical-align:bottom;">
+              <b>LIMITS</b>
             </td>
           </tr>
           <tr>
-            <td>
+            <td style="border:1px solid; border-bottom:2px solid !important;">
               {{$glinsuranceletter}}
             </td>
-            <td>
+            <td style="border-bottom:2px solid !important; border-right:1px solid;">
               <b>GENERAL LIABILITY</b><br>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 @if ( $gloptioncommercial === 'true')
-                  <input type="checkbox" name="" value="" checked=""> COMMERCIAL GENERAL LIABILITY<br/>
+                  <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> COMMERCIAL GENERAL LIABILITY<br/>
                 @else
-                  <input type="checkbox" name="" value=""> COMMERCIAL GENERAL LIABILITY<br/>
+                  <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> COMMERCIAL GENERAL LIABILITY<br/>
                 @endif
               </div>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 @if ( $gloptionclaims_made === 'true')
-                <input type="checkbox" name="" value="" checked=""> CLAIMS-MADE<br/>
+                <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> CLAIMS-MADE<br/>
                 @else
-                <input type="checkbox" name="" value=""> CLAIMS-MADE<br/>
+                <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> CLAIMS-MADE<br/>
                 @endif
               </div>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 @if ( $gloptionoccur === 'true')
-                <input type="checkbox" name="" value="" checked=""> OCCUR<br/>
+                <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> OCCUR<br/>
                 @else
-                <input type="checkbox" name="" value=""> OCCUR<br/>
+                <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> OCCUR<br/>
                 @endif
               </div>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 @if ($glother2 === 'true')
-                <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" value="{{$glotherinput2}}"><br/>
+                <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> {{$glotherinput2}}<br/>
                 @else
-                <input type="checkbox" name="" value=""> <input name="" type="text" class="form-control" placeholder=""><br/>
+                <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /><br>
                 @endif
               </div>
-              <div class="row">
-                @if ($glother2 === 'true')
-                <input type="checkbox" name="" value="" checked=""> <input name="" type="text" class="form-control" value="{{$glotherinput2}}"><br/>
-                @else
-                <input type="checkbox" name="" value=""> <input name="" type="text" class="form-control" placeholder=""><br/>
-                @endif
-              </div>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 GEN'L AGGREGATE LIMIT APPLIES PER:<br>
                 @if ( $gloptionpolicy === 'true')
-                <input type="checkbox" name="" value="" checked=""> POLICY<br>
+                <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> POLICY<br>
                 @else
-                <input type="checkbox" name="" value=""> POLICY<br>
+                <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> POLICY<br>
                 @endif
               </div>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 @if ( $gloptionpolicy === 'true')
-                <input type="checkbox" name="" value="" checked=""> PROJECT<br>
+                <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> PROJECT<br>
                 @else
-                <input type="checkbox" name="" value=""> PROJECT<br>
+                <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> PROJECT<br>
                 @endif
               </div>
-              <div class="row">
+              <div class="row" style="vertical-align:middle;">
                 @if ( $gloptionloc === 'true')
-                <input type="checkbox" name="" value="" checked=""> LOC<br>
+                <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> LOC<br>
                 @else
-                <input type="checkbox" name="" value=""> LOC<br>
+                <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> LOC<br>
                 @endif
               </div>
             </td>
-              {{$glpolicynumber}}
-            <td>
+            <td style="border-bottom:2px solid !important; border-right:1px solid;">
               @if ( $gloptionaddl === 'true')
-              <input type="checkbox" name="" value="" checked="">
+              <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo p-0 m-0" />
               @else
-              <input type="checkbox" name="" value="">
+              <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo p-0 m-0" />
               @endif
             </td>
-            <td>
+            <td style="border-bottom:2px solid !important; border-right:1px solid;">
               @if ( $gloptionsubr === 'true')
-              <input type="checkbox" name="" value="" checked="">
+              <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
               @else
-              <input type="checkbox" name="" value="">
+              <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
               @endif
             </td>
-            <td>
+            <td style="border-bottom:2px solid !important; border-right:1px solid; text-align:center;">
               {{$glpolicynumber}}
             </td>
-            <td>
+            <td style="border-bottom:2px solid !important; border-right:1px solid;">
               {{$gleffdate}}
             </td>
-            <td>
+            <td style="border-bottom:2px solid !important; border-right:1px solid;">
               {{$glexpdate}}
             </td>
-            <td>
-              <table>
+            <td style="border-bottom:2px solid !important; margin:0px !important; padding:0px !important;">
+              <table style="border-right:1px solid !important;">
                 <tr>
-                  <td style="width:200px;">
+                  <td style="width:135px !important; border-bottom:1px solid;">
                     EACH OCURRENCE
                   </td>
-                  <td>
+                  <td style="width:135px !important; border-bottom:1px solid; border-left:1px solid;">
                     $ {{$gleachocurrence}}
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td style="border-bottom:1px solid;">
                     DAMAGE TO RENTED PREMISES(Ea ocurrence)
                   </td>
-                  <td>
+                  <td style="border-bottom:1px solid; border-left:1px solid;">
                     $ {{$glrentedpermises}}
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td style="border-bottom:1px solid;">
                     MED EXP(Amy one person)
                   </td>
-                  <td>
+                  <td style="border-bottom:1px solid; border-left:1px solid;">
                     $ {{$glmedicalexpenses}}
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td style="border-bottom:1px solid;">
                     PERSONAL & ADV INJURY
                   </td>
-                  <td>
+                  <td style="border-bottom:1px solid; border-left:1px solid;">
                     $ {{$glpersonaladv}}
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td style="border-bottom:1px solid;">
                     GENERAL AGGREGATE
                   </td>
-                  <td>
+                  <td style="border-bottom:1px solid; border-left:1px solid;">
                     $ {{$glgeneralaggregate}}
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td style="border-bottom:1px solid;">
                     PRODUCTS-COMPO OP AGG
                   </td>
-                  <td>
+                  <td style="border-bottom:1px solid; border-left:1px solid;">
                     $ {{$glproductcomp}}
                   </td>
                 </tr>
@@ -487,7 +505,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   <td>
                       {{$glotherinput}}
                   </td>
-                  <td>
+                  <td style="border-left:1px solid;">
                     $ {{$glother}}
                   </td>
                 </tr>
@@ -495,120 +513,116 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             </td>
           </tr>
         </table>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <table style="width: 100%">
+        <table>
         <tr>
-          <td style="width:42px;">
+          <td width="15" style="border:1px solid; border-bottom:2px solid !important;">
             {{$alinsuranceletter}}
           </td>
-          <td style="width:250px;">
+          <td style="width:250px; border-bottom:2px solid !important;" >
             <b>AUTOMOBILE LIABILITY<br>
             @if ($aloptionanyauto === 'true')
-            <input type="checkbox" name="" value="" checked=""> ANY AUTO<br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> ANY AUTO<br>
             @else
-            <input type="checkbox" name="" value=""> ANY AUTO<br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> ANY AUTO<br>
             @endif
             @if ($aloptionallowned === 'true')
-            <input type="checkbox" name="" value="" checked=""> ALL OWNED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> ALL OWNED AUTOS<br>
             @else
-            <input type="checkbox" name="" value=""> ALL OWNED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> ALL OWNED AUTOS<br>
             @endif
             @if ($aloptionsheduled === 'true')
-            <input type="checkbox" name="" value="" checked=""> SHEDULED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> SHEDULED AUTOS<br>
             @else
-            <input type="checkbox" name="" value=""> SHEDULED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> SHEDULED AUTOS<br>
             @endif
             @if ($aloptionalhiredautos === 'true')
-            <input type="checkbox" name="" value="" checked=""> HIRED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> HIRED AUTOS<br>
             @else
-            <input type="checkbox" name="" value=""> HIRED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> HIRED AUTOS<br>
             @endif
             @if ($aloptionalownedautos === 'true')
-            <input type="checkbox" name="" value="" checked=""> NON-OWNED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> NON-OWNED AUTOS<br>
             @else
-            <input type="checkbox" name="" value=""> NON-OWNED AUTOS<br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> NON-OWNED AUTOS<br>
             @endif
             @if ($aloptionother === 'true')
-            <input type="checkbox" name="" value="" checked=""> {{$aloptionotherinput}}
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> {{$aloptionotherinput}}
             @else
-            <input type="checkbox" name="" value="">
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="width:47px;">
+          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid; border-right:1px solid;">
             @if ($aloptionaddl === 'true')
-            <input type="checkbox" name="" value="" checked="">
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
-            <input type="checkbox" name="" value="">
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="width:48px;">
+          <td style="width:10px; border-bottom:2px solid !important; border-right:1px solid;">
             @if ($aloptionsubr === 'true')
-            <input type="checkbox" name="" value="" checked="">
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
-            <input type="checkbox" name="" value="">
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td>
+          <td style="border-bottom:2px solid !important; border-right:1px solid; text-align:center;">
             {{$alpolicynumber}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px !important; border-bottom:2px solid !important; border-right:1px solid;">
             {{$aleffdate}}
           </td>
-          <td style="width:110px;">
+          <td style=" width:83px !important; border-bottom:2px solid !important; border-right:1px solid;">
             {{$alexpdate}}
           </td>
-          <td style="width:350px;">
+          <td style="width:300px !important; border-right:1px solid; border-bottom:2px solid !important; margin:0px !important; padding:0px !important;">
             <table>
               <tr>
-                <td style="width:200px;">
+                <td style="width:135px !important; border-bottom:1px solid;">
                   COMBINED SINGLE LIMIT<br/>
                   (EA accident)
                 </td>
-                <td>
+                <td style="width:135px !important; border-left:1px solid; border-bottom:1px solid;">
                   $ {{$alcombinedsingle}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   BODILY INJURY(Per person)
                 </td>
-                <td>
+                <td style="border-left:1px solid; border-bottom:1px solid;">
                   $ {{$albodilyperson}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   BODILY INJURY(Per accident)
                 </td>
-                <td>
+                <td style="border-left:1px solid; border-bottom:1px solid;">
                   $ {{$albodilyaccident}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   PROPERTY DAMAGE<br/>
                   (Per accident)
                 </td>
-                <td>
+                <td style="border-left:1px solid; border-bottom:1px solid;">
                   $ {{$alpropertydamage}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   {{$alotherinput2}}
                 </td>
-                <td>
+                <td style="border-left:1px solid; border-bottom:1px solid;">
                   $ {{$alother2}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td >
                   {{$alotherinput3}}
                 </td>
-                <td>
+                <td style="border-left:1px solid;">
                   $ {{$alother3}}
                 </td>
               </tr>
@@ -616,119 +630,113 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
           </td>
         </tr>
       </table>
-      </td>
-    </tr>
+      <table>
         <tr>
-      <td colspan="2">
-        <table style="widht: 100%">
-        <tr>
-          <td style="width:42px;">
+          <td width="15" style="border-bottom:2px solid !important; border:1px solid; border-right:1px solid;">
             {{$ulinsuranceletter}}
           </td>
-          <td style="width:250px;">
+          <td style="width:250px; border-bottom:2px solid !important;">
             @if ($uloptionumbrellaliability === 'true')
-            <input type="checkbox" name="" value="" checked=""><b> UMBRELLA LIAB </b>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> UMBRELLA LIAB </b>
             @else
-            <input type="checkbox" name="" value=""><b> UMBRELLA LIAB </b>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> UMBRELLA LIAB </b>
             @endif
             @if ($uloptionoccur === 'true')
-             <input type="checkbox" name="" value="" checked=""> OCCUR <br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> OCCUR <br>
             @else
-              <input type="checkbox" name="" value=""> OCCUR <br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> OCCUR <br>
             @endif
             @if ($uloptionexcessliability === 'true')
-            <input type="checkbox" name="" value="" checked=""><b> EXCESS LAB </b>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> EXCESS LAB </b>
             @else
-            <input type="checkbox" name="" value=""><b> EXCESS LAB </b>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> EXCESS LAB </b>
             @endif
             @if ($uloptionclaimsmade === 'true')
-            <input type="checkbox" name="" value="" checked=""> CLAIMS-MADE
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> CLAIMS-MADE
             @else
-            <input type="checkbox" name="" value=""> CLAIMS-MADE
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> CLAIMS-MADE
             @endif
             <hr>
             @if ($uloptiondeductible === 'true')
-            <input type="checkbox" name="" value="" checked=""> DEDUCTIBLE <br/>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> DEDUCTIBLE <br/>
             @else
-            <input type="checkbox" name="" value=""> DEDUCTIBLE <br/>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> DEDUCTIBLE <br/>
             @endif
             @if ($uloptionretention === 'true')
-            <input type="checkbox" name="" value="" checked=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control" value="{{$uloptionretentioninput}}"/></div>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> RETENTION
+            <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control" value="{{$uloptionretentioninput}}"/></div>
             @else
-            <input type="checkbox" name="" value=""> RETENTION <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> RETENTION
+            <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
             @endif
           </td>
-          <td style="width:47px;">
+          <td style="width:11px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($uloptionaddl === 'true')
-            <input type="checkbox" name="" value="" checked="">
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
-            <input type="checkbox" name="" value="" checked="">
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="width:48px;">
+          <td style="width:11px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($uloptionsubr === 'true')
-            <input type="checkbox" name="" value="" checked="">
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
-            <input type="checkbox" name="" value="">
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td>
+          <td style="border-bottom:2px solid !important; border-left:1px solid; text-align:center;">
             {{$ulpolicynumber}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px !important; border-bottom:2px solid !important; border-left:1px solid;">
             {{$uleffdate}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px !important; border-bottom:2px solid !important; border-left:1px solid;">
             {{$ulexpdate}}
           </td>
-          <td style="width:350px;">
+          <td style="width:300px; border-right:1px solid; border-bottom:2px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
             <table>
               <tr>
-                <td style="width:200px;">
+                <td style="width:135px; border-bottom:1px solid;">
                   EACH OCURRENCE
                 </td>
-                <td>
+                <td style="width:135px; border-bottom:1px solid; border-left:1px solid;">
                   $ {{$uleachoccurent}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   AGGREGATE<br/>
                 </td>
-                <td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$ulaggregate}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   {{$ulotherinput}}
                 </td>
-                <td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$ulother}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   {{$ulotherinput2}}
                 </td>
-                <td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$ulother2}}
                 </td>
               </tr>
             </table>
-          </td>
-        </tr>
-      </table>
       </td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <table style="widht: 100%">
+  </table>
+  <table>
         <tr>
-          <td style="width:42px;">
+          <td width="15" style="border-bottom:2px solid !important; border:1px solid;">
             {{$formcontrol->W_C_insurance_letter}}
           </td>
-          <td style="width:250px;">
+          <td style="width:250px; border-bottom:2px solid !important; border-left:1px solid;">
             <b>WORKERS COMPESATION<br>
             AND EMPLOYERS' LIABILITY </b><br>
             ANY PROPRIETOR/PARTNER/EXECUTIVE OFFICER/MEMBER EXCLUDED?<input type="checkbox" name="" value=""><b> Y/N</b><br>
@@ -736,55 +744,55 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             if yes, describe under<br>
             SPECIAL PROVISIONS below
           </td>
-          <td style="width:47px;">
+          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid;">
             N/A
           </td>
-          <td style="width:48px;">
+          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($wcoptionsubr === 'true')
-            <input type="checkbox" name="" value="" checked="">
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
-            <input type="checkbox" name="" value="">
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td>
+          <td style="border-bottom:2px solid !important; border-left:1px solid; text-align:center;">
             {{$formcontrol->W_C_policy_number}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px !important; border-bottom:2px solid !important; border-left:1px solid;">
             {{$formcontrol->W_C_eff_date}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px !important; border-bottom:2px solid !important; border-left:1px solid;">
             {{$formcontrol->W_C_exp_date}}
           </td>
-          <td style="width:350px;">
+          <td style="width:300px; border-right:1px solid; border-bottom:2px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
             <table>
               <tr>
-                <td style="width:200px;">
-                  <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">OTHER
+                <td style="width:135px; border-bottom:1px solid;">
+                  <input type="checkbox" name="" value="">EACH OCURRENCE <input type="checkbox" name="" value="">{{$formcontrol->W_C_other_input}}
                 </td>
-                <td>
+                <td style="width:135px; border-bottom:1px solid; border-left:1px solid;">
                   $ {{$formcontrol->W_C_other}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   E.L. EACH ACCIDENT
                 </td>
-                <td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$formcontrol->W_C_each_accident}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   E.L. DISEABLE - EA EMPLOYEE</td>
-                <td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$formcontrol->W_C_ea_employee}}
                 </td>
               </tr>
               <tr>
-                <td>
+                <td style="border-bottom:1px solid;">
                   E.L. DISEABLE - POLICY LIMIT
                 </td>
-                <td>
+                <td style="border-bottom:1px solid; border-left:1px solid;">
                   $ {{$formcontrol->W_C_policy_limit}}
                 </td>
               </tr>
@@ -792,42 +800,83 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
           </td>
         </tr>
       </table>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <table style="widht: 100%">
+      <table>
         <tr>
-          <td style="width:42px; height: 50px;">
-
+          <td width="15" style="border-bottom:2px solid !important; border:1px solid;">
+            {{$formcontrol->A_C_a_insurance_letter}}<br>
+            {{$formcontrol->A_C_b_insurance_letter}}
           </td>
-          <td style="width:250px;">
-
+          <td style="width:250px; border-bottom:2px solid !important; border-left:1px solid;">
+            {{$formcontrol->A_C_a_policy_type}}<br>
+            {{$formcontrol->A_C_b_policy_type}}
           </td>
-          <td style="width:47px;">
-            <input type="checkbox" name="" value="">
+          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid;">
+            @if ($formcontrol->A_C_a_options_add_insurance === 'Additonal insurance')
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /><br>
+            @else
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /><br>
+            @endif
+            @if ($formcontrol->A_C_b_options_add_insurance === 'Additonal insurance')
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
+            @else
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
+            @endif
           </td>
-          <td style="width:48px;">
-            <input type="checkbox" name="" value="">
+          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid;">
+            @if ($formcontrol->A_C_a_options_surrogation === 'Surrogation')
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /><br>
+            @else
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /><br>
+            @endif
+            @if ($formcontrol->A_C_b_options_surrogation === 'Surrogation')
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
+            @else
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
+            @endif
           </td>
-          <td>
-
+          <td style="border-bottom:2px solid !important; border-left:1px solid; text-align:center;">
+            {{$formcontrol->A_C_a_policy_number}}<br>
+            {{$formcontrol->A_C_b_policy_number}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
+            {{$formcontrol->A_C_a_eff_date}}<br>
+            {{$formcontrol->A_C_b_eff_date}}
           </td>
-          <td style="width:110px;">
+          <td style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
+            {{$formcontrol->A_C_a_exp_date}}<br>
+            {{$formcontrol->A_C_b_exp_date}}
           </td>
-          <td style="width:350px;">
+          <td style="width:300px; border-right:1px solid; border-bottom:2px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
+            <table>
+              <tr>
+                <td style="width:135px; border-bottom:1px solid;">
+                  COVERAGE LIMITS 1 / DEDUCTIBLE
+                </td>
+                <td style="width:135px; border-bottom:1px solid; border-left:1px solid;">
+                  $ {{$formcontrol->A_C_a_coverage_limits}}
+                </td>
+              </tr>
+              <tr>
+                <td >
+                  COVERAGE LIMITS 2 / DEDUCTIBLE
+                </td>
+                <td style="border-left:1px solid;">
+                  $ {{$formcontrol->A_C_b_coverage_limits}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        </table>
+        <table>
+        <tr>
+          <td colspan="2" style="height:50px; border:1px solid;">
+            <b>DESCRIPTION OF OPERATIONS / VEHICLES (Atthach ACORD 101, Additional Remarks Schedule, if more space is required)</b><br>
+            {!! $formcontrol->description !!}
           </td>
         </tr>
       </table>
-      </td>
-    </tr>
-    <tr>
-      <th colspan="2" style="height:100px;">
-        DESCRIPTION OF OPERATIONS / VEHICLES (Atthach ACORD 101, Additional Remarks Schedule, if more space is required)
-      </th>
-    </tr>
+      <table>
     <tr>
       <th>
         CERTIFICATE HOLDER
@@ -836,20 +885,33 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
         CANCELLATION
       </th>
     </tr>
+  </table>
+  <table>
     <tr>
-      <td rowspan="2" style="height:150px;">
+      <th rowspan="2" style="border:1px solid; height:100px; width:550px;">
 
-      </td>
-      <th>
+      </th>
+      <th style="border:1px solid;">
         SHOULD ANY OF THE ABOVE DESCRIBED POLICIES BE CANCELLED BEFORE THE EXPIRATION DATE THEREOF, NOTICE WILL BE DELIVERED IN A ACCORDANCE WITH THE POLICY PROVISIONS.
       </th>
     </tr>
     <tr>
-      <th>
+      <th style="border:1px solid;">
         AUTHORIZED REPRESENTATIVE
       </th>
     </tr>
   </table>
+  <table style="width:95%;">
+  <tr>
+    <th style="font-size:15px !important;">
+      ACORD 25 (2010/05)
+    </th>
+    <th style="text-align:right !important; font-size:15px !important;">
+      © 1988-2010 ACORD CORPORATION.  All rights reserved.
+    </th>
+  </tr>
+</table>
+<center><b style="font-size:15px !important;">The ACORD name and logo are registered marks of ACORD</b></center>
     <!-- ============================================================== -->
     <!-- End Page Content -->
     <!-- ============================================================== -->

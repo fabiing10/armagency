@@ -9,7 +9,7 @@ $user = Auth::user();
           <div class="sidebar-head">
               <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
               <ul class="nav" id="side-menu">
-                  <li class="user-pro"><a href="#" class="waves-effect"><img src="{{URL::asset('assets/plugins/images/users/varun.jpg')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{$user->name}}<span></span></span>
+                  <li class="user-pro"><a href="#" class="waves-effect"> <span class="hide-menu">{{$user->name}}<span></span></span>
                       </a>
                   </li>
                   <li> <a href="/user/" style="padding-right:18px;" class="waves-effect px-25"><i class="fa fa-home"></i> <span class="hide-menu" style="padding-left: 10px;"> Home <span></span></span></a>
