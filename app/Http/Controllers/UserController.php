@@ -16,7 +16,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 class UserController extends Controller
-{ 
+{
   public function sendCertificate(Request $request){
     /*$email_option = $request->email_option;
     if($email_option == "on"){
@@ -91,7 +91,7 @@ class UserController extends Controller
         view()->share('formcontrol',$FormControl);
         view()->share('user',$user);
         $pdf = PDF::loadView('user.download-certificate');
-        $pdf->setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
         return $pdf->stream('download.pdf');
 
 
