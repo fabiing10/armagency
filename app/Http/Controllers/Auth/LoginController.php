@@ -45,7 +45,7 @@ class LoginController extends Controller
             // Authentication passed...
             return redirect()->intended('redirect');
         }else{
-          \Session::flash('error_message','Datos Incorrectos! Intentalo nuevamente..');
+          \Session::flash('error_message','Incorrect data! Try again');
           return redirect('login');
         }
 
