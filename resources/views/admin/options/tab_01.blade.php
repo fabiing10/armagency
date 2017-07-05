@@ -1293,7 +1293,7 @@
                 </div>
 
                 Description<br>
-                <textarea rows="5" cols="100" name="description"></textarea>
+                <textarea rows="5" cols="100" name="description" class="summernote"> </textarea>
 
                 <hr>
                 <input class="btn btn-info" id="sa-params" value="Save" type="button" />

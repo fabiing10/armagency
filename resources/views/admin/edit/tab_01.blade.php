@@ -1384,7 +1384,7 @@
                 </div>
 
                 Description<br>
-                <textarea rows="5" cols="100" name="description">{{$formcontrol->description}}</textarea>
+                <textarea rows="5" cols="100" name="description" class="summernote">{{$formcontrol->description}}</textarea>
 
                 <hr>
                 <input class="btn btn-info" data-id="{{$user->id}}" id="sa-params{{$user->id}}" value="Save"  />

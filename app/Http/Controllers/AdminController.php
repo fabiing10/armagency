@@ -779,8 +779,13 @@ class AdminController extends Controller
           }
 
 
-          asort($fechas);
-          $fecha_exp = array_values($fechas)[0];
+          $count = count($fechas);
+          if($count > 0){
+            asort($fechas);
+            $fecha_exp = array_values($fechas)[0];
+          }else{
+            $fecha_exp = '00/00/0000';
+          }
 
           $formcontrol->exp_date = $fecha_exp;
           $formcontrol->save();
