@@ -70,9 +70,9 @@
                                       <td>{{$user->exp_date}}</td>
                                       <td>{{$user->status}}</td>
                                       @if ($user->status === 'active')
-                                      <td><button id="sa-params{{$user->id}}" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Cancel </button></td>
+                                      <td><button id="sa-params-cancel" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Cancel </button></td>
                                       @else
-                                      <td><button id="sa-params{{$user->id}}" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Activate </button></td>
+                                      <td><button id="sa-params-activate" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Activate </button></td>
                                       @endif
                                       </tr>
                                     @endforeach
@@ -127,7 +127,7 @@
     //examples
     SweetAlert.prototype.init = function() {
       //Parameter
-      $('#sa-params{{$user->id}}').click(function(){
+      $('#sa-params-cancel').click(function(){
         console.log("Click")
         var id = $(this).attr("data-id");
         console.log(id)
@@ -154,7 +154,7 @@
               }
           });
       });
-      $('#sa-params{{$user->id}}').click(function(){
+      $('#sa-params-activate').click(function(){
         console.log("Click")
         var id = $(this).attr("data-id");
         console.log(id)
