@@ -64,14 +64,14 @@ class UserController extends Controller
         Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path){
             $message->to($email)->subject('Armagency - Accord Form')->attach($path);
         });
-      /*  \Session::flash('flash_message','Se ha enviado el mensaje correctamente.. Gracias por Ayudar!');
-        return redirect('user/certificate');*/
-        return "Se envio";
+        \Session::flash('flash_message','Se ha enviado el mensaje correctamente.. Gracias por Ayudar!');
+        return redirect('user/history');
+
 
       }else{
         \Session::flash('flash_message','No se ha podido enviar tu mensaje, pero ya dejamos el reporte.. Gracias por tu ayuda!');
         return redirect('user/certificate');
-        return "No se envio";
+
       }
 
 
