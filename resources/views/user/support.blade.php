@@ -45,13 +45,13 @@ hr {
           </div>
           <!-- /.row -->
           <div class="white-box">
-              <h2 class="box-title m-b-0">NEED HELP?</h2>
-              <p class="text-muted m-b-30 font-13 disable">We are here to help</p>
-              <div class="row m-t-30">
+              <h2 class="box-title m-b-0 t-center">NEED HELP?</h2>
+              <p class="text-muted m-b-30 font-13 disable t-center">We are here to help</p>
+              <div class="row ">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
               </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
-                        <img src="{{URL::asset('assets/plugins/images/arm_logo.png')}}" alt="home" class="light-logo text-center"></div>
+                        <img src="{{URL::asset('assets/plugins/images/arm_logo.png')}}" alt="home" class="light-logo text-center support-logo"></div>
                         <h1 class="box-title titlesupport m-b-0 block" style="text-align:center; display:none;">NEED HELP?</h1>
                         <p class="text-muted m-b-30 font-13 titlesupport block" style="text-align:center; display:none;">Take some time to browse our site and feel free to<br>contact us about insurance needs.</p>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

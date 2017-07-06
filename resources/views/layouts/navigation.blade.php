@@ -23,15 +23,15 @@
 
           <li class="dropdown">
               <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><i class="fa fa-language"></i>  English </b><span class="caret"></span> </a>
-              <ul class="dropdown-menu dropdown-user animated flipInY">
+              <ul class="dropdown-menu dropdown-user ">
                   <li><a href="#" class="text-right"> Spanish</a></li>
-                  <li><a href="#" class="text-right"> Germany</a></li>
+                  <li><a href="#" class="text-right"> English</a></li>
               </ul>
               <!-- /.dropdown-language -->
           </li>
             <li class="dropdown">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs"><i class="fa fa-user"></i>  Login </b><span class="caret"></span> </a>
-                <ul class="dropdown-menu dropdown-user animated flipInY">
+                <ul class="dropdown-menu dropdown-user ">
                     <li><a href="#" class="text-right"> User Login</a></li>
 
                 </ul>
@@ -39,7 +39,7 @@
             </li>
 
             <li >
-                <a href="/logout"><b class="hidden-xs"><i class="fa fa-exit"></i>Logout</b> </a>
+                <a href="/logout"><b class="hidden-xs"><i class="fa fa-sign-out"></i>Logout</b> </a>
 
                 <!-- /.dropdown-login -->
             </li>

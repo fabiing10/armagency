@@ -56,7 +56,7 @@ hr {
                   <div class="white-box home-box ">
                     <div class="row">
                       <div class="col-lg-12" style="text-align:center;">
-                          <img src="{{URL::asset('assets/plugins/images/expired.png')}}" style="width:30%;"></img>
+                          <img src="{{URL::asset('assets/plugins/images/expired.png')}}" style="width: 100px;"></img>
                           <h2 class="m-b-0">Insurance expired</h2>
                           <p>Please call 281-550-1799 to speak to a <br> representative and renew your insurance.<br><br>
                           <button type="submit" class="btn btn-info p80" onclick="window.location.href='user/certificate'" style="padding:10px;"> <i class="fa fa-phone" style="color:white;"></i> Contact us</button><br><br>

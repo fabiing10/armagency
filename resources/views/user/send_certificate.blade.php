@@ -63,38 +63,53 @@ hr {
                                               <li role="tab">
                                                   <h4><span><i class="ti-credit-card"></i></span>2</h4> </li>
                                           </ul>
-                                          <form id="dataFormContainer" class="form-horizontal" method="POST">
+                                          <form id="dataFormContainer" class="form-horizontal floating-labels s-c" method="POST">
                                               <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                                               <div class="wizard-content">
                                                   <div class="wizard-pane active" role="tabpanel">
-                                                      <div class="form-group">
-                                                          <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
-                                                          <input type="text" class="form-control" id="certificate_name" name="certificate_name" placeholder="Certificate holders name"> </div>
+                                                    <div class="form-group">
+                                                      <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
+                                                      <div class="form-group f-style">
+                                                          <input type="text" class="form-control input-sm" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <label for="certificate_name">Certificate holders name</label>
                                                       </div>
-                                                      <div class="form-group">
-                                                          <div class="input-group">
-                                                          <div class="input-group-addon"><i class="ti-world grey"></i></div>
-                                                          <input type="text" class="form-control" name="address_client" id="address_client" placeholder="Address"> </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                      <div class="form-group f-style">
+                                                          <input type="text" class="form-control input-sm" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <label for="address_client">Address</label>
                                                       </div>
-                                                      <div class="form-group">
-                                                          <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-phone grey"></i></div>
-                                                          <input type="tel" class="form-control" id="phone_client" name="phone_client" placeholder="phone number"> </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                                      <div class="form-group f-style">
+                                                          <input type="text" class="form-control input-sm" id="phone_client" name="phone_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <label for="phone_client">Phone number</label>
                                                       </div>
-                                                      <div class="form-group">
-                                                          <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-fax grey"></i></div>
-                                                          <input type="text" class="form-control" id="fax_client" name="fax_client" placeholder="Fax"> </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                                      <div class="form-group f-style">
+                                                          <input type="text" class="form-control input-sm" id="fax_client" name="fax_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <label for="fax_client">Fax</label>
                                                       </div>
-                                                      <div class="form-group">
-                                                          <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-envelope grey"></i></div>
-                                                          <input type="email" class="form-control" id="email_client" name="email_client" placeholder="Email" required=""> </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                      <div class="input-group-addon"><i class="fa fa-inbox"></i></div>
+                                                      <div class="form-group f-style">
+                                                          <input type="text" class="form-control input-sm" id="email_client" name="email_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <label for="email_client">Email</label>
                                                       </div>
+                                                    </div>
+
+
                                                       <div class="form-group">
                                                         <div class="checkbox checkbox checkbox-success">
-                                                          <input type="checkbox" id="terms4" data-error="Before you wreck yourself" required>
+                                                          <input type="checkbox" id="terms4" data-error="Before you wreck yourself" checked required>
                                                           <label for="terms4"> Save to clients list</label>
                                                           <div class="help-block with-errors"></div>
                                                         </div>
@@ -106,7 +121,7 @@ hr {
                                                         <div class="col-sm-12 col-xs-12">
                                                             <form>
                                                               <div class="form-group">
-                                                                  <label class="control-label">Send to clients</label>
+                                                                  <p class="control-label">Send to clients</p>
                                                                   <div class="radio-list">
                                                                       <div class="checkbox checkbox-success checkbox-circle">
                                                                           <input type="checkbox" name="email_option">
@@ -121,16 +136,16 @@ hr {
                                                                   </div>
                                                               </div>
                                                               <div class="form-group">
-                                                                  <label class="control-label">Send me a copy to</label>
+                                                                  <p class="control-label">Send me a copy to</p>
                                                                   <div class="radio-list">
                                                                       <div class="checkbox checkbox-success checkbox-circle">
                                                                           <input id="email_to_me" name="email_to_me" type="checkbox" >
-                                                                          <label for="email_to_me"> nando2008@hotmail.com </label>
+                                                                          <label for="email_to_me"> {{$user->email }}</label>
                                                                       </div>
                                                                       <hr>
                                                                       <div class="checkbox checkbox-success checkbox-circle">
                                                                           <input id="phone_to_me" name="phone_to_me" type="checkbox" >
-                                                                          <label for="phone_to_me"> 558-430-0002 </label>
+                                                                          <label for="phone_to_me"> {{$user->phone }} (Fax)</label>
                                                                       </div>
                                                                       <hr>
                                                                   </div>
@@ -177,7 +192,7 @@ $('#email_client').change(function(){
   $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
 });
 $('#fax_client').change(function(){
-  $('#fax_option').html($('#fax_client').val());
+  $('#fax_option').html($('#fax_client').val()+" (Fax)");
 });
 
 
