@@ -83,7 +83,8 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/support',function(){return view('user.support');});
 
-  Route::get('/certificate',function(){return view('user.send_certificate');});
+
+  Route::get('/certificate', 'UserController@viewCertificate');
   Route::post('/certificate', 'UserController@sendCertificate');
 
 

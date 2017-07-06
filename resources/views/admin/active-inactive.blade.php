@@ -70,9 +70,9 @@
                                       <td>{{$user->exp_date}}</td>
                                       <td>{{$user->status}}</td>
                                       @if ($user->status === 'active')
-                                      <td><button id="sa-params-cancel" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Cancel </button></td>
+                                      <td><button id="" data-id="{{$user->id}}" type="submit" class="btn sa-params-cancel btn-gray"> Cancel </button></td>
                                       @else
-                                      <td><button id="sa-params-activate" data-id="{{$user->id}}" type="submit" class="btn btn-info"> Activate </button></td>
+                                      <td><button id="" data-id="{{$user->id}}" type="submit" class="btn sa-params-activate btn-green"> Activate </button></td>
                                       @endif
                                       </tr>
                                     @endforeach
@@ -126,16 +126,16 @@
 
     //examples
     SweetAlert.prototype.init = function() {
-      
+
       //Parameter
-      $('#sa-params-cancel').click(function(){
+      $('.sa-params-cancel').click(function(){
         console.log("Click")
         var id = $(this).attr("data-id");
         console.log(id)
           swal({
               title: "Cancel account",
               text: "Are you sure you want to cancel account?",
-              type: "warning",
+
               showCancelButton: true,
               confirmButtonColor: "#DD6B55",
               confirmButtonText: "Yes, I'm sure",
@@ -155,20 +155,20 @@
               }
           });
       });
-      $('#sa-params-activate').click(function(){
+      $('.sa-params-activate').click(function(){
         console.log("Click")
         var id = $(this).attr("data-id");
         console.log(id)
           swal({
               title: "Activate account",
               text: "Are you sure you want to cancel account?",
-              type: "warning",
+
               showCancelButton: true,
               confirmButtonColor: "#DD6B55",
               confirmButtonText: "Yes, I'm sure",
               cancelButtonText: "No, go back",
               closeOnConfirm: true,
-              closeOnCancel: false
+              closeOnCancel: true
           }, function(isConfirm){
               if (isConfirm) {
 

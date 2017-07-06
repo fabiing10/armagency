@@ -133,7 +133,6 @@ $(document).ready(function() {
         swal({
             title: "Send Form?",
             text: "",
-            type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "Yes, I'm sure",

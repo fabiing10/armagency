@@ -77,6 +77,10 @@ class UserController extends Controller
 
     return $history;
   }
+  public function viewCertificate(){
+    $user = Auth::user();
+    return view('user.send_certificate')->with('user',$user);
+  }
 
   public function gethistory (){
     $user = Auth::user();

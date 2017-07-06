@@ -54,9 +54,9 @@ hr {
                         <div class="col-xs-12">
                             <img src="{{URL::asset('assets/plugins/images/icono2.png')}}" class="w-6-reponsive" style="width: 3%;"></img>
                             @if ($FormControl->status === 'active')
-                            <label> Account status:</label><span style="color:green;"> Active</span>
+                            <label> Account status:</label><span style="color:green;"> ACTIVE</span>
                             @else
-                            <label> Account status:</label><span style="color:red;"> Desactive</span>
+                            <label> Account status:</label><span style="color:red;"> CANCEL</span>
                             @endif
                         </div>
                       </div>
@@ -64,11 +64,11 @@ hr {
                       <div class="row">
                         <div class="col-lg-4 issueaccount">
                             <i class="fa fa-calendar p-10"></i>
-                            <label> Issue date:</label><span> {{$FormControl->W_C_exp_date}}</span>
+                            <label> Issue date:</label><span> {{$FormControl->exp_date}}</span>
                         </div>
                         <div class="col-lg-4">
                             <i class="fa fa-calendar-o p-10"></i>
-                            <label> Expiration date:</label><span> {{$FormControl->W_C_exp_date}}</span>
+                            <label> Expiration date:</label><span> {{$FormControl->exp_date}}</span>
                         </div>
                       </div>
                       <hr>

@@ -53,7 +53,7 @@ hr {
                   <div class="white-box home-box ">
                     <div class="row">
                       <div class="col-lg-12" style="text-align:center;">
-                          <img src="{{URL::asset('assets/plugins/images/users/home.png')}}" style="width:30%;"></img>
+                          <img src="{{URL::asset('assets/plugins/images/users/home.png')}}" style="width: 100px;"></img>
                           <h2 class="m-b-0">Send Certificate</h2>
                           <p>Need your certificate? Click the button<br>to get your insurance certificate<br><br>
                           <button type="submit" class="btn btn-info p80" onclick="window.location.href='user/certificate'" style="padding:10px;"> <i class="fa fa-paper-plane" style="color:white;"></i> Send certificate</button><br><br>
