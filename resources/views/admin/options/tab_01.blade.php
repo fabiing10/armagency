@@ -139,42 +139,52 @@
                                               </div>
                                               <!--/span-->
                                               <div class="col-md-6">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                                          </div>
-                                                          <input name="dba_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="DBA name">
-                                                      </div>
+                                                <div class="form-group">
+                                                  <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="dba_name" name="dba_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="dba_name">DBA name</label>
                                                   </div>
+                                                </div>
                                               </div>
                                               <!--/span-->
                                           </div>
                                           <div class="row">
                                               <div class="col-md-12">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i>
-                                                          </div>
-                                                          <input name="address" type="text" class="form-control" id="exampleInputpwd2" placeholder="Address">
-                                                      </div>
+                                                <div class="form-group">
+                                                  <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="address" name="address" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="address">Address</label>
                                                   </div>
+                                                </div>
                                               </div>
                                           </div>
                                           <!--/row-->
                                           <div class="row">
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <input name="city" type="text" class="form-control" placeholder="City">
+                                                <div class="form-group">
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="city" name="city" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="city">City</label>
                                                   </div>
+                                                </div>
                                               </div>
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <input name="state" type="text" class="form-control" placeholder="State">
+                                                <div class="form-group">
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="state" name="state" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="state">State</label>
                                                   </div>
+                                                </div>
                                               </div>
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <input name="zip_code" type="text" class="form-control" placeholder="Zip code"> </div>
+                                                <div class="form-group">
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="zip_code" name="zip_code" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="zip_code">Zip code</label>
+                                                  </div>
+                                                </div>
                                               </div>
                                           </div>
                                       </div>
@@ -192,59 +202,59 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-user"></i>
-                                            </div>
-                                            <input name="name" type="text" class="form-control" id="exampleInputpwd2" placeholder="Contact name">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="name" name="name" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="name">Contact name</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-phone"></i>
-                                            </div>
-                                            <input name="phone" type="text" class="form-control" id="exampleInputpwd2" placeholder="Phone number">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="phone" name="phone" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="phone">Phone number</label>
                                     </div>
-                                </div>
-                                <!--/span-->
-                            </div>
-                            <!--/row-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-fax"></i>
-                                            </div>
-                                            <input name="fax" type="text" class="form-control" id="exampleInputpwd2" placeholder="FAX">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-envelope"></i>
-                                            </div>
-                                            <input name="email" type="text" class="form-control" id="exampleInputpwd2" placeholder="email">
-                                        </div>
-                                    </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <!--/row-->
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-lock"></i>
-                                            </div>
-                                            <input name="customer_id" type="text" class="form-control" id="exampleInputpwd2" placeholder="Producer customer ID number">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="fax" name="fax" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="fax">FAX</label>
                                     </div>
+                                  </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="email" name="email" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="email">Email</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="customer_id" name="customer_id" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="customer_id">Producer customer ID number</label>
+                                    </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -262,133 +272,133 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-9">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                            </div>
-                                            <input name="ensured_a" type="text" class="form-control" id="exampleInputpwd2" placeholder="Ensured A">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="ensured_a" name="ensured_a" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="ensured_a">Ensured A</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-question"></i>
-                                            </div>
-                                            <input name="naic_a" type="text" class="form-control" id="exampleInputpwd2" placeholder="NAIC #">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="naic_a" name="naic_a" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="naic_a">NAIC #</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-9">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                            </div>
-                                            <input name="ensured_b" type="text" class="form-control" id="exampleInputpwd2" placeholder="Ensured B">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="ensured_b" name="ensured_b" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="ensured_b">Ensured B</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-question"></i>
-                                            </div>
-                                            <input name="naic_b" type="text" class="form-control" id="exampleInputpwd2" placeholder="NAIC #">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="naic_b" name="naic_b" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="naic_b">NAIC #</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-9">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                            </div>
-                                            <input name="ensured_c" type="text" class="form-control" id="exampleInputpwd2" placeholder="Ensured C">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="ensured_c" name="ensured_c" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="ensured_c">Ensured C</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-question"></i>
-                                            </div>
-                                            <input name="naic_c" type="text" class="form-control" id="exampleInputpwd2" placeholder="NAIC #">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="naic_c" name="naic_c" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="naic_c">NAIC #</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-9">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                            </div>
-                                            <input name="ensured_d" type="text" class="form-control" id="exampleInputpwd2" placeholder="Ensured D">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="ensured_d" name="ensured_d" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="ensured_d">Ensured D</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-question"></i>
-                                            </div>
-                                            <input name="naic_d" type="text" class="form-control" id="exampleInputpwd2" placeholder="NAIC #">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="naic_d" name="naic_d" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="naic_d">NAIC #</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-9">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                            </div>
-                                            <input name="ensured_e" type="text" class="form-control" id="exampleInputpwd2" placeholder="Ensured E">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="ensured_e" name="ensured_e" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="ensured_e">Ensured E</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-question"></i>
-                                            </div>
-                                            <input name="naic_e" type="text" class="form-control" id="exampleInputpwd2" placeholder="NAIC #">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="naic_e" name="naic_e" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="naic_e">NAIC #</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
                             <div class="row">
                                 <div class="col-md-9">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                            </div>
-                                            <input name="ensured_f" type="text" class="form-control" id="exampleInputpwd2" placeholder="Ensured F">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="ensured_f" name="ensured_f" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="ensured_f">Ensured F</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-question"></i>
-                                            </div>
-                                            <input name="naic_f" type="text" class="form-control" id="exampleInputpwd2" placeholder="NAIC #">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="naic_f" name="naic_f" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="naic_f">NAIC #</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <!--/span-->
                             </div>
@@ -407,18 +417,18 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="g_l_insurance_letter" type="text" placeholder="Insurance letter" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_insurance_letter" name="g_l_insurance_letter" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_insurance_letter">Insurance letter</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="g_l_commercial" value="true"> Commercial general liability
                                                 <br>
@@ -427,18 +437,14 @@
                                                 <input type="checkbox" name="g_l_occur" value="true"> Occur
                                                 <br>
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
-                            </div>
-
+                                </div>
+                                <div class="row">
+                                <p> GENERAL AGGREGATE LIMIT APPLIES PER</p>
                             <!--/row-->
-                            <p> GENERAL AGGREGATE LIMIT APPLIES PER</p>
-                            <hr>
-                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="g_l_policy" value="true"> Policy
                                                 <br>
@@ -447,66 +453,56 @@
                                                 <input type="checkbox" name="g_l_loc" value="true"> Loc
                                                 <br>
                                                 <input type="checkbox" name="g_l_other" value="true"> Other
-                                                <input name="g_l_other_input" type="text" class="form-control" placeholder="NAME">
+                                                <input name="g_l_other_input" type="text" class="form-control input-sm" placeholder="NAME">
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                             </div>
-
-                            <hr>
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="g_l_option_addl" value="true"> ADDL INSR
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="g_l_option_subr" value="true"> SUBR WVD
-
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="g_l_policy_number" type="text" placeholder="Enter policy number" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_policy_number" name="g_l_policy_number" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_policy_number">Enter policy number</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="g_l_eff_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="g_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="g_l_exp_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="g_l_exp_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                         </div>
                     </div>
                 </div>
@@ -522,76 +518,83 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Each ocurrence </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_each_ocurrence" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Each ocurrence </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_each_ocurrence" name="g_l_each_ocurrence" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_each_ocurrence">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Damages to rented permises</h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_rented_permises" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Damages to rented permises</h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_rented_permises" name="g_l_rented_permises" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_rented_permises">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Medical expenses (any one person)</h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_medical_expenses" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Medical expenses (any one person)</h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_medical_expenses" name="g_l_medical_expenses" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_medical_expenses">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Personal & adv injury </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_personal_adv" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Personal & adv injury </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_personal_adv" name="g_l_personal_adv" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_personal_adv">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">General aggregate </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_general_aggregate" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">General aggregate </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_general_aggregate" name="g_l_general_aggregate" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_general_aggregate">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Product - comp/op agg </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_product_comp" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Product - comp/op agg </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_product_comp" name="g_l_product_comp" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_product_comp">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
 
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Other </h3>
-                                        <input name="g_l_other_input2" type="text" class="form-control" placeholder="NAME">
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="g_l_other2" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Other </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="g_l_other2" name="g_l_other2" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="g_l_other2">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
-
                         </div>
                     </div>
                 </div>
@@ -607,14 +610,14 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="a_l_insurance_letter" type="text" placeholder="Insurance letter" class="form-control">
+                                      <div class="form-group">
+                                        <div class="form-group f-style">
+                                            <input type="text" class="form-control input-sm" id="a_l_insurance_letter" name="a_l_insurance_letter" required><span class="highlight"></span> <span class="bar"></span>
+                                            <label for="a_l_insurance_letter">Insurance letter</label>
                                         </div>
-                                    </div>
+                                      </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -641,62 +644,55 @@
                                             <input type="checkbox" name="a_l_owned_autos" value="true"> Non-owned autos
                                             <br>
                                             <input type="checkbox" name="a_l_other" value="true">
-                                            <input name="a_l_other_input" type="text" placeholder="Other" class="form-control">
+                                            <input name="a_l_other_input" type="text" placeholder="Other" class="form-control input-sm">
                                             <br>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="a_l_options_addl" value="true"> ADDL INSR
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="a_l_options_subr" value="true"> SUBR WVD
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="a_l_policy_number" type="text" placeholder="Enter policy number" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_policy_number" name="a_l_policy_number" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_policy_number">Enter policy number</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="a_l_eff_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="a_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="a_l_exp_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="a_l_exp_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -714,64 +710,70 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Combined single limit (Ea accident) </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="a_l_combined_single" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Combined single limit (Ea accident) </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_combined_single" name="a_l_combined_single" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_combined_single">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Bodily injury (per person)</h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="a_l_bodily_person" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Bodily injury (per person)</h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_bodily_person" name="a_l_bodily_person" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_bodily_person">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Bodily injury (per accident)</h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="a_l_bodily_accident" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Bodily injury (per accident)</h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_bodily_accident" name="a_l_bodily_accident" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_bodily_accident">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Property damage (per accident) </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="a_l_property_damage" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Property damage (per accident) </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_property_damage" name="a_l_property_damage" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_property_damage">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Other </h3>
-                                        <input name="a_l_other_input2" type="text" class="form-control" placeholder="NAME">
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="a_l_other2" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Other </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_other2" name="a_l_other2" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_other2">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Other </h3>
-                                        <input name="a_l_other_input3" type="text" class="form-control" placeholder="NAME">
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="a_l_other3" type="text" id="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Other </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="a_l_other3" name="a_l_other3" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="a_l_other3">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-
-                            <hr>
                         </div>
                     </div>
                 </div>
@@ -787,14 +789,14 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="u_l_insurance_letter" type="text" placeholder="Insurance letter" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_insurance_letter" name="u_l_insurance_letter" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_insurance_letter">Insurance letter</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -820,60 +822,53 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12">
-                                            <input name="u_l_retention_input" type="text" placeholder="$ Retention" class="form-control">
+                                            <input name="u_l_retention_input" type="text" placeholder="$ Retention" class="form-control input-sm">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="u_l_options_addl" value="true"> ADDL INSR
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
                                             <div class="radio radio-success">
                                                 <input type="checkbox" name="u_l_options_subr" value="true"> SUBR WVD
                                             </div>
-                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="u_l_policy_number" type="text" placeholder="Enter policy number" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_policy_number" name="u_l_policy_number" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_policy_number">Enter policy number</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="u_l_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="u_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="u_l_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="u_l_exp_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -891,64 +886,69 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                      <div class="form-group">
                                         <h3 class="box-subtitle m-b-0">Each occurent </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="u_l_each_occurent" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                                        <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                        <div class="form-group f-style">
+                                            <input type="text" class="form-control input-sm" id="u_l_each_occurent" name="u_l_each_occurent" required><span class="highlight"></span> <span class="bar"></span>
+                                            <label for="u_l_each_occurent">.00</label>
                                         </div>
-                                    </div>
+                                      </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-subtitle m-b-0">Aggregate </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="u_l_aggregate" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-subtitle m-b-0">Aggregate </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_aggregate" name="u_l_aggregate" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_aggregate">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-title m-b-0">Other </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="u_l_other_input" type="text" class="form-control" placeholder="NAME">
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-title m-b-0">Other </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_other_input" name="u_l_other_input" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_other_input">NAME</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-title m-b-0">/</h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="u_l_other" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group" style="padding-top:30px;">
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_other_input" name="u_l_other" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_other">.00</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-title m-b-0">Other </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="u_l_other_input2" type="text" class="form-control" placeholder="NAME">
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-title m-b-0">Other </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_other_input2" name="u_l_other_input2" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_other_input2">NAME</label>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-title m-b-0">/</h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="u_l_other2" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group" style="padding-top:30px;">
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="u_l_other2" name="u_l_other2" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="u_l_other2">NAME</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-                            <hr>
                         </div>
-
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -962,99 +962,95 @@
                     <div id="collapseFiveTeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFiveTeen">
                       <div class="panel-body">
                         <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                        <input name="W_C_insurance_letter" type="text" placeholder="Insurance letter" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-md-3">
+                          <div class="col-md-12">
                             <div class="form-group">
-                                <label class="control-label">Propretor / Parner excluded</label>
+                              <div class="form-group f-style">
+                                  <input type="text" class="form-control input-sm" id="W_C_insurance_letter" name="W_C_insurance_letter" required><span class="highlight"></span> <span class="bar"></span>
+                                  <label for="W_C_insurance_letter">Insurance letter</label>
+                              </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="radio-list">
-                                    <label class="radio-inline p-0">
-                                        <div class="radio radio-info">
-                                            <input type="checkbox" name="W_C_propretor_yes" value="yes">YES
-                                        </div>
-                                    </label>
-                                    <label class="radio-inline">
-                                        <div class="radio radio-info">
-                                            <input type="checkbox" name="W_C_propretor_no" value="no">NO
-                                        </div>
-                                    </label>
+                          </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">Propretor / Parner excluded</label>
                                 </div>
                             </div>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                <input type="checkbox" name="W_C_office" value="true">Office / Member excluded <br>
-                              </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="radio-list">
+                                        <div class="radio-inline p-0">
+                                            <div class="radio radio-info">
+                                                <input type="checkbox" name="W_C_propretor_yes" value="yes">YES
+                                            </div>
+                                        </div>
+                                        <div class="radio-inline p-0">
+                                            <div class="radio radio-info">
+                                                <input type="checkbox" name="W_C_propretor_no" value="no">NO
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                           </div>
-                      </div>
-
-                      <hr>
-                      <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label>
-                                  <div class="radio radio-success">
-                                    <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
+                          <hr>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                    <input type="checkbox" name="W_C_office" value="true">Office / Member excluded <br>
                                   </div>
-                              </label>
-                            </div>
+                                </div>
+                              </div>
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label>
-                                  <div class="radio radio-success">
-                                    <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
+                          <hr>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                      <div class="radio radio-success">
+                                        <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
+                                      </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                      <div class="radio radio-success">
+                                        <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
+                                      </div>
+                                </div>
+                                </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                  <div class="form-group f-style">
+                                      <input type="text" class="form-control input-sm" id="W_C_policy_number" name="W_C_policy_number" required><span class="highlight"></span> <span class="bar"></span>
+                                      <label for="W_C_policy_number">Enter policy number</label>
                                   </div>
-                              </label>
-                            </div>
-                            </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                <input name="W_C_policy_number" type="text" placeholder="Enter policy number" class="form-control">
+                                </div>
                               </div>
-                            </div>
                           </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <div class="example">
-                                  <div class="input-group">
-                                      <input name="W_C_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                  <div class="form-group f-style">
+                                      <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="W_C_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <div class="example">
-                                  <div class="input-group">
-                                      <input name="W_C_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                  <div class="form-group f-style">
+                                      <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="W_C_exp_date" required><span class="highlight"></span> <span class="bar"></span>
+                                      <label for="datepicker1">EXP(MM/DD/YYY)</label>
+                                  </div>
+                                </div>
+                                </div>
                               </div>
-                            </div>
-                            </div>
-                          </div>
                         </div>
                         </div>
                         </div>
@@ -1072,48 +1068,55 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <h3 class="box-subtitle m-b-0">WC STATUTORY LIMITS </h3>
-                              <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                  <input name="W_C_statutory_limits" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                              <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                              <div class="form-group f-style">
+                                  <input type="text" class="form-control input-sm" id="W_C_statutory_limits" name="W_C_statutory_limits" required><span class="highlight"></span> <span class="bar"></span>
+                                  <label for="W_C_statutory_limits">.00</label>
                               </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <h3 class="box-subtitle m-b-0">E.L Disease - Policy limit </h3>
-                              <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                  <input name="W_C_policy_limit" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                              <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                              <div class="form-group f-style">
+                                  <input type="text" class="form-control input-sm" id="W_C_policy_limit" name="W_C_policy_limit" required><span class="highlight"></span> <span class="bar"></span>
+                                  <label for="W_C_policy_limit">.00</label>
                               </div>
                             </div>
                           </div>
                       </div>
-                      <hr>
                       <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
                               <h3 class="box-subtitle m-b-0">E.L. Each accident </h3>
-                              <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                  <input name="W_C_each_accident" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                              <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                              <div class="form-group f-style">
+                                  <input type="text" class="form-control input-sm" id="W_C_each_accident" name="W_C_each_accident" required><span class="highlight"></span> <span class="bar"></span>
+                                  <label for="W_C_each_accident">.00</label>
                               </div>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <h3 class="box-subtitle m-b-0">E.L Disease - EA Employee </h3>
-                              <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                  <input name="W_C_ea_employee" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                              <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                              <div class="form-group f-style">
+                                  <input type="text" class="form-control input-sm" id="W_C_ea_employee" name="W_C_ea_employee" required><span class="highlight"></span> <span class="bar"></span>
+                                  <label for="W_C_ea_employee">.00</label>
                               </div>
                             </div>
                             </div>
                       </div>
-                      <hr>
                       <div class="row">
 
                           <div class="col-md-6">
                             <div class="form-group">
                               <h3 class="box-subtitle m-b-0">Other </h3>
-                              <input name="W_C_other_input" type="text" class="form-control" placeholder="NAME">
-                              <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                  <input name="W_C_other" type="text" id="example-input3-group1" name="example-input3-group1" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
+                              <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                              <div class="form-group f-style">
+                                  <input type="text" class="form-control input-sm" id="W_C_other" name="W_C_other" required><span class="highlight"></span> <span class="bar"></span>
+                                  <label for="W_C_other">.00</label>
                               </div>
                             </div>
                             </div>
@@ -1133,78 +1136,82 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="A_C_a_insurance_letter" type="text" placeholder="Insurance letter" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_a_insurance_letter" name="A_C_a_insurance_letter" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_a_insurance_letter">Insurance letter</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="A_C_a_policy_type" type="text" placeholder="Policy type" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_a_policy_type" name="A_C_a_policy_type" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_a_policy_type">Policy type</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
-
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="radio-list">
-                                        <label class="radio-inline p-0">
+                                        <div class="radio-inline p-0">
                                             <div class="radio radio-info">
-                                                <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance">Additonal insurance
+                                                <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance"> Additonal insurance
                                             </div>
-                                        </label>
-                                        <label class="radio-inline">
+                                        </div>
+                                        <div class="radio-inline">
                                             <div class="radio radio-info">
-                                                <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation">Waiver of subrogation
+                                                <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation"> Waiver of subrogation
                                             </div>
-                                        </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="A_C_a_policy_number" type="text" placeholder="Enter policy number" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_a_policy_number" name="A_C_a_policy_number" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_a_policy_number">Enter policy number</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="A_C_a_eff_date" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="datepicker2" placeholder="EFF(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="A_C_a_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="A_C_a_exp_date" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="datepicker1" placeholder="EXP(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="A_C_a_exp_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-title m-b-0">Coverage limits / Deductible </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="A_C_a_coverage_limits" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-title m-b-0">Coverage limits / Deductible </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_a_coverage_limits" name="A_C_a_coverage_limits" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_a_coverage_limits">.00</label>
                                     </div>
+                                  </div>
                                 </div>
 
                             </div>
@@ -1223,78 +1230,83 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="A_C_b_insurance_letter" type="text" placeholder="Insurance letter" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_b_insurance_letter" name="A_C_b_insurance_letter" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_b_insurance_letter">Insurance letter</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="A_C_b_policy_type" type="text" placeholder="Policy type" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_b_policy_type" name="A_C_b_policy_type" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_b_policy_type">Policy type</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="radio-list">
-                                        <label class="radio-inline p-0">
+                                        <div class="radio-inline p-0">
                                             <div class="radio radio-info">
-                                                <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance">Additonal insurance
+                                                <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance"> Additonal insurance
                                             </div>
-                                        </label>
-                                        <label class="radio-inline">
+                                        </div>
+                                        <div class="radio-inline">
                                             <div class="radio radio-info">
-                                                <input type="checkbox" name="A_C_b_options_surrogation" value="Surrogation">Waiver of subrogation
+                                                <input type="checkbox" name="A_C_b_options_surrogation" value="Surrogation"> Waiver of subrogation
                                             </div>
-                                        </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <input name="A_C_b_policy_number" type="text" placeholder="Enter policy number" class="form-control">
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_b_policy_number" name="A_C_b_policy_number" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_b_policy_number">Enter policy number</label>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="A_C_b_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="A_C_b_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="example">
-                                            <div class="input-group">
-                                                <input name="A_C_b_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                        </div>
+                                  <div class="form-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="A_C_b_exp_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <h3 class="box-title m-b-0">Coverage limits / Deductible </h3>
-                                        <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input name="A_C_b_coverage_limits" type="text" class="form-control" placeholder=".."> <span class="input-group-addon">.00</span>
-                                        </div>
+                                  <div class="form-group">
+                                    <h3 class="box-title m-b-0">Coverage limits / Deductible </h3>
+                                    <div class="input-group-addon"><i class="fa fa-dollar"></i></div>
+                                    <div class="form-group f-style">
+                                        <input type="text" class="form-control input-sm" id="A_C_b_coverage_limits" name="A_C_b_coverage_limits" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="A_C_b_coverage_limits">.00</label>
                                     </div>
+                                  </div>
                                 </div>
 
                             </div>

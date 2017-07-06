@@ -54,13 +54,14 @@
   color: #707cd2;
 }
 
- .input-group-addon {
-   width: 35px;
-   float: left;
-   padding: 0px;
-   height: 29px;
-   line-height: 30px;
- }
+.input-group-addon {
+    width: 10%;
+    float: left;
+    padding: 0px;
+    height: 29px;
+    line-height: 27px;
+    font-size: 16px;
+}
  .f-style{
  width: 90%;
 float: left;

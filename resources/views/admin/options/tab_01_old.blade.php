@@ -21,7 +21,7 @@
                                                           <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                                           </div>
                                                           <!--<input name="name_insured" type="text" class="form-control" id="name_insured" placeholder="Name">-->
-                                                        
+
                                                       </div>
                                                   </div>
                                               </div>
@@ -130,6 +130,13 @@
                                               </div>
                                               <!--/span-->
                                               <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon"><i class="fa fa-question"></i>
+                                                        </div>
+                                                        <input name="P_I_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="name">
+                                                    </div>
+                                                </div>
                                                   <div class="form-group">
                                                       <div class="input-group">
                                                           <div class="input-group-addon"><i class="fa fa-question"></i>
