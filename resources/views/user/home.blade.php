@@ -57,7 +57,7 @@ hr {
                           <h2 class="m-b-0">Send Certificate</h2>
                           <p>Need your certificate? Click the button<br>to get your insurance certificate<br><br>
                           <button type="submit" class="btn btn-info p80" onclick="window.location.href='user/certificate'" style="padding:10px;"> <i class="fa fa-paper-plane" style="color:white;"></i> Send certificate</button><br><br>
-                          <button type="submit" class="btn btn-outline btn-primary p80" onclick="window.location.href='/user/download-certificate'" style="padding:10px;"> <i class="fa fa-download" style="color:grey;"></i> Download PDF</button>
+                          <button type="submit" class="btn btn-outline btn-primary p80" onclick="window.location.href='/user/download-certificate/download'" style="padding:10px;"> <i class="fa fa-download" style="color:grey;"></i> Download PDF</button>
                       </div>
                       </div>
                   </div>

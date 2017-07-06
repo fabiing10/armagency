@@ -70,7 +70,7 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   /* User */
   Route::get('/history', 'UserController@gethistory');
   Route::get('/client-list', 'UserController@getclient');
-  Route::get('/download-certificate', 'UserController@loadResult');
+  Route::get('/download-certificate/{option}', 'UserController@loadResult');
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/account', 'UserController@account');
   Route::get('/get-password',function(){return view('user.get-password');});

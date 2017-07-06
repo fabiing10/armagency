@@ -18,7 +18,7 @@ class CreateClientlist extends Migration
           $table->string('certificate_holder_name')->nulleable();
           $table->string('address')->nullable();
           $table->string('phone_number')->nullable();
-          $table->string('fax')->unique();
+          $table->string('fax')->nullable();
           $table->string('email')->nullable();
           $table->rememberToken();
           $table->timestamps();

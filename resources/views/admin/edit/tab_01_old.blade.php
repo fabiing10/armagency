@@ -18,7 +18,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                           <input name="name_insured" type="text" class="form-control" value="{{$user->name}}" id="name_insured" placeholder="Name">
                                                       </div>
                                               </div>
@@ -38,7 +38,7 @@
                                             <div class="col-md-4">
                                               <div class="form-group">
                                                       <div class="input-group">
-                                                        <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
                                                         <input name="address_insured" type="text" class="form-control" value="{{$user->address}}" id="address_insured" placeholder="Address">
                                                       </div>
                                               </div>
@@ -114,7 +114,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                           <input name="P_I_name" type="text" class="form-control" value="{{$formcontrol->P_I_name}}" placeholder="name">
                                                       </div>
                                               </div>
@@ -123,7 +123,7 @@
                                             <div class="col-md-6">
                                               <div class="form-group">
                                                       <div class="input-group">
-                                                        <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                                        <div class="input-group-addon"><i class="fa fa-question"></i></div>
                                                         <input name="dba_name" type="text" class="form-control" value="{{$formcontrol->P_I_dba_name}}" placeholder="DBA name">
                                                       </div>
                                               </div>
@@ -134,7 +134,7 @@
                                             <div class="col-md-12">
                                               <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                           <input name="address" type="text" class="form-control" value="{{$formcontrol->P_I_address}}" placeholder="Address">
                                                       </div>
                                               </div>
@@ -174,7 +174,7 @@
                             <div class="col-md-6">
                               <div class="form-group">
                                       <div class="input-group">
-                                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                           <input name="name" type="text" class="form-control" value="{{$formcontrol->C_I_name}}" placeholder="Contact name">
                                       </div>
                               </div>
@@ -1382,117 +1382,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingFourteen">
-                        <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
-                        14. Additional Coverage 2
-                      </a>
-                    </h4>
-                    </div>
-                    <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
-                        <div class="panel-body">
-                          <div class="row">
-                              <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                    <input name="A_C_b_insurance_letter" type="text" value="{{$formcontrol->A_C_b_insurance_letter}}" placeholder="Insurance letter" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                    <input name="A_C_b_policy_type" type="text" value="{{$formcontrol->A_C_b_policy_type}}" placeholder="Policy type" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
 
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <div class="radio-list">
-                                      <label class="radio-inline p-0">
-                                          <div class="radio radio-info">
-                                            @if ($formcontrol->A_C_b_options_add_insurance_surrogation === 'Additonal insurance')
-                                              <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance" checked="">Additonal insurance
-                                            @else
-                                              <input type="checkbox" name="A_C_b_options_add_insurance" value="Additonal insurance">Additonal insurance
-                                            @endif
-                                          </div>
-                                      </label>
-                                      <label class="radio-inline">
-                                          <div class="radio radio-info">
-                                            @if ($formcontrol->A_C_b_options_add_insurance_surrogation === 'Surrogation')
-                                              <input type="radio" name="A_C_b_options_surrogation" value="Surrogation" checked="">Waiver of subrogation
-                                            @else
-                                              <input type="radio" name="A_C_b_options_surrogation" value="Surrogation">Waiver of subrogation
-                                            @endif
-                                          </div>
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
+                Description<br>
+                <textarea rows="5" cols="100" name="description" class="summernote">{{$formcontrol->description}}</textarea>
 
-                          <div class="row">
-                              <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                    <input name="A_C_b_policy_number" value="{{$formcontrol->A_C_b_policy_number}}" type="text" placeholder="Enter policy number" class="form-control">
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-
-                          <div class="row">
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <div class="example">
-                                      <div class="input-group">
-                                          <input name="A_C_b_eff_date" type="text" value="{{$formcontrol->A_C_b_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <div class="example">
-                                      <div class="input-group">
-                                          <input name="A_C_b_exp_date" type="text" value="{{$formcontrol->A_C_b_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
-                                  </div>
-                                </div>
-                                </div>
-                          </div>
-                            <hr>
-                            <div class="row">
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <h3 class="box-title m-b-0">Coverage limits / Deductible </h3>
-                                  <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                      <input name="A_C_b_coverage_limits" type="text" class="form-control" value="{{$formcontrol->A_C_b_coverage_limits}}" placeholder=".."> <span class="input-group-addon">.00</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading color-collap" role="tab">
-                      <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" > 15. Description </a>
-                      </h4>
-                    </div>
-                    <div role="tabpanel" aria-labelledby="headingDescription">
-                        <div class="panel-body">
-                            <div class="row"> <textarea rows="5" cols="100" name="description" class="summernote">{{$formcontrol->description}}</textarea></div>
-                        </div>
-                    </div>
-                </div>
-
+                <hr>
                 <input class="btn btn-info" data-id="{{$user->id}}" id="sa-params{{$user->id}}" value="Save"  />
             </div>
         </div>

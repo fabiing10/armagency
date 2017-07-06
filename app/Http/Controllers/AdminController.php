@@ -401,7 +401,8 @@ class AdminController extends Controller
         view()->share('user',$user);
         $pdf = PDF::loadView('admin.table');
         $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
-        return $pdf->stream();
+        $data = date('Y-m-d');
+        return $pdf->download('accord-'.$data.'.pdf');
         //return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
 
       }

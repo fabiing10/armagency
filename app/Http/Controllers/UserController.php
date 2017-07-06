@@ -6,7 +6,7 @@ use App\Client;
 use App\ClientUser;
 use App\User;
 use App\History;
-use DB, PDF;
+use DB, PDF, Mail;
 use App\FormControl;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -48,6 +48,32 @@ class UserController extends Controller
     $history->clientId = $client->id;
     $history->sent_date = date('Y-m-d');
     $history->save();
+    $path = $this->loadResult('send');
+
+    $result = array(
+      'certificate_holder_name' => $request->certificate_name,
+      'address_client' => $request->address_client,
+      'phone_number' => $request->phone_client,
+      'email' => $request->email_client,
+      'path' => $path
+    );
+    if(!empty($result['email'])){
+        $email = $result['email'];
+        $path = $result['path'];
+
+        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path){
+            $message->to($email)->subject('Armagency - Accord Form')->attach($path);
+        });
+      /*  \Session::flash('flash_message','Se ha enviado el mensaje correctamente.. Gracias por Ayudar!');
+        return redirect('user/certificate');*/
+        return "Se envio";
+
+      }else{
+        \Session::flash('flash_message','No se ha podido enviar tu mensaje, pero ya dejamos el reporte.. Gracias por tu ayuda!');
+        return redirect('user/certificate');
+        return "No se envio";
+      }
+
 
     return $history;
   }
@@ -79,20 +105,28 @@ class UserController extends Controller
     return view('user.client-list')->with('user',$user)->with('clients',$clients);;
   }
 
-  public function loadResult(){
+  public function loadResult($option){
     $user = Auth::user();
     $formQuery = FormControl::where('userId','=',$user->id)->get();
+
     foreach($formQuery as $f){
       $form_id = $f->id;
     }
+    $date = date('m-d-y');
     $FormControl = FormControl::find($form_id);
+    view()->share('formcontrol',$FormControl);
+    view()->share('user',$user);
+    $pdf = PDF::loadView('user.download-certificate');
+    $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+    if($option == 'send'){
+      $name_pdf = public_path().'/pdf/'.$user->id.'-accord-pdf-'.$date.'.pdf';
+      $pdf->save($name_pdf);
+      return $name_pdf;
+    }else{
+      $data = date('Y-m-d');
+      return $pdf->download('accord-'.$data.'.pdf');
+    }
 
-
-        view()->share('formcontrol',$FormControl);
-        view()->share('user',$user);
-        $pdf = PDF::loadView('user.download-certificate');
-        $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
-        return $pdf->stream('download.pdf');
 
 
  //eturn view('user.download-certificate')->with('user',$user)->with('formcontrol',$FormControl);

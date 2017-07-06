@@ -18,7 +18,7 @@
                                               <div class="col-md-6">
                                                   <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user"></i>
+                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                                           </div>
                                                           <input name="name_insured" type="text" class="form-control" id="name_insured" placeholder="Name">
                                                       </div>
@@ -40,7 +40,7 @@
                                               <div class="col-md-4">
                                                   <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i>
+                                                          <div class="input-group-addon"><i class="fa fa-phone"></i>
                                                           </div>
                                                           <input name="address_insured" type="text" class="form-control" id="address_insured" placeholder="Address">
                                                       </div>
@@ -121,7 +121,7 @@
                                               <div class="col-md-6">
                                                   <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user"></i>
+                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                                           </div>
                                                           <input name="P_I_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="name">
                                                       </div>
@@ -131,7 +131,7 @@
                                               <div class="col-md-6">
                                                   <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i>
+                                                          <div class="input-group-addon"><i class="fa fa-question"></i>
                                                           </div>
                                                           <input name="dba_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="DBA name">
                                                       </div>
@@ -143,7 +143,7 @@
                                               <div class="col-md-12">
                                                   <div class="form-group">
                                                       <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i>
+                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                                           </div>
                                                           <input name="address" type="text" class="form-control" id="exampleInputpwd2" placeholder="Address">
                                                       </div>
@@ -184,7 +184,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-user"></i>
+                                            <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                             </div>
                                             <input name="name" type="text" class="form-control" id="exampleInputpwd2" placeholder="Contact name">
                                         </div>
@@ -1291,18 +1291,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading color-collap" role="tab">
-                      <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" > 15. Description </a>
-                      </h4>
-                    </div>
-                    <div role="tabpanel" aria-labelledby="headingDescription">
-                        <div class="panel-body">
-                            <div class="row"> <textarea rows="5" cols="100" name="description" class="summernote"></textarea></div>
-                        </div>
-                    </div>
-                </div>
+
+                Description<br>
+                <textarea rows="5" cols="100" name="description" class="summernote"> </textarea>
 
                 <hr>
                 <input class="btn btn-info" id="sa-params" value="Save" type="button" />
