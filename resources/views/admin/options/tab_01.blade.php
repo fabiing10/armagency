@@ -16,13 +16,11 @@
                                       <div class="panel-body">
                                           <div class="row">
                                               <div class="col-md-6">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user"></i>
-                                                          </div>
-                                                          <input name="name_insured" type="text" class="form-control" id="name_insured" placeholder="Name">
-                                                      </div>
-                                                  </div>
+                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                <div class="form-group f-style">
+                                                    <input type="text" class="form-control input-sm" id="name_insured" name="name_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                    <label for="name_insured">Name Insured</label>
+                                                </div>
                                               </div>
                                               <div class="col-md-6">
                                                   <div class="form-group">

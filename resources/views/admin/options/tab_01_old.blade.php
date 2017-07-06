@@ -20,7 +20,8 @@
                                                       <div class="input-group">
                                                           <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                                           </div>
-                                                          <input name="name_insured" type="text" class="form-control" id="name_insured" placeholder="Name">
+                                                          <!--<input name="name_insured" type="text" class="form-control" id="name_insured" placeholder="Name">-->
+                                                        
                                                       </div>
                                                   </div>
                                               </div>

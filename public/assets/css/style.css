@@ -28,6 +28,22 @@
      margin-bottom: 15px;
  }
 
+ .floating-labels .bar:after, .floating-labels .bar:before {
+     content: '';
+     height: 1px !important;
+ }
+ .input-group-addon {
+     width: 5%;
+     float: left;
+     padding: 0px;
+     height: 29px;
+     line-height: 35px;
+ }
+ .f-style{
+ width: 94%;
+float: left;
+margin-left: 0%;
+}
  .form-horizontal .form-group {
     margin-right: 0px;
     margin-left: 0px;

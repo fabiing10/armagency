@@ -72,7 +72,7 @@
               <div class="white-box">
 
 
-                      <form id="dataFormContainer" class="form-horizontal" method="POST">
+                      <form id="dataFormContainer" class="form-horizontal floating-labels" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                           <div class="wizard-content">
 
