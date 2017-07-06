@@ -128,13 +128,14 @@
                                       <div class="panel-body">
                                           <div class="row">
                                               <div class="col-md-6">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-user"></i>
-                                                          </div>
-                                                          <input name="P_I_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="name">
-                                                      </div>
+                                                <div class="form-group">
+                                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="P_I_name" name="P_I_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="P_I_name">Name</label>
                                                   </div>
+                                                </div>
+
                                               </div>
                                               <!--/span-->
                                               <div class="col-md-6">
