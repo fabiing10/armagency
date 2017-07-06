@@ -16,20 +16,23 @@
                                       <div class="panel-body">
                                           <div class="row">
                                               <div class="col-md-6">
-                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                                <div class="form-group f-style">
-                                                    <input type="text" class="form-control input-sm" id="name_insured" name="name_insured" required><span class="highlight"></span> <span class="bar"></span>
-                                                    <label for="name_insured">Name Insured</label>
-                                                </div>
+                                                  <div class="form-group">
+                                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                    <div class="form-group f-style">
+                                                        <input type="text" class="form-control input-sm" id="name_insured" name="name_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                        <label for="name_insured">Name Insured</label>
+                                                    </div>
+                                                  </div>
                                               </div>
                                               <div class="col-md-6">
                                                   <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-briefcase"></i>
-                                                          </div>
-                                                          <input name="I_I_dba_name" type="text" class="form-control" id="I_I_dba_name" placeholder="DBA name">
-                                                      </div>
+                                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                                    <div class="form-group f-style">
+                                                        <input type="text" class="form-control input-sm" id="I_I_dba_name" name="I_I_dba_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                        <label for="I_I_dba_name">DBA name</label>
+                                                    </div>
                                                   </div>
+
                                               </div>
                                               <!--span-->
                                           </div>
@@ -37,68 +40,76 @@
                                           <div class="row">
                                               <div class="col-md-4">
                                                   <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i>
-                                                          </div>
-                                                          <input name="address_insured" type="text" class="form-control" id="address_insured" placeholder="Address">
-                                                      </div>
+                                                    <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                    <div class="form-group f-style">
+                                                        <input type="text" class="form-control input-sm" id="address_insured" name="address_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                        <label for="address_insured">Address</label>
+                                                    </div>
                                                   </div>
                                               </div>
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-fax"></i>
-                                                          </div>
-                                                          <input name="phone_insured" type="number" class="form-control" id="phone_insured" placeholder="Phone">
-                                                      </div>
+                                                <div class="form-group">
+                                                  <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="phone_insured" name="phone_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="phone_insured">Phone</label>
                                                   </div>
+                                                </div>
+
                                               </div>
                                               <!--/span-->
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-envelope"></i>
-                                                          </div>
-                                                          <input name="email_insured" type="text" class="form-control" id="email_insured" placeholder="Email">
-                                                      </div>
+                                                <div class="form-group">
+                                                  <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="email_insured" name="email_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="email_insured">Email</label>
                                                   </div>
+                                                </div>
+
                                               </div>
                                               <!--/span-->
                                           </div>
                                           <div class="row">
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <input name="I_I_city" type="text" class="form-control" placeholder="City">
-                                                  </div>
+                                                <div class="form-group f-style">
+                                                    <input type="text" class="form-control input-sm" id="I_I_city" name="I_I_city" required><span class="highlight"></span> <span class="bar"></span>
+                                                    <label for="I_I_city">City</label>
+                                                </div>
                                               </div>
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <input name="I_I_state" type="text" class="form-control" placeholder="State">
-                                                  </div>
+                                                <div class="form-group f-style">
+                                                    <input type="text" class="form-control input-sm" id="I_I_state" name="I_I_state" required><span class="highlight"></span> <span class="bar"></span>
+                                                    <label for="I_I_state">State</label>
+                                                </div>
+
                                               </div>
                                               <div class="col-md-4">
-                                                  <div class="form-group">
-                                                      <input name="I_I_zip_code" type="text" class="form-control" placeholder="Zip code"> </div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="I_I_zip_code" name="I_I_zip_code" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="I_I_zip_code">Zip Code</label>
+                                                  </div>
                                               </div>
                                           </div>
                                           <!--/row-->
                                           <div class="row">
                                               <div class="col-md-6">
-                                                  <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-lock"></i>
-                                                          </div>
-                                                          <input name="password_insured" type="password" class="form-control" id="password_insured" placeholder="Password">
-                                                      </div>
+                                                <div class="form-group">
+                                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                                  <div class="form-group f-style">
+                                                      <input type="text" class="form-control input-sm" id="password_insured" name="password_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="password_insured">Password</label>
                                                   </div>
+                                                </div>
+
                                               </div>
                                               <div class="col-md-6">
                                                   <div class="form-group">
-                                                      <div class="input-group">
-                                                          <div class="input-group-addon"><i class="fa fa-lock"></i>
-                                                          </div>
-                                                          <input name="password_insured_repeat" type="password" class="form-control" id="password_insured_repeat" placeholder="Repeat Password">
-                                                      </div>
+                                                    <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                                    <div class="form-group f-style">
+                                                        <input type="text" class="form-control input-sm" id="password_insured_repeat" name="password_insured_repeat" required><span class="highlight"></span> <span class="bar"></span>
+                                                        <label for="password_insured_repeat">Repeat Password</label>
+                                                    </div>
                                                   </div>
                                               </div>
                                           </div>

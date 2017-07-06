@@ -27,22 +27,45 @@
  .form-group, .form-horizontal .form-group {
      margin-bottom: 15px;
  }
-
- .floating-labels .bar:after, .floating-labels .bar:before {
-     content: '';
-     height: 1px !important;
+ .floating-labels label {
+   color: #a2a2a2;
+   font-size: 16px;
+   position: absolute;
+   cursor: auto;
+   font-weight: 400;
+   top: 5px;
+   transition: .2s ease all;
+   -moz-transition: .2s ease all;
+   -webkit-transition: .2s ease all;
  }
+ .floating-labels .input-sm, .floating-labels .input-sm~label {
+    font-size: 16px;
+    padding-left: 5px;
+}
+ .floating-labels .bar:after, .floating-labels .bar:before {
+   content: '';
+   height: 1px !important;
+   bottom: 0px;
+ }
+
+.floating-labels .form-control:focus~label, .floating-labels .form-control:valid~label {
+  top: -15px;
+  font-size: 12px;
+  color: #707cd2;
+}
+
  .input-group-addon {
-     width: 5%;
-     float: left;
-     padding: 0px;
-     height: 29px;
-     line-height: 35px;
+   width: 35px;
+   float: left;
+   padding: 0px;
+   height: 29px;
+   line-height: 30px;
  }
  .f-style{
- width: 94%;
+ width: 90%;
 float: left;
 margin-left: 0%;
+    top: -1px;
 }
  .form-horizontal .form-group {
     margin-right: 0px;
