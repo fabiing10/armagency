@@ -49,26 +49,29 @@
 
                                 <div class="row">
                                     <div class="col-sm-12 col-xs-12">
-                                      <form id="dataFormContainer" class="form-horizontal" method="POST">
+                                      <form id="dataFormContainer" class="form-horizontal floating-labels" method="POST">
                                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                                    <input type="passwordold" name="password" class="form-control" placeholder="Enter pwd">
-                                                </div>
+                                          <div class="form-group">
+                                            <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
+                                            <div class="form-group f-style">
+                                                <input type="text" class="form-control input-sm" id="passwordold" name="passwordold" required><span class="highlight"></span> <span class="bar"></span>
+                                                <label for="passwordold">Enter old pwd</label>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                                    <input type="password" name="newpassword" id="newpassword" class="form-control" placeholder="Re Enter pwd">
-                                                </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
+                                            <div class="form-group f-style">
+                                                <input type="text" class="form-control input-sm" id="newpassword" name="newpassword" required><span class="highlight"></span> <span class="bar"></span>
+                                                <label for="newpassword">Enter pwd</label>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                                    <input type="password" name="newpassword2" class="form-control" id="newpassword2" placeholder="Re Enter pwd">
-                                                </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
+                                            <div class="form-group f-style">
+                                                <input type="text" class="form-control input-sm" id="newpassword2" name="newpassword2" required><span class="highlight"></span> <span class="bar"></span>
+                                                <label for="newpassword2">Re Enter pwd</label>
                                             </div>
+                                          </div>
                                             <div class="row">
                                               <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
                                                 <a href="get-password" id="to-recover" class="blue text-center"><i class="fa fa-question-circle m-r-5 blue"></i> Forgot your password?</a> </div>

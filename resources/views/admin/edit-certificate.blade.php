@@ -23,6 +23,9 @@
     padding: 10px 20px;
     background: #f7fafc;
     }
+    .row p {
+    padding-left: 15px;
+}
   </style>
 @endsection
 

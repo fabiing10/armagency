@@ -26,7 +26,9 @@
     border-bottom: 2px solid #e5e5e5;
     text-align: center;
 }
-
+.row p {
+    padding-left: 15px;
+}
   </style>
 @endsection
 

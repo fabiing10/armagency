@@ -66,25 +66,27 @@
               </div>
               </div>
               <div class="white-box">
-                      <form id="dataFormContainer" class="form-horizontal" method="POST">
+                      <form id="dataFormContainer" class="form-horizontal floating-labels" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                             <div class="panel-body">
                               <div class="row">
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                                                <input name="name_insured" type="text" class="form-control" id="name_insured" placeholder="Name">
-                                            </div>
+                                      <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                      <div class="form-group f-style">
+                                          <input type="text" class="form-control input-sm" id="name_insured" name="name_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                          <label for="name_insured">Name</label>
+                                      </div>
                                     </div>
                                     </div>
                                   <!--/span-->
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                            <div class="input-group">
-                                              <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                              <input name="address_insured" type="text" class="form-control" id="address_insured" placeholder="Address">
-                                            </div>
+                                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                      <div class="form-group f-style">
+                                          <input type="text" class="form-control input-sm" id="address_insured" name="address_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                          <label for="address_insured">Address</label>
+                                      </div>
                                     </div>
                                   </div>
                                   <!--/span-->
@@ -93,19 +95,21 @@
                               <div class="row">
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-fax"></i></div>
-                                                <input name="phone_insured" type="number" class="form-control" id="phone_insured" placeholder="Phone">
-                                            </div>
+                                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                      <div class="form-group f-style">
+                                          <input type="text" class="form-control input-sm" id="phone_insured" name="phone_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                          <label for="phone_insured">Phone</label>
+                                      </div>
                                     </div>
                                     </div>
                                   <!--/span-->
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                            <div class="input-group">
-                                              <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                                              <input name="email_insured" type="text" class="form-control" id="email_insured" placeholder="Email">
-                                            </div>
+                                      <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                      <div class="form-group f-style">
+                                          <input type="text" class="form-control input-sm" id="email_insured" name="email_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                          <label for="email_insured">Email</label>
+                                      </div>
                                     </div>
                                   </div>
                                   <!--/span-->
@@ -114,18 +118,20 @@
                               <div class="row">
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                                <input name="password_insured" type="password" class="form-control" id="password_insured" placeholder="Password">
-                                            </div>
+                                      <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                      <div class="form-group f-style">
+                                          <input type="text" class="form-control input-sm" id="password_insured" name="password_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                          <label for="password_insured">Password</label>
+                                      </div>
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                                <input name="password_insured_repeat" type="password" class="form-control" id="password_insured_repeat" placeholder="Repeat Password">
-                                            </div>
+                                      <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                      <div class="form-group f-style">
+                                          <input type="text" class="form-control input-sm" id="password_insured_repeat" name="password_insured_repeat" required><span class="highlight"></span> <span class="bar"></span>
+                                          <label for="password_insured">Repeat Password</label>
+                                      </div>
                                     </div>
                                   </div>
                                   <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">

@@ -179,7 +179,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <td style=" width: 500px !important; border-bottom: 1px solid; border-right:1px solid;"><b>PRODUCDER</b><br>
         {{$formcontrol->P_I_name}}<br>
         {{$formcontrol->P_I_address}}<br>
-        {{$formcontrol->P_I_dba_state}},{{$formcontrol->P_I_city}},TX {{$formcontrol->P_I_dba_zip_code}}
+        {{$formcontrol->P_I_city}},{{$formcontrol->P_I_dba_state}} {{$formcontrol->P_I_dba_zip_code}}
       </td>
         <td style="margin:0px !important; padding:0px !important;">
         <table border="1" style="">
@@ -229,6 +229,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       {{$user->name}}<br>
       {{$user->address}}<br>
       {{$user->phone}}
+      {{$user->city}}, {{$user->state}} {{$user->zip_code}}
       <!--
     	<table>
       <tr>

@@ -64,8 +64,8 @@
                                       <td>
                                         {{$h->sent_date}}
                                       <td>
-                                          <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
-                                          <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-20"><i class="fa fa-share-square"></i></button>
+                                          <button type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
+                                          <button type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></button>
                                       </td>
                                   </tr>
                                   @endforeach
@@ -76,7 +76,7 @@
                   <div class="row marginhistory block" style="display:none;">
                     <p class="block" style="display:none; margin-left:20px;">This month
                     @foreach ($histories as $h)
-                    <div class="white-box history-box">
+                    <div class="white-box history-box" style="padding:5px;">
                       <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:30%;"></img>
                       <h3 style="display: -webkit-inline-box; vertical-align: top;">{{$h->certificate_holder_name}}<br><span style="text-align:left;display: -webkit-inline-box; font-size:16px; color:grey;"> {{$h->address}}, </span><br><span style="text-align:left;display: -webkit-inline-box; font-size:16px; color:grey;"> TX{{$h->fax}} </span></h3>
 

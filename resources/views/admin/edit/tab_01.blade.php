@@ -249,7 +249,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-id-badge"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" value="{{$formcontrol->C_I_producer_id}}" id="customer_id" name="customer_id" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="customer_id">Producer customer ID number</label>
@@ -273,7 +273,7 @@
                           <div class="row">
                                   <div class="col-md-9">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Ensured_a}}" id="ensured_a" name="ensured_a" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="ensured_a">Ensured A</label>
@@ -283,7 +283,7 @@
                                   <!--/span-->
                                   <div class="col-md-3">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Naic_a}}" id="naic_a" name="naic_a" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="naic_a">NAIC #</label>
@@ -295,7 +295,7 @@
                                 <div class="row">
                                   <div class="col-md-9">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Ensured_b}}" id="ensured_b" name="ensured_b" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="ensured_b">Ensured B</label>
@@ -305,7 +305,7 @@
                                   <!--/span-->
                                   <div class="col-md-3">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Naic_b}}" id="naic_b" name="naic_b" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="naic_b">NAIC #</label>
@@ -317,7 +317,7 @@
                                 <div class="row">
                                   <div class="col-md-9">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Ensured_c}}" id="ensured_c" name="ensured_c" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="ensured_c">Ensured C</label>
@@ -327,7 +327,7 @@
                                   <!--/span-->
                                   <div class="col-md-3">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Naic_c}}" id="naic_c" name="naic_c" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="naic_c">NAIC #</label>
@@ -349,7 +349,7 @@
                                   <!--/span-->
                                   <div class="col-md-3">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Naic_d}}" id="naic_d" name="naic_d" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="naic_d">NAIC #</label>
@@ -361,7 +361,7 @@
                                 <div class="row">
                                   <div class="col-md-9">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Ensured_e}}" id="ensured_e" name="ensured_e" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="ensured_e">Ensured E</label>
@@ -371,7 +371,7 @@
                                   <!--/span-->
                                   <div class="col-md-3">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Naic_e}}" id="naic_e" name="naic_e" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="naic_e">NAIC #</label>
@@ -383,7 +383,7 @@
                                 <div class="row">
                                   <div class="col-md-9">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Ensured_f}}" id="ensured_f" name="ensured_f" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="ensured_f">Ensured F</label>
@@ -393,7 +393,7 @@
                                   <!--/span-->
                                   <div class="col-md-3">
                                     <div class="form-group">
-                                      <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                      <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                       <div class="form-group f-style">
                                           <input type="text" class="form-control input-sm" value="{{$Naic_f}}" id="naic_f" name="naic_f" required><span class="highlight"></span> <span class="bar"></span>
                                           <label for="naic_f">NAIC #</label>

@@ -179,7 +179,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <td style=" width: 500px !important; border-bottom: 1px solid; border-right:1px solid;"><b>PRODUCDER</b><br>
         {{$formcontrol->P_I_name}}<br>
         {{$formcontrol->P_I_address}}<br>
-        {{$formcontrol->P_I_dba_state}},{{$formcontrol->P_I_city}},TX {{$formcontrol->P_I_dba_zip_code}}
+        {{$formcontrol->P_I_city}},{{$formcontrol->P_I_dba_state}} {{$formcontrol->P_I_dba_zip_code}}
       </td>
         <td style="margin:0px !important; padding:0px !important;">
         <table border="1" style="">
@@ -229,6 +229,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       {{$user->name}}<br>
       {{$user->address}}<br>
       {{$user->phone}}
+      {{$user->city}}, {{$user->state}} {{$user->zip_code}}
       <!--
     	<table>
       <tr>
@@ -615,10 +616,10 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                 </td>
               </tr>
               <tr>
-                <td style="font-size:10px !important;">
+                <td style="font-size:10px !important; border-bottom:1px solid;">
                   {{$alotherinput3}}
                 </td>
-                <td style="border-left:1px solid; font-size:10px !important;">
+                <td style="border-left:1px solid; font-size:10px !important; border-bottom:1px solid;">
                   $ {{$alother3}}
                 </td>
               </tr>
@@ -849,16 +850,16 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
           <td style="width:300px; border-right:1px solid; border-bottom:2px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
             <table>
               <tr>
-                <td style="width:155px; font-size:10px !important;">
-                  COVERAGE LIMITS 1 / DEDUCTIBLE
+                <td style="width:155px; font-size:9px !important;">
+                  COVERAGE LIMITS 1 DEDUCTIBLE
                 </td>
                 <td style="width:115px; font-size:10px !important;">
                   $ {{$formcontrol->A_C_a_coverage_limits}}
                 </td>
               </tr>
               <tr>
-                <td style="font-size:10px !important;">
-                  COVERAGE LIMITS 2 / DEDUCTIBLE
+                <td style="font-size:9px !important;">
+                  COVERAGE LIMITS 2 DEDUCTIBLE
                 </td>
                 <td style="font-size:10px !important;">
                   $ {{$formcontrol->A_C_b_coverage_limits}}

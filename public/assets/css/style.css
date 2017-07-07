@@ -65,13 +65,16 @@
   color: #707cd2;
 }
 
- .input-group-addon {
-   width: 35px;
-   float: left;
-   padding: 0px;
-   height: 29px;
-   line-height: 30px;
- }
+.input-group-addon {
+    width: auto;
+    float: left;
+    padding: 2px;
+    height: 29px;
+    line-height: 30px;
+}
+.radio {
+    padding-left: 0px;
+}
  .f-style{
  width: 90%;
 float: left;

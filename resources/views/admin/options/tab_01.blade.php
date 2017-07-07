@@ -249,7 +249,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-id-badge"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="customer_id" name="customer_id" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="customer_id">Producer customer ID number</label>
@@ -273,7 +273,7 @@
                             <div class="row">
                                 <div class="col-md-9">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="ensured_a" name="ensured_a" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="ensured_a">Ensured A</label>
@@ -283,7 +283,7 @@
                                 <!--/span-->
                                 <div class="col-md-3">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="naic_a" name="naic_a" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="naic_a">NAIC #</label>
@@ -295,7 +295,7 @@
                             <div class="row">
                                 <div class="col-md-9">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="ensured_b" name="ensured_b" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="ensured_b">Ensured B</label>
@@ -305,7 +305,7 @@
                                 <!--/span-->
                                 <div class="col-md-3">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="naic_b" name="naic_b" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="naic_b">NAIC #</label>
@@ -317,7 +317,7 @@
                             <div class="row">
                                 <div class="col-md-9">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="ensured_c" name="ensured_c" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="ensured_c">Ensured C</label>
@@ -327,7 +327,7 @@
                                 <!--/span-->
                                 <div class="col-md-3">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="naic_c" name="naic_c" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="naic_c">NAIC #</label>
@@ -339,7 +339,7 @@
                             <div class="row">
                                 <div class="col-md-9">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="ensured_d" name="ensured_d" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="ensured_d">Ensured D</label>
@@ -349,7 +349,7 @@
                                 <!--/span-->
                                 <div class="col-md-3">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="naic_d" name="naic_d" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="naic_d">NAIC #</label>
@@ -361,7 +361,7 @@
                             <div class="row">
                                 <div class="col-md-9">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="ensured_e" name="ensured_e" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="ensured_e">Ensured E</label>
@@ -371,7 +371,7 @@
                                 <!--/span-->
                                 <div class="col-md-3">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="naic_e" name="naic_e" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="naic_e">NAIC #</label>
@@ -383,7 +383,7 @@
                             <div class="row">
                                 <div class="col-md-9">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-shield"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="ensured_f" name="ensured_f" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="ensured_f">Ensured F</label>
@@ -393,7 +393,7 @@
                                 <!--/span-->
                                 <div class="col-md-3">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-question"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-hashtag"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="naic_f" name="naic_f" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="naic_f">NAIC #</label>
@@ -1031,7 +1031,7 @@
                                 </div>
                               </div>
                           </div>
-                          <hr>
+
                           <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
@@ -1046,7 +1046,7 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                   <div class="form-group f-style">
                                       <input type="text" data-date-format="mm/dd/yyyy" placeholder="EXP(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="W_C_exp_date" required><span class="highlight"></span> <span class="bar"></span>
-                                      <label for="datepicker1">EXP(MM/DD/YYY)</label>
+
                                   </div>
                                 </div>
                                 </div>
@@ -1201,7 +1201,7 @@
                                   </div>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
@@ -1296,7 +1296,7 @@
                                   </div>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
@@ -1316,7 +1316,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading color-collap" role="tab">
                       <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" > 15. Description </a>
+                        <a class="" role="button" > 15. Description </a>
                       </h4>
                     </div>
                     <div role="tabpanel" aria-labelledby="headingDescription">

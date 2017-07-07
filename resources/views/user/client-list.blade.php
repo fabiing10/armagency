@@ -72,7 +72,7 @@
                                                     <td>{{$client->fax}}</td>
                                                     <td>{{$client->email}}</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                                        <button type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
