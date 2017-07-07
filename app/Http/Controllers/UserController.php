@@ -18,12 +18,45 @@ use Illuminate\Database\Eloquent\Builder;
 class UserController extends Controller
 {
   public function sendCertificate(Request $request){
-    /*$email_option = $request->email_option;
+
+    $user = Auth::user();
+
+    $email_option = $request->email_option;
     if($email_option == "on"){
-      return "Envio email option";
+      $send_email_option = true;
+      $email_data = $request->email_client;
     }else{
-      return "No Envio email option";
-    }*/
+      $send_email_option = false;
+      $email_data = 'none';
+    }
+
+    $fax_option = $request->fax_option;
+    if($fax_option == "on"){
+      $send_fax_option = true;
+      $fax_data = $request->fax_client.'@rcfax.com';
+    }else{
+      $send_fax_option = false;
+      $fax_data = 'none';
+    }
+
+
+    $email_to_me = $request->email_to_me;
+    if($email_to_me == "on"){
+      $email_to_me_option = true;
+      $email_to_me_data = $user->email;
+    }else{
+      $email_to_me_option = false;
+    }
+
+    $fax_to_me = $request->phone_to_me;
+    if($fax_to_me == "on"){
+      $fax_to_me_option = true;
+      $fax_to_me_data = $user->phone.'@rcfax.com';
+    }else{
+      $fax_to_me_option = false;
+      $fax_to_me_data = 'none';
+    }
+
 
     $client = new Client;
     $client->certificate_holder_name = $request->certificate_name;
@@ -33,7 +66,6 @@ class UserController extends Controller
     $client->email = $request->email_client;
     $client->save();
 
-    $user = Auth::user();
 
     $clientuser = new ClientUser;
     $clientuser->userId = $user->id;
@@ -54,15 +86,40 @@ class UserController extends Controller
       'certificate_holder_name' => $request->certificate_name,
       'address_client' => $request->address_client,
       'phone_number' => $request->phone_client,
-      'email' => $request->email_client,
-      'path' => $path
+      'path' => $path,
+      'send_email_option' => $send_email_option,
+      'email_data' => $email_data,
+      'send_fax_option' => $send_fax_option,
+      'fax_data' => $fax_data,
+      'email_to_me' => $email_to_me,
+      'email_to_me_data' => $email_to_me_data,
+      'fax_to_me_option' => $fax_to_me_option,
+      'fax_to_me_data' => $fax_to_me_data
     );
-    if(!empty($result['email'])){
-        $email = $result['email'];
+    if(!empty($result['send_email_option'])){
+        $email = $result['email_data'];
+        $fax = $result['fax_data'];
         $path = $result['path'];
 
-        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path){
-            $message->to($email)->subject('Armagency - Accord Form')->attach($path);
+        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$result){
+            if($result['send_email_option'] == true &&  $result['send_fax_option'] == false){
+              $message->to($email)->subject('Armagency - Accord Form')->attach($path);
+            }else if($result['send_email_option'] == false &&  $result['send_fax_option'] == true){
+              $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
+            }else if($result['send_email_option'] == true &&  $result['send_fax_option'] == true){
+              $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
+              $message->cc($result['fax_data']);
+            }else{
+              $message->to('sender@armagencyonline.com')->subject('Armagency - Accord Form')->attach($path);
+            }
+
+            if($result['email_to_me'] == true){
+              $message->cc($result['email_to_me_data']);
+            }
+            if($result['send_fax_option'] == true){
+              $message->cc($fax_data);
+            }
+
         });
         \Session::flash('flash_message','Se ha enviado el mensaje correctamente.. Gracias por Ayudar!');
         return redirect('user/history');

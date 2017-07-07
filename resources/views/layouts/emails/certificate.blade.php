@@ -17,12 +17,23 @@
 				<table width="500">
 					<tr>
 						<td>
-							<center><img src="{{URL::asset('assets/logo-identipet.png')}}" style="margin: 0 auto;display: block;" width="300"/></center>
+							<center><img src="{{URL::asset('assets/plugins/images/arm_logo2.png')}}" style="margin: 0 auto;display: block;" width="300"/></center>
 							<center><h2>Email Armagency</h2></center>
 
+						<p>To whom it may concern:</p>
+							<br>
+							<p>Please see attached certificate of insurance requested.</p>
+<br>
+							<p>Thank you</p>
+<br>
+							<p>Sincerely</p>
+<br>
+							<p>ARM Insurance Agency
+							We love your referrals</p>
+
+
 							<p class="lead"style="text-align:justify;">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nunc vel magna auctor fringilla. Praesent rhoncus augue eget interdum laoreet. Integer sagittis hendrerit dui, et suscipit magna maximus at. Pellentesque maximus erat sit amet est convallis tristique. Vestibulum mollis nunc eu porta dignissim. Ut sodales leo non ligula volutpat, sagittis efficitur nunc finibus. Aliquam venenatis tempus mauris, eget volutpat arcu consequat eu. Morbi placerat egestas urna sed pharetra. Nam euismod, erat sit amet molestie vestibulum, augue nisl scelerisque leo, mollis suscipit leo dolor vel nibh. Nullam felis magna, aliquet at erat sed, euismod volutpat diam. Fusce id posuere ipsum. Duis quis arcu ut lorem ultrices vestibulum. Ut eu mauris ut orci sollicitudin aliquet vel vestibulum nunc
-              </p>
+              his e-mail and all attachments transmitted with it may contain legally privileged and/or confidential information intended solely for the use of the addressee(s). If the reader of this message is not the intended recipient, you are hereby notified that any reading, dissemination, distribution, copying, forwarding or other use of this message or its attachments is strictly prohibited. If you have received this message in error, please notify the sender immediately and delete this message and all copies and backups thereof. Thank you.</p>
 							<br>
 
 
