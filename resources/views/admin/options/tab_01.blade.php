@@ -51,8 +51,8 @@
                                                 <div class="form-group">
                                                   <div class="input-group-addon"><i class="fa fa-fax"></i></div>
                                                   <div class="form-group f-style">
-                                                      <input type="text" class="form-control input-sm" id="phone_insured" name="phone_insured" required><span class="highlight"></span> <span class="bar"></span>
-                                                      <label for="phone_insured">Phone</label>
+                                                      <input type="number" class="form-control input-sm" id="phone_insured" name="phone_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <label for="phone_insured">Fax</label>
                                                   </div>
                                                 </div>
 
