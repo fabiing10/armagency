@@ -85,7 +85,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-phone"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="phone_client" name="phone_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" id="phone_client" name="phone_client" ><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="phone_client">Phone number</label>
                                                       </div>
                                                     </div>
@@ -93,7 +93,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-fax"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="fax_client" data-mask="(999) 999-9999" name="fax_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" id="fax_client" data-mask="(999) 999-9999" name="fax_client" ><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="fax_client">Fax</label>
                                                       </div>
                                                     </div>
@@ -128,11 +128,11 @@ hr {
                                                                           <label for="email_option" id="email_option"></label>
                                                                       </div>
                                                                       <hr>
-                                                                      <div class="checkbox checkbox-success checkbox-circle">
+                                                                      <div class="checkbox checkbox-success checkbox-circle fax_option">
                                                                           <input name="fax_option" type="checkbox" >
                                                                           <label for="fax_option" id="fax_option"></label>
                                                                       </div>
-                                                                      <hr>
+                                                                      <hr class="fax_option">
                                                                   </div>
                                                               </div>
                                                               <div class="form-group">
@@ -188,6 +188,7 @@ hr {
 @section('script')
 <script type="text/javascript">
 (function() {
+
 
 $('#email_client').change(function(){
   $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
@@ -252,8 +253,18 @@ $('#fax_client').change(function(){
             var isValidStep = fv.isValidContainer($this);
             if (isValidStep === false || isValidStep === null) {
                 return false;
+            }else{
+              $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
+              if($('#fax_client').val() != ""){
+                $('#fax_option').html($('#fax_client').val()+" (Fax)");
+              }else{
+                $('.fax_option').fadeOut();
+              }
+
+              console.log("Correcto")
+              return true;
             }
-            return true;
+
         },
         onFinish: function() {
           $("#sendForm").trigger("click");
