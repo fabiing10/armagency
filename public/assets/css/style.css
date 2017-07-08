@@ -30,6 +30,42 @@
        margin-right: 10px;
    }
  }
+
+ @media only screen and (max-width: 520px){
+   .marginhistory {
+       margin: 0px !important;
+       margin-top: 30px !important;
+       width: 100%;
+   }
+   .history-box {
+      min-height: 95px;
+    }
+    .panel_mobile {
+      float: right;
+      position: relative;
+      top: -10px;
+    }
+    .panel_mobile_clients {
+      float: right;
+      position: relative;
+      bottom: -45px;
+    }
+
+
+    .panel_description {
+      float: left;
+      min-width: 80%;
+      padding-left: 10px;
+    }
+
+    .panel_description_clients{
+      width: 50%;
+      float: left;
+      padding-left: 10px;
+    }
+ }
+
+
  .btnaccount2 {
      display: inline !important;
      float: right;
@@ -51,7 +87,7 @@
  }
  .floating-labels .input-sm, .floating-labels .input-sm~label {
     font-size: 16px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
  .floating-labels .bar:after, .floating-labels .bar:before {
    content: '';

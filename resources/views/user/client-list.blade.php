@@ -85,18 +85,26 @@
                                       </div>
                                     </div>-->
                                 </div>
-                                <div class="row marginhistory block" style="display:none;">
-                                  <p class="block" style="display:none; margin-left:20px;">This month
-                                  @foreach ($clients as $client)
-                                  <div class="white-box history-box">
-                                    <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:30%;"></img>
-                                    <h3 style="display: -webkit-inline-box; vertical-align: top;">{{$client->certificate_holder_name}}<br><span style="text-align:left;display: -webkit-inline-box; font-size:16px; color:grey;"> {{$client->address}}, </span><br><span style="text-align:left;display: -webkit-inline-box; font-size:16px; color:grey;"> TX{{$client->fax}} </span></h3>
-                                    <p style="float:right;">{{$client->email}}</p>
-                                  </div>
-                                  @endforeach
-                                </div>
+
                             </div>
               </div>
+          </div>
+          <div class="row marginhistory block" style="display:none;">
+            <p class="block" style="display:none; margin-left:20px;">This month
+            @foreach ($clients as $client)
+            <div class="white-box history-box" style="padding: 8px;">
+              <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:20%;float:left;"></img>
+              <div class="panel_description_clients">
+                <h3 style="display: -webkit-inline-box; vertical-align: top;padding: 0px;margin: 0px;">{{$client->certificate_holder_name}}</h3>
+                <p style="float:right;width: 100%;padding: 0px;">{{$client->email}}</p>
+              </div>
+                <div class="panel_mobile_clients">
+                  <a href="/user/history/delete/" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
+                  <a href="/user/certificate/" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                </div>
+
+            </div>
+            @endforeach
           </div>
           <!-- ============================================================== -->
           <!-- wallet, & manage users widgets -->
