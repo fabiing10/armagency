@@ -45,6 +45,7 @@ class UserController extends Controller
       $email_to_me_option = true;
       $email_to_me_data = $user->email;
     }else{
+      $email_to_me_data = 'none';
       $email_to_me_option = false;
     }
 
@@ -101,7 +102,7 @@ class UserController extends Controller
         $fax = $result['fax_data'];
         $path = $result['path'];
 
-        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$result){
+        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$fax,$path,$result){
             if($result['send_email_option'] == true &&  $result['send_fax_option'] == false){
               $message->to($email)->subject('Armagency - Accord Form')->attach($path);
             }else if($result['send_email_option'] == false &&  $result['send_fax_option'] == true){
@@ -139,6 +140,13 @@ class UserController extends Controller
     return view('user.send_certificate')->with('user',$user);
   }
 
+  public function deleteHistory($id){
+
+    $history = History::find($id);
+    $history->delete();
+    return redirect('user/history');
+
+  }
   public function gethistory (){
     $user = Auth::user();
     //$history = History::where('userId', '=', $user->id)->get();
@@ -146,7 +154,7 @@ class UserController extends Controller
     $histories = DB::table('users as u')
       ->join('history_send as h', 'u.id', '=', 'h.userId')
       ->join('clients as c', 'c.id', '=', 'h.clientId')
-      ->select('h.*','c.*')
+      ->select('h.*','c.*','c.id as clientId','u.id as userId','h.id as historyId')
       ->where('u.id','=',$user->id)
       ->get();
 

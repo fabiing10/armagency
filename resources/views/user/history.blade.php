@@ -64,8 +64,8 @@
                                       <td>
                                         {{$h->sent_date}}
                                       <td>
-                                          <button type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
-                                          <button type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></button>
+                                          <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
+                                          <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
                                       </td>
                                   </tr>
                                   @endforeach

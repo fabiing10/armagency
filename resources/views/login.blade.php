@@ -76,12 +76,12 @@
 
                     <div class="form-group  m-t-20">
                       <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" name="email" placeholder="Email">
+                        <input class="form-control" type="text" required="" name="email" placeholder="email">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" name="password" placeholder=" Password">
+                        <input class="form-control" type="password" required="" name="password" placeholder="password">
                       </div>
                     </div>
                     <div class="form-group">

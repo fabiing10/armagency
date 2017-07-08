@@ -69,6 +69,7 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::post('/', 'UserController@sendCertificate');
   /* User */
   Route::get('/history', 'UserController@gethistory');
+  Route::get('/history/delete/{id}', 'UserController@deleteHistory');
   Route::get('/client-list', 'UserController@getclient');
   Route::get('/download-certificate/{option}', 'UserController@loadResult');
   Route::get('/send-via',function(){return view('user.send-via');});
