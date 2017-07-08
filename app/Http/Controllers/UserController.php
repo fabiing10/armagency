@@ -17,6 +17,14 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 class UserController extends Controller
 {
+
+  public function specialC($data){
+    $conservar = '0-9'; // juego de caracteres a conservar
+    $regex = sprintf('~[^%s]++~i', $conservar); // case insensitive
+    $string = preg_replace($regex, '', $data);
+    return $string;
+  }
+
   public function sendCertificate(Request $request){
 
     $user = Auth::user();
@@ -33,7 +41,8 @@ class UserController extends Controller
     $fax_option = $request->fax_option;
     if($fax_option == "on"){
       $send_fax_option = true;
-      $fax_data = $request->fax_client.'@rcfax.com';
+      $data_validate =$this->specialC($request->fax_client);
+      $fax_data = $data_validate.'@rcfax.com';
     }else{
       $send_fax_option = false;
       $fax_data = 'none';
@@ -118,7 +127,7 @@ class UserController extends Controller
               $message->cc($result['email_to_me_data']);
             }
             if($result['send_fax_option'] == true){
-              $message->cc($fax_data);
+              $message->cc($result['fax_data']);
             }
 
         });

@@ -93,7 +93,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-fax"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="fax_client" name="fax_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" id="fax_client" data-mask="(999) 999-9999" name="fax_client" required><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="fax_client">Fax</label>
                                                       </div>
                                                     </div>
@@ -182,6 +182,7 @@ hr {
     <!-- FormValidation plugin and the class supports validating Bootstrap form -->
     <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js')}}"></script>
     <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('assets/js/mask.js')}}"></script>
 @endsection
 
 @section('script')
