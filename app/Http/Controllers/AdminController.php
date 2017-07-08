@@ -62,12 +62,18 @@ class AdminController extends Controller
           return view('admin.create-certificate');
       }
 
+      public function specialC($data){
+        $conservar = '0-9'; // juego de caracteres a conservar
+        $regex = sprintf('~[^%s]++~i', $conservar); // case insensitive
+        $string = preg_replace($regex, '', $data);
+        return $string;
+      }
       public function create_certificate (Request $request){
 
         /* user */
         $user = new User();
         $user->name = $request->name_insured;
-        $user->phone = $request->phone_insured;
+        $user->phone = $this->specialC($request->phone_insured);
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
         $user->dba_name = $request->I_I_dba_name;
@@ -423,7 +429,7 @@ class AdminController extends Controller
       public function edituserprofile (Request $request, $id){
         $user = User::find($id);
         $user->name = $request->name_insured;
-        $user->phone = $request->phone_insured;
+        $user->phone = $this->specialC($request->phone_insured);
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
         $user->dba_name = $request->I_I_dba_name;
@@ -463,7 +469,7 @@ class AdminController extends Controller
         /* user */
         $user = User::find($id);
         $user->name = $request->name_insured;
-        $user->phone = $request->phone_insured;
+        $user->phone = $this->specialC($request->phone_insured);
         $user->address = $request->address_insured;
 
         $user->email = $request->email_insured;

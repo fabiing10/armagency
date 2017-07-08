@@ -201,6 +201,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <!-- FormValidation plugin and the class supports validating Bootstrap form -->
     <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js')}}"></script>
     <script src="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('assets/js/mask.js')}}"></script>
 @endsection
 
 @section('script')

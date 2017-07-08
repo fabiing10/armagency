@@ -51,7 +51,7 @@
                                                 <div class="form-group">
                                                   <div class="input-group-addon"><i class="fa fa-fax"></i></div>
                                                   <div class="form-group f-style">
-                                                      <input type="number" class="form-control input-sm" id="phone_insured" name="phone_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <input type="text" class="form-control input-sm" id="phone_insured" name="phone_insured" data-mask="(999) 999-9999" required><span class="highlight"></span> <span class="bar"></span>
                                                       <label for="phone_insured">Fax</label>
                                                   </div>
                                                 </div>
@@ -97,7 +97,7 @@
                                                 <div class="form-group">
                                                   <div class="input-group-addon"><i class="fa fa-lock"></i></div>
                                                   <div class="form-group f-style">
-                                                      <input type="text" class="form-control input-sm" id="password_insured" name="password_insured" required><span class="highlight"></span> <span class="bar"></span>
+                                                      <input type="password" class="form-control input-sm" id="password_insured" name="password_insured" required><span class="highlight"></span> <span class="bar"></span>
                                                       <label for="password_insured">Password</label>
                                                   </div>
                                                 </div>
@@ -107,7 +107,7 @@
                                                   <div class="form-group">
                                                     <div class="input-group-addon"><i class="fa fa-lock"></i></div>
                                                     <div class="form-group f-style">
-                                                        <input type="text" class="form-control input-sm" id="password_insured_repeat" name="password_insured_repeat" required><span class="highlight"></span> <span class="bar"></span>
+                                                        <input type="password" class="form-control input-sm" id="password_insured_repeat" name="password_insured_repeat" required><span class="highlight"></span> <span class="bar"></span>
                                                         <label for="password_insured_repeat">Repeat Password</label>
                                                     </div>
                                                   </div>
@@ -249,7 +249,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
-                                    <div class="input-group-addon"><i class="fa fa-id-badge"></i></div>
+                                    <div class="input-group-addon"><i class="fa fa-bars" aria-hidden="true"></i></div>
                                     <div class="form-group f-style">
                                         <input type="text" class="form-control input-sm" id="customer_id" name="customer_id" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="customer_id">Producer customer ID number</label>

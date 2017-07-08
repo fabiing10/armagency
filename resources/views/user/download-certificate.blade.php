@@ -161,8 +161,16 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <td style="vertical-align:bottom;">
       <h1 style="text-align:center; font-size:30px !important; vertical-align:bottom">CERTIFICATE OF LIABILITY INSURANCE</h1>
     </td>
-    <td style="width:80px; text-align:right !important; padding-right:4px;">
-      <p style="border-top:1px solid; border-left:1px solid; border-right:1px solid; padding:20px;"> Date:{{$formcontrol->exp_date}} <p>
+    <td style="width:130px; text-align:right !important; padding-right:4px;">
+        <table style="width:130px; border:1px solid;position:relative;top:10px !important;" border="1">
+          <tr style="border:1px solid;">
+            <td style="width:130px; border:1px solid;">DATE (MM/DD/YYYY)</td>
+          </tr>
+          <tr>
+            <td><center>{{$formcontrol->exp_date}}</center></td>
+          </tr>
+        </table>
+
     </td>
 
   </table>
