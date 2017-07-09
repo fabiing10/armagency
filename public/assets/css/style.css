@@ -32,6 +32,9 @@
  }
 
  @media only screen and (max-width: 520px){
+   .btnlogin {
+      font-size: 15px;
+    }
    .recover_password{
     color: white;
     text-align: center;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use DB, PDF;
+use DB, PDF, Auth;
 use App\FormControl;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -448,8 +448,33 @@ class AdminController extends Controller
           }
 
       public function getuseradmin (){
-        $users = User::where('userType','=','admin')->get();
-        return view('admin.admin-settings')->with('users',$users);
+        $userType = Auth::user()->userType;
+          if($userType == "admin" ){
+            $admins = User::where('userType','=','admin')->get();
+            $users = User::where('userType','=','agency')->get();
+            return view('admin.admin-settings')->with('users',$users)->with('admins',$admins);
+          }else{
+            return redirect('/admin');
+          }
+
+      }
+
+      public function createAdmin($option){
+        if($option == 'admin'){
+          $option_user = 'admin';
+        }elseif ($option == 'user') {
+          $option_user = 'agency';
+        }else{
+          $option_user = 'agency';
+        }
+
+        return view('admin.add-admin')->with('option_user', $option_user);
+      }
+
+      public function deleteAdmin($option){
+        $user = User::find($option);
+        $user->delete();
+        return redirect('admin/admin-settings');
       }
 
       public function addAdmin (Request $request){
@@ -459,11 +484,11 @@ class AdminController extends Controller
         $user->phone = $request->phone_insured;
         $user->address = $request->address_insured;
         $user->email = $request->email_insured;
-        $user->userType = "admin";
+        $user->userType = $request->option_user;
         $user->password = bcrypt($request->password_insured);
         $user->save();
 
-        return redirect('admin');
+        return redirect('admin/admin-settings');
       }
       public function editcertificate (Request $request, $id){
         /* user */

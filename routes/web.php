@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
 /* Admin */
 Route::get('/', function () {
     return redirect('login');
@@ -49,12 +51,15 @@ Route::get('/fechas', 'AdminController@alerts');
   Route::get('/active-inactive', 'AdminController@getuser');
   Route::get('/active-inactive/status/{id}', 'AdminController@editstatus');
   Route::get('/admin-settings', 'AdminController@getuseradmin');
+  Route::get('/admin-settings/delete/{option}', 'AdminController@deleteAdmin');
+
+
   Route::get('/table', function () {return view('admin.table');});
   Route::get('/table/{id}', 'AdminController@loadResult');
   Route::get('/edit-certificate/{id}', 'AdminController@getcertificate');
   Route::post('/edit-certificate/{id}', 'AdminController@editcertificate');
-  Route::get('/create-admin', function () {return view('admin.add-admin');});
-  Route::post('/create-admin', 'AdminController@addAdmin');
+  Route::get('/create-admin/{option}', 'AdminController@createAdmin');
+  Route::post('/create-admin/{option}', 'AdminController@addAdmin');
   Route::get('/user-profile/{id}', 'AdminController@userprofile');
   Route::post('/user-profile/{id}', 'AdminController@edituserprofile');
 

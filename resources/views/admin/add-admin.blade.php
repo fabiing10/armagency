@@ -68,6 +68,7 @@
               <div class="white-box">
                       <form id="dataFormContainer" class="form-horizontal floating-labels" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
+                          <input type="hidden" name="option_user" value="{{$option_user}}" />
                             <div class="panel-body">
                               <div class="row">
                                   <div class="col-md-6">

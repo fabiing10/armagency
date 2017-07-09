@@ -15,10 +15,10 @@ class DataAccessAdmin
      */
     public function handle($request, Closure $next)
     {
-      
+
       if(Auth::user()){
         $userType = Auth::user()->userType;
-          if($userType == "admin"){
+          if($userType == "admin" or $userType == "agency"){
               return $next($request);
           }else if($userType == "user"){
               return redirect("/user");

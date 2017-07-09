@@ -92,7 +92,7 @@
                     </div>
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                        <a href="javascript:void(0)" id="to-recover" class="text-dark2 text-center forgot-login"> Forgot your password?</a> </div>
+                        <a href="{{ route('password.request') }}" class="text-dark2 text-center forgot-login"> Forgot your password?</a> </div>
                       </div>
                     </div>
                   </form>

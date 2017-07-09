@@ -33,6 +33,8 @@ class HomeController extends Controller
 
         if($userType == "admin"){
             return redirect("/admin");
+        }if($userType == "agency"){
+            return redirect("/admin");
         }else if($userType == "user"){
             return redirect("/user");
         }else{
