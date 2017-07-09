@@ -32,6 +32,10 @@
  }
 
  @media only screen and (max-width: 520px){
+   .recover_password{
+    color: white;
+    text-align: center;
+   }
    .marginhistory {
        margin: 0px !important;
        margin-top: 30px !important;
