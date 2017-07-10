@@ -6,7 +6,7 @@ use App\Client;
 use App\ClientUser;
 use App\User;
 use App\History;
-use DB, PDF, Mail;
+use DB, PDF, Mail,Alert;
 use App\FormControl;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -35,7 +35,7 @@ class UserController extends Controller
       $email_data = $request->email_client;
     }else{
       $send_email_option = false;
-      $email_data = 'none';
+      $email_data = 'email: ninguno';
     }
 
     $fax_option = $request->fax_option;
@@ -45,7 +45,7 @@ class UserController extends Controller
       $fax_data = $data_validate.'@rcfax.com';
     }else{
       $send_fax_option = false;
-      $fax_data = 'none';
+      $fax_data = 'fax: ninguno';
     }
 
 
@@ -54,8 +54,8 @@ class UserController extends Controller
       $email_to_me_option = true;
       $email_to_me_data = $user->email;
     }else{
-      $email_to_me_data = 'none';
       $email_to_me_option = false;
+      $email_to_me_data = 'none';
     }
 
     $fax_to_me = $request->phone_to_me;
@@ -90,7 +90,16 @@ class UserController extends Controller
     $history->clientId = $client->id;
     $history->sent_date = date('Y-m-d');
     $history->save();
-    $path = $this->loadResult('send');
+
+    $dataCertificate = array(
+      'certificate_holder_name' => $request->certificate_name,
+      'address_client' => $request->address_client,
+      'phone_number' => $request->phone_client,
+      'email_data' => $email_data,
+      'fax_data' => $fax_data
+    );
+
+    $path = $this->loadResult('send',$dataCertificate);
 
     $result = array(
       'certificate_holder_name' => $request->certificate_name,
@@ -101,12 +110,12 @@ class UserController extends Controller
       'email_data' => $email_data,
       'send_fax_option' => $send_fax_option,
       'fax_data' => $fax_data,
-      'email_to_me' => $email_to_me,
+      'email_to_me_option' => $email_to_me_option,
       'email_to_me_data' => $email_to_me_data,
       'fax_to_me_option' => $fax_to_me_option,
       'fax_to_me_data' => $fax_to_me_data
     );
-    if(!empty($result['send_email_option'])){
+    if(!empty($result['send_email_option']) or !empty($result['email_to_me_option'])){
         $email = $result['email_data'];
         $fax = $result['fax_data'];
         $path = $result['path'];
@@ -123,7 +132,7 @@ class UserController extends Controller
               $message->to('sender@armagencyonline.com')->subject('Armagency - Accord Form')->attach($path);
             }
 
-            if($result['email_to_me'] == true){
+            if($result['email_to_me_option'] == true){
               $message->cc($result['email_to_me_data']);
             }
             if($result['send_fax_option'] == true){
@@ -131,12 +140,13 @@ class UserController extends Controller
             }
 
         });
-        \Session::flash('flash_message','Se ha enviado el mensaje correctamente.. Gracias por Ayudar!');
+        Alert::success('The Accord has been sent!')->persistent("Close");
         return redirect('user/history');
 
 
       }else{
-        \Session::flash('flash_message','No se ha podido enviar tu mensaje, pero ya dejamos el reporte.. Gracias por tu ayuda!');
+
+        Alert::error('The Accord has not been sent!')->persistent("Close");
         return redirect('user/certificate');
 
       }
@@ -183,7 +193,18 @@ class UserController extends Controller
     return view('user.client-list')->with('user',$user)->with('clients',$clients);;
   }
 
-  public function loadResult($option){
+  public function downloadCertificate($option){
+    $dataCertificate = array(
+      'certificate_holder_name' => '',
+      'address_client' => '',
+      'phone_number' => '',
+      'email_data' => '',
+      'fax_data' => ''
+    );
+
+   return  $this->loadResult($option,$dataCertificate);
+  }
+  public function loadResult($option,$dataCertificate){
     $user = Auth::user();
     $formQuery = FormControl::where('userId','=',$user->id)->get();
 
@@ -192,6 +213,7 @@ class UserController extends Controller
     }
     $date = date('m-d-y');
     $FormControl = FormControl::find($form_id);
+    view()->share('dataCertificate',$dataCertificate);
     view()->share('formcontrol',$FormControl);
     view()->share('user',$user);
     $pdf = PDF::loadView('user.download-certificate');

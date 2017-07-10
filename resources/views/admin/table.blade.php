@@ -7,6 +7,13 @@
     font-size: 11px !important;
 
   }
+  .certificate_field{
+    text-transform: uppercase;
+    text-align: left;
+    padding: 1px;
+    margin-left: 30px;
+
+  }
   table, th, td {
     border: 0px solid black;
     border-collapse: collapse;
@@ -898,7 +905,9 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
   <table>
     <tr>
       <th rowspan="2" style="border:1px solid; height:100px; width:550px;">
-
+        <p class="certificate_field">{{$dataCertificate['certificate_holder_name']}}</p>
+        <p class="certificate_field">{{$dataCertificate['address_client']}}</p>
+        <p class="certificate_field">{{$dataCertificate['fax_data']}}</p>
       </th>
       <th style="border:1px solid;">
         SHOULD ANY OF THE ABOVE DESCRIBED POLICIES BE CANCELLED BEFORE THE EXPIRATION DATE THEREOF, NOTICE WILL BE DELIVERED IN A ACCORDANCE WITH THE POLICY PROVISIONS.

@@ -79,7 +79,7 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::get('/history', 'UserController@gethistory');
   Route::get('/history/delete/{id}', 'UserController@deleteHistory');
   Route::get('/client-list', 'UserController@getclient');
-  Route::get('/download-certificate/{option}', 'UserController@loadResult');
+  Route::get('/download-certificate/{option}', 'UserController@downloadCertificate');
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/account', 'UserController@account');
   Route::get('/get-password',function(){return view('user.get-password');});
