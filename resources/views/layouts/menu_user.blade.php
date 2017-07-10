@@ -23,7 +23,7 @@ $user = Auth::user();
                   <li> <a href="/user/support" style="padding-right:18px;" class="waves-effect px-25"><i class="fa fa-support"></i> <span class="hide-menu" style="padding-left: 10px;"> Support <span></span></span></a>
                   </li>
                   <li><a href="/user/account" style="padding-right:18px;" class="waves-effect px-25"><i class="fa fa-key"></i> <span class="hide-menu" style="padding-left: 10px;"> Account </span></a></li>
-                  <li><a href="/logout" style="padding-right:18px; display: none;" class="waves-effect px-25 block"><i class="fa fa-key"></i> <span class="hide-menu" style="padding-left: 10px;"> Logout </span></a></li>
+                  <li><a href="/logout" style="padding-right:18px; display: none;" class="waves-effect px-25 block"><i class="fa fa-sign-out"></i> <span class="hide-menu" style="padding-left: 10px;"> Logout </span></a></li>
 
               </ul>
       </div>
