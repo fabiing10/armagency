@@ -77,12 +77,13 @@
                     @foreach ($histories as $h)
                     <div class="history-box" style="padding:8px;">
                       <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:20%;float:left;"></img>
-                    <div class="panel_description">
+                    <div class="panel_description_clients">
 
-                      <h3 style="display: -webkit-inline-box; vertical-align: top;">{{$h->certificate_holder_name}}</h3>
-                      <p style="float:right; padding:10px;">{{$h->sent_date}}</p>
+                      <h3 style="display: -webkit-inline-box; vertical-align: top;padding: 0px;margin: 0px;">{{$h->certificate_holder_name}}</h3>
+                      <p style="float:right;width: 100%;padding: 0px;">{{$h->sent_date}}</p>
+
                     </div>
-                      <div class="panel_mobile">
+                      <div class="panel_mobile_clients">
                         <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
                         <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
                       </div>
