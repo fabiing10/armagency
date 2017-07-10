@@ -135,7 +135,7 @@ $(document).ready(function() {
     //Parameter
     $('#sa-params').click(function(){
         swal({
-            title: "Send Form?",
+            title: "Save New Client?",
             text: "",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
