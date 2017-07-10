@@ -46,7 +46,7 @@ hr {
               <!-- /.col-lg-12 -->
           </div>
           <!-- /.row -->
-          <div class="white-box" style="padding:20px;">
+          <div class="white-box">
               <h2 class="box-title m-b-0">NEED HELP?</h2>
               <p class="text-muted m-b-30 font-13 subtitleaccount">We are here to help</p>
               @if (Session::has('sweet_alert.alert'))
@@ -54,10 +54,10 @@ hr {
                       swal({!! Session::get('sweet_alert.alert') !!});
                   </script>
               @endif
-              <div class="row m-t-30">
+
                       <div class="row">
                         <div class="col-xs-12">
-                            <img src="{{URL::asset('assets/plugins/images/icono2.png')}}" class="w-6-reponsive" style="width: 3%;"></img>
+
                             @if ($FormControl->status === 'active')
                             <label> Account status:</label><span style="color:green;"> ACTIVE</span>
                             @else
@@ -78,12 +78,13 @@ hr {
                       </div>
                       <hr>
                       <div class="row">
-                          <div class="col-lg-4"><i class="fa fa-lock p-10"></i>
-                          <label> My Password</label> <button style="display:none;" type="submit" class="btn btn-info btnaccount" onclick="window.location.href='reset-password'"> <i class="fa fa-pencil"></i> Edit</button></div>
+                          <div class="col-lg-12"><i class="fa fa-lock p-10"></i>
+                          <label> My Password</label>
+                          <button type="submit" style="float:right;" class="btn btn-info btnaccount" onclick="window.location.href='reset-password'"> <i class="fa fa-pencil"></i> Edit</button></div>
 
                       </div>
                       <hr>
-              </div>
+
           </div>
           <!-- ============================================================== -->
           <!-- wallet, & manage users widgets -->
