@@ -5,7 +5,7 @@
     <div class="navbar-header">
         <div class="pl-30">
             <!-- Logo -->
-            <a class="logo" href="index.html">
+            <a class="logo" href="/login">
               <b>
                 <img src="{{URL::asset('assets/plugins/images/arm_logo2.png')}}" alt="home" class="light-logo" />
              </b>
