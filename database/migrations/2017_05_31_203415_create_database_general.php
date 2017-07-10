@@ -84,7 +84,7 @@ class CreateDatabaseGeneral extends Migration
             $table->string('A_C_b_exp_date')->nullable();
             $table->string('A_C_b_coverage_limits')->nullable();
             /* description */
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
