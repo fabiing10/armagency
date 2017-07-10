@@ -70,6 +70,7 @@
 <script src="{{URL::asset('assets/js/custom.min.js')}}"></script>
 <!-- Sweet-Alert  -->
 <script src="{{URL::asset('assets/plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
+@include('sweet::alert')
 <!--Style Switcher -->
 <script src="{{URL::asset('assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
 

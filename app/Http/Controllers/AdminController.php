@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\ClientUser;
+use App\History;
 use App\User;
-use DB, PDF, Auth;
+use DB, PDF, Auth, Alert, Mail;
 use App\FormControl;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -68,6 +71,8 @@ class AdminController extends Controller
         $string = preg_replace($regex, '', $data);
         return $string;
       }
+
+
       public function create_certificate (Request $request){
 
         /* user */
@@ -391,25 +396,166 @@ class AdminController extends Controller
 
           $formcontrol->exp_date = $fecha_exp;
           $formcontrol->save();
+          Alert::success('The certificate has been created!')->persistent("Close");
           return redirect('admin');
       }
 
-      public function loadResult($id){
-        $user = User::find($id);
+      public function sendCertificateForm($user){
+        $user = User::find($user);
+        return view('admin.send_certificate')->with('user',$user);
+      }
+
+      public function sendCertificate(Request $request){
+
+        $user = User::find($request->user_id);
+        $email_option = $request->email_option;
+        if($email_option == "on"){
+          $send_email_option = true;
+          $email_data = $request->email_client;
+        }else{
+          $send_email_option = false;
+          $email_data = 'none';
+        }
+
+        $fax_option = $request->fax_option;
+        if($fax_option == "on"){
+          $send_fax_option = true;
+          $data_validate =$this->specialC($request->fax_client);
+          $fax_data = $data_validate.'@rcfax.com';
+        }else{
+          $send_fax_option = false;
+          $fax_data = 'none';
+        }
+
+
+        $email_to_me = $request->email_to_me;
+        if($email_to_me == "on"){
+          $email_to_me_option = true;
+          $email_to_me_data = $user->email;
+        }else{
+          $email_to_me_data = 'none';
+          $email_to_me_option = false;
+        }
+
+        $fax_to_me = $request->phone_to_me;
+        if($fax_to_me == "on"){
+          $fax_to_me_option = true;
+          $fax_to_me_data = $user->phone.'@rcfax.com';
+        }else{
+          $fax_to_me_option = false;
+          $fax_to_me_data = 'none';
+        }
+
+
+        $client = new Client;
+        $client->certificate_holder_name = $request->certificate_name;
+        $client->address = $request->address_client;
+        $client->phone_number = $request->phone_client;
+        $client->fax = $request->fax_client;
+        $client->email = $request->email_client;
+        $client->save();
+
+
+        $clientuser = new ClientUser;
+        $clientuser->userId = $user->id;
+        $clientuser->status = 'active';
+        $clientuser->clientId = $client->id;
+        $clientuser->save();
+        //Obtener user
+
+        $history = new History;
+        $history->userId = $user->id;
+        $history->status = 'active';
+        $history->clientId = $client->id;
+        $history->sent_date = date('Y-m-d');
+        $history->save();
+
+        $dataCertificate = array(
+          'user_id' => $request->user_id,
+          'certificate_holder_name' => $request->certificate_name,
+          'address_client' => $request->address_client,
+          'phone_number' => $request->phone_client,
+          'email_data' => $email_data,
+          'fax_data' => $fax_data
+        );
+
+        $path = $this->loadResult('send',$dataCertificate);
+
+        $result = array(
+          'certificate_holder_name' => $request->certificate_name,
+          'address_client' => $request->address_client,
+          'phone_number' => $request->phone_client,
+          'path' => $path,
+          'send_email_option' => $send_email_option,
+          'email_data' => $email_data,
+          'send_fax_option' => $send_fax_option,
+          'fax_data' => $fax_data,
+          'email_to_me' => $email_to_me,
+          'email_to_me_data' => $email_to_me_data,
+          'fax_to_me_option' => $fax_to_me_option,
+          'fax_to_me_data' => $fax_to_me_data
+        );
+        if(!empty($result['send_email_option'])){
+            $email = $result['email_data'];
+            $fax = $result['fax_data'];
+            $path = $result['path'];
+
+            Mail::send('layouts.emails.certificate', $result, function($message) use($email,$fax,$path,$result){
+                if($result['send_email_option'] == true &&  $result['send_fax_option'] == false){
+                  $message->to($email)->subject('Armagency - Accord Form')->attach($path);
+                }else if($result['send_email_option'] == false &&  $result['send_fax_option'] == true){
+                  $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
+                }else if($result['send_email_option'] == true &&  $result['send_fax_option'] == true){
+                  $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
+                  $message->cc($result['fax_data']);
+                }else{
+                  $message->to('sender@armagencyonline.com')->subject('Armagency - Accord Form')->attach($path);
+                }
+
+                if($result['email_to_me'] == true){
+                  $message->cc($result['email_to_me_data']);
+                }
+                if($result['send_fax_option'] == true){
+                  $message->cc($result['fax_data']);
+                }
+
+            });
+            Alert::success('The Accord has been sent!')->persistent("Close");
+            return redirect('admin');
+
+
+          }else{
+
+            Alert::error('The Accord has not been sent!')->persistent("Close");
+            return redirect('admin');
+
+          }
+
+      }
+
+
+      public function loadResult($option,$dataUser){
+
+        $user = User::find($dataUser['user_id']);
         $formQuery = FormControl::where('userId','=',$user->id)->get();
+
         foreach($formQuery as $f){
           $form_id = $f->id;
         }
+        $date = date('m-d-y');
         $FormControl = FormControl::find($form_id);
-
-
         view()->share('formcontrol',$FormControl);
         view()->share('user',$user);
-        $pdf = PDF::loadView('admin.table');
+        $pdf = PDF::loadView('user.download-certificate');
         $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
-        $data = date('Y-m-d');
-        return $pdf->download('accord-'.$data.'.pdf');
-        //return view('admin.table')->with('user',$user)->with('formcontrol',$FormControl);
+        if($option == 'send'){
+          $name_pdf = public_path().'/pdf/'.$user->id.'-accord-pdf-'.$date.'.pdf';
+          $pdf->save($name_pdf);
+          return $name_pdf;
+        }else{
+          $data = date('Y-m-d');
+          return $pdf->download('accord-'.$data.'.pdf');
+        }
 
       }
 

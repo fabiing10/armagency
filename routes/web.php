@@ -47,6 +47,9 @@ Route::get('/fechas', 'AdminController@alerts');
   Route::get('/', 'AdminController@homeAdmin');
   Route::get('/create-certificate', 'AdminController@certificate');
   Route::post('/create-certificate', 'AdminController@create_certificate');
+  Route::get('/send-via/{user}', 'AdminController@sendCertificateForm');
+  Route::post('/send-via/{user}', 'AdminController@sendCertificate');
+
   Route::get('/alerts', 'AdminController@alerts');
   Route::get('/active-inactive', 'AdminController@getuser');
   Route::get('/active-inactive/status/{id}', 'AdminController@editstatus');

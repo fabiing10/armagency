@@ -43,6 +43,11 @@
               <div class="col-sm-6">
                 <h3 class="box-title m-b-0">Client Summary</h3>
               </div>
+              @if (Session::has('sweet_alert.alert'))
+    <script>
+        swal({!! Session::get('sweet_alert.alert') !!});
+    </script>
+@endif
               </div>
                   <div class="white-box">
 
@@ -66,9 +71,13 @@
                                       <td>{{$user->email}}</td>
                                       <td>{{$user->exp_date}}</td>
                                       <td>{{$user->status}}</td>
-                                      <td><button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
+                                      <td>
+                                        <button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
                                         <button onclick="window.location.href='/admin/edit-certificate/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
                                         <button onclick="window.location.href='/admin/table/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
+                                        <button onclick="window.location.href='/admin/send-via/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></button>
+
+
                                       </td>
                                   </tr>
                                   @endforeach

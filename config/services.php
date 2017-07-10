@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => 'armagencyonline.com',
+        'secret' => 'key-f0dfba11a439c5e07eb8a9c9cfaaa627',
     ],
     'mandrill' => [
         'secret' => env('MANDRILL_SECRET')
