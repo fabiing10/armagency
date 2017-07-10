@@ -192,6 +192,24 @@ margin-left: 0%;
     border-color: #29166f;
     border-bottom: 1px solid #e4e7ea;
 }
+
+.checkbox label::before {
+    -o-transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    background-color: #fff;
+    border-radius: 1px;
+    border: 1px solid rgba(36, 3, 78, 0.73);
+    content: "";
+    display: inline-block;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    position: absolute;
+    transition: .3s ease-in-out;
+    width: 17px;
+    outline: 0!important;
+}
+
 p.control-label {
     color: #444444 !important;
     text-align: left !important;
