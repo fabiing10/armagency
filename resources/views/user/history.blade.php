@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_user')
 
 @section('library_css')
 <link href="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
@@ -75,7 +75,7 @@
                   <div class="row marginhistory block" style="display:none;">
                     <p class="block" style="display:none; margin-left:20px;">This month
                     @foreach ($histories as $h)
-                    <div class="white-box history-box" style="padding:8px;">
+                    <div class="history-box" style="padding:8px;">
                       <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:20%;float:left;"></img>
                     <div class="panel_description">
 
@@ -107,6 +107,7 @@
 @section('script')
 <script>
 $(document).ready(function() {
+  $('.titlenavigation').html('History');
     $('#myTable').DataTable();
     $(document).ready(function() {
         var table = $('#example').DataTable({

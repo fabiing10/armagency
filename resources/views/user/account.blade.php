@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_user')
 
 @section('library_css')
     <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
@@ -49,6 +49,11 @@ hr {
           <div class="white-box" style="padding:20px;">
               <h2 class="box-title m-b-0">NEED HELP?</h2>
               <p class="text-muted m-b-30 font-13 subtitleaccount">We are here to help</p>
+              @if (Session::has('sweet_alert.alert'))
+                  <script>
+                      swal({!! Session::get('sweet_alert.alert') !!});
+                  </script>
+              @endif
               <div class="row m-t-30">
                       <div class="row">
                         <div class="col-xs-12">
@@ -75,7 +80,7 @@ hr {
                       <div class="row">
                           <div class="col-lg-4"><i class="fa fa-lock p-10"></i>
                           <label> My Password</label> <button style="display:none;" type="submit" class="btn btn-info btnaccount" onclick="window.location.href='reset-password'"> <i class="fa fa-pencil"></i> Edit</button></div>
-                          <div class="col-md-8 text-right"><button type="submit" class="btn btn-info btnaccount2" onclick="window.location.href='reset-password'"> <i class="fa fa-pencil"></i> Edit</button></div>
+
                       </div>
                       <hr>
               </div>
@@ -92,5 +97,9 @@ hr {
 @endsection
 
 @section('script')
-
+<script>
+$(document).ready(function() {
+  $('.titlenavigation').html('Account');
+});
+</script>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_user')
 
 @section('library_css')
 <!-- Wizard CSS -->
@@ -85,6 +85,8 @@ hr {
 @section('script')
 <script type="text/javascript">
 (function() {
+
+$('.titlenavigation').html('Home');
 
 $('#email_client').change(function(){
   $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");

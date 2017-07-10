@@ -44,10 +44,10 @@
                 <h3 class="box-title m-b-0">Client Summary</h3>
               </div>
               @if (Session::has('sweet_alert.alert'))
-    <script>
-        swal({!! Session::get('sweet_alert.alert') !!});
-    </script>
-@endif
+                  <script>
+                      swal({!! Session::get('sweet_alert.alert') !!});
+                  </script>
+              @endif
               </div>
                   <div class="white-box">
 

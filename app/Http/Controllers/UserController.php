@@ -154,9 +154,43 @@ class UserController extends Controller
 
     return $history;
   }
+
+  public function editClient($id){
+    $client = Client::find($id);
+    return view('user.client-edit')->with('client',$client);
+  }
+
+  public function saveClient(Request $request,$id){
+    $client = Client::find($id);
+    $client->certificate_holder_name = $request->certificate_name;
+    $client->address = $request->address_client;
+    $client->phone_number = $request->phone_client;
+    $client->fax = $request->fax_client;
+    $client->email = $request->email_client;
+    $client->save();
+    Alert::success('The client has been update!')->persistent("Close");
+    return redirect('/user/client-list');
+  }
+
+  public function deleteClient($clientId){
+
+    ClientUser::where('clientId', $clientId)->delete();
+    History::where('clientId', $clientId)->delete();
+    $client = Client::find($clientId);
+    $client->delete();
+    return redirect('/user/client-list');
+
+  }
+
   public function viewCertificate(){
     $user = Auth::user();
     return view('user.send_certificate')->with('user',$user);
+  }
+
+  public function viewCertificateHistory($id){
+    $client = Client::find($id);
+    $user = Auth::user();
+    return view('user.send_certificate_history')->with('user',$user)->with('client',$client);
   }
 
   public function deleteHistory($id){
@@ -248,8 +282,10 @@ class UserController extends Controller
             $useredit = User::find($user->id);
             $useredit->password = bcrypt($request->newpassword);
             $useredit->save();
+            Alert::success('The password has been update!')->persistent("Close");
             return redirect('user/account');
           }else{
+            Alert::error('The password you entered is incorrect!')->persistent("Close");
             return redirect('user/reset-password');
           }
     }

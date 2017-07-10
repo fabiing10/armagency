@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_user')
 
 @section('library_css')
 <link href="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
@@ -42,6 +42,11 @@
           </div>
           <!-- /.row -->
           <div class="row">
+            @if (Session::has('sweet_alert.alert'))
+                <script>
+                    swal({!! Session::get('sweet_alert.alert') !!});
+                </script>
+            @endif
               <div class="col-sm-12">
                             <div class="col-sm-12">
                                 <div class="white-box disable">
@@ -72,7 +77,8 @@
                                                     <td>{{$client->fax}}</td>
                                                     <td>{{$client->email}}</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                                        <a href="/user/client-list/edit/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></a>
+                                                        <a href="#" data-id="{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5 delete-user"><i class="ti-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -92,7 +98,7 @@
           <div class="row marginhistory block" style="display:none;">
             <p class="block" style="display:none; margin-left:20px;">This month
             @foreach ($clients as $client)
-            <div class="white-box history-box" style="padding: 8px;">
+            <div class="history-box" style="padding: 8px;">
               <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:20%;float:left;"></img>
               <div class="panel_description_clients">
                 <h3 style="display: -webkit-inline-box; vertical-align: top;padding: 0px;margin: 0px;">{{$client->certificate_holder_name}}</h3>
@@ -127,6 +133,43 @@
 @section('script')
 <script>
 $(document).ready(function() {
+
+$('.titlenavigation').html('Clients');
+  var SweetAlert = function() {};
+
+  //examples
+  SweetAlert.prototype.init = function() {
+    //Parameter
+    $('.delete-user').click(function(){
+        value =  $(this).attr("data-id");
+        console.log(value);
+        swal({
+            title: "Delete Client",
+            text: "Are You Sure You Want To Delete?",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, I'm sure",
+            cancelButtonText: "No, go back",
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            closeOnCancel: true
+        }, function(isConfirm){
+            if (isConfirm) {
+                swal("Deleted!", "The user has been removed.", "success");
+                setTimeout(function(){
+                  window.location.href='/user/client-list/delete/'+value;
+                }, 1500);
+
+            } else {
+                window.location.href='/user/client-list/';
+            }
+        });
+    });
+  }
+  $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+  $.SweetAlert.init();
+
+
     $('#myTable').DataTable();
     $(document).ready(function() {
         var table = $('#example').DataTable({

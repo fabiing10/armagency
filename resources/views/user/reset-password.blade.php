@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_user')
 
 @section('library_css')
     <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
@@ -43,8 +43,13 @@
           <div class="row">
               <div class="col-sm-12">
                       <div class="panel panel-default">
-                            <div class="white-box" style="padding:20px;">
+                            <div class="white-box">
                                 <h2 class="box-title m-b-0">RESET PASSWORD</h2>
+                                @if (Session::has('sweet_alert.alert'))
+                                    <script>
+                                        swal({!! Session::get('sweet_alert.alert') !!});
+                                    </script>
+                                @endif
                                 <p class="text-muted m-b-30 font-13"></p>
 
                                 <div class="row">
@@ -54,32 +59,25 @@
                                           <div class="form-group">
                                             <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
                                             <div class="form-group f-style">
-                                                <input type="text" class="form-control input-sm" id="passwordold" name="passwordold" required><span class="highlight"></span> <span class="bar"></span>
-                                                <label for="passwordold">Enter old pwd</label>
-                                            </div>
-                                          </div>
-                                          <div class="form-group">
-                                            <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
-                                            <div class="form-group f-style">
                                                 <input type="text" class="form-control input-sm" id="newpassword" name="newpassword" required><span class="highlight"></span> <span class="bar"></span>
-                                                <label for="newpassword">Enter pwd</label>
+                                                <label for="newpassword">Enter a new password</label>
                                             </div>
                                           </div>
                                           <div class="form-group">
                                             <div class="input-group-addon"><i class="fa fa-lock grey"></i></div>
                                             <div class="form-group f-style">
                                                 <input type="text" class="form-control input-sm" id="newpassword2" name="newpassword2" required><span class="highlight"></span> <span class="bar"></span>
-                                                <label for="newpassword2">Re Enter pwd</label>
+                                                <label for="newpassword2">Repeat new password</label>
                                             </div>
                                           </div>
                                             <div class="row">
-                                              <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
+                                              <!--<div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
                                                 <a href="get-password" id="to-recover" class="blue text-center"><i class="fa fa-question-circle m-r-5 blue"></i> Forgot your password?</a> </div>
-                                              </div>
+                                              </div>-->
                                               <br>
                                               <div class="col-xs-12 col-sm-12 col-md-12 m-t-10">
-                                                <a href="account" class="btn btn-default m-l-20 hidden-xs hidden-sm waves-effect waves-light">Back</a>
-                                                <button type="submit" id="sendForm" class="btn btn-info m-l-20 hidden-xs hidden-sm waves-effect waves-light">Next</button>
+                                                <a href="account" class="btn btn-default hidden-xs hidden-sm waves-effect waves-light">Back</a>
+                                                <button type="submit" id="sendForm" class="btn btn-info m-l-10 hidden-xs hidden-sm waves-effect waves-light">Update</button>
                                                 <button type="submit"  style="display:none;" id="sendForm" class="btn btn-info hidden-sm waves-effect waves-light changereset">Change password</button>
                                               </div>
                                         </form>

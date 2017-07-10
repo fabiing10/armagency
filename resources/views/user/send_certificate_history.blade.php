@@ -63,21 +63,21 @@ hr {
                                               <li role="tab">
                                                   <h4><span><i class="ti-credit-card"></i></span>2</h4> </li>
                                           </ul>
-                                          <form id="dataFormContainer" class="form-horizontal floating-labels s-c" method="POST">
+                                          <form id="dataFormContainer" class="form-horizontal floating-labels s-c" action="/user/certificate" method="POST">
                                               <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                                               <div class="wizard-content">
                                                   <div class="wizard-pane active" role="tabpanel">
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" value="{{$client->certificate_holder_name}}" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="certificate_name">Certificate holders name</label>
                                                       </div>
                                                     </div>
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" value="{{$client->address}}" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="address_client">Address</label>
                                                       </div>
                                                     </div>
@@ -85,7 +85,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-phone"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="phone_client" name="phone_client" ><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" value="{{$client->phone_number }}" id="phone_client" name="phone_client" ><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="phone_client">Phone number</label>
                                                       </div>
                                                     </div>
@@ -93,7 +93,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-fax"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="fax_client" data-mask="(999) 999-9999" name="fax_client"><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm"  value="{{$client->fax}}" id="fax_client" data-mask="(999) 999-9999" name="fax_client"><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="fax_client">Fax</label>
                                                       </div>
                                                     </div>
@@ -101,7 +101,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-inbox"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="email_client" name="email_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" value="{{$client->email}}" id="email_client" name="email_client" required><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="email_client">Email</label>
                                                       </div>
                                                     </div>
@@ -124,13 +124,13 @@ hr {
                                                                   <p class="control-label">Send to clients</p>
                                                                   <div class="radio-list">
                                                                       <div class="checkbox checkbox-success checkbox-circle">
-                                                                          <input type="checkbox" name="email_option">
-                                                                          <label for="email_option" id="email_option"></label>
+                                                                          <input type="checkbox" name="email_option" checked>
+                                                                          <label for="email_option" id="email_option">{{$client->email}}</label>
                                                                       </div>
                                                                       <hr>
                                                                       <div class="checkbox checkbox-success checkbox-circle fax_option">
                                                                           <input name="fax_option" type="checkbox" >
-                                                                          <label for="fax_option" id="fax_option"></label>
+                                                                          <label for="fax_option" id="fax_option">{{$client->fax}}</label>
                                                                       </div>
                                                                       <hr class="fax_option">
                                                                   </div>
@@ -271,6 +271,8 @@ $('#fax_client').change(function(){
 
         }
     });
+
+    $('#WizardFormContainer').wizard('next');
 })();
 
 jQuery('.mydatepicker, #datepicker').datepicker();
