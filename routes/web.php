@@ -58,7 +58,7 @@ Route::get('/fechas', 'AdminController@alerts');
 
 
   Route::get('/table', function () {return view('admin.table');});
-  Route::get('/table/{id}', 'AdminController@loadResult');
+  Route::get('/table/{id}', 'AdminController@downloadCertificate');
   Route::get('/edit-certificate/{id}', 'AdminController@getcertificate');
   Route::post('/edit-certificate/{id}', 'AdminController@editcertificate');
   Route::get('/create-admin/{option}', 'AdminController@createAdmin');

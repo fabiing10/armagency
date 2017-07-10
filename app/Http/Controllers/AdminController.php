@@ -39,6 +39,21 @@ class AdminController extends Controller
         return view('admin.alerts')->with('users',$users);
       }
 
+      public function downloadCertificate($id){
+
+
+        $dataCertificate = array(
+          'user_id' => $id,
+          'certificate_holder_name' => '',
+          'address_client' => '',
+          'phone_number' => '',
+          'email_data' => '',
+          'fax_data' => ''
+        );
+
+       return  $this->loadResult('download',$dataCertificate);
+      }
+
       public function getuser(){
         $users = DB::table('users as u')
         ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
@@ -534,9 +549,9 @@ class AdminController extends Controller
       }
 
 
-      public function loadResult($option,$dataUser){
+      public function loadResult($option,$dataCertificate){
 
-        $user = User::find($dataUser['user_id']);
+        $user = User::find($dataCertificate['user_id']);
         $formQuery = FormControl::where('userId','=',$user->id)->get();
 
         foreach($formQuery as $f){
@@ -544,6 +559,7 @@ class AdminController extends Controller
         }
         $date = date('m-d-y');
         $FormControl = FormControl::find($form_id);
+        view()->share('dataCertificate',$dataCertificate);
         view()->share('formcontrol',$FormControl);
         view()->share('user',$user);
         $pdf = PDF::loadView('user.download-certificate');
