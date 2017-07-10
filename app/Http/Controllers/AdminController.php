@@ -403,7 +403,7 @@ class AdminController extends Controller
           }
           $count = count($fechas);
           if($count > 0){
-            asort($fechas);
+            usort($fechas, array($this,"date_sort"));
             $fecha_exp = array_values($fechas)[0];
           }else{
             $fecha_exp = '00/00/0000';
@@ -651,6 +651,9 @@ class AdminController extends Controller
         $user->save();
 
         return redirect('admin/admin-settings');
+      }
+      public function date_sort($a, $b) {
+          return strtotime($a) - strtotime($b);
       }
       public function editcertificate (Request $request, $id){
         /* user */
@@ -975,7 +978,7 @@ class AdminController extends Controller
 
           $count = count($fechas);
           if($count > 0){
-            asort($fechas);
+            usort($fechas, array($this,"date_sort"));
             $fecha_exp = array_values($fechas)[0];
           }else{
             $fecha_exp = '00/00/0000';
