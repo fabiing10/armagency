@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		a.btn-download{
+		    background: #c7c7c7;
+		    padding: 10px;
+		    display: block;
+		    width: 115px;
+		    text-align: center;
+		    margin: 0 auto;
+		    text-decoration: initial;
+		    color: #525252 !important;
+		    border-radius: 5px;
+		    font-size: 17px;
+		}
+	</style>
 </head>
 
 <body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
@@ -24,6 +38,7 @@
 							<br>
 							<p>Please see attached certificate of insurance requested.</p>
 <br>
+<a href="http://app.armagencyonline.com/download/certificate/{{$path}}" class="btn-download">Download</a>
 							<p>Thank you</p>
 <br>
 							<p>Sincerely</p>

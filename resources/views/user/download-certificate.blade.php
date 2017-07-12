@@ -906,7 +906,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <tr>
       <th rowspan="2" style="border:1px solid; height:100px; width:550px;">
         <p class="certificate_field">{{$dataCertificate['certificate_holder_name']}}</p>
-        <p class="certificate_field">{{$dataCertificate['address_client']}}</p>
+        <p class="certificate_field">{{$dataCertificate['city']}},{{$dataCertificate['state']}},{{$dataCertificate['zip_code']}} </p>
         <p class="certificate_field">{{$dataCertificate['fax_data']}}</p>
       </th>
       <th style="border:1px solid;">

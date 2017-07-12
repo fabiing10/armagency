@@ -25,6 +25,10 @@ class UserController extends Controller
     return $string;
   }
 
+  public function downloadFile($file){
+    $pathToFile = public_path().'/pdf/'.$file;
+    return response()->download($pathToFile);
+  }
   public function sendCertificate(Request $request){
 
     $user = Auth::user();
@@ -74,6 +78,9 @@ class UserController extends Controller
     $client->phone_number = $request->phone_client;
     $client->fax = $request->fax_client;
     $client->email = $request->email_client;
+    $client->city = $request->city_client;
+    $client->state = $request->state_client;
+    $client->zip_code = $request->zipcode_client;
     $client->save();
 
 
@@ -92,9 +99,13 @@ class UserController extends Controller
     $history->save();
 
     $dataCertificate = array(
+      'client_id' => $client->id,
       'certificate_holder_name' => $request->certificate_name,
       'address_client' => $request->address_client,
       'phone_number' => $request->phone_client,
+      'city' => $request->city_client,
+      'state' => $request->state_client,
+      'zip_code' => $request->zipcode_client,
       'email_data' => $email_data,
       'fax_data' => $fax_data
     );
@@ -116,43 +127,63 @@ class UserController extends Controller
       'fax_to_me_data' => $fax_to_me_data
     );
     if(!empty($result['send_email_option']) or !empty($result['email_to_me_option'])){
-        $email = $result['email_data'];
-        $fax = $result['fax_data'];
+
+        if(!empty($result['send_email_option'])){
+          $email = $result['email_data'];
+          $option = 'email_client';
+        }else{
+          $email = $result['email_to_me_data'];
+          $option = 'email_to_me';
+        }
         $path = $result['path'];
 
-        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$fax,$path,$result){
-            if($result['send_email_option'] == true &&  $result['send_fax_option'] == false){
-              $message->to($email)->subject('Armagency - Accord Form')->attach($path);
-            }else if($result['send_email_option'] == false &&  $result['send_fax_option'] == true){
-              $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
-            }else if($result['send_email_option'] == true &&  $result['send_fax_option'] == true){
-              $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
-              $message->cc($result['fax_data']);
-            }else{
-              $message->to('sender@armagencyonline.com')->subject('Armagency - Accord Form')->attach($path);
-            }
-
-            if($result['email_to_me_option'] == true){
-              $message->cc($result['email_to_me_data']);
-            }
-            if($result['send_fax_option'] == true){
-              $message->cc($result['fax_data']);
-            }
-
+        Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$option,$result){
+              $message->to($email)->subject('Armagency - Accord Form');
+              if($option == 'email_client'){
+                if(!empty($result['email_to_me_option'])){
+                  $message->cc($result['email_to_me_data']);
+                }
+              }else{
+                if(!empty($result['send_email_option'])){
+                  $message->cc($result['email_data']);
+                }
+              }
         });
-        Alert::success('The Accord has been sent!')->persistent("Close");
-        return redirect('user/history');
-
-
-      }else{
-
-        Alert::error('The Accord has not been sent!')->persistent("Close");
-        return redirect('user/certificate');
 
       }
 
+      if(!empty($result['send_fax_option']) or !empty($result['fax_to_me_option'])){
 
-    return $history;
+          if(!empty($result['send_fax_option'])){
+            $email = $result['fax_data'];
+            $option = 'fax_client';
+          }else{
+            $email = $result['fax_to_me_data'];
+            $option = 'fax_to_me';
+          }
+          $path = $result['path'];
+
+          Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$option,$result){
+
+                $file = public_path().'/pdf/'.$path;
+                $message->to($email)->subject('Armagency - Accord Form')->attach($file);
+
+                if($option == 'fax_client'){
+                  if(!empty($result['fax_to_me_option'])){
+                    $message->cc($result['fax_to_me_data']);
+                  }
+                }else{
+                  if(!empty($result['send_fax_option'])){
+                    $message->cc($result['fax_data']);
+                  }
+                }
+          });
+
+        }
+
+
+        Alert::success('The Accord has been sent!')->persistent("Close");
+        return redirect('user/certificate');
   }
 
   public function editClient($id){
@@ -233,13 +264,20 @@ class UserController extends Controller
       'address_client' => '',
       'phone_number' => '',
       'email_data' => '',
-      'fax_data' => ''
+      'fax_data' => '',
+      'city' => '',
+      'state' => '',
+      'zip_code' => ''
     );
 
    return  $this->loadResult($option,$dataCertificate);
   }
   public function loadResult($option,$dataCertificate){
     $user = Auth::user();
+    if(!empty($dataCertificate['client_id'])){
+      $client = $dataCertificate['client_id'];
+    }
+
     $formQuery = FormControl::where('userId','=',$user->id)->get();
 
     foreach($formQuery as $f){
@@ -253,9 +291,9 @@ class UserController extends Controller
     $pdf = PDF::loadView('user.download-certificate');
     $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
     if($option == 'send'){
-      $name_pdf = public_path().'/pdf/'.$user->id.'-accord-pdf-'.$date.'.pdf';
+      $name_pdf = public_path().'/pdf/'.$client.'-accord-pdf-'.$date.'.pdf';
       $pdf->save($name_pdf);
-      return $name_pdf;
+      return $user->id.'-accord-pdf-'.$date.'.pdf';
     }else{
       $data = date('Y-m-d');
       return $pdf->download('accord-'.$data.'.pdf');

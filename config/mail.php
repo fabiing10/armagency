@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => 'mailgun',
+    'driver' => 'sparkpost',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.mailgun.org',
+    'host' => 'smtp.sparkpostmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => 465,
+    'port' => 587,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'postmaster@armagencyonline.com', 'name' => 'Armagency'],
+    'from' => ['address' => 'sender@armagencyonline.com', 'name' => 'Armagency'],
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => 'postmaster@armagencyonline.com',
+    'username' => 'sender@armagencyonline.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => '6bb15e28e72ce9c746eeb341f4a77b00',
+    'password' => 'armagency@2017',
 
     /*
     |--------------------------------------------------------------------------

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Client;
 use App\ClientUser;
 use App\History;
@@ -28,15 +29,57 @@ class AdminController extends Controller
         return view('admin.index')->with('users',$users);
       }
 
+
       public function alerts(){
+
+        $date=strtotime(date('Y-m-d'));  // if today :2013-05-23
+
+        $newDate = date('Y-m-d',strtotime('-30 days',$date));
+        $today = Carbon::now()->format('Y-m-d');
+
+        $tf = Carbon::parse($today)->format('Y-m-d');
+        $nd = Carbon::parse($newDate)->format('Y-m-d');
+        //$dayAfter = (new DateTime('2014-07-10'))->modify('+1 day')->format('Y-m-d');
+    /*  $users = DB::table('users as u')
+        ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
+        ->select('u.name',DB::raw("to_date(fc.exp_date, 'YY-MM-DD') as exp_date"),'u.email','u.phone')
+
+        ->where('u.userType', '=', 'user')
+        ->where('exp_date', '>', $nd)
+        ->whereBetween('exp_date', [$nd, $tf])
+        ->whereDate('exp_date', '>=', $nd)
+        ->whereDate('exp_date', '<', $tf)
+        ->where('exp_date', '>',$newDate)
+        ->get();
+*/
+
         $users = DB::table('users as u')
         ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
         ->select('u.name','fc.exp_date','u.email','u.phone')
-        ->orderBy('fc.exp_date', 'desc')
-        ->where('u.userType', '=', 'user')
-        ->get();
 
+        ->where('u.userType', '=', 'user')
+        //->where('exp_date', '>', $nd)
+        //->whereBetween('exp_date', [$nd, $tf])
+
+        /*->whereDate('exp_date', '<', $tf)*/
+        //->where('exp_date', '>',$newDate)
+        ->get();
+      //return $nd;
         return view('admin.alerts')->with('users',$users);
+    /*  $my_date = date('m/d/y', strtotime('07/12/2016'));
+ if($my_date > $newDate){
+   return 'true';
+ }else{
+   return 'false';
+ }*/
+
+
+//echo $newDate; //after15 days  :2013-06-07
+
+//$newDate = date('Y-m-d',strtotime('+1 month',$date));
+
+//echo $newDate; // after 1 month :2013-06-23
+
       }
 
       public function downloadCertificate($id){
@@ -468,6 +511,9 @@ class AdminController extends Controller
         $client->phone_number = $request->phone_client;
         $client->fax = $request->fax_client;
         $client->email = $request->email_client;
+        $client->city = $request->city_client;
+        $client->state = $request->state_client;
+        $client->zip_code = $request->zipcode_client;
         $client->save();
 
 
@@ -487,12 +533,18 @@ class AdminController extends Controller
 
         $dataCertificate = array(
           'user_id' => $request->user_id,
+          'client_id' => $client->id,
           'certificate_holder_name' => $request->certificate_name,
           'address_client' => $request->address_client,
           'phone_number' => $request->phone_client,
+          'city' => $request->city_client,
+          'state' => $request->state_client,
+          'zip_code' => $request->zipcode_client,
           'email_data' => $email_data,
           'fax_data' => $fax_data
         );
+
+
 
         $path = $this->loadResult('send',$dataCertificate);
 
@@ -505,46 +557,73 @@ class AdminController extends Controller
           'email_data' => $email_data,
           'send_fax_option' => $send_fax_option,
           'fax_data' => $fax_data,
-          'email_to_me' => $email_to_me,
+          'email_to_me_option' => $email_to_me,
           'email_to_me_data' => $email_to_me_data,
           'fax_to_me_option' => $fax_to_me_option,
           'fax_to_me_data' => $fax_to_me_data
         );
-        if(!empty($result['send_email_option'])){
-            $email = $result['email_data'];
-            $fax = $result['fax_data'];
-            $path = $result['path'];
 
-            Mail::send('layouts.emails.certificate', $result, function($message) use($email,$fax,$path,$result){
-                if($result['send_email_option'] == true &&  $result['send_fax_option'] == false){
-                  $message->to($email)->subject('Armagency - Accord Form')->attach($path);
-                }else if($result['send_email_option'] == false &&  $result['send_fax_option'] == true){
-                  $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
-                }else if($result['send_email_option'] == true &&  $result['send_fax_option'] == true){
-                  $message->to($fax)->subject('Armagency - Accord Form')->attach($path);
-                  $message->cc($result['fax_data']);
+
+
+          if(!empty($result['send_email_option']) or !empty($result['email_to_me_option'])){
+
+              if(!empty($result['send_email_option'])){
+                $email = $result['email_data'];
+                $option = 'email_client';
+              }else{
+                $email = $result['email_to_me_data'];
+                $option = 'email_to_me';
+              }
+              $path = $result['path'];
+
+              Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$option,$result){
+                    $message->to($email)->subject('Armagency - Accord Form');
+                    if($option == 'email_client'){
+                      if(!empty($result['email_to_me_option'])){
+                        $message->cc($result['email_to_me_data']);
+                      }
+                    }else{
+                      if(!empty($result['send_email_option'])){
+                        $message->cc($result['email_data']);
+                      }
+                    }
+              });
+
+            }
+
+            if(!empty($result['send_fax_option']) or !empty($result['fax_to_me_option'])){
+
+                if(!empty($result['send_fax_option'])){
+                  $email = $result['fax_data'];
+                  $option = 'fax_client';
                 }else{
-                  $message->to('sender@armagencyonline.com')->subject('Armagency - Accord Form')->attach($path);
+                  $email = $result['fax_to_me_data'];
+                  $option = 'fax_to_me';
                 }
+                $path = $result['path'];
 
-                if($result['email_to_me'] == true){
-                  $message->cc($result['email_to_me_data']);
-                }
-                if($result['send_fax_option'] == true){
-                  $message->cc($result['fax_data']);
-                }
+                Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$option,$result){
 
-            });
+                      $file = public_path().'/pdf/'.$path;
+                      $message->to($email)->subject('Armagency - Accord Form')->attach($file);
+
+                      if($option == 'fax_client'){
+                        if(!empty($result['fax_to_me_option'])){
+                          $message->cc($result['fax_to_me_data']);
+                        }
+                      }else{
+                        if(!empty($result['send_fax_option'])){
+                          $message->cc($result['fax_data']);
+                        }
+                      }
+                });
+
+              }
+
+
             Alert::success('The Accord has been sent!')->persistent("Close");
             return redirect('admin');
 
-
-          }else{
-
-            Alert::error('The Accord has not been sent!')->persistent("Close");
-            return redirect('admin');
-
-          }
 
       }
 
@@ -552,6 +631,7 @@ class AdminController extends Controller
       public function loadResult($option,$dataCertificate){
 
         $user = User::find($dataCertificate['user_id']);
+        $client = $dataCertificate['client_id'];
         $formQuery = FormControl::where('userId','=',$user->id)->get();
 
         foreach($formQuery as $f){
@@ -565,13 +645,16 @@ class AdminController extends Controller
         $pdf = PDF::loadView('user.download-certificate');
         $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
         if($option == 'send'){
-          $name_pdf = public_path().'/pdf/'.$user->id.'-accord-pdf-'.$date.'.pdf';
+          $name_pdf = public_path().'/pdf/'.$client.'-accord-pdf-'.$date.'.pdf';
           $pdf->save($name_pdf);
-          return $name_pdf;
+          return $user->id.'-accord-pdf-'.$date.'.pdf';
         }else{
           $data = date('Y-m-d');
           return $pdf->download('accord-'.$data.'.pdf');
         }
+
+
+
 
       }
 

@@ -39,6 +39,8 @@ Route::get('/redirect', 'HomeController@redirectURL')->name('redirect');
 Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@authenticate']);
 Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
 
+Route::get('/download/certificate/{pdf}', 'UserController@downloadFile')->name('login');
+
 //Admin Controller's
 Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function(){
 

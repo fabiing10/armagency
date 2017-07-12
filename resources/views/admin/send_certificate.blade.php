@@ -68,36 +68,62 @@ hr {
                                               <input type="hidden" name="user_id" value="{{$user->id }}" />
                                               <div class="wizard-content">
                                                   <div class="wizard-pane active" role="tabpanel">
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="certificate_name">Certificate holders name</label>
+                                                    <div class="row">
+                                                      <div class="col-md-12">
+                                                      <div class="form-group">
+                                                        <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
+                                                        <div class="form-group f-style">
+                                                            <input type="text" class="form-control input-sm" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                            <label for="certificate_name">Certificate holders name</label>
+                                                        </div>
+                                                        </div>
                                                       </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="address_client">Address</label>
+                                                    <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="address_client">Address</label>
+                                                          </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" id="city_client" name="city_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="city_client">City</label>
+                                                          </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" id="state_client" name="state_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="state_client">State</label>
+                                                          </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" id="zipcode_client" name="zipcode_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="zipcode_client">Zip Code</label>
+                                                          </div>
+                                                          </div>
                                                       </div>
                                                     </div>
 
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="phone_client" name="phone_client" ><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="phone_client">Phone number</label>
-                                                      </div>
-                                                    </div>
 
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-fax"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="fax_client" data-mask="(999) 999-9999" name="fax_client" ><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="fax_client">Fax</label>
-                                                      </div>
-                                                    </div>
+
+
+
 
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-inbox"></i></div>
@@ -107,6 +133,26 @@ hr {
                                                       </div>
                                                     </div>
 
+                                                    <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" id="phone_client" name="phone_client"><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="phone_client">Phone number</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" id="fax_client" data-mask="(999) 999-9999" name="fax_client" ><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="fax_client">Fax</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
 
                                                       <div class="form-group">
                                                         <div class="checkbox checkbox checkbox-success">
