@@ -647,7 +647,7 @@ class AdminController extends Controller
         if($option == 'send'){
           $name_pdf = public_path().'/pdf/'.$client.'-accord-pdf-'.$date.'.pdf';
           $pdf->save($name_pdf);
-          return $user->id.'-accord-pdf-'.$date.'.pdf';
+          return $client.'-accord-pdf-'.$date.'.pdf';
         }else{
           $data = date('Y-m-d');
           return $pdf->download('accord-'.$data.'.pdf');

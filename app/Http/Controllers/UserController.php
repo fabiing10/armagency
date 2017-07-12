@@ -272,6 +272,18 @@ class UserController extends Controller
 
    return  $this->loadResult($option,$dataCertificate);
   }
+
+  public function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+  }
+
+
   public function loadResult($option,$dataCertificate){
     $user = Auth::user();
     if(!empty($dataCertificate['client_id'])){
@@ -293,7 +305,7 @@ class UserController extends Controller
     if($option == 'send'){
       $name_pdf = public_path().'/pdf/'.$client.'-accord-pdf-'.$date.'.pdf';
       $pdf->save($name_pdf);
-      return $user->id.'-accord-pdf-'.$date.'.pdf';
+      return $client.'-accord-pdf-'.$date.'.pdf';
     }else{
       $data = date('Y-m-d');
       return $pdf->download('accord-'.$data.'.pdf');
