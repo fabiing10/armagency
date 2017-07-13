@@ -25,7 +25,7 @@ class UserController extends Controller
     return $string;
   }
 
-  public function File($file){
+  public function downloadFile($file){
     $pathToFile = public_path().'/pdf/'.$file;
     return response()->download($pathToFile);
   }
