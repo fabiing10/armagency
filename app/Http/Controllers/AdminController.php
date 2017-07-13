@@ -91,7 +91,10 @@ class AdminController extends Controller
           'address_client' => '',
           'phone_number' => '',
           'email_data' => '',
-          'fax_data' => ''
+          'fax_data' => '',
+          'city' => '',
+          'state' => '',
+          'zip_code' => ''
         );
 
        return  $this->loadResult('download',$dataCertificate);
@@ -631,7 +634,11 @@ class AdminController extends Controller
       public function loadResult($option,$dataCertificate){
 
         $user = User::find($dataCertificate['user_id']);
-        $client = $dataCertificate['client_id'];
+
+        if(!empty($dataCertificate['client_id'])){
+          $client = $dataCertificate['client_id'];
+        }
+
         $formQuery = FormControl::where('userId','=',$user->id)->get();
 
         foreach($formQuery as $f){
@@ -643,7 +650,9 @@ class AdminController extends Controller
         view()->share('formcontrol',$FormControl);
         view()->share('user',$user);
         $pdf = PDF::loadView('user.download-certificate');
-        $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        $pdf->setOptions(['pdfBackend' => "CPDF",'dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        $pdf->getDomPDF()->get_canvas()->get_cpdf()->setEncryption('','',array('print'));
+
         if($option == 'send'){
           $name_pdf = public_path().'/pdf/'.$client.'-accord-pdf-'.$date.'.pdf';
           $pdf->save($name_pdf);

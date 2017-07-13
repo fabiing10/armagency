@@ -25,7 +25,7 @@ class UserController extends Controller
     return $string;
   }
 
-  public function downloadFile($file){
+  public function File($file){
     $pathToFile = public_path().'/pdf/'.$file;
     return response()->download($pathToFile);
   }
@@ -302,6 +302,7 @@ class UserController extends Controller
     view()->share('user',$user);
     $pdf = PDF::loadView('user.download-certificate');
     $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+    $pdf->getDomPDF()->get_canvas()->get_cpdf()->setEncryption('','',array('print'));
     if($option == 'send'){
       $name_pdf = public_path().'/pdf/'.$client.'-accord-pdf-'.$date.'.pdf';
       $pdf->save($name_pdf);
