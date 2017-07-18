@@ -1,6 +1,7 @@
 @extends('layouts.master_user')
 
 @section('library_css')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Wizard CSS -->
 <link href="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/css/wizard.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
@@ -13,6 +14,10 @@
 }
 .wizard-content {
     border: 0px;
+}
+i.fa.fa-download.white {
+    color: white !important;
+    margin-right: 5px;
 }
 hr {
     margin-top: 10px;
@@ -232,8 +237,10 @@ hr {
 <script type="text/javascript">
 (function() {
   $.ajaxSetup({
-      headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') }
-  });
+          headers: {
+  	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  	        }
+  	});
 
 $('#email_client').change(function(){
   $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
@@ -339,11 +346,13 @@ function downloadCertificate(){
   jQuery.ajax({
    type: 'POST',
     url:'/user/view-certificate',
-    data: "_token= {{ csrf_token() }}"+'certificate_name='+jQuery('#certificate_name').val()+'&address_client='+ jQuery('#address_client').val()+'&city_client='+ jQuery('#city_client').val()+'&state_client='+ jQuery('#state_client').val()+'&zipcode_client='+ jQuery('#zipcode_client').val()+'&email_client='+ jQuery('#email_client').val()+'&phone_client='
+    data: 'certificate_name='+jQuery('#certificate_name').val()+'&address_client='+ jQuery('#address_client').val()+'&city_client='+ jQuery('#city_client').val()+'&state_client='+ jQuery('#state_client').val()+'&zipcode_client='+ jQuery('#zipcode_client').val()+'&email_client='+ jQuery('#email_client').val()+'&phone_client='
     +jQuery('#phone_client').val()+'&fax_client='+ jQuery('#fax_client').val(),
-
+    headers: {
+                       "X-CSRF-TOKEN": $('meta[name="_token"]').attr('content')
+                   },
     success: function(msg){
-      wwindow.location.href='/user/download/pdf/'+msg;
+      window.location.href='/user/download/pdf/'+msg;
     }
   });
 }

@@ -261,7 +261,7 @@ class UserController extends Controller
   }
 
 
-  public function generateCertificate(){
+  public function generateCertificate(Request $request){
 
     $dataCertificate = array(
       'certificate_holder_name' => $request->certificate_name,

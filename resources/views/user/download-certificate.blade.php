@@ -905,7 +905,10 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <tr>
       <th rowspan="2" style="border:1px solid; height:100px; width:550px;">
         <p class="certificate_field">{{$dataCertificate['certificate_holder_name']}}</p>
+          <p class="certificate_field">{{$dataCertificate['address_client']}}</p>
         <p class="certificate_field">{{$dataCertificate['city']}},{{$dataCertificate['state']}},{{$dataCertificate['zip_code']}} </p>
+
+
       </th>
       <th style="border:1px solid;">
         SHOULD ANY OF THE ABOVE DESCRIBED POLICIES BE CANCELLED BEFORE THE EXPIRATION DATE THEREOF, NOTICE WILL BE DELIVERED IN A ACCORDANCE WITH THE POLICY PROVISIONS.

@@ -140,7 +140,7 @@ hr {
 
                   <div class="form-group">
 
-                      <input type="submit" class="btn btn-info" value="Actualizar"/>
+                      <input type="submit" class="btn btn-info" value="Update"/>
 
                   </div>
              </form>
