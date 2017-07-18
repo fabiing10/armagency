@@ -68,6 +68,8 @@ Route::get('/fechas', 'AdminController@alerts');
   Route::get('/user-profile/{id}', 'AdminController@userprofile');
   Route::post('/user-profile/{id}', 'AdminController@edituserprofile');
 
+  Route::post('/view-certificate', 'AdminController@generateCertificate');
+  Route::get('/download/pdf/{option}', 'AdminController@downloadFile');
 });
 
 Route::get('/cancelled',function(){return view('user.cancelled');});

@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('library_css')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Wizard CSS -->
 <link href="{{URL::asset('assets/plugins/bower_components/jquery-wizard-master/css/wizard.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/css/responsive-user.css')}}" rel="stylesheet">
@@ -13,6 +14,10 @@
 }
 .wizard-content {
     border: 0px;
+}
+i.fa.fa-download.white {
+    color: white !important;
+    margin-right: 5px;
 }
 hr {
     margin-top: 10px;
@@ -51,7 +56,7 @@ hr {
           <div class="row">
               <div class="col-sm-12">
                   <div class="white-box">
-                              <div class="col-lg-3" style="padding-left:0px; padding-bottom:40px;">
+                              <div class="col-lg-3" style="padding-left:0px; padding-bottom:0px;">
                                 <h2 class="box-title m-b-0">SEND CERTIFICATE TO</h2>
                               </div>
                                 <div class="row">
@@ -65,7 +70,7 @@ hr {
                                           </ul>
                                           <form id="dataFormContainer" class="form-horizontal floating-labels s-c" method="POST">
                                               <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
-                                              <input type="hidden" name="user_id" value="{{$user->id }}" />
+                                              <input type="hidden" id="user_id" name="user_id" value="{{$user->id }}" />
                                               <div class="wizard-content">
                                                   <div class="wizard-pane active" role="tabpanel">
                                                     <div class="row">
@@ -119,16 +124,10 @@ hr {
                                                           </div>
                                                       </div>
                                                     </div>
-
-
-
-
-
-
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-inbox"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="email_client" name="email_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" id="email_client" name="email_client"><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="email_client">Email</label>
                                                       </div>
                                                     </div>
@@ -164,6 +163,8 @@ hr {
 
                                                   </div>
                                                   <div class="wizard-pane" role="tabpanel">
+
+                                                    <button style="float:right;" class="btn btn-info btnaccount" onclick="downloadCertificate()"> <i class="fa fa-download white"></i> Download Certificate</button>
                                                     <div class="row">
                                                         <div class="col-sm-12 col-xs-12">
 
@@ -235,7 +236,11 @@ hr {
 @section('script')
 <script type="text/javascript">
 (function() {
-
+  $.ajaxSetup({
+          headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+    });
 
 $('#email_client').change(function(){
   $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
@@ -328,6 +333,20 @@ jQuery('#datepicker1, #datepicker2').datepicker({
 jQuery('#date-range').datepicker({
     toggleActive: true
 });
+function downloadCertificate(){
+  jQuery.ajax({
+   type: 'POST',
+    url:'/admin/view-certificate',
+    data: 'user_id='+jQuery('#user_id').val()+'&certificate_name='+jQuery('#certificate_name').val()+'&address_client='+ jQuery('#address_client').val()+'&city_client='+ jQuery('#city_client').val()+'&state_client='+ jQuery('#state_client').val()+'&zipcode_client='+ jQuery('#zipcode_client').val()+'&email_client='+ jQuery('#email_client').val()+'&phone_client='
+    +jQuery('#phone_client').val()+'&fax_client='+ jQuery('#fax_client').val(),
+    headers: {
+                       "X-CSRF-TOKEN": $('meta[name="_token"]').attr('content')
+                   },
+    success: function(msg){
+      window.location.href='/admin/download/pdf/'+msg;
+    }
+  });
+}
 
 </script>
 @endsection

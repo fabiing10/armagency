@@ -39,6 +39,53 @@ class AdminController extends Controller
         return view('admin.index')->with('users',$users);
       }
 
+      public function generateCertificate(Request $request){
+
+        $dataCertificate = array(
+          'certificate_holder_name' => $request->certificate_name,
+          'address_client' => $request->address_client,
+          'phone_number' => $request->phone_client,
+          'email_data' => $request->email_client,
+          'fax_data' => $request->fax_client,
+          'city' => $request->city_client,
+          'state' => $request->state_client,
+          'zip_code' => $request->zipcode_client
+        );
+
+        $rand = $this->generateRandomString(5);
+
+        $user = User::find($request->user_id);
+        $formQuery = FormControl::where('userId','=',$user->id)->get();
+
+        foreach($formQuery as $f){
+          $form_id = $f->id;
+        }
+        $date = date('m-d-y');
+        $FormControl = FormControl::find($form_id);
+        view()->share('dataCertificate',$dataCertificate);
+        view()->share('formcontrol',$FormControl);
+        view()->share('user',$user);
+        $pdf = PDF::loadView('user.download-certificate');
+        $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+        $pdf->getDomPDF()->get_canvas()->get_cpdf()->setEncryption('','',array('print'));
+        $name_pdf = public_path().'/pdf/'.$rand.'-accord-pdf-'.$date.'.pdf';
+        $pdf->save($name_pdf);
+        return $rand.'-accord-pdf-'.$date.'.pdf';
+
+      }
+      public function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+      }
+      public function downloadFile($file){
+        $pathToFile = public_path().'/pdf/'.$file;
+        return response()->download($pathToFile);
+      }
 
       public function alerts(){
 
