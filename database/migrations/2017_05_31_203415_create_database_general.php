@@ -21,7 +21,7 @@ class CreateDatabaseGeneral extends Migration
                 ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->string('status')->nullable();
-            $table->string('exp_date')->nullable();
+            $table->date('exp_date')->nullable();
             /* contact info agency */
             $table->string('C_I_name')->nullable();
             $table->string('C_I_phone')->nullable();

@@ -69,7 +69,7 @@
                                   <tr>
                                       <td>{{$user->name}}</td>
                                       <td>{{$user->email}}</td>
-                                      <td>{{$user->exp_date}}</td>
+                                      <td>{{\Carbon\Carbon::parse($user->exp_date)->format('m/d/Y')}}</td>
                                       <td>{{$user->status}}</td>
                                       <td>
                                         <button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
@@ -77,7 +77,12 @@
                                         <button onclick="window.location.href='/admin/table/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
                                         <button onclick="window.location.href='/admin/send-via/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></button>
 
-
+                                        @if ($user->status == 'active')
+                                        <button data-id="{{$user->f_id}}" type="submit" class="btn sa-params-cancel btn-gray"> Cancel </button>
+                                        @else
+                                        <button data-id="{{$user->f_id}}" type="submit" class="btn sa-params-activate btn-green"> Activate </button>
+                                        @endif
+                                        </tr>
                                       </td>
                                   </tr>
                                   @endforeach
@@ -123,6 +128,75 @@
 
 @section('script')
 <script type="text/javascript">
+$(document).ready(function() {
+  var SweetAlert = function() {};
+
+  //examples
+  SweetAlert.prototype.init = function() {
+
+    //Parameter
+    $('.sa-params-cancel').click(function(){
+      console.log("Click")
+      var id = $(this).attr("data-id");
+      console.log(id)
+        swal({
+            title: "Cancel account",
+            text: "Are you sure you want to cancel account?",
+
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, I'm sure",
+            cancelButtonText: "No, go back",
+            closeOnConfirm: true,
+            closeOnCancel: true
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+                $.get( "/admin/active-inactive/status/"+id).done(function(data) {
+
+                  location.reload(true);
+                });
+
+            } else {
+            }
+        });
+    });
+    $('.sa-params-activate').click(function(){
+      console.log("Click")
+      var id = $(this).attr("data-id");
+      console.log(id)
+        swal({
+            title: "Activate account",
+            text: "Are you sure you want to cancel account?",
+
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, I'm sure",
+            cancelButtonText: "No, go back",
+            closeOnConfirm: true,
+            closeOnCancel: true
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+                $.get( "/admin/active-inactive/status/"+id).done(function(data) {
+
+                  location.reload(true);
+                });
+
+            } else {
+            }
+        });
+    });
+  }
+  $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+  $.SweetAlert.init()
+
+  $('#myTable').DataTable();
+
+});
+
 (function() {
     $('#exampleBasic').wizard({
         onFinish: function() {

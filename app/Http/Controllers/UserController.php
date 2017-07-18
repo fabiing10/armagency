@@ -178,7 +178,6 @@ class UserController extends Controller
                   }
                 }
           });
-
         }
 
 
@@ -198,8 +197,11 @@ class UserController extends Controller
     $client->phone_number = $request->phone_client;
     $client->fax = $request->fax_client;
     $client->email = $request->email_client;
+    $client->city = $request->city_client;
+    $client->state = $request->state_client;
+    $client->zip_code = $request->zipcode_client;
     $client->save();
-    Alert::success('The client has been update!')->persistent("Close");
+    Alert::success('The Client Has Been Updated!')->persistent("Close");
     return redirect('/user/client-list');
   }
 
@@ -258,17 +260,67 @@ class UserController extends Controller
     return view('user.client-list')->with('user',$user)->with('clients',$clients);;
   }
 
-  public function downloadCertificate($option){
+
+  public function generateCertificate(){
+
     $dataCertificate = array(
-      'certificate_holder_name' => '',
-      'address_client' => '',
-      'phone_number' => '',
-      'email_data' => '',
-      'fax_data' => '',
-      'city' => '',
-      'state' => '',
-      'zip_code' => ''
+      'certificate_holder_name' => $request->certificate_name,
+      'address_client' => $request->address_client,
+      'phone_number' => $request->phone_client,
+      'email_data' => $request->email_client,
+      'fax_data' => $request->fax_client,
+      'city' => $request->city_client,
+      'state' => $request->state_client,
+      'zip_code' => $request->zipcode_client
     );
+
+    $rand = $this->generateRandomString(5);
+
+    $user = Auth::user();
+    $formQuery = FormControl::where('userId','=',$user->id)->get();
+
+    foreach($formQuery as $f){
+      $form_id = $f->id;
+    }
+    $date = date('m-d-y');
+    $FormControl = FormControl::find($form_id);
+    view()->share('dataCertificate',$dataCertificate);
+    view()->share('formcontrol',$FormControl);
+    view()->share('user',$user);
+    $pdf = PDF::loadView('user.download-certificate');
+    $pdf->setOptions(['dpi' => 131, 'defaultFont' => 'sans-serif','fontHeightRatio' => 1.5,'debugLayoutPaddingBox' => false,'defaultPaperSize'=>'a4']);
+    $pdf->getDomPDF()->get_canvas()->get_cpdf()->setEncryption('','',array('print'));
+    $name_pdf = public_path().'/pdf/'.$rand.'-accord-pdf-'.$date.'.pdf';
+    $pdf->save($name_pdf);
+    return $rand.'-accord-pdf-'.$date.'.pdf';
+
+  }
+  public function downloadCertificate($option){
+    if($option != 'download'){
+      $client = Client::find($option);
+      $dataCertificate = array(
+        'certificate_holder_name' => $client->certificate_holder_name,
+        'address_client' => $client->address,
+        'phone_number' => $client->phone_number,
+        'email_data' => $client->email,
+        'fax_data' => $client->fax,
+        'city' => $client->city,
+        'state' => $client->state,
+        'zip_code' => $client->zip_code
+      );
+    }else{
+      $dataCertificate = array(
+        'certificate_holder_name' => '',
+        'address_client' => '',
+        'phone_number' => '',
+        'email_data' => '',
+        'fax_data' => '',
+        'city' => '',
+        'state' => '',
+        'zip_code' => ''
+      );
+    }
+
 
    return  $this->loadResult($option,$dataCertificate);
   }

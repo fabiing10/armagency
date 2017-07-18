@@ -243,7 +243,6 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <b>INSURED</b><br>
       {{$user->name}}<br>
       {{$user->address}}<br>
-      {{$user->phone}}
       {{$user->city}}, {{$user->state}} {{$user->zip_code}}
       <!--
     	<table>
@@ -342,7 +341,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       </td>
       <td>
       <b>CERTIFICATE NUMBER:</b>
-      <label>ARMINS0008723</label>
+      <label>ARMWEB000000{{$formcontrol->id}}</label>
       </td>
       <td>
       <b>REVISION NUMBER</b>
@@ -428,7 +427,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                 @else
                 <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> POLICY
                 @endif
-                @if ( $gloptionpolicy === 'true')
+                @if ( $gloptionproject === 'true')
                 <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> PROJECT
                 @else
                 <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> PROJECT
@@ -907,7 +906,6 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <th rowspan="2" style="border:1px solid; height:100px; width:550px;">
         <p class="certificate_field">{{$dataCertificate['certificate_holder_name']}}</p>
         <p class="certificate_field">{{$dataCertificate['city']}},{{$dataCertificate['state']}},{{$dataCertificate['zip_code']}} </p>
-        <p class="certificate_field">{{$dataCertificate['fax_data']}}</p>
       </th>
       <th style="border:1px solid;">
         SHOULD ANY OF THE ABOVE DESCRIBED POLICIES BE CANCELLED BEFORE THE EXPIRATION DATE THEREOF, NOTICE WILL BE DELIVERED IN A ACCORDANCE WITH THE POLICY PROVISIONS.

@@ -42,10 +42,7 @@
             <div class="col-sm-6">
               <h3 class="box-title m-b-0">User Profile</h3>
             </div>
-              <div class="col-sm-6">
-                <button type="submit" class="pull-right btn btn-info btnaccount2" onclick="window.location.href='/admin/table/{{$user->id}}'"><i class="fa fa-eye"></i> View Certificate </button>
-              </div>
-            </div>
+          </div>
             <div class="white-box">
               <form class="form-horizontal floating-labels" action="" method="POST">
                           <input type="hidden" name="_token" value="{!! csrf_token() !!}" />

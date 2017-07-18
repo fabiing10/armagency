@@ -23,9 +23,19 @@ class AdminController extends Controller
 
         $users = DB::table('users as u')
         ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
-        ->select('fc.C_I_producer_id','u.name','u.email','fc.exp_date','fc.status','u.id')
+        ->select('fc.C_I_producer_id','u.name','u.email','fc.exp_date','fc.status','u.id','fc.id as f_id')
         ->where('u.userType', '=', 'user')
         ->get();
+
+        $today = Carbon::now()->format('Y-m-d');
+        $tf = Carbon::parse($today)->format('Y-m-d');
+
+        foreach($users as $user){
+          if($user->exp_date < $tf){
+            $user->status = 'expired';
+          }
+        }
+
         return view('admin.index')->with('users',$users);
       }
 
@@ -34,7 +44,7 @@ class AdminController extends Controller
 
         $date=strtotime(date('Y-m-d'));  // if today :2013-05-23
 
-        $newDate = date('Y-m-d',strtotime('-30 days',$date));
+        $newDate = date('Y-m-d',strtotime('+30 days',$date));
         $today = Carbon::now()->format('Y-m-d');
 
         $tf = Carbon::parse($today)->format('Y-m-d');
@@ -59,11 +69,12 @@ class AdminController extends Controller
 
         ->where('u.userType', '=', 'user')
         //->where('exp_date', '>', $nd)
-        //->whereBetween('exp_date', [$nd, $tf])
+        ->whereBetween('exp_date', [$tf,$nd])
 
         /*->whereDate('exp_date', '<', $tf)*/
         //->where('exp_date', '>',$newDate)
         ->get();
+
       //return $nd;
         return view('admin.alerts')->with('users',$users);
     /*  $my_date = date('m/d/y', strtotime('07/12/2016'));
@@ -106,19 +117,33 @@ class AdminController extends Controller
         ->select('u.email','u.name','fc.exp_date','fc.status','fc.id')
         ->where('u.userType', '=', 'user')
         ->get();
+
+        $today = Carbon::now()->format('Y-m-d');
+        $tf = Carbon::parse($today)->format('Y-m-d');
+
+        foreach($users as $user){
+          if($user->exp_date < $tf){
+            $user->status = 'expired';
+          }
+        }
+
+
         return view('admin.active-inactive')->with('users',$users);
       }
       public function editstatus ($id){
+
           $FormControl = FormControl::find($id);
-            if($FormControl->status === 'cancel'){
-              $FormControl->status = 'active';
-              $FormControl->save();
-              return ('loco');
-            }else {
-              $FormControl->status = 'cancel';
-              $FormControl->save();
-              return ('no');
-            }
+          if($FormControl->status == 'cancel'){
+            $FormControl->status = 'active';
+            $FormControl->save();
+            //return ('active');
+          }else {
+            $FormControl->status = 'cancel';
+            $FormControl->save();
+            //return ('cancel');
+          }
+
+          return $FormControl;
 
       }
       public function certificate (Request $request){
@@ -450,9 +475,10 @@ class AdminController extends Controller
           $count = count($fechas);
           if($count > 0){
             usort($fechas, array($this,"date_sort"));
-            $fecha_exp = array_values($fechas)[0];
+            $f_e = array_values($fechas)[0];
+            $fecha_exp = Carbon::parse($f_e)->format('Y-m-d');
           }else{
-            $fecha_exp = '00/00/0000';
+            $fecha_exp = '0000-00-00';
           }
 
           $formcontrol->exp_date = $fecha_exp;
@@ -744,9 +770,11 @@ class AdminController extends Controller
 
         return redirect('admin/admin-settings');
       }
+
       public function date_sort($a, $b) {
           return strtotime($a) - strtotime($b);
       }
+
       public function editcertificate (Request $request, $id){
         /* user */
         $user = User::find($id);
@@ -1071,9 +1099,11 @@ class AdminController extends Controller
           $count = count($fechas);
           if($count > 0){
             usort($fechas, array($this,"date_sort"));
-            $fecha_exp = array_values($fechas)[0];
+
+            $f_e = array_values($fechas)[0];
+            $fecha_exp = Carbon::parse($f_e)->format('Y-m-d');
           }else{
-            $fecha_exp = '00/00/0000';
+            $fecha_exp = '0000-00-00';
           }
 
           $formcontrol->exp_date = $fecha_exp;
@@ -1082,4 +1112,5 @@ class AdminController extends Controller
 
           return redirect('admin');
       }
+
 }

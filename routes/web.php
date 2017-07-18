@@ -85,6 +85,7 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::post('/client-list/edit/{id}', 'UserController@saveClient');
   Route::get('/client-list/delete/{id}', 'UserController@deleteClient');
   Route::get('/download-certificate/{option}', 'UserController@downloadCertificate');
+  Route::get('/download/pdf/{option}', 'UserController@downloadFile');
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/account', 'UserController@account');
   Route::get('/get-password',function(){return view('user.get-password');});
@@ -92,7 +93,7 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
   Route::get('/login',function(){return view('user.login');});
   Route::get('/reset-password',function(){return view('user.reset-password');});
   Route::post('/reset-password', 'UserController@resetpassword');
-
+  Route::post('/view-certificate', 'UserController@generateCertificate');
 
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/support',function(){return view('user.support');});

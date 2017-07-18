@@ -51,7 +51,7 @@ hr {
           <div class="row">
               <div class="col-sm-12">
                   <div class="white-box">
-                              <div class="col-lg-3" style="padding-left:0px; padding-bottom:40px;">
+                              <div class="col-lg-3" style="padding-left:0px;">
                                 <h2 class="box-title m-b-0">SEND CERTIFICATE TO</h2>
                               </div>
                                 <div class="row">
@@ -86,7 +86,7 @@ hr {
                                                               <input type="text" class="form-control input-sm" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
                                                               <label for="address_client">Address</label>
                                                           </div>
-                                                          </div>
+                                                        </div>
                                                       </div>
                                                       <div class="col-md-6">
                                                         <div class="form-group">
@@ -123,7 +123,7 @@ hr {
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-inbox"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" id="email_client" name="email_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" id="email_client" name="email_client" ><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="email_client">Email</label>
                                                       </div>
                                                     </div>
@@ -159,6 +159,7 @@ hr {
 
                                                   </div>
                                                   <div class="wizard-pane" role="tabpanel">
+                                                    <button style="float:right;" class="btn btn-info btnaccount" onclick="downloadCertificate()"> <i class="fa fa-download white"></i> Download Certificate</button>
                                                     <div class="row">
                                                         <div class="col-sm-12 col-xs-12">
                                                             <form>
@@ -230,7 +231,9 @@ hr {
 @section('script')
 <script type="text/javascript">
 (function() {
-
+  $.ajaxSetup({
+      headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') }
+  });
 
 $('#email_client').change(function(){
   $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
@@ -297,6 +300,13 @@ $('#fax_client').change(function(){
                 return false;
             }else{
               $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
+
+              if($('#email_client').val() != ""){
+                $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
+              }else{
+                $('#email_option').fadeOut();
+              }
+
               if($('#fax_client').val() != ""){
                 $('#fax_option').html($('#fax_client').val()+" (Fax)");
               }else{
@@ -324,5 +334,18 @@ jQuery('#date-range').datepicker({
     toggleActive: true
 });
 
+
+function downloadCertificate(){
+  jQuery.ajax({
+   type: 'POST',
+    url:'/user/view-certificate',
+    data: "_token= {{ csrf_token() }}"+'certificate_name='+jQuery('#certificate_name').val()+'&address_client='+ jQuery('#address_client').val()+'&city_client='+ jQuery('#city_client').val()+'&state_client='+ jQuery('#state_client').val()+'&zipcode_client='+ jQuery('#zipcode_client').val()+'&email_client='+ jQuery('#email_client').val()+'&phone_client='
+    +jQuery('#phone_client').val()+'&fax_client='+ jQuery('#fax_client').val(),
+
+    success: function(msg){
+      wwindow.location.href='/user/download/pdf/'+msg;
+    }
+  });
+}
 </script>
 @endsection

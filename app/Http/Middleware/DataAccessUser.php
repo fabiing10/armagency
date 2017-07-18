@@ -30,11 +30,10 @@ class DataAccessUser
             $status = $user->status;
             $date = $user->exp_date;
           }
-          $dateNew = date_create($date);
-          date_format($dateNew,'mm/dd/yyyy');
+
           if($status == "cancel"){
             return redirect("cancelled");
-          }else if($dateNew < date('mm/dd/yyyy')){
+          }else if($date < date('Y-m-d')){
             return redirect("expired");
           }else{
             return $next($request);

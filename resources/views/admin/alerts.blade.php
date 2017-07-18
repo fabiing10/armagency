@@ -61,7 +61,7 @@
                           @foreach($users as $user)
                             <tr>
                                 <td>{{$user->name}} </td>
-                                <td>{{$user->exp_date}}</td>
+                                <td>{{\Carbon\Carbon::parse($user->exp_date)->format('m/d/Y')}}</td>
                                 <td>{{$user->email}}</td>
                                 <td><i class="fa fa-phone"></i> {{$user->phone}}</td>
                             </tr>
