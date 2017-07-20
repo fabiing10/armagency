@@ -39,7 +39,7 @@ Route::get('/redirect', 'HomeController@redirectURL')->name('redirect');
 Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@authenticate']);
 Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
 
-Route::get('/download/certificate/{pdf}', 'UserController@downloadFile')->name('login');
+Route::get('/download/certificate/{pdf}', 'UserController@downloadFile');
 
 //Admin Controller's
 Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function(){
@@ -101,12 +101,11 @@ Route::group(['prefix'=>'user','middleware'=>['auth','AccessUser']],function(){
 
   Route::get('/send-via',function(){return view('user.send-via');});
   Route::get('/support',function(){return view('user.support');});
-
+  Route::get('/certificate/{user}', 'UserController@viewCertificateHistory');
 
   Route::get('/certificate', 'UserController@viewCertificate');
   Route::post('/certificate', 'UserController@sendCertificate');
 
-  Route::get('/certificate/{user}', 'UserController@viewCertificateHistory');
 
 
 });

@@ -48,7 +48,7 @@ class DataAccessUser
             $nd = Carbon::parse($newDate)->format('Y-m-d');
 
             if($date >= $tf and $date <= $nd){
-              session()->flush();
+      
               session(['alert' => $date]);
 
             }

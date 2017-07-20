@@ -52,6 +52,9 @@ hr {
                   <h4 class="page-title">HOME</h4> </div>
               <!-- /.col-lg-12 -->
           </div>
+          @if (session()->has('alert'))
+            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+          @endif
           <!-- /.row -->
           <div class="row">
               <div class="col-sm-12">
