@@ -26,7 +26,7 @@
 
   @include('layouts.navigation')
 
-  @include('layouts.menu_user')
+  @include('layouts.menu_admin')
   <div id="page-wrapper">
       <div class="container-fluid">
           <div class="row bg-title">
@@ -40,9 +40,6 @@
                   </div>
               <!-- /.col-lg-12 -->
           </div>
-          @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
-          @endif
           <!-- /.row -->
           <div class="row">
             @if (Session::has('sweet_alert.alert'))
@@ -68,7 +65,7 @@
                                                     <th>phone</th>
                                                     <th>fax</th>
                                                     <th>email</th>
-                                                    <th>manage</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -79,12 +76,7 @@
                                                     <td>{{$client->phone_number}}</td>
                                                     <td>{{$client->fax}}</td>
                                                     <td>{{$client->email}}</td>
-                                                    <td>
-                                                        <a href="/user/client-list/edit/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></a>
-                                                        <a href="#" data-id="{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5 delete-user"><i class="ti-trash"></i></a>
-                                                        <a href="/user/certificate/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
-                                                        <button onclick="window.location.href='/user/download-certificate/{{$client->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
-                                                    </td>
+                                                  
                                                 </tr>
                                                 @endforeach
                                             </tbody>

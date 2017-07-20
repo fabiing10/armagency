@@ -309,12 +309,14 @@ $('#fax_client').change(function(){
               $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
 
               if($('#email_client').val() != ""){
+                $('#email_option').fadeIn();
                 $('#email_option').html($('#certificate_name').val()+" ("+$('#email_client').val()+")");
               }else{
                 $('#email_option').fadeOut();
               }
 
               if($('#fax_client').val() != ""){
+                $('.fax_option').fadeIn();
                 $('#fax_option').html($('#fax_client').val()+" (Fax)");
               }else{
                 $('.fax_option').fadeOut();

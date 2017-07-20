@@ -47,6 +47,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','AccessAdmin']],function()
 Route::get('/fechas', 'AdminController@alerts');
 
   Route::get('/', 'AdminController@homeAdmin');
+  Route::get('/history/{option}', 'AdminController@gethistory');
+  Route::get('/clients/{option}', 'AdminController@getclient');
   Route::get('/create-certificate', 'AdminController@certificate');
   Route::post('/create-certificate', 'AdminController@create_certificate');
   Route::get('/send-via/{user}', 'AdminController@sendCertificateForm');

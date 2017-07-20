@@ -25,7 +25,7 @@
 
   @include('layouts.navigation')
 
-  @include('layouts.menu_user')
+  @include('layouts.menu_admin')
   <div id="page-wrapper">
       <div class="container-fluid">
           <div class="row bg-title">
@@ -40,9 +40,6 @@
               <!-- /.col-lg-12 -->
           </div>
           <!-- /.row -->
-          @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
-          @endif
           <div class="white-box disable">
           <div class="row">
             <div class="col-sm-6">
@@ -56,7 +53,7 @@
                                   <tr>
                                       <th>NAME</th>
                                       <th>SENT DATE</th>
-                                      <th width="300">MANAGE</th>
+
                                   </tr>
                               </thead>
                               <tbody>
@@ -64,34 +61,13 @@
                                   <tr>
                                       <td>{{$h->certificate_holder_name}}</td>
                                       <td>
-                                        {{$h->sent_date}}
-                                      <td>
-                                          <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
-                                          <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                                        {{\Carbon\Carbon::parse($h->sent_date)->format('m/d/Y')}}
                                       </td>
                                   </tr>
                                   @endforeach
                               </tbody>
                           </table>
                       </div>
-                  </div>
-                  <div class="row marginhistory block" style="display:none;">
-                    <p class="block" style="display:none; margin-left:20px;">This month
-                    @foreach ($histories as $h)
-                    <div class="history-box" style="padding:8px;">
-                      <img src="{{URL::asset('assets/plugins/images/users/history.png')}}" style="width:20%;float:left;"></img>
-                    <div class="panel_description_clients">
-
-                      <h3 style="display: -webkit-inline-box; vertical-align: top;padding: 0px;margin: 0px;">{{$h->certificate_holder_name}}</h3>
-                      <p style="float:right;width: 100%;padding: 0px;">{{$h->sent_date}}</p>
-
-                    </div>
-                      <div class="panel_mobile_clients">
-                        <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
-                        <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
-                      </div>
-                    </div>
-                    @endforeach
                   </div>
               </div>
           </div>

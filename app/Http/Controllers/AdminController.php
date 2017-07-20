@@ -39,6 +39,34 @@ class AdminController extends Controller
         return view('admin.index')->with('users',$users);
       }
 
+      public function gethistory ($user){
+        $user = User::find($user);
+        //$history = History::where('userId', '=', $user->id)->get();
+
+        $histories = DB::table('users as u')
+          ->join('history_send as h', 'u.id', '=', 'h.userId')
+          ->join('clients as c', 'c.id', '=', 'h.clientId')
+          ->select('h.*','c.*','c.id as clientId','u.id as userId','h.id as historyId')
+          ->where('u.id','=',$user->id)
+          ->get();
+
+        //return $histories;
+        return view('admin.history')->with('user',$user)->with('histories',$histories);
+      }
+
+      public function getclient($user){
+        $user = User::find($user);
+
+        $clients = DB::table('users as u')
+          ->join('history_send as h', 'u.id', '=', 'h.userId')
+          ->join('clients as c', 'c.id', '=', 'h.clientId')
+          ->select('c.*')
+          ->where('u.id','=',$user->id)
+          ->get();
+        return view('admin.client-list')->with('user',$user)->with('clients',$clients);;
+      }
+
+
       public function generateCertificate(Request $request){
 
         $dataCertificate = array(
@@ -142,20 +170,43 @@ class AdminController extends Controller
 
       public function downloadCertificate($id){
 
+        $users = DB::table('users as u')
+          ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
+          ->select('fc.status','fc.exp_date')
+          ->where('u.id', '=', $id)
+          ->get();
+        foreach($users as $user){
+          $status = $user->status;
+          $date = $user->exp_date;
+        }
 
-        $dataCertificate = array(
-          'user_id' => $id,
-          'certificate_holder_name' => '',
-          'address_client' => '',
-          'phone_number' => '',
-          'email_data' => '',
-          'fax_data' => '',
-          'city' => '',
-          'state' => '',
-          'zip_code' => ''
-        );
+        if($status == "cancel"){
+          Alert::error('The Accord is canceled!')->persistent("Close");
+          return redirect('/admin');
+        }else if($date < date('Y-m-d')){
+          Alert::error('The Accord is expired!')->persistent("Close");
+          return redirect('/admin');
+        }else{
+          $dataCertificate = array(
+            'user_id' => $id,
+            'certificate_holder_name' => '',
+            'address_client' => '',
+            'phone_number' => '',
+            'email_data' => '',
+            'fax_data' => '',
+            'city' => '',
+            'state' => '',
+            'zip_code' => ''
+          );
 
-       return  $this->loadResult('download',$dataCertificate);
+         return  $this->loadResult('download',$dataCertificate);
+        }
+
+
+
+
+
+
       }
 
       public function getuser(){
@@ -536,7 +587,27 @@ class AdminController extends Controller
 
       public function sendCertificateForm($user){
         $user = User::find($user);
-        return view('admin.send_certificate')->with('user',$user);
+
+        $users = DB::table('users as u')
+          ->join('FormControl as fc', 'u.id', '=', 'fc.userId')
+          ->select('fc.status','fc.exp_date')
+          ->where('u.id', '=', $user->id)
+          ->get();
+        foreach($users as $u){
+          $status = $u->status;
+          $date = $u->exp_date;
+        }
+
+        if($status == "cancel"){
+          Alert::error('The Accord is canceled!')->persistent("Close");
+          return redirect('/admin');
+        }else if($date < date('Y-m-d')){
+          Alert::error('The Accord is expired!')->persistent("Close");
+          return redirect('/admin');
+        }else{
+          return view('admin.send_certificate')->with('user',$user);
+        }
+
       }
 
       public function sendCertificate(Request $request){

@@ -43,6 +43,9 @@ hr {
               </div>
               <!-- /.col-lg-12 -->
           </div>
+          @if (session()->has('alert'))
+            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+          @endif
           <!-- /.row -->
           <div class="white-box">
               <h2 class="box-title m-b-0 t-center">NEED HELP?</h2>

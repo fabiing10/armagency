@@ -4,6 +4,33 @@
 <link href="{{URL::asset('assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
 <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
 <link href="{{URL::asset('assets/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet">
+
+<style>
+.tooltip-text {
+    font-size: 12px;
+    line-height: 24px;
+    display: block;
+    padding: 1.31em 1.21em 1.21em 0;
+    color: #fff;
+    text-align: center;
+}
+.tooltip-content {
+    width: 140px;
+    left: 290%;
+    bottom: 40% !important;
+}
+  .tooltip-text {
+    padding: 5px;
+}
+.tooltip-item {
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    padding: 0px;
+}
+
+</style>
 @endsection
 
 @section('body_content')
@@ -72,16 +99,77 @@
                                       <td>{{\Carbon\Carbon::parse($user->exp_date)->format('m/d/Y')}}</td>
                                       <td>{{$user->status}}</td>
                                       <td>
-                                        <button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
-                                        <button onclick="window.location.href='/admin/edit-certificate/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
-                                        <button onclick="window.location.href='/admin/table/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
-                                        <button onclick="window.location.href='/admin/send-via/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></button>
+                                        <span class="mytooltip tooltip-effect-4">
+                                          <span class="tooltip-item">
+                                              <button onclick="window.location.href='/admin/user-profile/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-user"></i></button>
+                                          </span>
+                                          <span class="tooltip-content clearfix">
+
+                                            <span class="tooltip-text">Clients</span>
+                                          </span>
+                                        </span>
+
+                                        <span class="mytooltip tooltip-effect-4">
+                                          <span class="tooltip-item">
+                                              <button onclick="window.location.href='/admin/edit-certificate/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                          </span>
+                                          <span class="tooltip-content clearfix">
+
+                                            <span class="tooltip-text">Edit User</span>
+                                          </span>
+                                        </span>
+
+
+                                        <span class="mytooltip tooltip-effect-4">
+                                          <span class="tooltip-item">
+                                              <button onclick="window.location.href='/admin/table/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
+                                          </span>
+                                          <span class="tooltip-content clearfix">
+
+                                            <span class="tooltip-text">Download Certificate</span>
+                                          </span>
+                                        </span>
+
+                                        <span class="mytooltip tooltip-effect-4">
+                                          <span class="tooltip-item">
+                                              <button onclick="window.location.href='/admin/send-via/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></button>
+                                          </span>
+                                          <span class="tooltip-content clearfix">
+                                            <span class="tooltip-text">Send Certificate</span>
+                                          </span>
+                                        </span>
+
+                                        <span class="mytooltip tooltip-effect-4">
+                                          <span class="tooltip-item">
+                                              <button onclick="window.location.href='/admin/history/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-clock-o"></i></button>
+                                          </span>
+                                          <span class="tooltip-content clearfix">
+                                            <span class="tooltip-text">History</span>
+                                          </span>
+                                        </span>
+
+                                        <span class="mytooltip tooltip-effect-4">
+                                          <span class="tooltip-item">
+                                              <button onclick="window.location.href='/admin/clients/{{$user->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-align-left"></i></button>
+                                          </span>
+                                          <span class="tooltip-content clearfix">
+                                            <span class="tooltip-text">Client List</span>
+                                          </span>
+                                        </span>
+
+
+
+
+
 
                                         @if ($user->status == 'active')
                                         <button data-id="{{$user->f_id}}" type="submit" class="btn sa-params-cancel btn-gray"> Cancel </button>
                                         @else
                                         <button data-id="{{$user->f_id}}" type="submit" class="btn sa-params-activate btn-green"> Activate </button>
                                         @endif
+
+
+
                                         </tr>
                                       </td>
                                   </tr>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use Closure;
 use DB;
 
@@ -36,6 +37,21 @@ class DataAccessUser
           }else if($date < date('Y-m-d')){
             return redirect("expired");
           }else{
+
+
+            $date_t=strtotime(date('Y-m-d'));  // if today :2013-05-23
+
+            $newDate = date('Y-m-d',strtotime('+30 days',$date_t));
+            $today = Carbon::now()->format('Y-m-d');
+
+            $tf = Carbon::parse($today)->format('Y-m-d');
+            $nd = Carbon::parse($newDate)->format('Y-m-d');
+
+            if($date >= $tf and $date <= $nd){
+              session()->flush();
+              session(['alert' => $date]);
+
+            }
             return $next($request);
           }
 
