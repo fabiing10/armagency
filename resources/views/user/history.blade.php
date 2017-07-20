@@ -64,7 +64,7 @@
                                   <tr>
                                       <td>{{$h->certificate_holder_name}}</td>
                                       <td>
-                                        {{$h->sent_date}}
+                                        {{\Carbon\Carbon::parse($h->sent_date)->format('m/d/Y')}}
                                       <td>
                                           <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
                                           <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
