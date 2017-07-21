@@ -750,7 +750,7 @@ class AdminController extends Controller
               $path = $result['path'];
 
               Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$option,$result){
-                    $message->to($email)->subject('Armagency - Accord Form');
+                    $message->to($email)->subject('ACORD FORM--ARM Insurance Agency--');
                     if($option == 'email_client'){
                       if(!empty($result['email_to_me_option'])){
                         $message->cc($result['email_to_me_data']);
@@ -778,7 +778,7 @@ class AdminController extends Controller
                 Mail::send('layouts.emails.certificate', $result, function($message) use($email,$path,$option,$result){
 
                       $file = public_path().'/pdf/'.$path;
-                      $message->to($email)->subject('Armagency - Accord Form')->attach($file);
+                      $message->to($email)->subject('ACORD FORM--ARM Insurance Agency--')->attach($file);
 
                       if($option == 'fax_client'){
                         if(!empty($result['fax_to_me_option'])){

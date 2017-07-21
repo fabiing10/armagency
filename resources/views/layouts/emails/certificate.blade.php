@@ -32,7 +32,7 @@
 					<tr>
 						<td>
 							<center><img src="{{URL::asset('http://app.armagencyonline.com/assets/plugins/images/arm_logo2.png')}}" style="margin: 0 auto;display: block;" width="50"/></center>
-							<center><h2>Email Armagency</h2></center>
+							<center><h2>ARM Insurance Agency</h2></center>
 
 						<p>To whom it may concern:</p>
 							<br>
