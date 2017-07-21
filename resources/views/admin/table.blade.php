@@ -174,7 +174,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <td style="width:130px; border:1px solid;">DATE (MM/DD/YYYY)</td>
           </tr>
           <tr>
-            <td><center>\Carbon\Carbon::parse($formcontrol->exp_date)->format('m/d/Y')</center></td>
+            <td><center>{{\Carbon\Carbon::parse($formcontrol->exp_date)->format('m/d/Y')}}</center></td>
           </tr>
         </table>
 
@@ -421,7 +421,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                 @endif
               </div>
               <div class="row" style="vertical-align:middle;">
-                GEN'L AGGREGATE LIMIT APPLIES PER:<br>
+                <p style="padding-bottom:0px;margin-bottom:3px;">GEN'L AGGREGATE LIMIT APPLIES PER:</p><br>
                 @if ( $gloptionpolicy === 'true')
                 <img style="padding-top:10px;" src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> POLICY
                 @else
@@ -646,16 +646,16 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
           <td width="15" style="border-bottom:2px solid !important; border:1px solid; border-right:1px solid;">
             {{$ulinsuranceletter}}
           </td>
-          <td style="width:260px; border-bottom:2px solid !important; margin:0; padding:0;">
+          <td style="width:260px; border-bottom:2px solid !important; margin:0; padding-top:10px; padding-left:0px; padding-right:0px;">
             @if ($uloptionumbrellaliability === 'true')
             <img style="padding-top:10px;" src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> UMBRELLA LIAB </b>
             @else
             <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> UMBRELLA LIAB </b>
             @endif
             @if ($uloptionoccur === 'true')
-            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> OCCUR <br>
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" style="margin-left:10px;" /> OCCUR <br>
             @else
-            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> OCCUR <br>
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" style="margin-left:10px;"/> OCCUR <br>
             @endif
             @if ($uloptionexcessliability === 'true')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> EXCESS LAB </b>
@@ -663,9 +663,9 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> EXCESS LAB </b>
             @endif
             @if ($uloptionclaimsmade === 'true')
-            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /> CLAIMS-MADE
+            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" style="margin-left:28px;" /> CLAIMS-MADE
             @else
-            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /> CLAIMS-MADE
+            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" style="margin-left:28px;" /> CLAIMS-MADE
             @endif
             <hr>
             @if ($uloptiondeductible === 'true')
@@ -905,8 +905,10 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <tr>
       <th rowspan="2" style="border:1px solid; height:100px; width:550px;">
         <p class="certificate_field">{{$dataCertificate['certificate_holder_name']}}</p>
-        <p class="certificate_field">{{$dataCertificate['address_client']}}</p>
+          <p class="certificate_field">{{$dataCertificate['address_client']}}</p>
         <p class="certificate_field">{{$dataCertificate['city']}},{{$dataCertificate['state']}},{{$dataCertificate['zip_code']}} </p>
+
+
       </th>
       <th style="border:1px solid;">
         SHOULD ANY OF THE ABOVE DESCRIBED POLICIES BE CANCELLED BEFORE THE EXPIRATION DATE THEREOF, NOTICE WILL BE DELIVERED IN A ACCORDANCE WITH THE POLICY PROVISIONS.
