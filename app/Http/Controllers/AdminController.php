@@ -794,7 +794,7 @@ class AdminController extends Controller
               }
 
 
-        Alert::success('The Accord has been sent!')->persistent("Close");
+        Alert::success('The Certificate has been sent!')->persistent("Close");
         return redirect('admin');
 
 
