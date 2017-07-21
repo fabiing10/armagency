@@ -73,7 +73,7 @@
             <div class="form-group">
               <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
               <div class="form-group f-style">
-                  <input type="text" class="form-control input-sm" value="{{$user->dba_name}}" id="I_I_dba_name" name="I_I_dba_name" required><span class="highlight"></span> <span class="bar"></span>
+                  <input type="text" class="form-control input-sm" value="{{$user->dba_name}}" id="I_I_dba_name" name="I_I_dba_name"><span class="highlight"></span> <span class="bar"></span>
                   <label for="I_I_dba_name">DBA name</label>
               </div>
             </div>
@@ -95,7 +95,7 @@
           <div class="form-group">
             <div class="input-group-addon"><i class="fa fa-fax"></i></div>
             <div class="form-group f-style">
-                <input type="text" class="form-control input-sm" value="{{$user->phone}}" id="phone_insured" name="phone_insured" data-mask="(999) 999-9999" required><span class="highlight"></span> <span class="bar"></span>
+                <input type="text" class="form-control input-sm" value="{{$user->phone}}" id="phone_insured" name="phone_insured" data-mask="(999) 999-9999" ><span class="highlight"></span> <span class="bar"></span>
                 <label for="phone_insured">Fax</label>
             </div>
           </div>
