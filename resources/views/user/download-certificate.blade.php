@@ -865,7 +865,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <table>
               <tr>
                 <td style="width:155px; font-size:9px !important;">
-                  COVERAGE LIMITS 1 DEDUCTIBLE
+                  COVERAGE LIMITS / DEDUCTIBLE
                 </td>
                 <td style="width:115px; font-size:10px !important;">
                   $ {{$formcontrol->A_C_a_coverage_limits}}
@@ -873,7 +873,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
               </tr>
               <tr>
                 <td style="font-size:9px !important;">
-                  COVERAGE LIMITS 2 DEDUCTIBLE
+                  COVERAGE LIMITS / DEDUCTIBLE
                 </td>
                 <td style="font-size:10px !important;">
                   $ {{$formcontrol->A_C_b_coverage_limits}}
