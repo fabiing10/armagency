@@ -264,7 +264,7 @@ class AdminController extends Controller
         $user->name = $request->name_insured;
         $user->phone = $this->specialC($request->phone_insured);
         $user->address = $request->address_insured;
-        $user->email = $request->email_insured;
+        $user->email = strtolower($request->email_insured);
         $user->dba_name = $request->I_I_dba_name;
         $user->city = $request->I_I_city;
         $user->state = $request->I_I_state;
@@ -829,7 +829,7 @@ class AdminController extends Controller
         $user->name = $request->name_insured;
         $user->phone = $this->specialC($request->phone_insured);
         $user->address = $request->address_insured;
-        $user->email = $request->email_insured;
+        $user->email = strtolower($request->email_insured);
         $user->dba_name = $request->I_I_dba_name;
         $user->city = $request->I_I_city;
         $user->state = $request->I_I_state;
@@ -900,7 +900,7 @@ class AdminController extends Controller
         $user->phone = $this->specialC($request->phone_insured);
         $user->address = $request->address_insured;
 
-        $user->email = $request->email_insured;
+        $user->email = strtolower($request->email_insured);
         $user->userType = "user";
         if($request->password_insured != "" || $request->password_insured_repeat != ""){
           if($request->password_insured == $request->password_insured_repeat){

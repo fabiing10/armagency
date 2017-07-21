@@ -76,7 +76,7 @@
 
                     <div class="form-group  m-t-20">
                       <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" name="email" placeholder="email">
+                        <input class="form-control" type="text" required="" name="email" placeholder="email" style="text-transform: lowercase;">
                       </div>
                     </div>
                     <div class="form-group">

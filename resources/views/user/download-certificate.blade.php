@@ -174,7 +174,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <td style="width:130px; border:1px solid;">DATE (MM/DD/YYYY)</td>
           </tr>
           <tr>
-            <td><center>{{$formcontrol->exp_date}}</center></td>
+            <td><center>{{\Carbon\Carbon::parse($formcontrol->exp_date)->format('m/d/Y')}}</center></td>
           </tr>
         </table>
 

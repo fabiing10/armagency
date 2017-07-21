@@ -41,8 +41,8 @@ class LoginController extends Controller
 
     public function authenticate(Request $request){
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authentication passed...
+        if (Auth::attempt(['email' => strtolower($request->email), 'password' => $request->password])) {
+
             return redirect()->intended('redirect');
         }else{
           \Session::flash('error_message','Incorrect data! Try again');
