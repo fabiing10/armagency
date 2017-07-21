@@ -45,9 +45,9 @@ class AdminController extends Controller
 
         $histories = DB::table('users as u')
           ->join('history_send as h', 'u.id', '=', 'h.userId')
-          ->join('clients as c', 'c.id', '=', 'h.clientId')
-          ->select('h.*','c.*','c.id as clientId','u.id as userId','h.id as historyId')
+          ->select('h.*','u.id as userId','h.id as historyId')
           ->where('u.id','=',$user->id)
+          ->orderBy('h.created_at', 'desc')
           ->get();
 
         //return $histories;
@@ -58,12 +58,14 @@ class AdminController extends Controller
         $user = User::find($user);
 
         $clients = DB::table('users as u')
-          ->join('history_send as h', 'u.id', '=', 'h.userId')
-          ->join('clients as c', 'c.id', '=', 'h.clientId')
+          ->join('clients_user as c_u', 'u.id', '=', 'c_u.userId')
+          ->join('clients as c', 'c.id', '=', 'c_u.clientId')
           ->select('c.*')
           ->where('u.id','=',$user->id)
+          ->orderBy('c.created_at', 'desc')
           ->get();
-        return view('admin.client-list')->with('user',$user)->with('clients',$clients);;
+
+        return view('admin.client-list')->with('user',$user)->with('clients',$clients);
       }
 
 
@@ -103,6 +105,15 @@ class AdminController extends Controller
       }
       public function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+      }
+      public function generateRandomInteger($length = 10) {
+        $characters = '0123456789';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
@@ -612,6 +623,10 @@ class AdminController extends Controller
 
       public function sendCertificate(Request $request){
 
+
+        $option_client = $request->client_list;
+
+
         $user = User::find($request->user_id);
         $email_option = $request->email_option;
         if($email_option == "on"){
@@ -651,36 +666,49 @@ class AdminController extends Controller
           $fax_to_me_data = 'none';
         }
 
+        if($option_client == "on"){
+          $client = new Client;
+          $client->certificate_holder_name = $request->certificate_name;
+          $client->address = $request->address_client;
+          $client->phone_number = $request->phone_client;
+          $client->fax = $request->fax_client;
+          $client->email = $request->email_client;
+          $client->city = $request->city_client;
+          $client->state = $request->state_client;
+          $client->zip_code = $request->zipcode_client;
+          $client->save();
 
-        $client = new Client;
-        $client->certificate_holder_name = $request->certificate_name;
-        $client->address = $request->address_client;
-        $client->phone_number = $request->phone_client;
-        $client->fax = $request->fax_client;
-        $client->email = $request->email_client;
-        $client->city = $request->city_client;
-        $client->state = $request->state_client;
-        $client->zip_code = $request->zipcode_client;
-        $client->save();
+
+          $clientuser = new ClientUser;
+          $clientuser->userId = $user->id;
+          $clientuser->status = 'active';
+          $clientuser->clientId = $client->id;
+          $clientuser->save();
+          $client_id = $client->id;
+          $client_save = true;
+        }else{
+          $client_id = $this->generateRandomInteger(5);
+          $client_save = false;
+        }
 
 
-        $clientuser = new ClientUser;
-        $clientuser->userId = $user->id;
-        $clientuser->status = 'active';
-        $clientuser->clientId = $client->id;
-        $clientuser->save();
-        //Obtener user
 
         $history = new History;
         $history->userId = $user->id;
         $history->status = 'active';
-        $history->clientId = $client->id;
+        $history->certificate_holder_name = $request->certificate_name;
+        $history->address = $request->address_client;
+        $history->city = $request->city_client;
+        $history->state = $request->state_client;
+        $history->zip_code = $request->zipcode_client;
         $history->sent_date = date('Y-m-d');
+        $history->client_save =  $client_save;
+        $history->client_id =  $client_id;
         $history->save();
 
         $dataCertificate = array(
           'user_id' => $request->user_id,
-          'client_id' => $client->id,
+          'client_id' => $client_id,
           'certificate_holder_name' => $request->certificate_name,
           'address_client' => $request->address_client,
           'phone_number' => $request->phone_client,
@@ -710,9 +738,7 @@ class AdminController extends Controller
           'fax_to_me_data' => $fax_to_me_data
         );
 
-
-
-          if(!empty($result['send_email_option']) or !empty($result['email_to_me_option'])){
+        if(!empty($result['send_email_option']) or !empty($result['email_to_me_option'])){
 
               if(!empty($result['send_email_option'])){
                 $email = $result['email_data'];
@@ -736,9 +762,9 @@ class AdminController extends Controller
                     }
               });
 
-            }
+          }
 
-            if(!empty($result['send_fax_option']) or !empty($result['fax_to_me_option'])){
+        if(!empty($result['send_fax_option']) or !empty($result['fax_to_me_option'])){
 
                 if(!empty($result['send_fax_option'])){
                   $email = $result['fax_data'];
@@ -768,8 +794,8 @@ class AdminController extends Controller
               }
 
 
-            Alert::success('The Accord has been sent!')->persistent("Close");
-            return redirect('admin');
+        Alert::success('The Accord has been sent!')->persistent("Close");
+        return redirect('admin');
 
 
       }
@@ -781,6 +807,8 @@ class AdminController extends Controller
 
         if(!empty($dataCertificate['client_id'])){
           $client = $dataCertificate['client_id'];
+        }else{
+          $client = $this->generateRandomString(5);
         }
 
         $formQuery = FormControl::where('userId','=',$user->id)->get();

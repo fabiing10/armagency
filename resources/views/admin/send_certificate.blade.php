@@ -155,7 +155,7 @@ hr {
 
                                                       <div class="form-group">
                                                         <div class="checkbox checkbox checkbox-success">
-                                                          <input type="checkbox" id="terms4" data-error="Before you wreck yourself" required>
+                                                          <input type="checkbox" name="client_list" id="client_list" data-error="Before you wreck yourself" >
                                                           <label for="terms4"> Save to clients list</label>
                                                           <div class="help-block with-errors"></div>
                                                         </div>

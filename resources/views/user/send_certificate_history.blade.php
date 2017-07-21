@@ -65,51 +65,104 @@ hr {
                                           </ul>
                                           <form id="dataFormContainer" class="form-horizontal floating-labels s-c" action="/user/certificate" method="POST">
                                               <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
+                                              <input type="hidden" name="client_value" value="{{$client->id }}" />
                                               <div class="wizard-content">
                                                   <div class="wizard-pane active" role="tabpanel">
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" value="{{$client->certificate_holder_name}}" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="certificate_name">Certificate holders name</label>
+
+                                                    <div class="row">
+                                                      <div class="col-md-12">
+                                                      <div class="form-group">
+                                                        <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
+                                                        <div class="form-group f-style">
+                                                            <input type="text" class="form-control input-sm" value="{{$client->certificate_holder_name}}" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
+                                                            <label for="certificate_name">Certificate holders name</label>
+                                                        </div>
+                                                        </div>
                                                       </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" value="{{$client->address}}" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="address_client">Address</label>
+                                                    <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" value="{{$client->address}}" id="address_client" name="address_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="address_client">Address</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" value="{{$client->city}}" id="city_client" name="city_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="city_client">City</label>
+                                                          </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" value="{{$client->state}}" id="state_client" name="state_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="state_client">State</label>
+                                                          </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" value="{{$client->zip_code}}" id="zipcode_client" name="zipcode_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="zipcode_client">Zip Code</label>
+                                                          </div>
+                                                          </div>
                                                       </div>
                                                     </div>
 
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" value="{{$client->phone_number }}" id="phone_client" name="phone_client" ><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="phone_client">Phone number</label>
-                                                      </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                      <div class="input-group-addon"><i class="fa fa-fax"></i></div>
-                                                      <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm"  value="{{$client->fax}}" id="fax_client" data-mask="(999) 999-9999" name="fax_client"><span class="highlight"></span> <span class="bar"></span>
-                                                          <label for="fax_client">Fax</label>
-                                                      </div>
-                                                    </div>
 
                                                     <div class="form-group">
                                                       <div class="input-group-addon"><i class="fa fa-inbox"></i></div>
                                                       <div class="form-group f-style">
-                                                          <input type="text" class="form-control input-sm" value="{{$client->email}}" id="email_client" name="email_client" required><span class="highlight"></span> <span class="bar"></span>
+                                                          <input type="text" class="form-control input-sm" value="{{$client->email}}" id="email_client" name="email_client" ><span class="highlight"></span> <span class="bar"></span>
                                                           <label for="email_client">Email</label>
                                                       </div>
                                                     </div>
 
+                                                    <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" value="{{$client->phone_number }}" id="phone_client" name="phone_client"><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="phone_client">Phone number</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <div class="input-group-addon"><i class="fa fa-fax"></i></div>
+                                                          <div class="form-group f-style">
+                                                              <input type="text" class="form-control input-sm" value="{{$client->fax}}" id="fax_client" data-mask="(999) 999-9999" name="fax_client" ><span class="highlight"></span> <span class="bar"></span>
+                                                              <label for="fax_client">Fax</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
 
-                                                      <div class="form-group">
+
+
+
+
+
+
+
+
+
+                                                      <div class="form-group" style="display:none;">
                                                         <div class="checkbox checkbox checkbox-success">
-                                                          <input type="checkbox" id="terms4" data-error="Before you wreck yourself" checked required>
+                                                          <input type="checkbox" name="client_list" id="client_list" data-error="Before you wreck yourself">
                                                           <label for="terms4"> Save to clients list</label>
                                                           <div class="help-block with-errors"></div>
                                                         </div>

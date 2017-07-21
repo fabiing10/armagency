@@ -20,6 +20,7 @@ class CreateClientlist extends Migration
           $table->string('phone_number')->nullable();
           $table->string('fax')->nullable();
           $table->string('email')->nullable();
+          $table->string('visible')->nullable();
           $table->rememberToken();
           $table->timestamps();
       });
@@ -49,11 +50,11 @@ class CreateClientlist extends Migration
               ->references('id')->on('users')
               ->onDelete('cascade');
           $table->string('status')->nullable();
-          /* Foreign key Users */
-          $table->integer('clientId')->unsigned();
-          $table->foreign('clientId')
-              ->references('id')->on('clients')
-              ->onDelete('cascade');
+          $table->string('certificate_holder_name')->nulleable();
+          $table->string('address')->nullable();
+          $table->string('city')->nullable();
+          $table->string('state')->nullable();
+          $table->string('zip_code')->nullable();
           $table->date('sent_date')->nullable();
           $table->rememberToken();
           $table->timestamps();

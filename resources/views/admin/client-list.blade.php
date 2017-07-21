@@ -65,6 +65,7 @@
                                                     <th>phone</th>
                                                     <th>fax</th>
                                                     <th>email</th>
+                                                    <th>Created at</th>
 
                                                 </tr>
                                             </thead>
@@ -76,7 +77,7 @@
                                                     <td>{{$client->phone_number}}</td>
                                                     <td>{{$client->fax}}</td>
                                                     <td>{{$client->email}}</td>
-                                                  
+                                                    <td>{{$client->created_at}}</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -130,7 +131,11 @@
 @section('script')
 <script>
 $(document).ready(function() {
-
+  $('#myTable').DataTable({
+    "order": [
+        [5, 'desc']
+    ]
+  });
 $('.titlenavigation').html('Clients');
   var SweetAlert = function() {};
 

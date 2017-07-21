@@ -32,7 +32,7 @@ class UserController extends Controller
   public function sendCertificate(Request $request){
 
     $user = Auth::user();
-
+    $option_client = $request->client_list;
     $email_option = $request->email_option;
     if($email_option == "on"){
       $send_email_option = true;
@@ -71,35 +71,55 @@ class UserController extends Controller
       $fax_to_me_data = 'none';
     }
 
+    if($option_client == "on"){
+      $client = new Client;
+      $client->certificate_holder_name = $request->certificate_name;
+      $client->address = $request->address_client;
+      $client->phone_number = $request->phone_client;
+      $client->fax = $request->fax_client;
+      $client->email = $request->email_client;
+      $client->city = $request->city_client;
+      $client->state = $request->state_client;
+      $client->zip_code = $request->zipcode_client;
+      $client->save();
 
-    $client = new Client;
-    $client->certificate_holder_name = $request->certificate_name;
-    $client->address = $request->address_client;
-    $client->phone_number = $request->phone_client;
-    $client->fax = $request->fax_client;
-    $client->email = $request->email_client;
-    $client->city = $request->city_client;
-    $client->state = $request->state_client;
-    $client->zip_code = $request->zipcode_client;
-    $client->save();
+
+      $clientuser = new ClientUser;
+      $clientuser->userId = $user->id;
+      $clientuser->status = 'active';
+      $clientuser->clientId = $client->id;
+      $clientuser->save();
+      $client_id = $client->id;
+      $client_save = true;
+    }else{
+      if(!empty($request->client_value)){
+        $client_id = $request->client_value;
+        $client_save = true;
+      }else{
+        $client_id = $this->generateRandomInteger(5);
+        $client_save = false;
+      }
+
+    }
 
 
-    $clientuser = new ClientUser;
-    $clientuser->userId = $user->id;
-    $clientuser->status = 'active';
-    $clientuser->clientId = $client->id;
-    $clientuser->save();
     //Obtener user
 
     $history = new History;
     $history->userId = $user->id;
     $history->status = 'active';
-    $history->clientId = $client->id;
+    $history->certificate_holder_name = $request->certificate_name;
+    $history->address = $request->address_client;
+    $history->city = $request->city_client;
+    $history->state = $request->state_client;
+    $history->zip_code = $request->zipcode_client;
     $history->sent_date = date('Y-m-d');
+    $history->client_save =  $client_save;
+    $history->client_id =  $client_id;
     $history->save();
 
     $dataCertificate = array(
-      'client_id' => $client->id,
+      'client_id' => $client_id,
       'certificate_holder_name' => $request->certificate_name,
       'address_client' => $request->address_client,
       'phone_number' => $request->phone_client,
@@ -182,7 +202,7 @@ class UserController extends Controller
 
 
         Alert::success('The Accord has been sent!')->persistent("Close");
-        return redirect('user/certificate');
+        return redirect('user/history');
   }
 
   public function editClient($id){
@@ -208,9 +228,24 @@ class UserController extends Controller
   public function deleteClient($clientId){
 
     ClientUser::where('clientId', $clientId)->delete();
-    History::where('clientId', $clientId)->delete();
     $client = Client::find($clientId);
     $client->delete();
+
+    $countH = History::where('client_id',$clientId)->count();
+    if($countH > 0){
+      $histories = History::where('client_id',$clientId)->get();
+      foreach ($histories as $h ){
+        $hId = $h->id;
+      }
+      $history = History::find($hId);
+      $history->client_save =  false;
+      $history->client_id =  0;
+      $history->save();
+
+    }
+
+
+
     return redirect('/user/client-list');
 
   }
@@ -239,9 +274,10 @@ class UserController extends Controller
 
     $histories = DB::table('users as u')
       ->join('history_send as h', 'u.id', '=', 'h.userId')
-      ->join('clients as c', 'c.id', '=', 'h.clientId')
-      ->select('h.*','c.*','c.id as clientId','u.id as userId','h.id as historyId')
+
+      ->select('h.*','u.id as userId','h.id as historyId')
       ->where('u.id','=',$user->id)
+      ->orderBy('h.created_at', 'desc')
       ->get();
 
     //return $histories;
@@ -249,15 +285,16 @@ class UserController extends Controller
   }
 
   public function getclient(){
-    $user = Auth::user();
 
+    $user = Auth::user();
     $clients = DB::table('users as u')
-      ->join('history_send as h', 'u.id', '=', 'h.userId')
-      ->join('clients as c', 'c.id', '=', 'h.clientId')
+      ->join('clients_user as c_u', 'u.id', '=', 'c_u.userId')
+      ->join('clients as c', 'c.id', '=', 'c_u.clientId')
       ->select('c.*')
       ->where('u.id','=',$user->id)
       ->get();
-    return view('user.client-list')->with('user',$user)->with('clients',$clients);;
+    return view('user.client-list')->with('user',$user)->with('clients',$clients);
+
   }
 
 
@@ -327,6 +364,15 @@ class UserController extends Controller
 
   public function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+  }
+  public function generateRandomInteger($length = 10) {
+    $characters = '0123456789';
     $charactersLength = strlen($characters);
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {

@@ -72,11 +72,11 @@ hr {
                       <div class="row">
                         <div class="col-lg-4 issueaccount">
                             <i class="fa fa-calendar p-10"></i>
-                            <label> Issue date:</label><span> {{$FormControl->exp_date}}</span>
+                            <label> Issue date:</label><span> {{\Carbon\Carbon::parse($FormControl->exp_date)->format('m/d/Y')}}</span>
                         </div>
                         <div class="col-lg-4">
                             <i class="fa fa-calendar-o p-10"></i>
-                            <label> Expiration date:</label><span> {{$FormControl->exp_date}}</span>
+                            <label> Expiration date:</label><span> {{\Carbon\Carbon::parse($FormControl->exp_date)->format('m/d/Y')}}</span>
                         </div>
                       </div>
                       <hr>

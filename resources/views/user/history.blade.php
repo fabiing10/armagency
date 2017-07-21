@@ -54,21 +54,31 @@
                           <table id="myTable" class="table table-striped">
                               <thead>
                                   <tr>
-                                      <th>NAME</th>
+                                    <th>Name</th>
+                                    <th>State</th>
+                                    <th>City</th>
+                                    <th>Address</th>
                                       <th>SENT DATE</th>
-                                      <th width="300">MANAGE</th>
+                                      <th >MANAGE</th>
+                                      <th style="display:none;">Data order</th>
                                   </tr>
                               </thead>
                               <tbody>
                                 @foreach ($histories as $h)
                                   <tr>
                                       <td>{{$h->certificate_holder_name}}</td>
+                                      <td>{{$h->state}}</td>
+                                      <td>{{$h->city}}</td>
+                                      <td>{{$h->address}}</td>
                                       <td>
                                         {{\Carbon\Carbon::parse($h->sent_date)->format('m/d/Y')}}
                                       <td>
                                           <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
-                                          <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                                          @if($h->client_save == true)
+                                          <a href="/user/certificate/{{$h->client_id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                                          @endif
                                       </td>
+                                      <td style="display:none;">{{$h->created_at}}</td>
                                   </tr>
                                   @endforeach
                               </tbody>
@@ -88,7 +98,10 @@
                     </div>
                       <div class="panel_mobile_clients">
                         <a href="/user/history/delete/{{$h->historyId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
-                        <a href="/user/certificate/{{$h->clientId}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                        @if($h->client_save == true)
+                        <a href="/user/certificate/{{$h->client_id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                        @endif
+
                       </div>
                     </div>
                     @endforeach
@@ -112,7 +125,12 @@
 <script>
 $(document).ready(function() {
   $('.titlenavigation').html('History');
-    $('#myTable').DataTable();
+
+    $('#myTable').DataTable({
+      "order": [
+          [6, 'desc']
+      ]
+    });
     $(document).ready(function() {
         var table = $('#example').DataTable({
             "columnDefs": [{
