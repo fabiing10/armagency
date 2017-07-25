@@ -386,12 +386,17 @@ button.cancel {
 }
 button.confirm {
     display: block;
-    width: 50%;
+    width: 100%;
     margin: 0;
     background-color: #f4f7f9 !important;
     box-shadow: none !important;
     color: #190d43;
     float: right;
+}
+.sweet-alert button.cancel {
+    background-color: #C1C1C1;
+    float: left;
+    display: none !important;
 }
 .sa-button-container {
     padding-top: 25px;

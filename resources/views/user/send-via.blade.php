@@ -40,6 +40,9 @@
                   </div>
               <!-- /.col-lg-12 -->
           </div>
+          @if (session()->has('alert'))
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+          @endif
           <!-- /.row -->
           <div class="row">
               <div class="col-sm-12">

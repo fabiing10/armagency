@@ -41,7 +41,7 @@
               <!-- /.col-lg-12 -->
           </div>
           @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
           @endif
           <!-- /.row -->
           <div class="row">
@@ -63,11 +63,13 @@
                                         <table id="myTable" class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>address</th>
-                                                    <th>phone</th>
-                                                    <th>fax</th>
-                                                    <th>email</th>
+                                                    <th>Client Name</th>
+                                                    <th>Address</th>
+                                                    <th>City</th>
+                                                    <th>State</th>
+                                                    <th>Phone</th>
+                                                    <th>Fax</th>
+                                                    <th>Email</th>
                                                     <th>manage</th>
                                                 </tr>
                                             </thead>
@@ -76,6 +78,8 @@
                                                 <tr>
                                                     <td>{{$client->certificate_holder_name}}</td>
                                                     <td>{{$client->address}}</td>
+                                                    <td>{{$client->city}}</td>
+                                                    <td>{{$client->state}}</td>
                                                     <td>{{$client->phone_number}}</td>
                                                     <td>{{$client->fax}}</td>
                                                     <td>{{$client->email}}</td>

@@ -47,7 +47,7 @@ hr {
           </div>
           <!-- /.row -->
           @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
           @endif
           <div class="white-box">
               <h2 class="box-title m-b-0">NEED HELP?</h2>

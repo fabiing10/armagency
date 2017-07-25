@@ -73,14 +73,14 @@ class UserController extends Controller
 
     if($option_client == "on"){
       $client = new Client;
-      $client->certificate_holder_name = $request->certificate_name;
-      $client->address = $request->address_client;
-      $client->phone_number = $request->phone_client;
-      $client->fax = $request->fax_client;
-      $client->email = $request->email_client;
-      $client->city = $request->city_client;
-      $client->state = $request->state_client;
-      $client->zip_code = $request->zipcode_client;
+      $client->certificate_holder_name = strtoupper($request->certificate_name);
+      $client->address = strtoupper($request->address_client);
+      $client->phone_number = strtoupper($request->phone_client);
+      $client->fax = strtoupper($request->fax_client);
+      $client->email = strtoupper($request->email_client);
+      $client->city = strtoupper($request->city_client);
+      $client->state = strtoupper($request->state_client);
+      $client->zip_code = strtoupper($request->zipcode_client);
       $client->save();
 
 
@@ -108,11 +108,11 @@ class UserController extends Controller
     $history = new History;
     $history->userId = $user->id;
     $history->status = 'active';
-    $history->certificate_holder_name = $request->certificate_name;
-    $history->address = $request->address_client;
-    $history->city = $request->city_client;
-    $history->state = $request->state_client;
-    $history->zip_code = $request->zipcode_client;
+    $history->certificate_holder_name = strtoupper($request->certificate_name);
+    $history->address = strtoupper($request->address_client);
+    $history->city = strtoupper($request->city_client);
+    $history->state = strtoupper($request->state_client);
+    $history->zip_code = strtoupper($request->zipcode_client);
     $history->sent_date = date('Y-m-d');
     $history->client_save =  $client_save;
     $history->client_id =  $client_id;
@@ -201,7 +201,7 @@ class UserController extends Controller
         }
 
 
-        Alert::success('The Accord has been sent!')->persistent("Close");
+        Alert::success('Your Request Has Been Processed!')->persistent("Close");
         return redirect('user/history');
   }
 
@@ -212,13 +212,13 @@ class UserController extends Controller
 
   public function saveClient(Request $request,$id){
     $client = Client::find($id);
-    $client->certificate_holder_name = $request->certificate_name;
-    $client->address = $request->address_client;
-    $client->phone_number = $request->phone_client;
+    $client->certificate_holder_name = strtoupper($request->certificate_name);
+    $client->address = strtoupper($request->address_client);
+    $client->phone_number = strtoupper($request->phone_client);
     $client->fax = $request->fax_client;
-    $client->email = $request->email_client;
-    $client->city = $request->city_client;
-    $client->state = $request->state_client;
+    $client->email = strtoupper($request->email_client);
+    $client->city = strtoupper($request->city_client);
+    $client->state = strtoupper($request->state_client);
     $client->zip_code = $request->zipcode_client;
     $client->save();
     Alert::success('The Client Has Been Updated!')->persistent("Close");
@@ -301,13 +301,13 @@ class UserController extends Controller
   public function generateCertificate(Request $request){
 
     $dataCertificate = array(
-      'certificate_holder_name' => $request->certificate_name,
-      'address_client' => $request->address_client,
+      'certificate_holder_name' => strtoupper($request->certificate_name),
+      'address_client' => strtoupper($request->address_client),
       'phone_number' => $request->phone_client,
-      'email_data' => $request->email_client,
+      'email_data' => strtoupper($request->email_client),
       'fax_data' => $request->fax_client,
-      'city' => $request->city_client,
-      'state' => $request->state_client,
+      'city' => strtoupper($request->city_client),
+      'state' => strtoupper($request->state_client),
       'zip_code' => $request->zipcode_client
     );
 
@@ -336,13 +336,13 @@ class UserController extends Controller
     if($option != 'download'){
       $client = Client::find($option);
       $dataCertificate = array(
-        'certificate_holder_name' => $client->certificate_holder_name,
-        'address_client' => $client->address,
+        'certificate_holder_name' => strtoupper($client->certificate_holder_name),
+        'address_client' => strtoupper($client->address),
         'phone_number' => $client->phone_number,
-        'email_data' => $client->email,
+        'email_data' => strtoupper($client->email),
         'fax_data' => $client->fax,
-        'city' => $client->city,
-        'state' => $client->state,
+        'city' => strtoupper($client->city),
+        'state' => strtoupper($client->state),
         'zip_code' => $client->zip_code
       );
     }else{
@@ -431,7 +431,7 @@ class UserController extends Controller
             $useredit = User::find($user->id);
             $useredit->password = bcrypt($request->newpassword);
             $useredit->save();
-            Alert::success('The password has been update!')->persistent("Close");
+            Alert::success('Your password has Been updated!')->persistent("Close");
             return redirect('user/account');
           }else{
             Alert::error('The password you entered is incorrect!')->persistent("Close");

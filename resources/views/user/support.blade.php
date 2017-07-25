@@ -44,7 +44,7 @@ hr {
               <!-- /.col-lg-12 -->
           </div>
           @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
           @endif
           <!-- /.row -->
           <div class="white-box">
@@ -56,21 +56,23 @@ hr {
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
                         <img src="{{URL::asset('assets/plugins/images/arm_logo.png')}}" alt="home" class="light-logo text-center support-logo"></div>
                         <h1 class="box-title titlesupport m-b-0 block" style="text-align:center; display:none;">NEED HELP?</h1>
-                        <p class="text-muted m-b-30 font-13 titlesupport block" style="text-align:center; display:none;">Take some time to browse our site and feel free to<br>contact us about insurance needs.</p>
+                        <p class="text-muted m-b-30 font-13 titlesupport block" style="text-align:center; display:none;">Please contact us with any questions or concerns.
+
+.<br>ARM Insurance Agency is here to help with all your insurance needs.</p>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                           <div class="input-group">
                           <i class="fa fa-phone p-10"></i>
-                          <label> 281-550-1799</label>
+                          <label>281-550-1720</label>
                           </div>
                       </div>
                       <hr>
                       <div class="form-group">
                           <div class="input-group">
                           <i class="fa fa-envelope p-10"></i>
-                          <label> Alex@armagencyonline.com</label>
+                          <label>info@armagencyonline.com</label>
                           </div>
                       </div>
                       <hr>
@@ -84,7 +86,7 @@ hr {
                       <div class="form-group">
                           <div class="input-group">
                           <i class="ti-map p-10"></i>
-                          <label> 4511 HWY 6 N, HOUSTON, TX 77084</label>
+                          <label> 4511 Highway 6 N. Ste. A Houston, TX 77084</label>
                           </div>
                       </div>
                       <hr>

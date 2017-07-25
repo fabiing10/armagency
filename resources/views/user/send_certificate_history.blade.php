@@ -47,6 +47,9 @@ hr {
                   <h4 class="page-title">HOME</h4> </div>
               <!-- /.col-lg-12 -->
           </div>
+          @if (session()->has('alert'))
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+          @endif
           <!-- /.row -->
           <div class="row">
               <div class="col-sm-12">
@@ -75,7 +78,7 @@ hr {
                                                         <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
                                                         <div class="form-group f-style">
                                                             <input type="text" class="form-control input-sm" value="{{$client->certificate_holder_name}}" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                            <label for="certificate_name">Certificate holders name</label>
+                                                            <label for="certificate_name">Certificate Holders Name</label>
                                                         </div>
                                                         </div>
                                                       </div>

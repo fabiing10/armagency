@@ -53,7 +53,7 @@ hr {
               <!-- /.col-lg-12 -->
           </div>
           @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
           @endif
           <!-- /.row -->
           <div class="row">
@@ -81,7 +81,7 @@ hr {
                                                         <div class="input-group-addon"><i class="fa fa-user grey"></i></div>
                                                         <div class="form-group f-style">
                                                             <input type="text" class="form-control input-sm" id="certificate_name" name="certificate_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                            <label for="certificate_name">Certificate holders name</label>
+                                                            <label for="certificate_name">Certificate Holders Name</label>
                                                         </div>
                                                         </div>
                                                       </div>

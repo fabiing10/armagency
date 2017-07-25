@@ -72,13 +72,13 @@ class AdminController extends Controller
       public function generateCertificate(Request $request){
 
         $dataCertificate = array(
-          'certificate_holder_name' => $request->certificate_name,
-          'address_client' => $request->address_client,
+          'certificate_holder_name' => strtoupper($request->certificate_name),
+          'address_client' => strtoupper($request->address_client),
           'phone_number' => $request->phone_client,
-          'email_data' => $request->email_client,
+          'email_data' => strtoupper($request->email_client),
           'fax_data' => $request->fax_client,
-          'city' => $request->city_client,
-          'state' => $request->state_client,
+          'city' => strtoupper($request->city_client),
+          'state' => strtoupper($request->state_client),
           'zip_code' => $request->zipcode_client
         );
 
@@ -272,13 +272,13 @@ class AdminController extends Controller
 
         /* user */
         $user = new User();
-        $user->name = $request->name_insured;
+        $user->name = strtoupper($request->name_insured);
         $user->phone = $this->specialC($request->phone_insured);
-        $user->address = $request->address_insured;
+        $user->address = strtoupper($request->address_insured);
         $user->email = strtolower($request->email_insured);
-        $user->dba_name = $request->I_I_dba_name;
-        $user->city = $request->I_I_city;
-        $user->state = $request->I_I_state;
+        $user->dba_name = strtoupper($request->I_I_dba_name);
+        $user->city = strtoupper($request->I_I_city);
+        $user->state = strtoupper($request->I_I_state);
         $user->zip_code = $request->I_I_zip_code;
         $user->userType = "user";
         $user->password = bcrypt($request->password_insured);
@@ -288,17 +288,17 @@ class AdminController extends Controller
         $formcontrol->userId = $user->id;
         $formcontrol->status = 'active';
         /* contact info agency */
-        $formcontrol->C_I_name = $request->name;
+        $formcontrol->C_I_name = strtoupper($request->name);
         $formcontrol->C_I_phone = $request->phone;
-        $formcontrol->C_I_email = $request->email;
+        $formcontrol->C_I_email = strtoupper($request->email);
         $formcontrol->C_I_fax = $request->fax;
         $formcontrol->C_I_producer_id = $request->customer_id;
         /* producer information */
-        $formcontrol->P_I_name = $request->P_I_name;
-        $formcontrol->P_I_dba_name = $request->dba_name;
-        $formcontrol->P_I_address = $request->address;
-        $formcontrol->P_I_city = $request->city;
-        $formcontrol->P_I_dba_state = $request->state;
+        $formcontrol->P_I_name = strtoupper($request->P_I_name);
+        $formcontrol->P_I_dba_name = strtoupper($request->dba_name);
+        $formcontrol->P_I_address = strtoupper($request->address);
+        $formcontrol->P_I_city = strtoupper($request->city);
+        $formcontrol->P_I_dba_state = strtoupper($request->state);
         $formcontrol->P_I_dba_zip_code = $request->zip_code;
         /* insurance */
         $insuranceData = array(
@@ -560,7 +560,7 @@ class AdminController extends Controller
           $formcontrol->A_C_b_exp_date = $request->A_C_b_exp_date;
           $formcontrol->A_C_b_coverage_limits = $request->A_C_b_coverage_limits;
           /* description */
-          $formcontrol->description = $request->description;
+          $formcontrol->description = strtoupper($request->description);
 
           $fechas = array();
           if($request->g_l_exp_date != null){
@@ -668,13 +668,13 @@ class AdminController extends Controller
 
         if($option_client == "on"){
           $client = new Client;
-          $client->certificate_holder_name = $request->certificate_name;
-          $client->address = $request->address_client;
+          $client->certificate_holder_name = strtoupper($request->certificate_name);
+          $client->address = strtoupper($request->address_client);
           $client->phone_number = $request->phone_client;
           $client->fax = $request->fax_client;
-          $client->email = $request->email_client;
-          $client->city = $request->city_client;
-          $client->state = $request->state_client;
+          $client->email = strtoupper($request->email_client);
+          $client->city = strtoupper($request->city_client);
+          $client->state = strtoupper($request->state_client);
           $client->zip_code = $request->zipcode_client;
           $client->save();
 
@@ -696,10 +696,10 @@ class AdminController extends Controller
         $history = new History;
         $history->userId = $user->id;
         $history->status = 'active';
-        $history->certificate_holder_name = $request->certificate_name;
-        $history->address = $request->address_client;
-        $history->city = $request->city_client;
-        $history->state = $request->state_client;
+        $history->certificate_holder_name = strtoupper($request->certificate_name);
+        $history->address = strtoupper($request->address_client);
+        $history->city = strtoupper($request->city_client);
+        $history->state = strtoupper($request->state_client);
         $history->zip_code = $request->zipcode_client;
         $history->sent_date = date('Y-m-d');
         $history->client_save =  $client_save;
@@ -709,13 +709,13 @@ class AdminController extends Controller
         $dataCertificate = array(
           'user_id' => $request->user_id,
           'client_id' => $client_id,
-          'certificate_holder_name' => $request->certificate_name,
-          'address_client' => $request->address_client,
+          'certificate_holder_name' => strtoupper($request->certificate_name),
+          'address_client' => strtoupper($request->address_client),
           'phone_number' => $request->phone_client,
-          'city' => $request->city_client,
-          'state' => $request->state_client,
+          'city' => strtoupper($request->city_client),
+          'state' => strtoupper($request->state_client),
           'zip_code' => $request->zipcode_client,
-          'email_data' => $email_data,
+          'email_data' => strtoupper($email_data),
           'fax_data' => $fax_data
         );
 
@@ -724,8 +724,8 @@ class AdminController extends Controller
         $path = $this->loadResult('send',$dataCertificate);
 
         $result = array(
-          'certificate_holder_name' => $request->certificate_name,
-          'address_client' => $request->address_client,
+          'certificate_holder_name' => strtoupper($request->certificate_name),
+          'address_client' => strtoupper($request->address_client),
           'phone_number' => $request->phone_client,
           'path' => $path,
           'send_email_option' => $send_email_option,
@@ -854,13 +854,13 @@ class AdminController extends Controller
       }
       public function edituserprofile (Request $request, $id){
         $user = User::find($id);
-        $user->name = $request->name_insured;
+        $user->name = strtoupper($request->name_insured);
         $user->phone = $this->specialC($request->phone_insured);
-        $user->address = $request->address_insured;
+        $user->address = strtoupper($request->address_insured);
         $user->email = strtolower($request->email_insured);
-        $user->dba_name = $request->I_I_dba_name;
-        $user->city = $request->I_I_city;
-        $user->state = $request->I_I_state;
+        $user->dba_name = strtoupper($request->I_I_dba_name);
+        $user->city = strtoupper($request->I_I_city);
+        $user->state = strtoupper($request->I_I_state);
         $user->zip_code = $request->I_I_zip_code;
         $user->userType = "user";
         if($request->password_insured != "" || $request->password_insured_repeat != ""){
@@ -906,9 +906,9 @@ class AdminController extends Controller
       public function addAdmin (Request $request){
 
         $user = new User();
-        $user->name = $request->name_insured;
-        $user->phone = $request->phone_insured;
-        $user->address = $request->address_insured;
+        $user->name = strtoupper($request->name_insured);
+        $user->phone = strtoupper($request->phone_insured);
+        $user->address = strtoupper($request->address_insured);
         $user->email = $request->email_insured;
         $user->userType = $request->option_user;
         $user->password = bcrypt($request->password_insured);

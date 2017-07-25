@@ -49,7 +49,7 @@ hr {
           </div>
           <!-- /.row -->
           @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
           @endif
           <div class="row">
               <div class="col-sm-12">
@@ -57,10 +57,10 @@ hr {
                     <div class="row">
                       <div class="col-lg-12" style="text-align:center;">
                           <img src="{{URL::asset('assets/plugins/images/users/home.png')}}" style="width: 100px;"></img>
-                          <h2 class="m-b-0">Send Certificate</h2>
+                          <h2 class="m-b-0">Certificate Of Insurance</h2>
                           <p>Need your certificate? Click the button<br>to get your insurance certificate<br><br>
-                          <button type="submit" class="btn btn-info p80" onclick="window.location.href='/user/certificate'" style="padding:10px;"> <i class="fa fa-paper-plane" style="color:white;"></i> Send certificate</button><br><br>
-                          <button type="submit" class="btn btn-outline btn-primary p80" onclick="window.location.href='/user/download-certificate/download'" style="padding:10px;"> <i class="fa fa-download" style="color:grey;"></i> Download PDF</button>
+                          <button type="submit" class="btn btn-info p80" onclick="window.location.href='/user/certificate'" style="padding:10px;"> <i class="fa fa-paper-plane" style="color:white;"></i> Send Certificate</button><br><br>
+                          <button type="submit" class="btn btn-info p80" onclick="window.location.href='/user/download-certificate/download'" style="padding:10px;"> <i class="fa fa-download" style="color:WHITE;"></i> Download Certificate</button>
                       </div>
                       </div>
                   </div>

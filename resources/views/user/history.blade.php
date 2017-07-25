@@ -41,7 +41,7 @@
           </div>
           <!-- /.row -->
           @if (session()->has('alert'))
-            <div class="alert alert-danger alert-dismissable">Your Account expires soon -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
+            <div class="alert alert-danger alert-dismissable">Your Policy Expires Soon Please Contact ARM Insurance Agency -  {{\Carbon\Carbon::parse(Session('alert'))->format('m/d/Y')}} </div>
           @endif
           <div class="white-box disable">
           <div class="row">
@@ -54,22 +54,22 @@
                           <table id="myTable" class="table table-striped">
                               <thead>
                                   <tr>
-                                    <th>Name</th>
-                                    <th>State</th>
-                                    <th>City</th>
+                                    <th>Certificate Holder Name</th>
                                     <th>Address</th>
-                                      <th>SENT DATE</th>
-                                      <th >MANAGE</th>
-                                      <th style="display:none;">Data order</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>SENT DATE</th>
+                                    <th >MANAGE</th>
+                                    <th style="display:none;">Data order</th>
                                   </tr>
                               </thead>
                               <tbody>
                                 @foreach ($histories as $h)
                                   <tr>
                                       <td>{{$h->certificate_holder_name}}</td>
-                                      <td>{{$h->state}}</td>
-                                      <td>{{$h->city}}</td>
                                       <td>{{$h->address}}</td>
+                                      <td>{{$h->city}}</td>
+                                      <td>{{$h->state}}</td>
                                       <td>
                                         {{\Carbon\Carbon::parse($h->sent_date)->format('m/d/Y')}}
                                       <td>
