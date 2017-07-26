@@ -273,11 +273,9 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <center>NAIC #</center>
             </td>
     </tr>
-    <tr>
-      <td style="border-bottom:1px solid !important; font-weight:bold;">
-      INSURER A:
-      </td>
-      <td style="border-bottom:1px solid !important;">{{$Ensured_a}}</td>
+    <tr style="text-align:left;">
+      <td style="width:50px !important; border-bottom:1px solid !important; font-weight:bold;">INSURER A:</td>
+      <td style="width:200px !important; border-bottom:1px solid !important;">{{$Ensured_a}}</td>
       <td style="border-bottom:1px solid !important; border-left:1px solid;">
         {{$Naic_a}}
       </td>
@@ -462,8 +460,8 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <td style="border-bottom:2px solid !important; border-right:1px solid;">
               {{$glexpdate}}
             </td>
-            <td style="border-bottom:2px solid !important; margin:0px !important; padding:0px !important;">
-              <table style="border-right:1px solid !important; font-size:5px !important;">
+            <td style="border-bottom:2px solid !important; border-right:1px solid !important; margin:0px !important; padding:0px !important;">
+              <table style=" font-size:5px !important;">
                 <tr>
                   <td style="width:155px !important; border-bottom:1px solid; font-size:10px !important;">
                     EACH OCURRENCE
@@ -513,10 +511,10 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   </td>
                 </tr>
                 <tr>
-                  <td style="font-size:10px !important;">
+                  <td style="font-size:10px !important; border-bottom:1px solid;">
                       {{$glotherinput}}
                   </td>
-                  <td style="border-left:1px solid; font-size:10px !important;">
+                  <td style="border-bottom:1px solid; border-left:1px solid; font-size:10px !important;">
                     $ {{$glother}}
                   </td>
                 </tr>
@@ -621,6 +619,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   $ {{$alpropertydamage}}
                 </td>
               </tr>
+              @if($alotherinput2 != "" || $alotherinput3 != "")
               <tr>
                 <td style="border-bottom:1px solid; font-size:10px !important;">
                   {{$alotherinput2}}
@@ -637,6 +636,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   $ {{$alother3}}
                 </td>
               </tr>
+              @endif
             </table>
           </td>
         </tr>
@@ -681,14 +681,14 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <div class="input-group m-t-10"> <span class="input-group-addon"><i class="fa fa-dollar"></i></span><input name="g_l_other2" type="text" id="example-input3-group1" class="form-control"></div>
             @endif
           </td>
-          <td style="width:11px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:21px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($uloptionaddl === 'true')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
             <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="width:11px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:20px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($uloptionsubr === 'true')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
@@ -755,10 +755,10 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             if yes, describe under<br>
             SPECIAL PROVISIONS below
           </td>
-          <td style="width:11px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:21px; border-bottom:2px solid !important; border-left:1px solid;">
             N/A
           </td>
-          <td style="width:11px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:20px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($wcoptionsubr === 'true')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
@@ -825,7 +825,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             {{$formcontrol->A_C_a_policy_type}}<br>
             {{$formcontrol->A_C_b_policy_type}}
           </td>
-          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:21px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($formcontrol->A_C_a_options_add_insurance === 'Additonal insurance')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /><br>
             @else
@@ -837,7 +837,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
             <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="width:10px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:20px; border-bottom:2px solid !important; border-left:1px solid;">
             @if ($formcontrol->A_C_a_options_surrogation === 'Surrogation')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /><br>
             @else
@@ -867,12 +867,12 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                 <td style="width:155px; font-size:9px !important;">
                   COVERAGE LIMITS / DEDUCTIBLE
                 </td>
-                <td style="width:115px; font-size:10px !important;">
+                <td style="width:115px; font-size:10px !important; vertical-align:top;">
                   $ {{$formcontrol->A_C_a_coverage_limits}}
                 </td>
               </tr>
               <tr>
-                <td style="font-size:9px !important;">
+                <td style="font-size:9px !important; vertical-align:top;">
                   COVERAGE LIMITS / DEDUCTIBLE
                 </td>
                 <td style="font-size:10px !important;">
@@ -915,8 +915,9 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       </th>
     </tr>
     <tr>
-      <th style="border:1px solid;">
-        AUTHORIZED REPRESENTATIVE
+      <th style="border:1px solid; height:100px;">
+        AUTHORIZED REPRESENTATIVE<br>
+        <center><img src="../public/assets/plugins/images/Firma.png" width="200" alt="" class="light-logo" / style="position:absolute; "></center>
       </th>
     </tr>
   </table>
