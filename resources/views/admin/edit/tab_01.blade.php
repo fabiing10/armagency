@@ -29,7 +29,7 @@
                                                   <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                   <div class="form-group f-style">
                                                       <input type="text" class="form-control input-sm" value="{{$user->dba_name}}" id="I_I_dba_name" name="I_I_dba_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                      <label for="I_I_dba_name">DBA name</label>
+                                                      <label for="I_I_dba_name">DBA Name</label>
                                                   </div>
                                                 </div>
                                                 </div>
@@ -143,7 +143,7 @@
                                                 <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                 <div class="form-group f-style">
                                                     <input type="text" class="form-control input-sm" value="{{$formcontrol->P_I_dba_name}}" id="dba_name" name="dba_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                    <label for="dba_name">DBA name</label>
+                                                    <label for="dba_name">DBA Name</label>
                                                 </div>
                                               </div>
                                             </div>
@@ -486,9 +486,9 @@
                                   <div class="form-group">
                                         <div class="radio radio-success">
                                           @if ($gloptionaddl === 'true')
-                                          <input type="checkbox" name="g_l_option_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="g_l_option_addl" value="true" checked=""> Additional Insured
                                           @else
-                                          <input type="checkbox" name="g_l_option_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="g_l_option_addl" value="true"> Additional Insured
                                           @endif
                                         </div>
                                   </div>
@@ -497,9 +497,9 @@
                                   <div class="form-group">
                                         <div class="radio radio-success">
                                           @if ($gloptionsubr === 'true')
-                                          <input type="checkbox" name="g_l_option_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="g_l_option_subr" value="true" checked="">  Waiver of Subrogation
                                           @else
-                                          <input type="checkbox" name="g_l_option_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="g_l_option_subr" value="true">  Waiver of Subrogation
                                           @endif
                                         </div>
                                   </div>
@@ -706,9 +706,9 @@
                                   <div class="form-group">
                                         <div class="radio radio-success">
                                           @if ($aloptionaddl === 'true')
-                                          <input type="checkbox" name="a_l_options_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="a_l_options_addl" value="true" checked=""> Additional Insured
                                           @else
-                                          <input type="checkbox" name="a_l_options_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="a_l_options_addl" value="true"> Additional Insured
                                           @endif
                                         </div>
                                   </div>
@@ -717,9 +717,9 @@
                                   <div class="form-group">
                                         <div class="radio radio-success">
                                           @if ($aloptionsubr === 'true')
-                                          <input type="checkbox" name="a_l_options_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="a_l_options_subr" value="true" checked="">  Waiver of Subrogation
                                           @else
-                                          <input type="checkbox" name="a_l_options_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="a_l_options_subr" value="true">  Waiver of Subrogation
                                           @endif
                                         </div>
                                   </div>
@@ -922,9 +922,9 @@
                                   <div class="form-group">
                                         <div class="radio radio-success">
                                           @if ($uloptionaddl === 'true')
-                                          <input type="checkbox" name="u_l_options_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="u_l_options_addl" value="true" checked=""> Additional Insured
                                           @else
-                                          <input type="checkbox" name="u_l_options_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="u_l_options_addl" value="true"> Additional Insured
                                           @endif
                                         </div>
                                   </div>
@@ -933,9 +933,9 @@
                                   <div class="form-group">
                                         <div class="radio radio-success">
                                           @if ($uloptionsubr === 'true')
-                                          <input type="checkbox" name="u_l_options_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="u_l_options_subr" value="true" checked="">  Waiver of Subrogation
                                           @else
-                                          <input type="checkbox" name="u_l_options_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="u_l_options_subr" value="true">  Waiver of Subrogation
                                           @endif
                                         </div>
                                   </div>
@@ -1115,9 +1115,9 @@
                               <div class="form-group">
                                     <div class="radio radio-success">
                                       @if ($wcoptionaddl === 'true')
-                                      <input type="checkbox" name="w_c_options_addl" value="true" checked=""> ADDL INSR
+                                      <input type="checkbox" name="w_c_options_addl" value="true" checked=""> Additional Insured
                                       @else
-                                      <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
+                                      <input type="checkbox" name="w_c_options_addl" value="true"> Additional Insured
                                       @endif
                                     </div>
                               </div>
@@ -1126,9 +1126,9 @@
                               <div class="form-group">
                                     <div class="radio radio-success">
                                       @if ($wcoptionsubr === 'true')
-                                      <input type="checkbox" name="w_c_options_subr" value="true" checked="">  SUBR WVD
+                                      <input type="checkbox" name="w_c_options_subr" value="true" checked="">  Waiver of Subrogation
                                       @else
-                                      <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
+                                      <input type="checkbox" name="w_c_options_subr" value="true">  Waiver of Subrogation
                                       @endif
                                     </div>
                                 </label>
@@ -1271,9 +1271,9 @@
                                       <div class="radio-inline p-0">
                                           <div class="radio radio-info">
                                             @if ($formcontrol->A_C_a_options_add_insurance_surrogation === 'Additonal insurance')
-                                              <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance" checked="">Additonal insurance
+                                              <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance" checked="">Additional Insured
                                             @else
-                                              <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance">Additonal insurance
+                                              <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance">Additional Insured
                                             @endif
                                           </div>
                                       </div>
