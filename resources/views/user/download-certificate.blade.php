@@ -817,51 +817,35 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       </table>
       <table>
         <tr>
-          <td width="15" style="border-bottom:2px solid !important; border:1px solid;">
-            {{$formcontrol->A_C_a_insurance_letter}}<br>
-            {{$formcontrol->A_C_b_insurance_letter}}
+          <td width="15" style="border-left:1px solid;">
+            {{$formcontrol->A_C_a_insurance_letter}}
           </td>
-          <td style="width:250px; border-bottom:2px solid !important; border-left:1px solid;">
-            {{$formcontrol->A_C_a_policy_type}}<br>
-            {{$formcontrol->A_C_b_policy_type}}
+          <td style="width:250px; border-bottom:0px solid !important; border-left:1px solid;">
+            {{$formcontrol->A_C_a_policy_type}}
           </td>
-          <td style="width:21px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:21px; border-bottom:0px solid !important; border-left:1px solid;">
             @if ($formcontrol->A_C_a_options_add_insurance === 'Additonal insurance')
-            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /><br>
-            @else
-            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /><br>
-            @endif
-            @if ($formcontrol->A_C_b_options_add_insurance === 'Additonal insurance')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
             <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="width:20px; border-bottom:2px solid !important; border-left:1px solid;">
+          <td style="width:20px; border-bottom:0px solid !important; border-left:1px solid;">
             @if ($formcontrol->A_C_a_options_surrogation === 'Surrogation')
-            <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" /><br>
-            @else
-            <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" /><br>
-            @endif
-            @if ($formcontrol->A_C_b_options_surrogation === 'Surrogation')
             <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
             @else
             <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
             @endif
           </td>
-          <td style="border-bottom:2px solid !important; border-left:1px solid; text-align:center;">
-            {{$formcontrol->A_C_a_policy_number}}<br>
-            {{$formcontrol->A_C_b_policy_number}}
+          <td style="border-bottom:0px solid !important; border-left:1px solid; text-align:center;">
+            {{$formcontrol->A_C_a_policy_number}}
           </td>
-          <td style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
-            {{$formcontrol->A_C_a_eff_date}}<br>
-            {{$formcontrol->A_C_b_eff_date}}
+          <td style="width:83px; border-bottom:0px solid !important; border-left:1px solid;">
+            {{$formcontrol->A_C_a_eff_date}}
+          <td style="width:83px; border-bottom:0px solid !important; border-left:1px solid;">
+            {{$formcontrol->A_C_a_exp_date}}
           </td>
-          <td style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
-            {{$formcontrol->A_C_a_exp_date}}<br>
-            {{$formcontrol->A_C_b_exp_date}}
-          </td>
-          <td style="width:300px; border-right:1px solid; border-bottom:2px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
+          <td style="width:300px; border-right:1px solid; border-bottom:0px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
             <table>
               <tr>
                 <td style="width:155px; font-size:9px !important;">
@@ -871,18 +855,55 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
                   $ {{$formcontrol->A_C_a_coverage_limits}}
                 </td>
               </tr>
-              <tr>
-                <td style="font-size:9px !important; vertical-align:top;">
-                  COVERAGE LIMITS / DEDUCTIBLE
-                </td>
-                <td style="font-size:10px !important;">
-                  $ {{$formcontrol->A_C_b_coverage_limits}}
-                </td>
-              </tr>
             </table>
           </td>
         </tr>
         </table>
+        <table>
+          <tr>
+            <td width="15" style="border-bottom:2px solid !important; border-left:1px solid;">
+              {{$formcontrol->A_C_b_insurance_letter}}
+            </td>
+            <td style="width:250px; border-bottom:2px solid !important; border-left:1px solid;">
+              {{$formcontrol->A_C_b_policy_type}}
+            </td>
+            <td style="width:21px; border-bottom:2px solid !important; border-left:1px solid;">
+              @if ($formcontrol->A_C_b_options_add_insurance === 'Additonal insurance')
+              <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
+              @else
+              <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
+              @endif
+            </td>
+            <td style="width:20px; border-bottom:2px solid !important; border-left:1px solid;">
+              @if ($formcontrol->A_C_b_options_surrogation === 'Surrogation')
+              <img src="../public/assets/plugins/images/cuadro-lleno.png" width="20" height="20" alt="" class="light-logo" />
+              @else
+              <img src="../public/assets/plugins/images/cuadro.png" width="20" height="20" alt="" class="light-logo" />
+              @endif
+            </td>
+            <td style="border-bottom:2px solid !important; border-left:1px solid; text-align:center;">
+              {{$formcontrol->A_C_b_policy_number}}
+            </td>
+            <td style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
+              {{$formcontrol->A_C_b_eff_date}}
+            </td>
+            <td style="width:83px; border-bottom:2px solid !important; border-left:1px solid;">
+              {{$formcontrol->A_C_b_exp_date}}
+            </td>
+            <td style="width:300px; border-right:1px solid; border-bottom:2px solid !important; border-left:1px solid; margin:0px !important; padding:0px !important;">
+              <table>
+                <tr>
+                  <td style="width:155px; font-size:9px !important; vertical-align:top;">
+                    COVERAGE LIMITS / DEDUCTIBLE
+                  </td>
+                  <td style="width:115px; font-size:10px !important; text-align:left;">
+                    $ {{$formcontrol->A_C_b_coverage_limits}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          </table>
         <table>
         <tr>
           <td colspan="2" style="height:50px; border:1px solid;">

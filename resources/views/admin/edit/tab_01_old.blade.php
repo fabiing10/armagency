@@ -27,7 +27,7 @@
                                                 <div class="form-group">
                                                         <div class="input-group">
                                                             <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
-                                                            <input name="I_I_dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="I_I_dba_name" placeholder="DBA name">
+                                                            <input name="I_I_dba_name" type="text" class="form-control" value="{{$user->dba_name}}" id="I_I_dba_name" placeholder="DBA Name">
                                                         </div>
                                                 </div>
                                                 </div>
@@ -124,7 +124,7 @@
                                               <div class="form-group">
                                                       <div class="input-group">
                                                         <div class="input-group-addon"><i class="fa fa-question"></i></div>
-                                                        <input name="dba_name" type="text" class="form-control" value="{{$formcontrol->P_I_dba_name}}" placeholder="DBA name">
+                                                        <input name="dba_name" type="text" class="form-control" value="{{$formcontrol->P_I_dba_name}}" placeholder="DBA Name">
                                                       </div>
                                               </div>
                                             </div>
@@ -447,9 +447,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($gloptionaddl === 'true')
-                                          <input type="checkbox" name="g_l_option_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="g_l_option_addl" value="true" checked=""> Additonal insurance
                                           @else
-                                          <input type="checkbox" name="g_l_option_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="g_l_option_addl" value="true"> Additonal insurance
                                           @endif
                                         </div>
                                     </label>
@@ -460,9 +460,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($gloptionsubr === 'true')
-                                          <input type="checkbox" name="g_l_option_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="g_l_option_subr" value="true" checked="">  Waiver of subrogation
                                           @else
-                                          <input type="checkbox" name="g_l_option_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="g_l_option_subr" value="true">  Waiver of subrogation
                                           @endif
                                         </div>
                                     </label>
@@ -485,7 +485,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="g_l_eff_date" type="text" value="{{$gleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="g_l_eff_date" type="text" value="{{$gleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                 </div>
@@ -493,7 +493,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="g_l_exp_date" type="text" value="{{$glexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon" ><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="g_l_exp_date" type="text" value="{{$glexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon" ><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                   </div>
@@ -666,9 +666,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($aloptionaddl === 'true')
-                                          <input type="checkbox" name="a_l_options_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="a_l_options_addl" value="true" checked=""> Additonal insurance
                                           @else
-                                          <input type="checkbox" name="a_l_options_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="a_l_options_addl" value="true"> Additonal insurance
                                           @endif
                                         </div>
                                     </label>
@@ -679,9 +679,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($aloptionsubr === 'true')
-                                          <input type="checkbox" name="a_l_options_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="a_l_options_subr" value="true" checked="">  Waiver of subrogation
                                           @else
-                                          <input type="checkbox" name="a_l_options_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="a_l_options_subr" value="true">  Waiver of subrogation
                                           @endif
                                         </div>
                                     </label>
@@ -704,7 +704,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="a_l_eff_date" type="text" value="{{$aleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="a_l_eff_date" type="text" value="{{$aleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                 </div>
@@ -712,7 +712,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="a_l_exp_date" type="text" value="{{$alexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="a_l_exp_date" type="text" value="{{$alexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                   </div>
@@ -870,9 +870,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($uloptionaddl === 'true')
-                                          <input type="checkbox" name="u_l_options_addl" value="true" checked=""> ADDL INSR
+                                          <input type="checkbox" name="u_l_options_addl" value="true" checked=""> Additonal insurance
                                           @else
-                                          <input type="checkbox" name="u_l_options_addl" value="true"> ADDL INSR
+                                          <input type="checkbox" name="u_l_options_addl" value="true"> Additonal insurance
                                           @endif
                                         </div>
                                     </label>
@@ -883,9 +883,9 @@
                                     <label>
                                         <div class="radio radio-success">
                                           @if ($uloptionsubr === 'true')
-                                          <input type="checkbox" name="u_l_options_subr" value="true" checked="">  SUBR WVD
+                                          <input type="checkbox" name="u_l_options_subr" value="true" checked="">  Waiver of subrogation
                                           @else
-                                          <input type="checkbox" name="u_l_options_subr" value="true">  SUBR WVD
+                                          <input type="checkbox" name="u_l_options_subr" value="true">  Waiver of subrogation
                                           @endif
                                         </div>
                                     </label>
@@ -908,7 +908,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="u_l_eff_date" type="text" value="{{$uleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="u_l_eff_date" type="text" value="{{$uleffdate}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                 </div>
@@ -916,7 +916,7 @@
                                   <div class="form-group">
                                     <div class="example">
                                         <div class="input-group">
-                                            <input name="u_l_exp_date" type="text" value="{{$ulexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                            <input name="u_l_exp_date" type="text" value="{{$ulexpdate}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                     </div>
                                   </div>
                                   </div>
@@ -1071,9 +1071,9 @@
                                 <label>
                                     <div class="radio radio-success">
                                       @if ($wcoptionaddl === 'true')
-                                      <input type="checkbox" name="w_c_options_addl" value="true" checked=""> ADDL INSR
+                                      <input type="checkbox" name="w_c_options_addl" value="true" checked=""> Additonal insurance
                                       @else
-                                      <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
+                                      <input type="checkbox" name="w_c_options_addl" value="true"> Additonal insurance
                                       @endif
                                     </div>
                                 </label>
@@ -1084,9 +1084,9 @@
                                 <label>
                                     <div class="radio radio-success">
                                       @if ($wcoptionsubr === 'true')
-                                      <input type="checkbox" name="w_c_options_subr" value="true" checked="">  SUBR WVD
+                                      <input type="checkbox" name="w_c_options_subr" value="true" checked="">  Waiver of subrogation
                                       @else
-                                      <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
+                                      <input type="checkbox" name="w_c_options_subr" value="true">  Waiver of subrogation
                                       @endif
                                     </div>
                                 </label>
@@ -1109,7 +1109,7 @@
                               <div class="form-group">
                                 <div class="example">
                                     <div class="input-group">
-                                        <input name="W_C_eff_date" type="text" value="{{$formcontrol->W_C_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                        <input name="W_C_eff_date" type="text" value="{{$formcontrol->W_C_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                 </div>
                               </div>
                             </div>
@@ -1117,7 +1117,7 @@
                               <div class="form-group">
                                 <div class="example">
                                     <div class="input-group">
-                                        <input name="W_C_exp_date" type="text" value="{{$formcontrol->W_C_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                        <input name="W_C_exp_date" type="text" value="{{$formcontrol->W_C_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                 </div>
                               </div>
                               </div>
@@ -1257,7 +1257,7 @@
                                 <div class="form-group">
                                   <div class="example">
                                       <div class="input-group">
-                                          <input name="A_C_a_eff_date" type="text" value="{{$formcontrol->A_C_a_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                          <input name="A_C_a_eff_date" type="text" value="{{$formcontrol->A_C_a_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                   </div>
                                 </div>
                               </div>
@@ -1265,7 +1265,7 @@
                                 <div class="form-group">
                                   <div class="example">
                                       <div class="input-group">
-                                          <input name="A_C_a_exp_date" type="text" value="{{$formcontrol->A_C_a_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                          <input name="A_C_a_exp_date" type="text" value="{{$formcontrol->A_C_a_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                   </div>
                                 </div>
                                 </div>
@@ -1354,7 +1354,7 @@
                                 <div class="form-group">
                                   <div class="example">
                                       <div class="input-group">
-                                          <input name="A_C_b_eff_date" type="text" value="{{$formcontrol->A_C_b_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                          <input name="A_C_b_eff_date" type="text" value="{{$formcontrol->A_C_b_eff_date}}" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                   </div>
                                 </div>
                               </div>
@@ -1362,7 +1362,7 @@
                                 <div class="form-group">
                                   <div class="example">
                                       <div class="input-group">
-                                          <input name="A_C_b_exp_date" type="text" value="{{$formcontrol->A_C_b_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                          <input name="A_C_b_exp_date" type="text" value="{{$formcontrol->A_C_b_exp_date}}" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)" data-date-format="mm/dd/yyyy" > <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                   </div>
                                 </div>
                                 </div>

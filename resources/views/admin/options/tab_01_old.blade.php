@@ -30,7 +30,7 @@
                                                       <div class="input-group">
                                                           <div class="input-group-addon"><i class="fa fa-briefcase"></i>
                                                           </div>
-                                                          <input name="I_I_dba_name" type="text" class="form-control" id="I_I_dba_name" placeholder="DBA name">
+                                                          <input name="I_I_dba_name" type="text" class="form-control" id="I_I_dba_name" placeholder="DBA Name">
                                                       </div>
                                                   </div>
                                               </div>
@@ -141,7 +141,7 @@
                                                       <div class="input-group">
                                                           <div class="input-group-addon"><i class="fa fa-question"></i>
                                                           </div>
-                                                          <input name="dba_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="DBA name">
+                                                          <input name="dba_name" type="text" class="form-control" id="exampleInputpwd2" placeholder="DBA Name">
                                                       </div>
                                                   </div>
                                               </div>
@@ -459,7 +459,7 @@
                                     <div class="form-group">
                                         <label>
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="g_l_option_addl" value="true"> ADDL INSR
+                                                <input type="checkbox" name="g_l_option_addl" value="true"> Additonal insurance
                                             </div>
                                         </label>
                                     </div>
@@ -468,7 +468,7 @@
                                     <div class="form-group">
                                         <label>
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="g_l_option_subr" value="true"> SUBR WVD
+                                                <input type="checkbox" name="g_l_option_subr" value="true"> Waiver of subrogation
 
                                             </div>
                                         </label>
@@ -491,7 +491,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="g_l_eff_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="g_l_eff_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -499,7 +499,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="g_l_exp_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="g_l_exp_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -653,7 +653,7 @@
                                     <div class="form-group">
                                         <label>
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="a_l_options_addl" value="true"> ADDL INSR
+                                                <input type="checkbox" name="a_l_options_addl" value="true"> Additonal insurance
                                             </div>
                                         </label>
                                     </div>
@@ -662,7 +662,7 @@
                                     <div class="form-group">
                                         <label>
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="a_l_options_subr" value="true"> SUBR WVD
+                                                <input type="checkbox" name="a_l_options_subr" value="true"> Waiver of subrogation
                                             </div>
                                         </label>
                                     </div>
@@ -684,7 +684,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="a_l_eff_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="a_l_eff_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -692,7 +692,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="a_l_exp_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="a_l_exp_date" data-date-format="mm/dd/yyyy" type="text" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -830,7 +830,7 @@
                                     <div class="form-group">
                                         <label>
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="u_l_options_addl" value="true"> ADDL INSR
+                                                <input type="checkbox" name="u_l_options_addl" value="true"> Additonal insurance
                                             </div>
                                         </label>
                                     </div>
@@ -839,7 +839,7 @@
                                     <div class="form-group">
                                         <label>
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="u_l_options_subr" value="true"> SUBR WVD
+                                                <input type="checkbox" name="u_l_options_subr" value="true"> Waiver of subrogation
                                             </div>
                                         </label>
                                     </div>
@@ -861,7 +861,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="u_l_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="u_l_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -869,7 +869,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="u_l_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="u_l_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1009,7 +1009,7 @@
                             <div class="form-group">
                               <label>
                                   <div class="radio radio-success">
-                                    <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
+                                    <input type="checkbox" name="w_c_options_addl" value="true"> Additonal insurance
                                   </div>
                               </label>
                             </div>
@@ -1018,7 +1018,7 @@
                             <div class="form-group">
                               <label>
                                   <div class="radio radio-success">
-                                    <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
+                                    <input type="checkbox" name="w_c_options_subr" value="true">  Waiver of subrogation
                                   </div>
                               </label>
                             </div>
@@ -1040,7 +1040,7 @@
                             <div class="form-group">
                               <div class="example">
                                   <div class="input-group">
-                                      <input name="W_C_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                      <input name="W_C_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                               </div>
                             </div>
                           </div>
@@ -1048,7 +1048,7 @@
                             <div class="form-group">
                               <div class="example">
                                   <div class="input-group">
-                                      <input name="W_C_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                      <input name="W_C_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(MM/DD/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                               </div>
                             </div>
                             </div>
@@ -1181,7 +1181,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="A_C_a_eff_date" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="datepicker2" placeholder="EFF(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="A_C_a_eff_date" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="datepicker2" placeholder="EFF(DD/MM/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1189,7 +1189,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="A_C_a_exp_date" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="datepicker1" placeholder="EXP(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="A_C_a_exp_date" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="datepicker1" placeholder="EXP(DD/MM/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1271,7 +1271,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="A_C_b_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="A_C_b_eff_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker2" placeholder="EFF(DD/MM/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1279,7 +1279,7 @@
                                     <div class="form-group">
                                         <div class="example">
                                             <div class="input-group">
-                                                <input name="A_C_b_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(DD/MM/YYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+                                                <input name="A_C_b_exp_date" type="text" data-date-format="mm/dd/yyyy" class="form-control" id="datepicker1" placeholder="EXP(DD/MM/YYYY)"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
                                         </div>
                                     </div>
                                 </div>

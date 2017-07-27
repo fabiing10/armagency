@@ -97,7 +97,7 @@
                                       <td>{{$user->name}}</td>
                                       <td>{{$user->email}}</td>
                                       <td>{{\Carbon\Carbon::parse($user->exp_date)->format('m/d/Y')}}</td>
-                                      <td>{{$user->status}}</td>
+                                      <td style="text-transform: capitalize;">{{$user->status}}</td>
                                       <td>
                                         <span class="mytooltip tooltip-effect-4">
                                           <span class="tooltip-item">

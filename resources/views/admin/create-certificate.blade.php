@@ -58,7 +58,7 @@
           <div class="row">
                 <ol class="breadcrumb" style="float:left; margin-left:30px;">
                   <li><a href="/admin">Home</a></li>
-                  <li class="active">create certificate</li>
+                  <li class="active">Create Certificate</li>
                 </ol>
           </div>
             <!-- /.col-lg-12 -->

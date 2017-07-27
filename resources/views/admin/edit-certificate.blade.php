@@ -160,7 +160,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
           <div class="row">
                 <ol class="breadcrumb" style="float:left; margin-left:30px;">
                   <li><a href="/admin">Home</a></li>
-                  <li class="active">create certificate</li>
+                  <li class="active">Edit Certificate</li>
                 </ol>
           </div>
             <!-- /.col-lg-12 -->
