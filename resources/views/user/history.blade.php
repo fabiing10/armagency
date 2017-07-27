@@ -58,8 +58,9 @@
                                     <th>Address</th>
                                     <th>City</th>
                                     <th>State</th>
-                                    <th>SENT DATE</th>
-                                    <th >MANAGE</th>
+                                    <th>Zip Code</th>
+                                    <th>Sent Date</th>
+                                    <th >Manage</th>
                                     <th style="display:none;">Data order</th>
                                   </tr>
                               </thead>
@@ -70,6 +71,7 @@
                                       <td>{{$h->address}}</td>
                                       <td>{{$h->city}}</td>
                                       <td>{{$h->state}}</td>
+                                      <td>{{$h->zip_code}}</td>
                                       <td>
                                         {{\Carbon\Carbon::parse($h->sent_date)->format('m/d/Y')}}
                                       <td>

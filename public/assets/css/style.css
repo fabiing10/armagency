@@ -37,7 +37,7 @@
     color: white;
 }
 h1.login {
-     display: block !important; 
+     display: block !important;
     color: white;
     line-height: 30px;
     margin-bottom: 17px !important;
@@ -141,7 +141,11 @@ background: white;
     }
  }
 
-
+ .la-ball-fall {
+     display: block;
+     font-size: 0;
+     color: #29166f !important;
+ }
  .checkbox input[type=checkbox] {
      width: 19px;
      height: 17px;
@@ -159,7 +163,9 @@ background: white;
      text-align: center;
      color: white;
  }
-
+ input.form-control {
+     text-transform: uppercase;
+ }
  p.t-mobile {
     text-align: center;
 }

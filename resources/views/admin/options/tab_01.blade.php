@@ -29,7 +29,7 @@
                                                     <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                     <div class="form-group f-style">
                                                         <input type="text" class="form-control input-sm" id="I_I_dba_name" name="I_I_dba_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                        <label for="I_I_dba_name">DBA name</label>
+                                                        <label for="I_I_dba_name">DBA Name</label>
                                                     </div>
                                                   </div>
 
@@ -143,7 +143,7 @@
                                                   <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
                                                   <div class="form-group f-style">
                                                       <input type="text" class="form-control input-sm" id="dba_name" name="dba_name" required><span class="highlight"></span> <span class="bar"></span>
-                                                      <label for="dba_name">DBA name</label>
+                                                      <label for="dba_name">DBA Name</label>
                                                   </div>
                                                 </div>
                                               </div>
@@ -462,14 +462,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="g_l_option_addl" value="true"> ADDL INSR
+                                                <input type="checkbox" name="g_l_option_addl" value="true"> Additional Insured
                                             </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="g_l_option_subr" value="true"> SUBR WVD
+                                                <input type="checkbox" name="g_l_option_subr" value="true">  Waiver of Subrogation
                                             </div>
                                     </div>
                                 </div>
@@ -490,7 +490,7 @@
                                   <div class="form-group">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                     <div class="form-group f-style">
-                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="g_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYYY)" class="form-control input-sm" id="datepicker2" name="g_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
                                   </div>
                                 </div>
@@ -654,14 +654,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="a_l_options_addl" value="true"> ADDL INSR
+                                                <input type="checkbox" name="a_l_options_addl" value="true"> Additional Insured
                                             </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="a_l_options_subr" value="true"> SUBR WVD
+                                                <input type="checkbox" name="a_l_options_subr" value="true">  Waiver of Subrogation
                                             </div>
                                     </div>
                                 </div>
@@ -681,7 +681,7 @@
                                   <div class="form-group">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                     <div class="form-group f-style">
-                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="a_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYYY)" class="form-control input-sm" id="datepicker2" name="a_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
 
                                     </div>
                                   </div>
@@ -831,14 +831,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="u_l_options_addl" value="true"> ADDL INSR
+                                                <input type="checkbox" name="u_l_options_addl" value="true"> Additional Insured
                                             </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                             <div class="radio radio-success">
-                                                <input type="checkbox" name="u_l_options_subr" value="true"> SUBR WVD
+                                                <input type="checkbox" name="u_l_options_subr" value="true">  Waiver of Subrogation
                                             </div>
                                     </div>
                                 </div>
@@ -858,7 +858,7 @@
                                   <div class="form-group">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                     <div class="form-group f-style">
-                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="u_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYYY)" class="form-control input-sm" id="datepicker2" name="u_l_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
                                   </div>
                                 </div>
@@ -1009,14 +1009,14 @@
                               <div class="col-md-6">
                                 <div class="form-group">
                                       <div class="radio radio-success">
-                                        <input type="checkbox" name="w_c_options_addl" value="true"> ADDL INSR
+                                        <input type="checkbox" name="w_c_options_addl" value="true"> Additional Insured
                                       </div>
                                 </div>
                               </div>
                               <div class="col-md-6">
                                 <div class="form-group">
                                       <div class="radio radio-success">
-                                        <input type="checkbox" name="w_c_options_subr" value="true">  SUBR WVD
+                                        <input type="checkbox" name="w_c_options_subr" value="true">   Waiver of Subrogation
                                       </div>
                                 </div>
                                 </div>
@@ -1037,7 +1037,7 @@
                                 <div class="form-group">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                   <div class="form-group f-style">
-                                      <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="W_C_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                      <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYYY)" class="form-control input-sm" id="datepicker2" name="W_C_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                   </div>
                                 </div>
                               </div>
@@ -1160,12 +1160,12 @@
                                     <div class="radio-list">
                                         <div class="radio-inline p-0">
                                             <div class="radio radio-info">
-                                                <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance"> Additonal insurance
+                                                <input type="checkbox" name="A_C_a_options_add_insurance" value="Additonal insurance"> Additional Insured
                                             </div>
                                         </div>
                                         <div class="radio-inline">
                                             <div class="radio radio-info">
-                                                <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation"> Waiver of subrogation
+                                                <input type="checkbox" name="A_C_a_options_surrogation" value="Surrogation"> Waiver of Subrogation
                                             </div>
                                         </div>
                                     </div>
@@ -1188,7 +1188,7 @@
                                   <div class="form-group">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                     <div class="form-group f-style">
-                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker2" name="A_C_a_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYYY)" class="form-control input-sm" id="datepicker2" name="A_C_a_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
                                   </div>
                                 </div>
@@ -1283,7 +1283,7 @@
                                   <div class="form-group">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                     <div class="form-group f-style">
-                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYY)" class="form-control input-sm" id="datepicker1" name="A_C_b_eff_date" required><span class="highlight"></span> <span class="bar"></span>
+                                        <input type="text" data-date-format="mm/dd/yyyy" placeholder="EFF(MM/DD/YYYY)" class="form-control input-sm" id="datepicker1" name="A_C_b_eff_date" required><span class="highlight"></span> <span class="bar"></span>
                                     </div>
                                   </div>
                                 </div>

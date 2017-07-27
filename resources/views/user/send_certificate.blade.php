@@ -348,18 +348,36 @@ jQuery('#date-range').datepicker({
 
 
 function downloadCertificate(){
-  jQuery.ajax({
-   type: 'POST',
-    url:'/user/view-certificate',
-    data: 'certificate_name='+jQuery('#certificate_name').val()+'&address_client='+ jQuery('#address_client').val()+'&city_client='+ jQuery('#city_client').val()+'&state_client='+ jQuery('#state_client').val()+'&zipcode_client='+ jQuery('#zipcode_client').val()+'&email_client='+ jQuery('#email_client').val()+'&phone_client='
-    +jQuery('#phone_client').val()+'&fax_client='+ jQuery('#fax_client').val(),
-    headers: {
-                       "X-CSRF-TOKEN": $('meta[name="_token"]').attr('content')
-                   },
-    success: function(msg){
-      window.location.href='/user/download/pdf/'+msg;
-    }
-  });
+  swal({
+    title: "Are you sure?",
+    text: "Are you sure that you want to download this certificate?",
+    type: "info",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    showLoaderOnConfirm: true,
+    confirmButtonText: "Yes, download it!",
+    confirmButtonColor: "#ec6c62"
+   }, function() {
+       $.ajax(
+         {
+           type: 'POST',
+            url:'/user/view-certificate',
+            data: 'certificate_name='+jQuery('#certificate_name').val()+'&address_client='+ jQuery('#address_client').val()+'&city_client='+ jQuery('#city_client').val()+'&state_client='+ jQuery('#state_client').val()+'&zipcode_client='+ jQuery('#zipcode_client').val()+'&email_client='+ jQuery('#email_client').val()+'&phone_client='
+            +jQuery('#phone_client').val()+'&fax_client='+ jQuery('#fax_client').val(),
+            headers: { "X-CSRF-TOKEN": $('meta[name="_token"]').attr('content')},
+            success: function(data){
+            }
+         }
+       )
+     .done(function(data) {
+       swal("Downloaded!", "Your certificate was successfully downloaded!", "success");
+         window.location.href='/user/download/pdf/'+data;
+     })
+     .error(function(data) {
+       swal("Oops", "We couldn't connect to the server!", "error");
+     });
+   });
+
 }
 </script>
 @endsection

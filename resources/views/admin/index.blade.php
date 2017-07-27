@@ -87,7 +87,7 @@
                                       <th>Email</th>
                                       <th>Exp date</th>
 
-                                      <th>status</th>
+                                      <th>Status</th>
                                       <th>Manage</th>
                                   </tr>
                               </thead>

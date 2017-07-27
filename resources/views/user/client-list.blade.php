@@ -67,6 +67,7 @@
                                                     <th>Address</th>
                                                     <th>City</th>
                                                     <th>State</th>
+                                                    <th>Zip</th>
                                                     <th>Phone</th>
                                                     <th>Fax</th>
                                                     <th>Email</th>
@@ -80,6 +81,7 @@
                                                     <td>{{$client->address}}</td>
                                                     <td>{{$client->city}}</td>
                                                     <td>{{$client->state}}</td>
+                                                    <td>{{$client->zip_code}}</td>
                                                     <td>{{$client->phone_number}}</td>
                                                     <td>{{$client->fax}}</td>
                                                     <td>{{$client->email}}</td>
