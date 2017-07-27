@@ -105,7 +105,7 @@
                                           </span>
                                           <span class="tooltip-content clearfix">
 
-                                            <span class="tooltip-text">Clients</span>
+                                            <span class="tooltip-text">Edit Profile</span>
                                           </span>
                                         </span>
 
@@ -115,7 +115,7 @@
                                           </span>
                                           <span class="tooltip-content clearfix">
 
-                                            <span class="tooltip-text">Edit User</span>
+                                            <span class="tooltip-text">Edit Certificate</span>
                                           </span>
                                         </span>
 

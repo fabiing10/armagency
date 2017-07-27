@@ -58,29 +58,37 @@
                                   </div>
                                     <div class="table-responsive">
                                         <table id="myTable" class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>address</th>
-                                                    <th>phone</th>
-                                                    <th>fax</th>
-                                                    <th>email</th>
-                                                    <th>Created at</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              @foreach ($clients as $client)
-                                                <tr>
-                                                    <td>{{$client->certificate_holder_name}}</td>
-                                                    <td>{{$client->address}}</td>
-                                                    <td>{{$client->phone_number}}</td>
-                                                    <td>{{$client->fax}}</td>
-                                                    <td>{{$client->email}}</td>
-                                                    <td>{{$client->created_at}}</td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
+                                          <thead>
+                                              <tr>
+                                                  <th>Client Name</th>
+                                                  <th>Address</th>
+                                                  <th>City</th>
+                                                  <th>State</th>
+                                                  <th>Phone</th>
+                                                  <th>Fax</th>
+                                                  <th>Email</th>
+                                                  <th>manage</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                            @foreach ($clients as $client)
+                                              <tr>
+                                                  <td>{{$client->certificate_holder_name}}</td>
+                                                  <td>{{$client->address}}</td>
+                                                  <td>{{$client->city}}</td>
+                                                  <td>{{$client->state}}</td>
+                                                  <td>{{$client->phone_number}}</td>
+                                                  <td>{{$client->fax}}</td>
+                                                  <td>{{$client->email}}</td>
+                                                  <td>
+                                                      <a href="/user/client-list/edit/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></a>
+                                                      <a href="#" data-id="{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5 delete-user"><i class="ti-trash"></i></a>
+                                                      <a href="/user/certificate/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                                                      <button onclick="window.location.href='/user/download-certificate/{{$client->id}}'" type="button" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-download"></i></button>
+                                                  </td>
+                                              </tr>
+                                              @endforeach
+                                          </tbody>
                                         </table>
                                     </div>
                                     <!-- <div class="form-group">
