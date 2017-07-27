@@ -50,15 +50,15 @@ hr {
           <!-- /.row -->
           <div class="row">
               <div class="col-sm-12">
-                <div class="alert block2" style="display:none;">
-                  <i class="fa fa-times-circle" style="color:white;"></i>  Account cancelled
+                <div class="alert block2">
+                  <i class="fa fa-times-circle" style="color:white;"></i>  Insurance is Cancelled
                 </div>
                   <div class="white-box home-box ">
                     <div class="row">
                       <div class="col-lg-12" style="text-align:center;">
                           <img src="{{URL::asset('assets/plugins/images/cancelled.png')}}" style="width: 100px;"></img>
-                          <h2 class="m-b-0">Acoount Cancelled</h2>
-                          <p>Your account have some issures and have<br>been cancelled. Please call 281-550-1799<br>to speak to representative<br><br>
+                          <h2 class="m-b-0">Insurance is Cancelled</h2>
+                          <p>Your account has experienced some issues and has been canceled<br>Please call 281-550-1799 To speak to a representative<br><br>
                           <button type="submit" class="btn btn-info p80" onclick="window.location.href='user/certificate'" style="padding:10px;"> <i class="fa fa-phone" style="color:white;"></i> Contact us</button><br><br>
                       </div>
                       </div>

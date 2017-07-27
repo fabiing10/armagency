@@ -67,7 +67,7 @@
 
       <div class="new-login-box">
                 <div class="white-box contentlogin" style="margin-top:130px;">
-                    <h1 class="m-b-0 text-center login">Login</h1>
+                    <h1 class="m-b-0 text-center login">Reset your password </h1>
                     <center><img src="{{URL::asset('assets/plugins/images/logo3.png')}}" alt="home" style="width:25%; display:none;" class="light-logo logo-login" /></center>
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -81,6 +81,7 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                             <div class="col-xs-12">
+                               <p class="t-mobile">Enter your email and we'll send you a link to reset your password</p>
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="Enter a Email">
 
                                 @if ($errors->has('email'))
@@ -94,7 +95,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <button type="submit" class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light btnlogin">
-                                    Send Password Reset Link
+                                    Submit
                                 </button>
                             </div>
                         </div>

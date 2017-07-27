@@ -68,7 +68,7 @@
 
       <div class="new-login-box">
                 <div class="white-box contentlogin" style="margin-top:130px;">
-                    <h1 class="m-b-0 text-center login">Login</h1>
+                    <h1 class="m-b-0 text-center login">Reset your password </h1>
                     <center><img src="{{URL::asset('assets/plugins/images/logo3.png')}}" alt="home" style="width:25%; display:none;" class="light-logo logo-login" /></center>
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -83,7 +83,7 @@
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} m-t-20">
                             <div class="col-xs-12">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus placeholder="Email">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -95,7 +95,7 @@
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <div class="col-xs-12">
-                                <input id="password" type="password" class="form-control" name="password" required placeholder="Enter a new Password">
+                                <input id="password" type="password" class="form-control" name="password" required placeholder="Enter New Password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -107,7 +107,7 @@
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <div class="col-xs-12">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Repeat a new Password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Re-enter Password">
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -119,7 +119,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light btnlogin">
-                                    Reset Password
+                                    Submit
                                 </button>
                             </div>
                         </div>

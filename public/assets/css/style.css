@@ -32,6 +32,17 @@
  }
 
  @media only screen and (max-width: 520px){
+   p.t-mobile {
+    text-align: center;
+    color: white;
+}
+h1.login {
+     display: block !important; 
+    color: white;
+    line-height: 30px;
+    margin-bottom: 17px !important;
+    font-size: 22px;
+}
    .white-box {
         background: #fff;
         padding: 25px !important;
@@ -62,6 +73,8 @@
     padding: 0px;
     width: 99%;
 }
+
+
 .history-box{
 background: white;
 }
@@ -127,6 +140,29 @@ background: white;
       padding-left: 10px;
     }
  }
+
+
+ .checkbox input[type=checkbox] {
+     width: 19px;
+     height: 17px;
+     margin: -2px 0px 0px -20px;
+ }
+
+ .checkbox-success input[type=checkbox]:checked+label::before {
+     background-color: #29166f;
+     border-color: #29166f;
+ }
+ .alert {
+     position: relative;
+     top: 20px;
+     background: #ff4a1a;
+     text-align: center;
+     color: white;
+ }
+
+ p.t-mobile {
+    text-align: center;
+}
 
 .bar_bottom{
     display: none;
