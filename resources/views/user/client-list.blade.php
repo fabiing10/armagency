@@ -116,8 +116,8 @@
                 <p style="float:right;width: 100%;padding: 0px;">{{$client->email}}</p>
               </div>
                 <div class="panel_mobile_clients">
-                  <a href="/user/history/delete/" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
-                  <a href="/user/certificate/" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
+                  <a href="/user/client-list/delete/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></a>
+                  <a href="/user/certificate/{{$client->id}}" class="btn btn-outline btn-circle btn-lg m-r-5"><i class="fa fa-share-square"></i></a>
                 </div>
 
             </div>
