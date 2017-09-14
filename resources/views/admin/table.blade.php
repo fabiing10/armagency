@@ -191,7 +191,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
       <td colspan="2" style="border-bottom:2px solid; font-weight:bold; font-size:15px !important;" >IMPORTANT: if the certificate holder is an ADDITIONAL INSURED. the policy(ies) must be endorsed. if SUBROGATION IS WAIVED, subject to the terms and conditions of the policy, certain policies may require and endorsement. A statement on this certificate does not confer rights to the certificate holder in lieu of such endorsement(s).</td>
     </tr>
       <tr>
-      <td style=" width: 500px !important; border-bottom: 1px solid; border-right:1px solid;"><b>PRODUCDER</b><br>
+      <td style=" width: 500px !important; border-bottom: 1px solid; border-right:1px solid;"><b>PRODUCER</b><br>
         {{$formcontrol->P_I_name}}<br>
         {{$formcontrol->P_I_address}}<br>
         {{$formcontrol->P_I_city}},{{$formcontrol->P_I_dba_state}} {{$formcontrol->P_I_dba_zip_code}}
@@ -242,6 +242,7 @@ $wcoptionsaddlsubrResult = json_decode($formcontrol->W_C_options_addl_subr);
     <td style="border-bottom:1px solid !important; border-right:1px solid;">
       <b>INSURED</b><br>
       {{$user->name}}<br>
+      {{$user->dba_name}}<br>
       {{$user->address}}<br>
       {{$user->city}}, {{$user->state}} {{$user->zip_code}}
       <!--
